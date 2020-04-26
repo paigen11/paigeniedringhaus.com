@@ -1,16 +1,16 @@
-import React from "react";
-import Helmet from "react-helmet";
-import { graphql, Link } from "gatsby";
-import Layout from "../layout";
-import PostListing from "../components/PostListing/PostListing";
-import SEO from "../components/SEO/SEO";
-import config from "../../data/SiteConfig";
-import "./listing.css";
+import React from 'react';
+import Helmet from 'react-helmet';
+import { graphql, Link } from 'gatsby';
+import Layout from '../components/Layout/Layout';
+import PostListing from '../components/PostListing/PostListing';
+import SEO from '../components/SEO/SEO';
+import config from '../../data/SiteConfig';
+import './listing.css';
 
 class Listing extends React.Component {
   renderPaging() {
     const { currentPageNum, pageCount } = this.props.pageContext;
-    const prevPage = currentPageNum - 1 === 1 ? "/" : `/${currentPageNum - 1}/`;
+    const prevPage = currentPageNum - 1 === 1 ? '/' : `/${currentPageNum - 1}/`;
     const nextPage = `/${currentPageNum + 1}/`;
     const isFirstPage = currentPageNum === 1;
     const isLastPage = currentPageNum === pageCount;
@@ -23,7 +23,7 @@ class Listing extends React.Component {
           return (
             <Link
               key={`listing-page-${pageNum}`}
-              to={pageNum === 1 ? "/" : `/${pageNum}/`}
+              to={pageNum === 1 ? '/' : `/${pageNum}/`}
             >
               {pageNum}
             </Link>

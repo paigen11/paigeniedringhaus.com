@@ -14,12 +14,13 @@ module.exports = {
       image_url: `${urljoin(
         config.siteUrl,
         config.pathPrefix,
-      )}/logos/logo-512.png`,
+      )}/logos/pn-logo-512.png`,
       copyright: config.copyright,
     },
   },
   plugins: [
     'gatsby-plugin-react-helmet',
+    'gatsby-plugin-sass',
     'gatsby-plugin-lodash',
     {
       resolve: 'gatsby-source-filesystem',

@@ -24,3 +24,12 @@ body {
   display: flex;
   padding: 20px;
 }
+@import '../../styles/colors.scss';
+
+.layout-container {
+  margin: 0 auto;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}

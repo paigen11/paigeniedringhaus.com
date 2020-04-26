@@ -1,7 +1,15 @@
+@import '../../styles/colors.scss';
+
 .footer {
   justify-content: center;
   align-content: center;
-  padding: 10px 5px 5px;
+  padding: 0.5rem 1rem;
+  background: $green;
+
+  .footer-content {
+    max-width: 1280px;
+    margin: auto;
+  }
 }
 
 .notice-container {
