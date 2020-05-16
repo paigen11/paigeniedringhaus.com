@@ -1,0 +1,21 @@
+@import '../../styles/colors.scss';
+
+.user-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  max-width: 100%;
+  text-decoration: none;
+
+  a {
+    padding: 10px;
+    svg {
+      color: $darkBlue;
+      font-size: 30px;
+    }
+    svg:hover {
+      color: $medBlue;
+    }
+  }
+}

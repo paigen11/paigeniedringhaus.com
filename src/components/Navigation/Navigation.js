@@ -10,13 +10,21 @@ const Navigation = () => (
         <Link to="/">
           <img src={logo}></img>
         </Link>
-        <h3>Paige Niedringhaus</h3>
+        <span>Paige Niedringhaus</span>
       </span>
       <span className="navigation-links">
-        <Link to="/blog/">Blog</Link>
-        <Link to="/media/">Media</Link>
-        <Link to="/about/">About</Link>
-        <Link to="/contact/">Contact</Link>
+        <Link activeClassName="active" to="/blog/">
+          Blog
+        </Link>
+        <Link activeClassName="active" to="/media/">
+          Media
+        </Link>
+        <Link activeClassName="active" to="/about/">
+          About
+        </Link>
+        <Link activeClassName="active" to="/contact/">
+          Contact
+        </Link>
       </span>
     </div>
   </header>

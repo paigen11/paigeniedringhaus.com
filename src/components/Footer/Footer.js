@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'gatsby';
 import config from '../../../data/SiteConfig';
 import UserLinks from '../UserLinks/UserLinks';
 import './Footer.scss';
@@ -14,12 +13,9 @@ const Footer = () => {
   return (
     <footer className="footer">
       <div className="footer-content">
-        <UserLinks config={config} labeled />
         <div className="notice-container">
           <h4>{copyright}</h4>
-          <Link to={url}>
-            <button>Subscribe</button>
-          </Link>
+          <UserLinks config={config} labeled />
         </div>
       </div>
     </footer>

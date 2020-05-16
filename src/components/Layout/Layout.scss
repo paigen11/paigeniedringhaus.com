@@ -11,6 +11,7 @@ body {
   padding: 0;
   min-height: 100%;
   min-width: 100%;
+  font-family: 'Baloo 2', cursive;
 }
 
 #___gatsby #gatsby-focus-wrapper {
@@ -24,6 +25,7 @@ body {
   display: flex;
   padding: 20px;
 }
+
 @import '../../styles/colors.scss';
 
 .layout-container {
