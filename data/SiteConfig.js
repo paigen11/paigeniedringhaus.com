@@ -21,17 +21,17 @@ const config = {
     {
       label: 'GitHub',
       url: 'https://github.com/paigen11',
-      iconClassName: 'fa fa-github',
+      iconClassName: 'faGithub',
     },
     {
       label: 'Twitter',
       url: 'https://twitter.com/pniedri',
-      iconClassName: 'fa fa-twitter',
+      iconClassName: 'faTwitter',
     },
     {
       label: 'Email',
       url: 'mailto:hellopaigen@gmail.com',
-      iconClassName: 'fa fa-envelope',
+      iconClassName: 'faEnvelope',
     },
   ],
   copyright: 'Copyright © 2020. Paige Niedringhaus',
