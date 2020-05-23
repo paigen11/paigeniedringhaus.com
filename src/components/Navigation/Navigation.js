@@ -13,16 +13,16 @@ const Navigation = () => (
         <span>Paige Niedringhaus</span>
       </span>
       <span className="navigation-links">
-        <Link activeClassName="active" to="/blog/">
+        <Link activeClassName="active" to="/blog">
           Blog
         </Link>
-        <Link activeClassName="active" to="/media/">
+        <Link activeClassName="active" to="/media">
           Media
         </Link>
-        <Link activeClassName="active" to="/about/">
+        <Link activeClassName="active" to="/about">
           About
         </Link>
-        <Link activeClassName="active" to="/contact/">
+        <Link activeClassName="active" to="/contact">
           Contact
         </Link>
       </span>
