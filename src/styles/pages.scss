@@ -2,4 +2,32 @@
   max-width: 1280px;
   width: 100%;
   margin: auto;
+  padding: 0 2rem;
+}
+
+// media page scss
+.media-container {
+  p,
+  li {
+    font-size: 1.25rem;
+  }
+
+  h3 {
+    margin: 0;
+  }
+
+  ul {
+    margin-top: 0;
+  }
+
+  .media-items {
+    display: flex;
+    align-items: center;
+    padding: 4px 0;
+  }
+
+  .media-images {
+    max-height: 2rem;
+    padding-right: 1rem;
+  }
 }
