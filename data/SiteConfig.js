@@ -19,14 +19,19 @@ const config = {
   userLocation: 'Atlanta, GA',
   userLinks: [
     {
-      label: 'GitHub',
-      url: 'https://github.com/paigen11',
-      iconClassName: 'faGithub',
-    },
-    {
       label: 'Twitter',
       url: 'https://twitter.com/pniedri',
       iconClassName: 'faTwitter',
+    },
+    {
+      label: 'Medium',
+      url: 'https://medium.com/@paigen11',
+      iconClassName: 'faMedium',
+    },
+    {
+      label: 'GitHub',
+      url: 'https://github.com/paigen11',
+      iconClassName: 'faGithub',
     },
     {
       label: 'Email',
@@ -38,8 +43,6 @@ const config = {
   themeColor: '#c62828', // Used for setting manifest and progress theme colors.
   backgroundColor: '#e0e0e0', // Used for setting manifest background color.
 };
-
-// Validate
 
 // Make sure pathPrefix is empty if not needed
 if (config.pathPrefix === '/') {
