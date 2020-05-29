@@ -4,7 +4,7 @@ cover: "5.jpg"
 category: "moar"
 date: "2018-03-01"
 slug: "Big-Sample_Test"
-tags:
+tags: 
     - test
     - huge
 ---
@@ -15,6 +15,8 @@ tags:
 This is intended as a quick reference and showcase. For more complete info, see [John Gruber's original spec](http://daringfireball.net/projects/markdown/) and the [Github-flavored Markdown info page](http://github.github.com/github-flavored-markdown/).
 
 This cheatsheet is specifically *Markdown Here's* version of Github-flavored Markdown. This differs slightly in styling and syntax from what Github uses, so what you see below might vary a little from what you get in a *Markdown Here* email, but it should be pretty close.
+
+Image ![test](../images/laptop-1.jpeg)
 
 You can play around with Markdown on our [live demo page](http://www.markdown-here.com/livedemo.html).
 
