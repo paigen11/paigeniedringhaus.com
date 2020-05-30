@@ -40,8 +40,8 @@ const config = {
     },
   ],
   copyright: 'Copyright © 2020. Paige Niedringhaus',
-  themeColor: '#c62828', // Used for setting manifest and progress theme colors.
-  backgroundColor: '#e0e0e0', // Used for setting manifest background color.
+  themeColor: '#40c9a2', // Used for setting manifest and progress theme colors.
+  backgroundColor: '#eceef5', // Used for setting manifest background color.
 };
 
 // Make sure pathPrefix is empty if not needed
