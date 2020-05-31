@@ -1,8 +1,39 @@
+@import './colors.scss';
+
 .page-body {
   max-width: 1280px;
   width: 100%;
   margin: auto;
   padding: 0 2rem;
+  color: $darkBlueTint;
+}
+
+h1 {
+  color: $darkBlue;
+}
+
+a {
+  text-decoration: none;
+  color: $blueViolet;
+}
+
+a:hover {
+  color: $medBlue;
+}
+// main page
+.main-page {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+
+  .main-intro {
+    max-width: 32rem;
+  }
+
+  img {
+    max-height: 20rem;
+    border-radius: 50%;
+  }
 }
 
 // media page scss
@@ -24,6 +55,18 @@
     display: flex;
     align-items: center;
     padding: 4px 0;
+  }
+
+  .media-slides {
+    padding-left: 70px;
+  }
+
+  .companies {
+    padding-left: 40px;
+  }
+
+  .articles {
+    padding-left: 3rem;
   }
 
   .media-images {
