@@ -116,7 +116,7 @@ module.exports = {
         setup(ref) {
           const ret = ref.query.site.siteMetadata.rssMetadata;
           ret.allMarkdownRemark = ref.query.allMarkdownRemark;
-          ret.generator = 'GatsbyJS Advanced Starter';
+          ret.generator = 'Paige Niedringhaus';
           return ret;
         },
         query: `
