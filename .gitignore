@@ -57,3 +57,6 @@ public/
 
 # Bundle stats
 bundle-stats.json
+
+.DS_Store
+content/.DS_Store
