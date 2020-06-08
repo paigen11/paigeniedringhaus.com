@@ -19,13 +19,6 @@ body {
   min-width: 100vw;
 }
 
-.layout-container {
-  min-height: 100vh;
-  min-width: 100vw;
-  display: flex;
-  padding: 20px;
-}
-
 @import '../../styles/colors.scss';
 
 .layout-container {
@@ -34,4 +27,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  min-height: 100vh;
+  min-width: 100vw;
+  background: $medBlueTint;
 }
