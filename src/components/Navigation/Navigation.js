@@ -9,8 +9,8 @@ const Navigation = () => (
       <span className="navigation-names">
         <Link to="/">
           <img src={logo}></img>
+          <span>Paige Niedringhaus</span>
         </Link>
-        <span>Paige Niedringhaus</span>
       </span>
       <span className="navigation-links">
         <Link activeClassName="active" to="/blog">
