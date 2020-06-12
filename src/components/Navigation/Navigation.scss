@@ -2,6 +2,7 @@
 
 .navigation-wrapper {
   background-color: $green;
+  padding: 0.5rem 1rem;
 
   .navigation-header {
     max-width: 1280px;
@@ -19,12 +20,18 @@
     .navigation-names {
       justify-content: space-between;
       a {
-        padding: 15px 10px 10px 0;
-      }
-      span {
-        font-size: 24px;
-        font-weight: 700;
-        color: $darkBlue;
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        img {
+          padding: 15px 10px 10px 0;
+        }
+        span {
+          font-size: 24px;
+          font-weight: 700;
+          color: $darkBlue;
+          width: 100%;
+        }
       }
     }
 
@@ -36,10 +43,13 @@
         font-size: 20px;
         color: $darkBlue;
         font-weight: 600;
+        padding: 0.5rem;
+        border-radius: 3px;
       }
       a.active,
       a:hover {
         color: $medBlue;
+        background-color: $lightGreen;
       }
     }
   }
