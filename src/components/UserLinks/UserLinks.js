@@ -1,6 +1,10 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faTwitter, faGithub } from '@fortawesome/free-brands-svg-icons';
+import {
+  faTwitter,
+  faGithub,
+  faMedium,
+} from '@fortawesome/free-brands-svg-icons';
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import './UserLinks.scss';
 
@@ -15,6 +19,8 @@ const UserLinks = (props) => {
         return <FontAwesomeIcon icon={faTwitter} />;
       case 'faEnvelope':
         return <FontAwesomeIcon icon={faEnvelope} />;
+      case 'faMedium':
+        return <FontAwesomeIcon icon={faMedium} />;
     }
   };
 
