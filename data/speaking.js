@@ -2,6 +2,7 @@ import connectTech from '../src/images/thumbnails/connectTech.png';
 import digitalCrafts from '../src/images/thumbnails/digitalCrafts.png';
 import girlDevelopIt from '../src/images/thumbnails/girlDevelopIt.png';
 import theHomeDepot from '../src/images/thumbnails/theHomeDepot.png';
+import breakingTheGlass from '../src/images/thumbnails/breakingTheGlass.png';
 import react from '../content/images/react.png';
 
 export default [
@@ -63,5 +64,12 @@ export default [
     path:
       'https://us02web.zoom.us/rec/share/-e1HIK7L8H5OZKvXxk3dda8ZQ6Tqeaa8gSEW-vFezSQQqxeDKTctYEhQODwaXE8?startTime=1591223149000',
     img: digitalCrafts,
+  },
+  {
+    title:
+      'Breaking the Glass: RAD Women Webinar: Authentic Confidence & Self Advocacy',
+    date: 'June 24, 2020',
+    path: null,
+    img: breakingTheGlass,
   },
 ];
