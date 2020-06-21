@@ -1,8 +1,10 @@
 import React from 'react';
+import { Link } from 'gatsby';
 import Helmet from 'react-helmet';
 import Layout from '../components/Layout/Layout';
 import About from '../components/About/About';
 import config from '../../data/SiteConfig';
+import seanAndPaige from '../../content/images/seanAndPaige.jpg';
 import '../styles/pages.scss';
 
 const AboutPage = () => {
@@ -10,8 +12,116 @@ const AboutPage = () => {
     <Layout>
       <div className="about-container page-body">
         <Helmet title={`About | ${config.siteTitle}`} />
-        <h1>This is the about me page</h1>
-        <About />
+        <h1>About</h1>
+        <h2>Hey, I'm Paige Niedringhaus.</h2>
+        <p>
+          I'm a full stack software engineer, technical writer, and speaker,
+          originally from St. Louis, MO 🇺🇸.
+        </p>
+        <h3>Web development wasn't my first job...</h3>
+        <p>
+          Software development hasn't always been my focus. After graduating
+          high school, I attended&nbsp;
+          <a
+            href="http://www.emory.edu/home/index.html"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Emory University
+          </a>
+          &nbsp;and graduated from the&nbsp;
+          <a
+            href="https://goizueta.emory.edu/"
+            target="_blank"
+            rel="nooperner noreferrer"
+          >
+            Goizueta Business School
+          </a>
+          &nbsp;with a Bachelor's of Business Administration and concentrations
+          in Marketing, Management and International Business 🎓. I then worked
+          as a digital marketer and content strategist for several advertising
+          agencies before I made the decision to pursue a total career change in
+          web development in 2016.
+        </p>
+        <h3>But it turns out, I really enjoy it.</h3>
+        <p>
+          <a
+            href="https://www.digitalcrafts.com/"
+            target="_blank"
+            rel="nooperner noreferrer"
+          >
+            DigitalCrafts
+          </a>
+          &nbsp;is the immersive coding bootcamp I attended, and I've been
+          writing software ever since 💻. If you want to hear more about how I
+          got started in web development, I shared my origin story on the
+          podcast&nbsp;
+          <a
+            href="https://devchat.tv/my-javascript-story/mjs-143-paige-niedringhaus"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            My JavaScript Story
+          </a>
+          &nbsp;📻, and wrote about my early experiences as a new developer in a
+          few&nbsp;
+          <a
+            href="https://medium.com/@paigen11/how-i-went-from-a-digital-marketer-to-a-software-engineer-in-4-months-7ed99c65d360"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            blog
+          </a>
+          &nbsp;posts.
+        </p>
+        <h3>And now, I want to help others find the joy in coding too.</h3>
+        <p>
+          Today, I work with a team of developers as a senior software engineer.
+          I'm always learning new things, but my focus right now is on frontend
+          web development technologies like React, Gatsby and Node. Bringing
+          cool user interfaces to life with HTML, CSS and JavaScript, and
+          solving new problems daily is what I enjoy most about my job.
+        </p>
+        <p>
+          But I also love seeing other developers improve and succeed in their
+          careers, which is why I mentor devs, write about what I've learned
+          online and occasionally speak at conferences and meetups.
+        </p>
+        <p>
+          I've written regularly on&nbsp;
+          <a
+            href="https://medium.com/@paigen11"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Medium
+          </a>
+          &nbsp;and other <Link to="/media">publications</Link> about web
+          development and technology for a few years, but I wanted to build my
+          own site to share my knowledge with a broader audience. I hope you
+          find my&nbsp;
+          <Link to="/blog">posts</Link>&nbsp;useful as you build your own cool
+          stuff.
+        </p>
+        <h3>If you want to know more about me personally...</h3>
+        <p>
+          I met my husband, Sean, while I was working in Atlanta, GA, and we've
+          been happily married since 2016 (that was a really good year for me,
+          in case you haven't noticed).
+        </p>
+        <p>
+          And when I'm not programming, I like to spend my spare time working on
+          my art 🎨, traveling ✈️, and hanging out with family and friends. I've
+          recently gotten into learning to paint digitally (Procreate and my
+          iPad is what I'm using), so if you have tips to improve, please let
+          know!
+        </p>
+        <figure>
+          <img src={seanAndPaige} alt="sean and paige photo" />
+          <figcaption>
+            Sean and me, looking extra spiffy for our friend's wedding.
+          </figcaption>
+        </figure>
       </div>
     </Layout>
   );
