@@ -1,9 +1,9 @@
 @import './colors.scss';
 
 .page-body {
-  max-width: 1280px;
+  max-width: 800px;
   width: 100%;
-  margin: auto;
+  margin: 30px auto;
   padding: 0 2rem;
   color: $darkBlueTint;
 }
@@ -20,6 +20,12 @@ a {
 a:hover {
   color: $medBlue;
 }
+
+p,
+li {
+  font-size: 1.25rem;
+}
+
 // main page
 .main-page {
   display: flex;
@@ -27,22 +33,29 @@ a:hover {
   justify-content: space-evenly;
 
   .main-intro {
-    max-width: 32rem;
+    max-width: 26rem;
   }
 
   img {
-    max-height: 20rem;
+    max-height: 15rem;
     border-radius: 50%;
+  }
+}
+
+// about page scss
+.about-container {
+  figure {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    img {
+      border-radius: 5px;
+    }
   }
 }
 
 // media page scss
 .media-container {
-  p,
-  li {
-    font-size: 1.25rem;
-  }
-
   h3 {
     margin: 0;
   }
@@ -55,6 +68,12 @@ a:hover {
     display: flex;
     align-items: center;
     padding: 4px 0;
+    .title {
+      max-width: 480px;
+    }
+    .date {
+      margin-left: auto;
+    }
   }
 
   .companies {
