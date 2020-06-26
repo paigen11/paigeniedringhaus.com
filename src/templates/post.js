@@ -10,7 +10,7 @@ import SEO from '../components/SEO/SEO';
 import Footer from '../components/Footer/Footer';
 import config from '../../data/SiteConfig';
 import './b16-tomorrow-dark.css';
-import './post.css';
+import './post.scss';
 
 export default class PostTemplate extends React.Component {
   render() {
@@ -28,8 +28,8 @@ export default class PostTemplate extends React.Component {
           <Helmet>
             <title>{`${post.title} | ${config.siteTitle}`}</title>
           </Helmet>
-          <SEO postPath={slug} postNode={postNode} postSEO />
-          <div>
+          {/* <SEO postPath={slug} postNode={postNode} postSEO /> */}
+          <div className="post-wrapper">
             <h1>{post.title}</h1>
             <div dangerouslySetInnerHTML={{ __html: postNode.html }} />
             <div className="post-meta">
@@ -55,7 +55,13 @@ export const pageQuery = graphql`
       excerpt
       frontmatter {
         title
-        # cover
+        featuredImage {
+          childImageSharp {
+            fixed(width: 200, height: 200) {
+              ...GatsbyImageSharpFixed
+            }
+          }
+        }
         date
         category
         tags

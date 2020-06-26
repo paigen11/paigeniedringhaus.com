@@ -1,0 +1,20 @@
+@import '../../src/styles/colors.scss';
+
+.post-wrapper {
+  margin: 0 auto;
+  max-width: 800px;
+
+  .post-meta {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .gatsby-highlight {
+    background-color: $medBlue;
+    border-radius: 0.3em;
+    margin: 0.5em 0;
+    padding: 1em;
+    overflow: auto;
+  }
+}
