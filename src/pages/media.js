@@ -30,15 +30,16 @@ const MediaPage = () => {
           appearing as a guest on podcasts.
         </p>
         <p>
-          Since 2020 I've also been a regular host on the popular tech podcast{' '}
+          Since 2020, I've also been a regular host on the popular tech podcast
+          &nbsp;
           <a
             href="https://devchat.tv/react-round-up/"
             target="_blank"
             rel="noopener noreferrer"
           >
             React Round Up
-          </a>{' '}
-          , a bi-monthly podcast dedicated to React and the development
+          </a>
+          &nbsp;, a bi-monthly podcast dedicated to React and the development
           community. Each episode we talk to different experts in the community
           about all things React and beyond.
         </p>
@@ -58,13 +59,14 @@ const MediaPage = () => {
                       href={talk.path}
                       target="_blank"
                       rel="noopener noreferrer"
+                      className="title"
                     >
                       {talk.title}
                     </a>
                   ) : (
-                    <>{talk.title}</>
+                    <span className="title">{talk.title}</span>
                   )}
-                  &nbsp;- {talk.date}
+                  <span className="date">{talk.date}</span>
                 </li>
               </>
             );
@@ -84,10 +86,11 @@ const MediaPage = () => {
                   href={episode.path}
                   target="_blank"
                   rel="noopener noreferrer"
+                  className="title"
                 >
                   {episode.title}
                 </a>
-                &nbsp;- {episode.date}
+                <span className="date">{episode.date}</span>
               </li>
             );
           })}
@@ -114,10 +117,11 @@ const MediaPage = () => {
                         href={article.path}
                         target="_blank"
                         rel="noopener noreferrer"
+                        className="title"
                       >
                         {article.title}
                       </a>
-                      &nbsp;- {article.date}
+                      <span className="date">{article.date}</span>
                     </li>
                   );
                 })}

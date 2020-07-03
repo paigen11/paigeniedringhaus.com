@@ -25,8 +25,8 @@ const App = () => {
           </h2>
         </div>
         <img src={paige} alt="paige picture" />
-        <PostListing />
       </div>
+      <PostListing />
     </Layout>
   );
 };
