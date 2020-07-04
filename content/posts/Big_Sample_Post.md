@@ -1,6 +1,6 @@
 ---
 title: "Big Test"
-cover: "../images/laptop-1.jpeg"
+cover: ../images/laptop-1.jpeg
 thumbnail: ../images/laptop-1.jpeg
 featuredImage: "../images/laptop-1.jpeg"
 category: "moar"
@@ -13,6 +13,31 @@ tags:
 
 # NOTE: This "post" is based on [Markdown Cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet) and is meant to test styling of Markdown generated documents.
 
+JS or JavaScript Markdown example
+```js
+// In your gatsby-config.js
+plugins: [
+  {
+    resolve: `gatsby-transformer-remark`,
+    options: {
+      plugins: [
+        `gatsby-remark-prismjs`,
+      ]
+    }
+  }
+]
+```
+
+CSS Markdown example
+```css
+   .gatsby-highlight {
+      background-color: $medBlue;
+      border-radius: 0.3em;
+      margin: 0.5em 0;
+      padding: 1em;
+      overflow: auto;
+  }
+```
 
 This is intended as a quick reference and showcase. For more complete info, see [John Gruber's original spec](http://daringfireball.net/projects/markdown/) and the [Github-flavored Markdown info page](http://github.github.com/github-flavored-markdown/).
 
