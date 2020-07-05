@@ -9,59 +9,59 @@ import react from '../content/images/react.png';
 export default [
   {
     title: 'Women in Tech Speaker Panel',
-    date: moment('February 23, 2017').format('MMM Do, YYYY'),
+    date: moment('2017-02-23').format('LL'),
     path:
       'https://www.meetup.com/learn-to-code-in-atlanta-digitalcrafts/events/237763832',
     img: digitalCrafts,
   },
   {
     title: 'The Home Depot Tech Talk: Migrating from AngularJS to React',
-    date: moment('June 14, 2018').format('MMM Do, YYYY'),
+    date: moment('2018-06-14').format('LL'),
     path: null,
     img: theHomeDepot,
   },
   {
     title: 'The Home Depot Tech Talk: Docker 102',
-    date: moment('June 27, 2018').format('MMM Do, YYYY'),
+    date: moment('2018-06-27').format('LL'),
     path: null,
     img: theHomeDepot,
   },
   {
     title:
       'Girl Develop It Panelist Series: A Day in the Life of UX Designers and Developers',
-    date: moment('July 10, 2018').format('MMM Do, YYYY'),
+    date: moment('2018-07-10').format('LL'),
     path: 'https://www.meetup.com/Girl-Develop-It-Atlanta/events/251904253',
     img: girlDevelopIt,
   },
   {
     title:
       'The Home Depot Tech Talk: Google Jib: Getting Expert Docker Results Without Any Knowledge of Docker',
-    date: moment('October 3, 2018').format('MMM Do, YYYY'),
+    date: moment('2018-10-03').format('LL'),
     path: null,
     img: theHomeDepot,
   },
   {
     title: 'The Home Depot Tech Talk: Responsive Design with ReactJS',
-    date: moment('October 14, 2019').format('MMM Do, YYYY'),
+    date: moment('2019-10-14').format('LL'),
     path: null,
     img: theHomeDepot,
   },
   {
     title: 'Connect.Tech 2019: Responsive Design with ReactJS',
-    date: moment('October 18, 2019').format('MMM Do, YYYY'),
+    date: moment('2019-10-18').format('LL'),
     path: 'https://connect.tech/session/?id=4664',
     img: connectTech,
   },
   {
     title: 'Virtual Meetup: React Testing Library Tips & Tricks',
-    date: moment('April 30, 2020').format('MMM Do, YYYY'),
+    date: moment('2020-04-30').format('LL'),
     path: 'https://www.crowdcast.io/e/react-virtual-meetup',
     img: react,
   },
   {
     title:
       'DigitalCrafts Elective Workshop: React Testing Library Tips and Tricks',
-    date: moment('June 3, 2020').format('MMM Do, YYYY'),
+    date: moment('2020-06-03').format('LL'),
     path:
       'https://us02web.zoom.us/rec/share/-e1HIK7L8H5OZKvXxk3dda8ZQ6Tqeaa8gSEW-vFezSQQqxeDKTctYEhQODwaXE8?startTime=1591223149000',
     img: digitalCrafts,
@@ -69,7 +69,7 @@ export default [
   {
     title:
       'Breaking the Glass: RAD Women Webinar: Authentic Confidence & Self Advocacy',
-    date: moment('June 24, 2020').format('MMM Do, YYYY'),
+    date: moment('2020-06-24').format('LL'),
     path: null,
     img: breakingTheGlass,
   },
