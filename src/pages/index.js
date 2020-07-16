@@ -26,7 +26,7 @@ const App = () => {
         </div>
         <img src={paige} alt="paige picture" />
       </div>
-      <PostListing />
+      <PostListing partial={true} />
     </Layout>
   );
 };

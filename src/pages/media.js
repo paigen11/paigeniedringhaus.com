@@ -1,6 +1,7 @@
 import React from 'react';
 import Helmet from 'react-helmet';
 import { Link } from 'gatsby';
+import { sortArrayByDate } from '../helpers/helpers';
 import config from '../../data/SiteConfig';
 import speaking from '../../data/speaking';
 import publications from '../../data/publications';
@@ -17,6 +18,8 @@ const MediaPage = () => {
   };
 
   const companies = Object.entries(publications);
+  const sortedPodcasts = sortArrayByDate(podcasts);
+  const sortedSpeaking = sortArrayByDate(speaking);
 
   return (
     <Layout>
@@ -45,7 +48,7 @@ const MediaPage = () => {
         </p>
         <h2>Talks</h2>
         <ul>
-          {speaking.map((talk, i) => {
+          {sortedSpeaking.map((talk) => {
             return (
               <>
                 <li className="media-items" key={talk.title}>
@@ -74,7 +77,7 @@ const MediaPage = () => {
         </ul>
         <h2>Podcast interviews</h2>
         <ul>
-          {podcasts.map((episode) => {
+          {sortedPodcasts.map((episode) => {
             return (
               <li className="media-items" key={episode.title}>
                 <img
@@ -96,7 +99,7 @@ const MediaPage = () => {
           })}
         </ul>
         <h2>Company articles</h2>
-        {companies.map((publication) => {
+        {companies.reverse().map((publication) => {
           const companyName = publication[0];
           const articles = publication[1];
           return (

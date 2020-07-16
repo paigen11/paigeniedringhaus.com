@@ -2,9 +2,8 @@ import React from 'react';
 import { Link } from 'gatsby';
 import Helmet from 'react-helmet';
 import Layout from '../components/Layout/Layout';
-import About from '../components/About/About';
 import config from '../../data/SiteConfig';
-import seanAndPaige from '../../content/images/seanAndPaige.jpg';
+import seanAndPaige from '../../content/images/sean-and-paige.jpg';
 import '../styles/pages.scss';
 
 const AboutPage = () => {
