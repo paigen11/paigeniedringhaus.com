@@ -8,9 +8,9 @@ import '../styles/pages.scss';
 const BlogPage = () => {
   return (
     <Layout>
-      <div className="blog-container page-body">
-        <Helmet title={`Blog – ${config.siteTitle}`} />
-        <h1>This is the blog</h1>
+      <div className="blog-container wide-page-body">
+        <Helmet title={`Blog | ${config.siteTitle}`} />
+        <h1>This is the blog and placeholder for search bar</h1>
         <PostListing />
       </div>
     </Layout>

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'gatsby';
 import Helmet from 'react-helmet';
 import config from '../../data/SiteConfig';
 import favicon from '../images/favicon-pn.png';
@@ -10,23 +11,32 @@ import '../styles/pages.scss';
 const App = () => {
   return (
     <Layout>
-      <div className="main-page page-body">
+      <div className="page-body">
         <Helmet>
           <meta name="description" content={config.siteDescription} />
           <link rel="shortcut icon" type="image/png" href={favicon} />
           <html lang="en" />
         </Helmet>
-        <div className="main-intro">
-          <h1>Hi everyone, I'm Paige</h1>
-          <h2>
-            I'm a full stack software engineer with a focus on frontend
-            development. I write about web development, JavaScript and
-            technology.
-          </h2>
+        <div className="main-page">
+          <div className="main-intro">
+            <h1>Hi everyone, I'm Paige</h1>
+            <h2>
+              I'm a full stack software engineer with a focus on frontend
+              development. I write about web development, JavaScript and
+              technology.
+            </h2>
+          </div>
+          <img src={paige} alt="paige picture" />
         </div>
-        <img src={paige} alt="paige picture" />
+        <p>
+          If you're interested here's some of my latest blog posts down below.
+          You can also head over to my <Link to="/blog">blog page</Link> to see
+          all of them.
+        </p>
+        <h3>Latest Posts</h3>
+        {/* consider switching this with a list view of latest blogs instead of cards */}
+        <PostListing partial={true} />
       </div>
-      <PostListing partial={true} />
     </Layout>
   );
 };
