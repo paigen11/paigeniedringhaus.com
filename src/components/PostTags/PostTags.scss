@@ -1,0 +1,215 @@
+@import '../../styles/colors.scss';
+
+.post-tag-container {
+  display: flex;
+  flex-wrap: wrap;
+
+  a {
+    text-decoration: none;
+
+    button {
+      margin: 0.25rem 0.5rem;
+      padding: 0.25rem 0.5rem;
+      border-radius: 10px;
+      border: none;
+      cursor: pointer;
+    }
+
+    .javascript {
+      background-color: #f8d137;
+    }
+    .javascript:hover {
+      background-color: #d5b42b;
+    }
+
+    .programming {
+      background-color: #9593d9;
+      color: white;
+    }
+    .programming:hover {
+      background-color: #6b68ca;
+    }
+
+    .vscode {
+      background-color: #0078d7;
+      color: white;
+    }
+    .vscode:hover {
+      background-color: #005ca4;
+    }
+
+    .eslint {
+      background-color: #7c7cec;
+      color: white;
+    }
+    .eslint:hover {
+      background-color: #3a3ac7;
+    }
+
+    .testing {
+      background-color: #e56399;
+      color: white;
+    }
+    .testing:hover {
+      background-color: #d1236c;
+    }
+
+    .puppeteer {
+      background-color: #00d39d;
+      color: white;
+    }
+    .puppeteer:hover {
+      background-color: #00a077;
+    }
+
+    .react {
+      background-color: #61dbfb;
+    }
+    .react:hover {
+      background-color: #00cccc;
+    }
+
+    .jest {
+      background-color: #944058;
+      color: white;
+    }
+    .jest:hover {
+      background-color: #703143;
+    }
+
+    .nodejs {
+      background-color: #68a063;
+      color: white;
+    }
+    .nodejs:hover {
+      background-color: #3c873a;
+    }
+
+    .express {
+      background-color: #7f96ff;
+      color: white;
+    }
+    .express:hover {
+      background-color: #4769ff;
+    }
+
+    .big-data {
+      background-color: #db324d;
+      color: white;
+    }
+    .big-data:hover {
+      background-color: #741a28;
+    }
+
+    .java {
+      background-color: #e61f24;
+      color: white;
+    }
+    .java:hover {
+      background-color: #b8181c;
+    }
+
+    .spring-boot {
+      background-color: #6db33e;
+      color: white;
+    }
+    .spring-boot:hover {
+      background-color: #568d31;
+    }
+
+    .jwt {
+      background-color: #07b4eb;
+      color: white;
+    }
+    .jwt:hover {
+      background-color: #068eb9;
+    }
+
+    .security {
+      background-color: #d0bcd5;
+    }
+    .security:hover {
+      background-color: #b99bc0;
+    }
+
+    .api {
+      background-color: #3772ff;
+      color: white;
+    }
+    .api:hover {
+      background-color: #0049f5;
+    }
+
+    .postman {
+      background-color: #f66933;
+      color: white;
+    }
+    .postman:hover {
+      background-color: #c45428;
+    }
+
+    .insomnia {
+      background-color: #5648b8;
+      color: white;
+    }
+    .insomnia:hover {
+      background-color: #41386d;
+    }
+
+    .docker {
+      background-color: #2496ed;
+      color: white;
+    }
+    .docker:hover {
+      background-color: #117ccd;
+    }
+
+    .sql {
+      background-color: #e7a11d;
+      color: white;
+    }
+    .sql:hover {
+      background-color: #c88a15;
+    }
+
+    .devops {
+      background-color: #031d44;
+      color: white;
+    }
+    .devops:hover {
+      background-color: #021127;
+    }
+
+    .jib {
+      background-color: #f96141;
+      color: white;
+    }
+    .jib:hover {
+      background-color: #f73810;
+    }
+
+    .graphql {
+      background-color: #e535ab;
+      color: white;
+    }
+    .graphql:hover {
+      background-color: #b61782;
+    }
+
+    .career-change {
+      background-color: #c97064;
+      color: white;
+    }
+    .career-change:hover {
+      background-color: #b54d40;
+    }
+
+    .advice {
+      background-color: #320e3b;
+      color: white;
+    }
+    .advice:hover {
+      background-color: #1c0821;
+    }
+  }
+}
