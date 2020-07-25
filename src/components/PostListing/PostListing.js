@@ -1,57 +1,68 @@
 import React from 'react';
-import { Link, graphql, useStaticQuery } from 'gatsby';
+import { Link } from 'gatsby';
+import Img from 'gatsby-image';
+import { usePostListingQuery } from '../../Hooks/usePostListingQuery';
+import { sortArrayByDate } from '../../helpers/helpers';
+import mediumBlogs from '../../../data/mediumBlogs';
+import PostTags from '../PostTags/PostTags';
+import './PostListing.scss';
 
-const PostListing = () => {
-  const data = useStaticQuery(graphql`
-    query PostQuery {
-      allMarkdownRemark(
-        sort: { fields: [fields___date], order: DESC }
-        limit: 3
-      ) {
-        edges {
-          node {
-            fields {
-              slug
-              date
-            }
-            excerpt
-            timeToRead
-            frontmatter {
-              title
-              tags
-              cover
-              date
-            }
-          }
-        }
-      }
-    }
-  `);
-
+const PostListing = ({ partial = false }) => {
   const getPostList = () => {
     const postList = [];
-    data.allMarkdownRemark.edges.forEach((postEdge) => {
+    const posts = usePostListingQuery();
+    posts.allMarkdownRemark.edges.forEach((postEdge) => {
       postList.push({
         path: postEdge.node.fields.slug,
         tags: postEdge.node.frontmatter.tags,
-        cover: postEdge.node.frontmatter.cover,
+        thumbnail: postEdge.node.frontmatter.thumbnail.childImageSharp.fixed,
         title: postEdge.node.frontmatter.title,
         date: postEdge.node.fields.date,
         excerpt: postEdge.node.excerpt,
         timeToRead: postEdge.node.timeToRead,
       });
     });
-    return postList;
+    const fullList = postList.concat(mediumBlogs);
+    const sortedPostsList = sortArrayByDate(fullList);
+    console.log(sortedPostsList);
+    const uniqueTags = new Set();
+    sortedPostsList.forEach((post) => {
+      console.log(post.tags);
+      post.tags?.forEach((tag) => {
+        uniqueTags.add(tag);
+      });
+    });
+    console.log(uniqueTags);
+    if (partial) {
+      return sortedPostsList.slice(0, 4);
+    }
+    return sortedPostsList;
   };
 
   const postList = getPostList();
+
   return (
-    <div>
-      {/* Your post list here. */
-      postList.map((post) => (
-        <Link to={post.path} key={post.title}>
-          <h1>{post.title}</h1>
-        </Link>
+    <div className="posts-wrapper">
+      {postList.map((post) => (
+        <div className="post">
+          <p className="post-date">
+            {post.date} {'\u2022'} {post.timeToRead} min read
+          </p>
+          {post.path ? (
+            <Link to={post.path} key={post.title}>
+              <p className="post-title">{post.title}</p>
+              <Img fixed={post.thumbnail} />
+              {post.excerpt && <p>{post.excerpt}</p>}
+            </Link>
+          ) : (
+            <a href={post.url} target="_blank" rel="noopener noreferrer">
+              <p className="post-title">{post.title}</p>
+              <img src={post.img} style={{ width: 200 }} />
+              {post.subTitle ? <p>{post.subTitle}</p> : <p></p>}
+            </a>
+          )}
+          <PostTags tags={post.tags} />
+        </div>
       ))}
     </div>
   );
