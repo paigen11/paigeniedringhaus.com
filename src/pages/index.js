@@ -29,9 +29,9 @@ const App = () => {
           <img src={paige} alt="paige picture" />
         </div>
         <p>
-          If you're interested here's some of my latest blog posts down below.
-          You can also head over to my <Link to="/blog">blog page</Link> to see
-          all of them.
+          If you're interested, below are some of my latest blog posts. You can
+          also head over to my <Link to="/blog">blog page</Link> to see a full
+          list of all of them.
         </p>
         <h3>Latest Posts</h3>
         {/* consider switching this with a list view of latest blogs instead of cards */}

@@ -8,7 +8,7 @@ export const usePostListingQuery = () => {
           node {
             fields {
               slug
-              date(formatString: "MMMM D, YYYY")
+              date(formatString: "MMM D, YYYY")
             }
             excerpt
             timeToRead

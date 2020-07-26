@@ -10,7 +10,7 @@ const BlogPage = () => {
     <Layout>
       <div className="blog-container wide-page-body">
         <Helmet title={`Blog | ${config.siteTitle}`} />
-        <h1>This is the blog and placeholder for search bar</h1>
+        <h1>Blog</h1>
         <PostListing />
       </div>
     </Layout>
