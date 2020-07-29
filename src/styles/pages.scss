@@ -1,5 +1,12 @@
 @import './colors.scss';
 
+.wide-page-body {
+  max-width: 1150px;
+  margin: 30px auto;
+  padding: 0 2rem;
+  color: $darkBlueTint;
+}
+
 .page-body {
   max-width: 800px;
   width: 100%;
