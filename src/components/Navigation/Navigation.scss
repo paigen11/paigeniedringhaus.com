@@ -5,7 +5,8 @@
   padding: 0.5rem 1rem;
 
   .navigation-header {
-    max-width: 1280px;
+    max-width: 800px;
+    height: 100px;
     margin: auto;
     display: flex;
     align-items: center;
@@ -36,7 +37,6 @@
     }
 
     .navigation-links {
-      width: 30%;
       justify-content: space-between;
       a {
         text-decoration: none;
@@ -45,6 +45,7 @@
         font-weight: 600;
         padding: 0.5rem;
         border-radius: 3px;
+        margin: 0 0.5rem;
       }
       a.active,
       a:hover {
