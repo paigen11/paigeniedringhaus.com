@@ -1,18 +1,17 @@
 import React from 'react';
 import _ from 'lodash';
-import { Link } from 'gatsby';
 import './PostTags.scss';
 
 const PostTags = ({ tags }) => {
+  // consider removing hover color change since these aren't clickable for now
+
   return (
     <div className="post-tag-container">
       {tags &&
         tags.map((tag) => (
-          <Link key={tag} to={`/tags/${_.kebabCase(tag)}`}>
-            <button className={_.kebabCase(tag)} type="button">
-              {tag}
-            </button>
-          </Link>
+          <div key={tag} className={_.kebabCase(tag)}>
+            {tag}
+          </div>
         ))}
     </div>
   );
