@@ -121,7 +121,7 @@ export default [
     url:
       'https://itnext.io/jib-getting-expert-docker-results-without-any-knowledge-of-docker-ef5cba294e05',
     subTitle: null,
-    tags: ['docker', 'devops', 'java', 'jib'],
+    tags: ['docker', 'devops', 'java ', 'jib'],
     timeToRead: 4,
     title: 'Jib: Getting Expert Docker Results Without Any Knowledge of Docker',
   },
@@ -173,7 +173,7 @@ export default [
     url:
       'https://itnext.io/how-to-use-netflixs-eureka-and-spring-cloud-for-service-registry-8b43c8acdf4e',
     subTitle: null,
-    tags: ['java', 'nodejs', 'spring boot', 'javascript'],
+    tags: ['java ', 'nodejs', 'spring boot', 'javascript'],
     timeToRead: 10,
     title: 'How to Use Netflix’s Eureka and Spring Cloud for Service Registry',
   },
