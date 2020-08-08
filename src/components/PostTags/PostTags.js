@@ -1,5 +1,5 @@
 import React from 'react';
-import _ from 'lodash';
+import { kebabCase } from 'lodash';
 import './PostTags.scss';
 
 const PostTags = ({ tags }) => {
@@ -9,7 +9,7 @@ const PostTags = ({ tags }) => {
     <div className="post-tag-container">
       {tags &&
         tags.map((tag) => (
-          <div key={tag} className={_.kebabCase(tag)}>
+          <div key={tag} className={kebabCase(tag)}>
             {tag}
           </div>
         ))}
