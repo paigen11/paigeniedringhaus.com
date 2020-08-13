@@ -20,6 +20,22 @@ import mostInterestingMan from '../content/images/most-interesting-man.jpeg';
 import nodemailer from '../content/images/nodemailer.png';
 import puppeteer from '../content/images/puppeteer.png';
 import fineDog from '../content/images/fine-dog.jpeg';
+import java from '../content/images/java.png';
+import swagger from '../content/images/swagger.png';
+import errorMsg from '../content/images/error-msg.png';
+import angularToReact from '../content/images/angular-react.jpeg';
+import esLint from '../content/images/eslint-success.jpeg';
+import nvm from '../content/images/nvm.png';
+import multipleDevs from '../content/images/multiple-devs.jpeg';
+import npm from '../content/images/npm.png';
+import vsCode from '../content/images/vs-code.png';
+import multiNode from '../content/images/multiple-nodes.png';
+import officeSpace from '../content/images/office-space.jpeg';
+import sparta from '../content/images/sparta-destructuring.jpeg';
+import allForOne from '../content/images/all-for-one.jpeg';
+import cssIsAwesome from '../content/images/css-is-awesome.jpeg';
+import stumpedDev from '../content/images/stumped-dev.jpeg';
+import blocks from '../content/images/blocks.jpeg';
 
 export default [
   {
@@ -200,7 +216,7 @@ export default [
     url:
       'https://itnext.io/streams-for-the-win-a-performance-comparison-of-nodejs-methods-for-reading-large-datasets-pt-2-bcfa732fa40e',
     subTitle: 'How readFile(), createReadStream() and event-stream Stack Up',
-    tags: ['javascript', 'nodejs', 'big data', 'testing'],
+    tags: ['javascript', 'nodejs', 'big data', 'testing', 'performance'],
     timeToRead: 8,
     title:
       'A Performance Comparison of Node.js Methods for Reading Large Datasets (Pt 2)',
@@ -250,5 +266,169 @@ export default [
     title:
       'Keep Code Consistent Across Developers The Easy Way — With Prettier & ESLint',
   },
-  // {},
+  {
+    date: moment('2019-01-04').format('ll'),
+    img: java,
+    url:
+      'https://itnext.io/using-java-to-read-really-really-large-files-a6f8a3f44649',
+    subTitle: 'This is the kind of stuff Java was made for.',
+    tags: ['java ', 'big data', 'performance', 'testing'],
+    timeToRead: 16,
+    title: 'Using Java to Read Really, Really Large Files',
+  },
+  {
+    date: moment('2019-01-21').format('ll'),
+    img: swagger,
+    url:
+      'https://itnext.io/setting-up-swagger-in-a-node-js-application-d3c4d7aa56d4',
+    subTitle: 'Spring Boot makes Swagger APIs look easy, Node.js not so much.',
+    tags: ['nodejs', 'swagger', 'api', 'testing', 'javascript'],
+    timeToRead: 18,
+    title: 'Setting Up Swagger to API Test In a JavaScript Application',
+  },
+  {
+    date: moment('2019-02-03').format('ll'),
+    img: errorMsg,
+    url:
+      'https://itnext.io/the-case-for-standardized-error-handling-in-your-web-application-6428ff60cc31',
+    subTitle:
+      'Because Bad Error Messages — or Worse, Invisible Errors are Doing No One Any Favors',
+    tags: ['api', 'errors', 'programming'],
+    timeToRead: 9,
+    title:
+      'The Case for Standardized Error Handling in Your Web Application’s APIs',
+  },
+  {
+    date: moment('2019-02-11').format('ll'),
+    img: angularToReact,
+    url: 'https://buttercms.com/blog/migrating-from-angularjs-to-react',
+    subTitle: 'What to Keep in Mind as You Upgrade Your Legacy UI Code Bases',
+    tags: ['javascript', 'react', 'angular', 'spring boot'],
+    timeToRead: 10,
+    title: 'Migrating from AngularJS to React',
+  },
+  {
+    date: moment('2019-02-17').format('ll'),
+    img: esLint,
+    url:
+      'https://itnext.io/how-eslint-makes-me-a-better-react-developer-237fb14c00ae',
+    subTitle: 'JavaScript’s Loose Standards are a Blessing and a Curse',
+    tags: ['javascript', 'eslint', 'react', 'self improvement'],
+    timeToRead: 11,
+    title: 'How ESLint Makes Me a Better React Developer',
+  },
+  {
+    date: moment('2019-03-03').format('ll'),
+    img: nvm,
+    url:
+      'https://itnext.io/nvm-the-easiest-way-to-switch-node-js-environments-on-your-machine-in-a-flash-17babb7d5f1b',
+    subTitle:
+      'Nope, I didn’t Misspell NPM — Node Version Manager is it’s Own Handy Dev Tool',
+    tags: ['javascript', 'nodejs', 'nvm', 'programming'],
+    timeToRead: 7,
+    title:
+      'NVM, the Easiest Way to Switch Node.js Environments on Your Machine in a Flash',
+  },
+  {
+    date: moment('2019-03-15').format('ll'),
+    img: multipleDevs,
+    url:
+      'https://itnext.io/update-feature-toggles-in-a-react-app-without-redeploying-5b95674a5bb1',
+    subTitle:
+      'Spring Cloud Makes Feature Toggles Easy, a Node Endpoint Makes Redeploying Unneeded',
+    tags: ['javascript', 'nodejs', 'react', 'spring boot'],
+    timeToRead: 11,
+    title: 'Update Feature Toggles in a React App without Redeploying',
+  },
+  {
+    date: moment('2019-03-31').format('ll'),
+    img: npm,
+    url:
+      'https://itnext.io/node-engines-helping-developers-everywhere-avoid-phantom-bugs-2eef519604b2',
+    subTitle:
+      'Specific Node.js Engines Should Be a Required Field for Every Package.json',
+    tags: ['javascript', 'nodejs', 'programming', 'npm'],
+    timeToRead: 7,
+    title: 'Node Engines: Helping Developers Everywhere Avoid Phantom Bugs',
+  },
+  {
+    date: moment('2019-04-13').format('ll'),
+    img: vsCode,
+    url: 'https://itnext.io/settings-sync-with-vs-code-c3d4f126989',
+    subTitle:
+      'Just When You Thought Visual Studio Code Couldn’t Get Any Better, It Did',
+    tags: ['javascript', 'vscode', 'programming'],
+    timeToRead: 9,
+    title: 'Take Your VS Code Configuration Anywhere Easily with Settings Sync',
+  },
+  {
+    date: moment('2019-05-02').format('ll'),
+    img: multiNode,
+    url:
+      'https://itnext.io/4-solutions-to-run-multiple-node-js-or-npm-commands-simultaneously-9edaa6215a93',
+    subTitle: 'At Some Point, Everyone Has this Problem…',
+    tags: ['javascript', 'nodejs', 'npm'],
+    timeToRead: 8,
+    title: '4 Solutions To Run Multiple Node.js or NPM Commands Simultaneously',
+  },
+  {
+    date: moment('2019-05-12').format('ll'),
+    img: officeSpace,
+    url:
+      'https://itnext.io/javascripts-async-await-versus-promise-the-great-debate-6308cb2e10b3',
+    subTitle: 'Prepare Yourselves, You’re Stepping into a Minefield',
+    tags: ['javascript', 'async', 'es6', 'promises'],
+    timeToRead: 11,
+    title: 'JavaScript’s Async/Await versus Promises: The Great Debate',
+  },
+  {
+    date: moment('2019-05-27').format('ll'),
+    img: sparta,
+    url:
+      'https://itnext.io/using-es6-to-destructure-nested-objects-in-javascript-avoid-undefined-errors-that-break-your-code-612ae67913e9',
+    subTitle: 'Because Airbnb’s ESLint is Merciless in React',
+    tags: ['javascript', 'react', 'es6', 'eslint'],
+    timeToRead: 10,
+    title: 'Using ES6 To Destructure Deeply Nested Objects in JavaScript',
+  },
+  {
+    date: moment('2019-06-11').format('ll'),
+    img: allForOne,
+    url:
+      'https://medium.com/better-programming/github-templates-the-smarter-way-to-formalize-pull-requests-among-development-teams-89f8d6a204f',
+    subTitle: 'No more confusing pull requests',
+    tags: ['github', 'git', 'programming'],
+    timeToRead: 6,
+    title: 'Github Templates: The Smarter Way to Formalize PRs Among Dev Teams',
+  },
+  {
+    date: moment('2019-06-23').format('ll'),
+    img: cssIsAwesome,
+    url:
+      'https://itnext.io/viewport-units-the-css-you-didnt-know-about-but-should-24b104483429',
+    subTitle: 'Because CSS Done Right is Awesome',
+    tags: ['css', 'programming'],
+    timeToRead: 6,
+    title: 'Viewport Units, the CSS You Didn’t Know About But Should',
+  },
+  {
+    date: moment('2019-07-07').format('ll'),
+    img: stumpedDev,
+    url: 'https://itnext.io/javascript-international-methods-b70a2de09d92',
+    subTitle:
+      'Because Date Formatting is Pain & International Formatting is Impossible',
+    tags: ['javascript', 'programming', 'internationalization'],
+    timeToRead: 12,
+    title: 'JavaScript International Methods',
+  },
+  {
+    date: moment('2019-07-28').format('ll'),
+    img: blocks,
+    url:
+      'https://itnext.io/var-let-const-javascript-es6-feature-series-pt-1-fa603567809e',
+    subTitle: "Let's Begin at the Beginning...",
+    tags: ['javascript', 'es6'],
+    timeToRead: 10,
+    title: 'Var, Let & Const: JavaScript ES6 Feature Series (Pt 1)',
+  },
 ];
