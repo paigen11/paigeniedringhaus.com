@@ -50,28 +50,26 @@ const MediaPage = () => {
         <ul>
           {sortedSpeaking.map((talk) => {
             return (
-              <>
-                <li className="media-items" key={talk.title}>
-                  <img
-                    className="media-images"
-                    src={talk.img}
-                    alt="organization logo"
-                  />
-                  {talk.path ? (
-                    <a
-                      href={talk.path}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="title"
-                    >
-                      {talk.title}
-                    </a>
-                  ) : (
-                    <span className="title">{talk.title}</span>
-                  )}
-                  <span className="date">{talk.date}</span>
-                </li>
-              </>
+              <li className="media-items" key={talk.title}>
+                <img
+                  className="media-images"
+                  src={talk.img}
+                  alt="organization logo"
+                />
+                {talk.path ? (
+                  <a
+                    href={talk.path}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="title"
+                  >
+                    {talk.title}
+                  </a>
+                ) : (
+                  <span className="title">{talk.title}</span>
+                )}
+                <span className="date">{talk.date}</span>
+              </li>
             );
           })}
         </ul>

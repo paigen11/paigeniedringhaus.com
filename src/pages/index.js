@@ -5,7 +5,7 @@ import config from '../../data/SiteConfig';
 import favicon from '../images/favicon-pn.png';
 import Layout from '../components/Layout/Layout';
 import paige from '../../content/images/paige-smile.jpg';
-import PostListing from '../components/PostListing/PostListing';
+import LatestPosts from '../components/LatestPosts/LatestPosts';
 import '../styles/pages.scss';
 
 const App = () => {
@@ -22,20 +22,20 @@ const App = () => {
             <h1>Hi everyone, I'm Paige</h1>
             <h2>
               I'm a full stack software engineer with a focus on frontend
-              development. I write about web development, JavaScript and
+              development, and I write about web development, JavaScript and
               technology.
             </h2>
           </div>
           <img src={paige} alt="paige picture" />
         </div>
-        <p>
-          If you're interested, below are some of my latest blog posts. You can
-          also head over to my <Link to="/blog">blog page</Link> to see a full
-          list of all of them.
+        <p className="welcome-message">
+          Welcome and thanks for stopping by. While you're here, you can check
+          out my <Link to="/blog">blog posts</Link>, see my{' '}
+          <Link to="/media">talks and interviews</Link>, or learn more{' '}
+          <Link to="/about">about me</Link>.
         </p>
-        <h3>Latest Posts</h3>
-        {/* consider switching this with a list view of latest blogs instead of cards */}
-        <PostListing partial={true} />
+        <h2 className="latest-title">Latest Blog Posts</h2>
+        <LatestPosts />
       </div>
     </Layout>
   );

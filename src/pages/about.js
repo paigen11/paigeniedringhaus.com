@@ -77,14 +77,16 @@ const AboutPage = () => {
         <p>
           Today, I work with a team of developers as a senior software engineer.
           I'm always learning new things, but my focus right now is on frontend
-          web development technologies like React, Gatsby and Node. Bringing
-          cool user interfaces to life with HTML, CSS and JavaScript, and
-          solving new problems daily is what I enjoy most about my job.
+          web development technologies like React, Gatsby and Node.
+        </p>
+        <p>
+          Bringing cool user interfaces to life with HTML, CSS and JavaScript,
+          and solving new problems daily is what I enjoy most about my job.
         </p>
         <p>
           But I also love seeing other developers improve and succeed in their
           careers, which is why I mentor devs, write about what I've learned
-          online and occasionally speak at conferences and meetups.
+          online and speak at conferences and meetups.
         </p>
         <p>
           I've written regularly on&nbsp;
@@ -99,8 +101,8 @@ const AboutPage = () => {
           development and technology for a few years, but I wanted to build my
           own site to share my knowledge with a broader audience. I hope you
           find my&nbsp;
-          <Link to="/blog">posts</Link>&nbsp;useful as you build your own cool
-          stuff.
+          <Link to="/blog">posts</Link>&nbsp;useful as you build your own
+          awesome stuff.
         </p>
         <h3>If you want to know more about me personally...</h3>
         <p>
