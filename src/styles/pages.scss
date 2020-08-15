@@ -31,7 +31,8 @@ a:hover {
 }
 
 p,
-li {
+li,
+input {
   font-size: 1.25rem;
 }
 
@@ -39,7 +40,7 @@ li {
 .main-page {
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: space-between;
 
   .main-intro {
     max-width: 26rem;
@@ -49,6 +50,17 @@ li {
     max-height: 15rem;
     border-radius: 50%;
   }
+}
+
+.welcome-message {
+  margin-bottom: 3rem;
+  a {
+    font-weight: 600;
+  }
+}
+
+.latest-title {
+  border-bottom: 2px solid $medBlue;
 }
 
 // about page scss
@@ -65,6 +77,10 @@ li {
 
 // media page scss
 .media-container {
+  h2 {
+    border-bottom: 2px solid $medBlue;
+  }
+
   h3 {
     margin: 0;
   }
@@ -76,7 +92,7 @@ li {
   .media-items {
     display: flex;
     align-items: center;
-    padding: 4px 0;
+    padding: 0.25rem 0;
     .title {
       max-width: 480px;
     }
