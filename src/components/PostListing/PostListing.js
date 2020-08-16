@@ -2,17 +2,19 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'gatsby';
 import Img from 'gatsby-image';
 import { usePostListingQuery } from '../../Hooks/usePostListingQuery';
+import Loader from '../Loader/Loader';
 import { sortArrayByDate } from '../../helpers/helpers';
 import mediumBlogs from '../../../data/mediumBlogs';
 import PostTags from '../PostTags/PostTags';
 import './PostListing.scss';
 
-const PostListing = ({ partial = false }) => {
+const PostListing = () => {
   const [fullPostList, setFullPostList] = useState([]);
   const emptyQuery = '';
   const [state, setState] = useState({
     filteredPostList: [],
     query: emptyQuery,
+    postCount: 0,
   });
   const localSitePosts = usePostListingQuery();
 
@@ -34,12 +36,8 @@ const PostListing = ({ partial = false }) => {
     sortedPostsList.forEach((post) => {
       post.tags?.sort();
     });
-    // todo remove this and replace with diff component on home page
-    if (partial) {
-      setFullPostList(sortedPostsList);
-      return sortedPostsList.slice(0, 4);
-    }
     setFullPostList(sortedPostsList);
+    setState({ postCount: sortedPostsList.length });
     return sortedPostsList;
   };
 
@@ -64,33 +62,35 @@ const PostListing = ({ partial = false }) => {
     setState({
       query,
       filteredPostList,
+      postCount: filteredPostList.length,
     });
   };
 
-  const { filteredPostList, query } = state;
+  const { filteredPostList, query, postCount } = state;
   const hasSearchResults = filteredPostList && query !== emptyQuery;
   const posts = hasSearchResults ? filteredPostList : fullPostList;
 
   return (
     <>
       {!posts.length && query === emptyQuery && (
-        <div className="loader-wrapper">
-          <div className="loader"></div>
-          <h2>Loading blog posts</h2>
-        </div>
+        <Loader message="Loading blog posts" />
       )}
       <>
-        <input
-          className="searchInput"
-          type="text"
-          aria-label="Search"
-          placeholder="Filter blog posts by title or tag"
-          onChange={(e) => filterPosts(e)}
-        ></input>
+        <span className="post-search-wrapper">
+          <input
+            className="searchInput"
+            type="search"
+            aria-label="Search"
+            placeholder="Filter blog posts by title or tag"
+            onChange={(e) => filterPosts(e)}
+          ></input>
+          <p className="post-count">{postCount}&nbsp;</p>
+          {postCount === 1 ? <p>post</p> : <p>posts</p>}
+        </span>
         <div className="posts-wrapper">
           {posts.length ? (
-            posts.map((post) => (
-              <div className="post">
+            posts.map((post, index) => (
+              <div className="post" key={index}>
                 <p className="post-date">
                   {post.date} {'\u2022'} {post.timeToRead} min read
                 </p>
@@ -103,15 +103,19 @@ const PostListing = ({ partial = false }) => {
                 ) : (
                   <a href={post.url} target="_blank" rel="noopener noreferrer">
                     <p className="post-title">{post.title}</p>
-                    <img src={post.img} style={{ width: 200 }} />
-                    {post.subTitle ? <p>{post.subTitle}</p> : <p></p>}
+                    <img
+                      src={post.img}
+                      style={{ width: 200 }}
+                      alt="blog post thumbnail image"
+                    />
+                    <p>{post.subTitle}</p>
                   </a>
                 )}
                 <PostTags tags={post.tags} />
               </div>
             ))
           ) : (
-            <div class="empty-results">
+            <div className="empty-results">
               <h2>Sorry, no search results match your query.</h2>
             </div>
           )}
