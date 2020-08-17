@@ -14,8 +14,8 @@ const AboutPage = () => {
         <h1>About</h1>
         <h2>Hey, I'm Paige Niedringhaus.</h2>
         <p>
-          I'm a full stack software engineer, technical writer, and speaker,
-          originally from St. Louis, MO 🇺🇸.
+          I'm a full stack senior software engineer, technical writer, and
+          speaker, originally from St. Louis, MO 🇺🇸.
         </p>
         <h3>Web development wasn't my first job...</h3>
         <p>
@@ -76,17 +76,18 @@ const AboutPage = () => {
         <h3>And now, I want to help others find the joy in coding too.</h3>
         <p>
           Today, I work with a team of developers as a senior software engineer.
-          I'm always learning new things, but my focus right now is on frontend
-          web development technologies like React, Gatsby and Node.
+          I'm always learning new things, but my focus right now is on web
+          development technologies like React, Gatsby and Node.js.
         </p>
         <p>
           Bringing cool user interfaces to life with HTML, CSS and JavaScript,
           and solving new problems daily is what I enjoy most about my job.
         </p>
         <p>
-          But I also love seeing other developers improve and succeed in their
-          careers, which is why I mentor devs, write about what I've learned
-          online and speak at conferences and meetups.
+          But I also love seeing other developers improve, build fun things they
+          dreamed up, and succeed in their careers, which is why I mentor devs,
+          write about what I've learned online and speak at conferences and
+          meetups.
         </p>
         <p>
           I've written regularly on&nbsp;
@@ -99,8 +100,8 @@ const AboutPage = () => {
           </a>
           &nbsp;and other <Link to="/media">publications</Link> about web
           development and technology for a few years, but I wanted to build my
-          own site to share my knowledge with a broader audience. I hope you
-          find my&nbsp;
+          own site to share my knowledge with a broader audience (and hopefully
+          learn new things from them as well!). I hope you find my&nbsp;
           <Link to="/blog">posts</Link>&nbsp;useful as you build your own
           awesome stuff.
         </p>
@@ -120,7 +121,7 @@ const AboutPage = () => {
         <figure>
           <img src={seanAndPaige} alt="sean and paige photo" />
           <figcaption>
-            Sean and me, looking extra spiffy for our friend's wedding.
+            Sean and I, looking extra spiffy for our friend's wedding.
           </figcaption>
         </figure>
       </div>

@@ -26,13 +26,13 @@ const MediaPage = () => {
       <div className="media-container page-body">
         <Helmet title={`Media | ${config.siteTitle}`} />
         <h1>Media</h1>
-        <p>
+        <p className="intro">
           In addition to my own <Link to="/blog">blog posts</Link>, I've been
           fortunate enough to share what I've learned through speaking at
           conferences and meetups, writing technical articles for companies, and
           appearing as a guest on podcasts.
         </p>
-        <p>
+        <p className="intro">
           Since 2020, I've also been a regular host on the popular tech podcast
           &nbsp;
           <a
