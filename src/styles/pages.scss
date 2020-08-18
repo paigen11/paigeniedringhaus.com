@@ -65,6 +65,10 @@ input {
 
 // about page scss
 .about-container {
+  a {
+    font-weight: 600;
+  }
+
   figure {
     display: flex;
     flex-direction: column;
@@ -87,6 +91,12 @@ input {
 
   ul {
     margin-top: 0;
+  }
+
+  .intro {
+    a {
+      font-weight: 600;
+    }
   }
 
   .media-items {
@@ -112,5 +122,15 @@ input {
   .media-images {
     max-height: 2rem;
     padding-right: 1rem;
+  }
+}
+
+.contact-container {
+  h3 {
+    border-bottom: 2px solid $medBlue;
+  }
+
+  a {
+    font-weight: 600;
   }
 }
