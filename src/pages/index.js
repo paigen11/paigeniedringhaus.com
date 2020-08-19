@@ -30,8 +30,8 @@ const App = () => {
         </div>
         <p className="welcome-message">
           Welcome and thanks for stopping by. While you're here, you can check
-          out my <Link to="/blog">blog posts</Link>, see my{' '}
-          <Link to="/media">talks and interviews</Link>, or learn more{' '}
+          out my <Link to="/blog">blog posts</Link>, see my&nbsp;
+          <Link to="/media">talks and interviews</Link>, or learn more&nbsp;
           <Link to="/about">about me</Link>.
         </p>
         <h2 className="latest-title">Latest Blog Posts</h2>

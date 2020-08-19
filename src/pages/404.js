@@ -10,6 +10,7 @@ const FourOhFourPage = () => {
       <div className="404-container page-body">
         <Helmet title={`404 – ${config.siteTitle}`} />
         <h1>Oh no, you found the 404 page.</h1>
+        {/* //todo add more  */}
       </div>
     </Layout>
   );

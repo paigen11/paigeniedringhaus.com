@@ -2,6 +2,7 @@ import React from 'react';
 import Helmet from 'react-helmet';
 import config from '../../data/SiteConfig';
 import Layout from '../components/Layout/Layout';
+import SubscriptionForm from '../components/SubscriptionForm/SubscriptionForm';
 import '../styles/pages.scss';
 
 const ContactPage = () => {
@@ -57,6 +58,20 @@ const ContactPage = () => {
           &nbsp; I build for myself (mostly to learn new stuff) are open source,
           and I'm happy for people to fork them and put them to good use.
         </p>
+        <h3>
+          Or subscribe to my newsletter, I promise to never send spam, only good
+          emails of stuff I've written.
+        </h3>
+        {/* //todo make this nicer */}
+        <button>
+          <a
+            href="https://paigeniedringhaus.substack.com/subscribe"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Join my newsletter
+          </a>
+        </button>
         <p>Thanks and have a great day!</p>
       </div>
     </Layout>
