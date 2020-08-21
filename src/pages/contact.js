@@ -2,7 +2,6 @@ import React from 'react';
 import Helmet from 'react-helmet';
 import config from '../../data/SiteConfig';
 import Layout from '../components/Layout/Layout';
-import SubscriptionForm from '../components/SubscriptionForm/SubscriptionForm';
 import '../styles/pages.scss';
 
 const ContactPage = () => {
@@ -18,9 +17,10 @@ const ContactPage = () => {
         <h3>Send me an email</h3>
         <p>
           If you'd like to say "hi" or there's anything you want to chat with me
-          about, feel free to reach me at&nbsp;
-          <a href="mailto:hellopaigen@gmail.com">hellopaigen@gmail.com</a>. I
-          may not reply immediately, but I will, I promise.
+          about, feel free to&nbsp;
+          <a href="mailto:hellopaigen@gmail.com">reach me</a>&nbsp;at
+          hellopaigen@gmail.com. I may not reply immediately, but I will, I
+          promise.
         </p>
         <h3>Follow me and start a conversation on social media</h3>
         <ul>
