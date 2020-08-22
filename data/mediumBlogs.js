@@ -396,7 +396,7 @@ export default [
     img: allForOne,
     url:
       'https://medium.com/better-programming/github-templates-the-smarter-way-to-formalize-pull-requests-among-development-teams-89f8d6a204f',
-    subTitle: 'No more confusing pull requests',
+    subTitle: 'No More Confusing Pull Requests',
     tags: ['github', 'git', 'programming'],
     timeToRead: 6,
     title: 'Github Templates: The Smarter Way to Formalize PRs Among Dev Teams',
