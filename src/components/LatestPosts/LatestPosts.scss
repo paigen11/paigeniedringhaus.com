@@ -1,0 +1,38 @@
+@import '../../styles/colors.scss';
+
+.latest-posts-wrapper {
+  display: flex;
+  flex-direction: column;
+
+  .post {
+    margin: 10px 20px;
+    padding: 20px 30px;
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px;
+    border-radius: 5px;
+
+    .post-date {
+      font-size: 1rem;
+      margin: 0;
+    }
+
+    .post-title {
+      color: $darkBlueTint;
+      font-weight: 600;
+      font-size: 1.5rem;
+      line-height: 2rem;
+    }
+
+    .post-title:hover {
+      color: $medBlue;
+    }
+
+    p {
+      margin: 0.25rem 0 0.25rem 0;
+    }
+
+    .read-more {
+      font-size: 1rem;
+    }
+  }
+}
