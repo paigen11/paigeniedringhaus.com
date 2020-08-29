@@ -18,9 +18,11 @@ const ContactPage = () => {
         <p>
           If you'd like to say "hi" or there's anything you want to chat with me
           about, feel free to&nbsp;
-          <a href="mailto:hellopaigen@gmail.com">reach me</a>&nbsp;at
-          hellopaigen@gmail.com. I may not reply immediately, but I will, I
-          promise.
+          <a href="#mailgo" data-address="hellopaigen" data-domain="gmail.com">
+            reach me
+          </a>
+          &nbsp;at hellopaigen@gmail.com. I may not reply immediately, but I
+          will, I promise.
         </p>
         <h3>Follow me and start a conversation on social media</h3>
         <ul>
@@ -58,10 +60,11 @@ const ContactPage = () => {
           &nbsp; I build for myself (mostly to learn new stuff) are open source,
           and I'm happy for people to fork them and put them to good use.
         </p>
-        <h3>
-          Or subscribe to my newsletter, I promise to never send spam, only good
-          emails of stuff I've written.
-        </h3>
+        <h3>Or subscribe to my newsletter</h3>
+        <p>
+          I promise to never send spam, only useful emails about new articles
+          I've written or links talks I've given.
+        </p>
         {/* //todo make this nicer */}
         <button>
           <a
