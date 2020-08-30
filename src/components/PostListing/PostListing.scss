@@ -1,9 +1,29 @@
 @import '../../styles/colors.scss';
 
+.post-search-wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+
+  input {
+    min-width: 350px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 3px;
+    border-radius: 4px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: $lightGrey;
+    padding: 5px 10px;
+  }
+
+  .post-count {
+    margin-left: 1rem;
+  }
+}
+
 .posts-wrapper {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
 
   .post {
     width: 320px;
@@ -34,5 +54,10 @@
     a:hover {
       color: $medBlue;
     }
+  }
+
+  .empty-results {
+    margin-left: auto;
+    margin-right: auto;
   }
 }
