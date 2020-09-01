@@ -74,7 +74,8 @@ export default [
     img: breakingTheGlass,
   },
   {
-    title: 'Axios Cancel Tokens: Save Yourself from Expensive HTTP Calls',
+    title:
+      'The Home Depot Tech Talk: Axios Cancel Tokens: Save Yourself from Expensive HTTP Calls',
     date: moment('2020-08-26').format('LL'),
     path: null,
     img: theHomeDepot,
