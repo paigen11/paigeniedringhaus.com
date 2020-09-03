@@ -39,7 +39,7 @@ const AboutPage = () => {
           &nbsp;with a Bachelor's of Business Administration and concentrations
           in Marketing, Management and International Business 🎓. I then worked
           as a digital marketer and content strategist for several advertising
-          agencies before I made the decision to pursue a total career change in
+          agencies before I made the decision to pursue a total career change to
           web development in 2016.
         </p>
         <h3>But it turns out, I really enjoy it.</h3>
@@ -113,10 +113,10 @@ const AboutPage = () => {
         </p>
         <p>
           And when I'm not programming, I like to spend my spare time working on
-          my art 🎨, traveling ✈️, and hanging out with family and friends. I've
-          recently gotten into learning to paint digitally (Procreate and my
-          iPad is what I'm using), so if you have tips to improve, please let
-          know!
+          my art 🎨, traveling ✈️ (at least when there's not a global pandemic
+          on), and hanging out with family and friends. I've recently gotten
+          into learning to paint digitally (Procreate and my iPad is what I'm
+          using), so if you have tips to improve, please let know!
         </p>
         <figure>
           <img src={seanAndPaige} alt="sean and paige photo" />

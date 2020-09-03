@@ -16,8 +16,8 @@ const ContactPage = () => {
         </h2>
         <h3>Send me an email</h3>
         <p>
-          If you'd like to say "hi" or there's anything you want to chat with me
-          about, feel free to&nbsp;
+          If you'd like to say "hi" or there's anything you want to chat about,
+          feel free to&nbsp;
           <a href="#mailgo" data-address="hellopaigen" data-domain="gmail.com">
             reach me
           </a>
@@ -63,7 +63,7 @@ const ContactPage = () => {
         <h3>Or subscribe to my newsletter</h3>
         <p>
           I promise to never send spam, only useful emails about new articles
-          I've written or links talks I've given.
+          I've written or links to talks I've given.
         </p>
         {/* //todo make this nicer */}
         <button>

@@ -29,9 +29,8 @@ const App = () => {
           <img src={paige} alt="paige picture" />
         </div>
         <p>
-          Welcome and thanks for stopping by. I built this site as something
-          that excites me and I look forward to improving. I hope it might spark
-          some delight in you too.
+          Welcome and thanks for stopping by. I hope you enjoy exploring this
+          site as much as I've enjoyed building it.
         </p>
         <p className="welcome">
           While you're here, you can check out my&nbsp;
