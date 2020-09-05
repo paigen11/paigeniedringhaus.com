@@ -36,6 +36,7 @@ import allForOne from '../content/images/all-for-one.jpeg';
 import cssIsAwesome from '../content/images/css-is-awesome.jpeg';
 import stumpedDev from '../content/images/stumped-dev.jpeg';
 import blocks from '../content/images/blocks.jpeg';
+import chalkboard from '../content/images/chalkboard.jpeg';
 
 export default [
   {
@@ -430,5 +431,15 @@ export default [
     tags: ['javascript', 'es6'],
     timeToRead: 10,
     title: 'Var, Let & Const: JavaScript ES6 Feature Series (Pt 1)',
+  },
+  {
+    date: moment('2019-08-06').format('ll'),
+    img: chalkboard,
+    url:
+      'https://itnext.io/arrow-functions-javascript-es6-feature-series-pt-2-e8c31c823392',
+    subTitle: 'When is a Function Not a Function? When it’s an Arrow',
+    tags: ['javascript', 'es6'],
+    timeToRead: 11,
+    title: 'Arrow Functions: JavaScript ES6 Feature Series (Pt 2)',
   },
 ];
