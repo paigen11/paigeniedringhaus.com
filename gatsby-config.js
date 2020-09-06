@@ -200,5 +200,6 @@ module.exports = {
         ],
       },
     },
+    `gatsby-plugin-mailgo`,
   ],
 };
