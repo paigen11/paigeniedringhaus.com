@@ -36,6 +36,7 @@ const Post = (props) => {
           <UserInfo config={config} />
         </div>
       </div>
+      {/* // todo add links to posts before and after this? */}
     </Layout>
   );
 };
