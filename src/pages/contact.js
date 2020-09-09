@@ -65,8 +65,7 @@ const ContactPage = () => {
           I promise to never send spam, only useful emails about new articles
           I've written or links to talks I've given.
         </p>
-        {/* //todo make this nicer */}
-        <button>
+        <button className="subscribe-button">
           <a
             href="https://paigeniedringhaus.substack.com/subscribe"
             target="_blank"
