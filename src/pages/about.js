@@ -17,7 +17,7 @@ const AboutPage = () => {
           I'm a full stack senior software engineer, technical writer, and
           speaker, originally from St. Louis, MO 🇺🇸.
         </p>
-        <h3>Web development wasn't my first job...</h3>
+        <h2>Web development wasn't my first job...</h2>
         <p>
           Software development hasn't always been my focus. After graduating
           high school, I attended&nbsp;
@@ -42,7 +42,7 @@ const AboutPage = () => {
           agencies before I made the decision to pursue a total career change to
           web development in 2016.
         </p>
-        <h3>But it turns out, I really enjoy it.</h3>
+        <h2>But it turns out, I really enjoy it.</h2>
         <p>
           <a
             href="https://www.digitalcrafts.com/"
@@ -73,7 +73,7 @@ const AboutPage = () => {
           </a>
           &nbsp;posts.
         </p>
-        <h3>And now, I want to help others find the joy in coding too.</h3>
+        <h2>And now, I want to help others find the joy in coding too.</h2>
         <p>
           Today, I work with a team of developers as a senior software engineer.
           I'm always learning new things, but my focus right now is on web
@@ -105,7 +105,7 @@ const AboutPage = () => {
           <Link to="/blog">posts</Link>&nbsp;useful as you build your own
           awesome stuff.
         </p>
-        <h3>If you want to know more about me personally...</h3>
+        <h2>If you want to know more about me personally...</h2>
         <p>
           I met my husband, Sean, while I was working in Atlanta, GA, and we've
           been happily married since 2016 (that was a really good year for me,

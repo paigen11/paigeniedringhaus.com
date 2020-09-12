@@ -2,6 +2,7 @@ import React from 'react';
 import Helmet from 'react-helmet';
 import config from '../../data/SiteConfig';
 import Layout from '../components/Layout/Layout';
+import Subscribe from '../components/Subscribe/Subscribe';
 import '../styles/pages.scss';
 
 const ContactPage = () => {
@@ -14,20 +15,19 @@ const ContactPage = () => {
           Thanks again for visiting my site, I hope you like it. <br />
           If you'd like to get in touch...
         </h2>
-        <h3>Send me an email</h3>
+        <h2>Send me an email</h2>
         <p>
           If you'd like to say "hi" or there's anything you want to chat about,
-          feel free to&nbsp;
+          feel free to reach me at &nbsp;
           <a href="#mailgo" data-address="hellopaigen" data-domain="gmail.com">
-            reach me
+            hellopaigen@gmail.com
           </a>
-          &nbsp;at hellopaigen@gmail.com. I may not reply immediately, but I
-          will, I promise.
+          . I may not reply immediately, but I will eventually.
         </p>
-        <h3>Follow me and start a conversation on social media</h3>
+        <h2>Follow me and start a conversation on social media</h2>
         <ul>
           <li>
-            I'm on Twitter as&nbsp;
+            I'm on Twitter at&nbsp;
             <a
               href="https://twitter.com/pniedri"
               target="_blank"
@@ -47,7 +47,7 @@ const ContactPage = () => {
             </a>
           </li>
         </ul>
-        <h3>Check out my Github profile</h3>
+        <h2>Check out my Github profile</h2>
         <p>
           All of the&nbsp;
           <a
@@ -60,20 +60,12 @@ const ContactPage = () => {
           &nbsp; I build for myself (mostly to learn new stuff) are open source,
           and I'm happy for people to fork them and put them to good use.
         </p>
-        <h3>Or subscribe to my newsletter</h3>
+        <h2>Or subscribe to my newsletter</h2>
         <p>
           I promise to never send spam, only useful emails about new articles
           I've written or links to talks I've given.
         </p>
-        <button className="subscribe-button">
-          <a
-            href="https://paigeniedringhaus.substack.com/subscribe"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Join my newsletter
-          </a>
-        </button>
+        <Subscribe />
         <p>Thanks and have a great day!</p>
       </div>
     </Layout>

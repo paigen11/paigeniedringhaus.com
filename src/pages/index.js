@@ -6,6 +6,7 @@ import favicon from '../images/favicon-pn.png';
 import Layout from '../components/Layout/Layout';
 import paige from '../../content/images/paige-smile.jpg';
 import LatestPosts from '../components/LatestPosts/LatestPosts';
+import Subscribe from '../components/Subscribe/Subscribe';
 import '../styles/pages.scss';
 
 const App = () => {
@@ -40,6 +41,12 @@ const App = () => {
         </p>
         <h2 className="latest-title">Latest Blog Posts</h2>
         <LatestPosts />
+        <h2 className="latest-title">Newsletter</h2>
+        <p>
+          My goal with this blog is to create useful content for web developers.
+          Subscribe to be notified when I have something new to share.
+        </p>
+        <Subscribe />
       </div>
     </Layout>
   );
