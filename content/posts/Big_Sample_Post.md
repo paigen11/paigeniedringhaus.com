@@ -2,7 +2,7 @@
 title: "Big Test"
 cover: ../images/laptop-1.jpeg
 thumbnail: ../images/laptop-1.jpeg
-featuredImage: "../images/laptop-1.jpeg"
+featuredImage: ../images/laptop-1.jpeg
 category: "moar"
 date: "2018-03-01"
 slug: "Big-Sample_Test"
