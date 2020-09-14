@@ -1,8 +1,7 @@
 import React from 'react';
 import Helmet from 'react-helmet';
-import { graphql } from 'gatsby';
+import { graphql, Link } from 'gatsby';
 import Layout from '../components/Layout/Layout';
-import UserInfo from '../components/UserInfo/UserInfo';
 import PostTags from '../components/PostTags/PostTags';
 import SEO from '../components/SEO/SEO';
 import SocialLinks from '../components/SocialLinks/SocialLinks';
@@ -15,28 +14,44 @@ const Post = (props) => {
   const { slug } = pageContext;
   const postNode = data.markdownRemark;
   const post = postNode.frontmatter;
+
+  const { nextslug, nexttitle, prevslug, prevtitle } = pageContext;
+  const nextArticle = nextslug && (
+    <Link to={nextslug} style={{ maxWidth: '25%' }}>
+      <strong>Next Article</strong> <br />
+      {nexttitle}
+    </Link>
+  );
+
+  const prevArticle = prevslug && (
+    <Link to={prevslug} style={{ maxWidth: '25%' }}>
+      <strong>Previous Article</strong> <br />
+      {prevtitle}
+    </Link>
+  );
+
   if (!post.id) {
     post.id = slug;
   }
-
   return (
     <Layout>
       <div>
         <Helmet>
           <title>{`${post.title} | ${config.siteTitle}`}</title>
         </Helmet>
-        {/* <SEO postPath={slug} postNode={postNode} postSEO /> */}
+        <SEO postPath={slug} postNode={postNode} postSEO />
         <div className="post-wrapper">
           <h1>{post.title}</h1>
           <div dangerouslySetInnerHTML={{ __html: postNode.html }} />
           <div className="post-meta">
             <PostTags tags={post.tags} />
+            {/* // todo make these links look better*/}
+            {nextArticle}
+            {prevArticle}
             <SocialLinks postPath={slug} postNode={postNode} />
           </div>
-          <UserInfo config={config} />
         </div>
       </div>
-      {/* // todo add links to posts before and after this? */}
     </Layout>
   );
 };
