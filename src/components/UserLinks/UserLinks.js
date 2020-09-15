@@ -5,11 +5,11 @@ import {
   faGithub,
   faMedium,
 } from '@fortawesome/free-brands-svg-icons';
-import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
+import { faEnvelope, faRssSquare } from '@fortawesome/free-solid-svg-icons';
 import './UserLinks.scss';
 
 const UserLinks = (props) => {
-  const { config, labeled } = props;
+  const { config } = props;
 
   const getLinkIcons = (icon) => {
     switch (icon) {
@@ -33,11 +33,18 @@ const UserLinks = (props) => {
     ));
   };
 
-  const { userLinks } = config;
+  const { userLinks, siteRss } = config;
   if (!userLinks) {
     return null;
   }
-  return <div className="user-links">{getLinkElements()}</div>;
+  return (
+    <div className="user-links">
+      {getLinkElements()}
+      <a href={siteRss} target="_blank">
+        <FontAwesomeIcon icon={faRssSquare} />
+      </a>
+    </div>
+  );
 };
 
 export default UserLinks;
