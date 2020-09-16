@@ -20,6 +20,12 @@ module.exports = {
   },
   plugins: [
     'gatsby-plugin-react-helmet',
+    {
+      resolve: `gatsby-plugin-react-helmet-canonical-urls`,
+      options: {
+        siteUrl: `https://www.paigeniedringhaus.com`,
+      },
+    },
     'gatsby-plugin-sass',
     'gatsby-plugin-lodash',
     {
