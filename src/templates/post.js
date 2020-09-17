@@ -46,8 +46,8 @@ const Post = (props) => {
           <div className="post-meta">
             <PostTags tags={post.tags} />
             {/* // todo make these links look better*/}
-            {nextArticle}
-            {prevArticle}
+            <span>{nextArticle}</span>
+            <span>{prevArticle}</span>
             <SocialLinks postPath={slug} postNode={postNode} />
           </div>
         </div>
@@ -77,6 +77,7 @@ export const pageQuery = graphql`
         date
         category
         tags
+        canonical
       }
       fields {
         slug

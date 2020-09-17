@@ -5,22 +5,26 @@ import Layout from '../components/Layout/Layout';
 import PostListing from '../components/PostListing/PostListing';
 import config from '../../data/SiteConfig';
 
-export default class CategoryTemplate extends React.Component {
-  render() {
-    const { category } = this.props.pageContext;
-    const postEdges = this.props.data.allMarkdownRemark.edges;
-    return (
-      <Layout>
-        <div className="category-container">
-          <Helmet
-            title={`Posts in category "${category}" | ${config.siteTitle}`}
-          />
-          <PostListing postEdges={postEdges} />
-        </div>
-      </Layout>
-    );
-  }
-}
+const CategoryTemplate = (props) => {
+  const { category } = props.pageContext;
+  console.log(category);
+  const postEdges = props.data.allMarkdownRemark.edges;
+  console.log(postEdges);
+  return (
+    <Layout>
+      <div className="category-container">
+        <Helmet
+          title={`Posts in category "${category}" | ${config.siteTitle}`}
+        />
+        //todo replace this with component which filters by post categories in
+        the future?
+        <PostListing postEdges={postEdges} />
+      </div>
+    </Layout>
+  );
+};
+
+export default CategoryTemplate;
 
 /* eslint no-undef: "off" */
 export const pageQuery = graphql`
@@ -42,8 +46,8 @@ export const pageQuery = graphql`
           frontmatter {
             title
             tags
-            # cover
             date
+            category
           }
         }
       }
