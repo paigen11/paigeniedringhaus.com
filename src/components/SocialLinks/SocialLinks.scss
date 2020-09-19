@@ -1,18 +1,30 @@
+@import '../../styles/colors.scss';
+
 .social-links {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-content: center;
-  align-items: center;
+  display: grid;
+  grid-template-columns: 1fr auto auto 1fr;
   margin: 15px 0;
-}
+  align-items: center;
+  color: $darkBlueTint;
 
-.social-links > div {
-  margin: 5px 15px;
-  cursor: pointer;
-}
+  hr {
+    border-top: 2px solid $darkBlueTint;
+    width: 100%;
+  }
 
-.share-count {
-  text-align: center;
+  span {
+    margin: 5px 5px 5px 15px;
+  }
+
+  button {
+    margin: 5px 15px 5px 5px;
+    cursor: pointer;
+    font-weight: 600 !important;
+    color: $blueViolet !important;
+    font-size: 1.25rem;
+  }
+
+  button:hover {
+    color: $medBlue !important;
+  }
 }

@@ -1,33 +1,21 @@
-import React, { Component } from 'react';
-import {
-  FacebookShareButton,
-  TwitterShareButton,
-  FacebookIcon,
-  TwitterIcon,
-} from 'react-share';
+import React from 'react';
+import { TwitterShareButton } from 'react-share';
 import urljoin from 'url-join';
 import config from '../../../data/SiteConfig';
 import './SocialLinks.scss';
 
 const SocialLinks = (props) => {
-  const { postNode, postPath, mobile } = props;
+  const { postNode, postPath } = props;
   const post = postNode.frontmatter;
   const url = urljoin(config.siteUrl, config.pathPrefix, postPath);
-  const iconSize = mobile ? 36 : 48;
-  const filter = (count) => (count > 0 ? count : '');
-  const renderShareCount = (count) => (
-    <div className="share-count">{filter(count)}</div>
-  );
-  // todo fix this to be nicer to look at
   return (
     <div className="social-links">
-      Share:
-      <TwitterShareButton url={url} title={post.title}>
-        <TwitterIcon round size={iconSize} />
+      <hr />
+      <span>If you found this useful:</span>
+      <TwitterShareButton url={url} title={`${post.title} ✍️ @pniedri`}>
+        Share on Twitter
       </TwitterShareButton>
-      <FacebookShareButton url={url} quote={postNode.excerpt}>
-        <FacebookIcon round size={iconSize} />
-      </FacebookShareButton>
+      <hr />
     </div>
   );
 };
