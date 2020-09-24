@@ -42,7 +42,6 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions;
   const postPage = path.resolve('src/templates/post.js');
-  const tagPage = path.resolve('src/templates/tag.jsx');
   const categoryPage = path.resolve('src/templates/category.jsx');
 
   // Get a full list of markdown posts
@@ -127,21 +126,13 @@ exports.createPages = async ({ graphql, actions }) => {
     });
   });
 
-  //  Create tag pages
-  // tagSet.forEach((tag) => {
-  //   createPage({
-  //     path: `/tags/${_.kebabCase(tag)}/`,
-  //     component: tagPage,
-  //     context: { tag },
-  //   });
-  // });
-
+  // todo replace category post display
   // Create category pages
-  // categorySet.forEach((category) => {
-  //   createPage({
-  //     path: `/categories/${_.kebabCase(category)}/`,
-  //     component: categoryPage,
-  //     context: { category },
-  //   });
-  // });
+  categorySet.forEach((category) => {
+    createPage({
+      path: `/categories/${_.kebabCase(category)}/`,
+      component: categoryPage,
+      context: { category },
+    });
+  });
 };
