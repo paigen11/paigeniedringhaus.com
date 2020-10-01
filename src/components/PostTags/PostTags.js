@@ -3,8 +3,6 @@ import { kebabCase } from 'lodash';
 import './PostTags.scss';
 
 const PostTags = ({ tags }) => {
-  // consider removing hover color change since these aren't clickable for now
-
   return (
     <div className="post-tag-container">
       {tags &&

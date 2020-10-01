@@ -3,7 +3,7 @@ const config = {
   siteTitleShort: 'Paige Niedringhaus',
   siteTitleAlt: 'Paige Niedringhaus',
   siteLogo: '/logos/pn-logo-1024.png',
-  siteUrl: 'https://paigeniedringhaus.com',
+  siteUrl: 'https://www.paigeniedringhaus.com',
   pathPrefix: '/',
   siteDescription:
     'Paige Niedringhaus is a full stack software engineer with a focus on front end development.',
