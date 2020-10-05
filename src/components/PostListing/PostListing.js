@@ -76,7 +76,7 @@ const PostListing = () => {
         <Loader message="Loading blog posts" />
       )}
       <>
-        <span className="post-search-wrapper">
+        <span className="post-search-wrapper page-body">
           <input
             className="searchInput"
             type="search"
@@ -87,7 +87,7 @@ const PostListing = () => {
           <p className="post-count">{postCount}&nbsp;</p>
           {postCount === 1 ? <p>post</p> : <p>posts</p>}
         </span>
-        <div className="posts-wrapper">
+        <div className="posts-wrapper wide-page-body">
           {posts.length ? (
             posts.map((post, index) => (
               <div className="post" key={index}>
