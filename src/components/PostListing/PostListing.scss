@@ -22,8 +22,11 @@
 }
 
 .posts-wrapper {
+  max-width: 1150px;
+
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
 
   .post {
     width: 320px;
