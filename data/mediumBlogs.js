@@ -37,6 +37,7 @@ import cssIsAwesome from '../content/images/css-is-awesome.jpeg';
 import stumpedDev from '../content/images/stumped-dev.jpeg';
 import blocks from '../content/images/blocks.jpeg';
 import chalkboard from '../content/images/chalkboard.jpeg';
+import books from '../content/images/books.jpeg';
 
 export default [
   {
@@ -442,4 +443,13 @@ export default [
     timeToRead: 11,
     title: 'Arrow Functions: JavaScript ES6 Feature Series (Pt 2)',
   },
+  {
+    date: moment('2019-08-23').format('ll'),
+    img: books,
+    url: 'https://itnext.io/default-function-parameter-values-javascript-es6-feature-series-pt-3-bd8392a88a12',
+    subTitle: "Less Parameter Undefined Checks Make Developers' Lives Easier",
+    tags: ['javascript', 'es6'],
+    timeToRead: 8,
+    title: 'Default Function Parameter Values: JavaScript ES6 Feature Series (Pt 3)book'   
+  }
 ];
