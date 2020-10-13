@@ -38,6 +38,7 @@ import stumpedDev from '../content/images/stumped-dev.jpeg';
 import blocks from '../content/images/blocks.jpeg';
 import chalkboard from '../content/images/chalkboard.jpeg';
 import books from '../content/images/books.jpeg';
+import highlighters from '../content/images/highlighters.jpeg';
 
 export default [
   {
@@ -451,5 +452,14 @@ export default [
     tags: ['javascript', 'es6'],
     timeToRead: 8,
     title: 'Default Function Parameter Values: JavaScript ES6 Feature Series (Pt 3)book'   
+  },
+  {
+    date: moment('2019-09=01').format('ll'),
+    img: highlighters,
+    url: 'https://itnext.io/spread-rest-parameters-javascript-es6-feature-series-pt-4-c9e9f0c0228f',
+    subTitle: 'The Syntax so Nice ES6 Used it Twice',
+    tags: ['javascript', 'es6'],
+    timeToRead: 11,
+    title: 'Spread & Rest Parameters: JavaScript ES6 Feature Series (Pt 4)'
   }
 ];
