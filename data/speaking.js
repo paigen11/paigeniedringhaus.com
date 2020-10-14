@@ -5,6 +5,7 @@ import girlDevelopIt from '../src/images/thumbnails/girlDevelopIt.png';
 import theHomeDepot from '../src/images/thumbnails/theHomeDepot.png';
 import breakingTheGlass from '../src/images/thumbnails/breakingTheGlass.png';
 import react from '../content/images/react.png';
+import techElevator from '../content/images/techElevator.png';
 
 export default [
   {
@@ -79,5 +80,18 @@ export default [
     date: moment('2020-08-26').format('LL'),
     path: null,
     img: theHomeDepot,
+  },
+  {
+    title:
+      'DigitalCrafts Elective Workshop: Getting Started with Google Analytics in ReactJS',
+    date: moment('2020-10-21').format('LL'),
+    path: null,
+    img: digitalCrafts,
+  },
+  {
+    title: 'Tech Elevator: Lessons I Learned in my IT Career Panel',
+    date: moment('2020-11-13').format('LL'),
+    path: null,
+    img: techElevator,
   },
 ];
