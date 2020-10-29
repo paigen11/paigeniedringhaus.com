@@ -5,7 +5,7 @@ import girlDevelopIt from '../src/images/thumbnails/girlDevelopIt.png';
 import theHomeDepot from '../src/images/thumbnails/theHomeDepot.png';
 import breakingTheGlass from '../src/images/thumbnails/breakingTheGlass.png';
 import react from '../content/images/react.png';
-import techElevator from '../content/images/techElevator.png';
+import techElevator from '../src/images/thumbnails/techElevator.png';
 
 export default [
   {
