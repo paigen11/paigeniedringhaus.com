@@ -84,8 +84,10 @@ const PostListing = () => {
             placeholder="Filter blog posts by title or tag"
             onChange={(e) => filterPosts(e)}
           ></input>
-          <p className="post-count">{postCount}&nbsp;</p>
-          {postCount === 1 ? <p>post</p> : <p>posts</p>}
+          <span className="post-count-wrapper">
+            <p className="post-count">{postCount}&nbsp;</p>
+            {postCount === 1 ? <p>post</p> : <p>posts</p>}
+          </span>
         </span>
         <div className="posts-wrapper wide-page-body">
           {posts.length ? (
