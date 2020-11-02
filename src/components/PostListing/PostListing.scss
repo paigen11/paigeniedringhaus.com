@@ -16,14 +16,21 @@
     padding: 5px 10px;
   }
 
-  .post-count {
-    margin-left: 1rem;
+  .post-count-wrapper {
+    display: flex;
+    .post-count {
+      margin-left: 1rem;
+    }
+  }
+}
+
+@media only screen and (max-width: 375px) {
+  .post-search-wrapper {
+    flex-direction: column;
   }
 }
 
 .posts-wrapper {
-  max-width: 1150px;
-
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -62,5 +69,11 @@
   .empty-results {
     margin-left: auto;
     margin-right: auto;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .posts-wrapper {
+    padding: 0;
   }
 }
