@@ -39,6 +39,7 @@ import blocks from '../content/images/blocks.jpeg';
 import chalkboard from '../content/images/chalkboard.jpeg';
 import books from '../content/images/books.jpeg';
 import highlighters from '../content/images/highlighters.jpeg';
+import pen from '../content/images/pen.jpeg';
 
 export default [
   {
@@ -447,19 +448,32 @@ export default [
   {
     date: moment('2019-08-23').format('ll'),
     img: books,
-    url: 'https://itnext.io/default-function-parameter-values-javascript-es6-feature-series-pt-3-bd8392a88a12',
+    url:
+      'https://itnext.io/default-function-parameter-values-javascript-es6-feature-series-pt-3-bd8392a88a12',
     subTitle: "Less Parameter Undefined Checks Make Developers' Lives Easier",
     tags: ['javascript', 'es6'],
     timeToRead: 8,
-    title: 'Default Function Parameter Values: JavaScript ES6 Feature Series (Pt 3)book'   
+    title:
+      'Default Function Parameter Values: JavaScript ES6 Feature Series (Pt 3)book',
   },
   {
     date: moment('2019-09=01').format('ll'),
     img: highlighters,
-    url: 'https://itnext.io/spread-rest-parameters-javascript-es6-feature-series-pt-4-c9e9f0c0228f',
+    url:
+      'https://itnext.io/spread-rest-parameters-javascript-es6-feature-series-pt-4-c9e9f0c0228f',
     subTitle: 'The Syntax so Nice ES6 Used it Twice',
     tags: ['javascript', 'es6'],
     timeToRead: 11,
-    title: 'Spread & Rest Parameters: JavaScript ES6 Feature Series (Pt 4)'
-  }
+    title: 'Spread & Rest Parameters: JavaScript ES6 Feature Series (Pt 4)',
+  },
+  {
+    date: moment('2019-09-16').format('ll'),
+    img: pen,
+    url:
+      'https://medium.com/better-programming/string-template-literals-javascript-es6-feature-series-pt-5-a40e55a5485b',
+    subTitle: 'Why developers need to know the back-ticks key is',
+    tags: ['javascript', 'es6'],
+    timeToRead: 8,
+    title: 'String Template Literals: JavaScript ES6 Feature Series (Pt 5)pe',
+  },
 ];
