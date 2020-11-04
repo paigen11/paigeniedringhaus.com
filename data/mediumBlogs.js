@@ -40,6 +40,7 @@ import chalkboard from '../content/images/chalkboard.jpeg';
 import books from '../content/images/books.jpeg';
 import highlighters from '../content/images/highlighters.jpeg';
 import pen from '../content/images/pen.jpeg';
+import glasses from '../content/images/glasses.jpeg';
 
 export default [
   {
@@ -474,6 +475,17 @@ export default [
     subTitle: 'Why developers need to know the back-ticks key is',
     tags: ['javascript', 'es6'],
     timeToRead: 8,
-    title: 'String Template Literals: JavaScript ES6 Feature Series (Pt 5)pe',
+    title: 'String Template Literals: JavaScript ES6 Feature Series (Pt 5)',
+  },
+  {
+    date: moment('2019-09-29').format('ll'),
+    img: glasses,
+    url:
+      'https://itnext.io/enhanced-object-literal-value-shorthand-javascript-es6-feature-series-pt-6-e00dfdc24f64',
+    subTitle: 'Because typing the same thing twice in an object is crazy',
+    tags: ['javascript', 'es6'],
+    timeToRead: 8,
+    title:
+      'Enhanced Object Literal Values Shorthand: JavaScript ES6 Feature Series (Pt 6)',
   },
 ];
