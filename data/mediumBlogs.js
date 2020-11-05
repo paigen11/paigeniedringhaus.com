@@ -41,6 +41,7 @@ import books from '../content/images/books.jpeg';
 import highlighters from '../content/images/highlighters.jpeg';
 import pen from '../content/images/pen.jpeg';
 import glasses from '../content/images/glasses.jpeg';
+import pencils from '../content/images/pencils.jpeg';
 
 export default [
   {
@@ -487,5 +488,16 @@ export default [
     timeToRead: 8,
     title:
       'Enhanced Object Literal Values Shorthand: JavaScript ES6 Feature Series (Pt 6)',
+  },
+  {
+    date: moment('2019-10-14').format('ll'),
+    img: pencils,
+    url:
+      'https://medium.com/better-programming/built-in-module-imports-and-exports-javascript-es6-feature-series-part-7-5f0864049e1f',
+    subTitle: "Import means never having to write 'require' again",
+    tags: ['javascript', 'es6'],
+    timeToRead: 11,
+    title:
+      'Built-In Module Imports and Exports: JavaScript ES6 Feature Series (Pt 7)',
   },
 ];
