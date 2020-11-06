@@ -42,6 +42,7 @@ import highlighters from '../content/images/highlighters.jpeg';
 import pen from '../content/images/pen.jpeg';
 import glasses from '../content/images/glasses.jpeg';
 import pencils from '../content/images/pencils.jpeg';
+import cars from '../content/images/cars.jpeg';
 
 export default [
   {
@@ -499,5 +500,15 @@ export default [
     timeToRead: 11,
     title:
       'Built-In Module Imports and Exports: JavaScript ES6 Feature Series (Pt 7)',
+  },
+  {
+    date: moment('2019-10-27').format('ll'),
+    img: cars,
+    url:
+      'https://itnext.io/classes-and-inheritance-javascript-es6-feature-series-part-8-4a81fa3adf0f',
+    subTitle: 'Prototypes are still there...under the hood',
+    tags: ['javascript', 'es6'],
+    timeToRead: 11,
+    title: 'Classes and Inheritance: JavaScript ES6 Feature Series (Pt 8)',
   },
 ];
