@@ -43,6 +43,8 @@ import pen from '../content/images/pen.jpeg';
 import glasses from '../content/images/glasses.jpeg';
 import pencils from '../content/images/pencils.jpeg';
 import cars from '../content/images/cars.jpeg';
+import notebookAndCoffee from '../content/images/notebook-and-coffee.jpeg';
+import library from '../content/images/library.jpeg';
 
 export default [
   {
@@ -510,5 +512,29 @@ export default [
     tags: ['javascript', 'es6'],
     timeToRead: 11,
     title: 'Classes and Inheritance: JavaScript ES6 Feature Series (Pt 8)',
+  },
+  {
+    date: moment('2019-11-12').format('ll'),
+    img: notebookAndCoffee,
+    url:
+      'https://medium.com/better-programming/object-keys-values-and-entries-javascript-es6-feature-series-part-9-d71268791089',
+    subTitle:
+      'Finally, ECMAScript has introduced some much-needed object manipulation methods',
+    tags: ['javascript', 'es6'],
+    timeToRead: 10,
+    title:
+      'Object Keys, Values, and Entries: JavaScript ES6 Feature Series (Pt 9)',
+  },
+  {
+    date: moment('2019-11-24').format('ll'),
+    img: library,
+    url:
+      'https://itnext.io/destructuring-arrays-objects-javascript-es6-feature-series-pt-10-507108471c07',
+    subTitle:
+      'For concise variable syntax, curly braces have never been more critical',
+    tags: ['javascript', 'es6'],
+    timeToRead: 12,
+    title:
+      'Destructuring Arrays & Objects: JavaScript ES6 Feature Series (Pt 10)',
   },
 ];
