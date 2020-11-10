@@ -45,6 +45,7 @@ import pencils from '../content/images/pencils.jpeg';
 import cars from '../content/images/cars.jpeg';
 import notebookAndCoffee from '../content/images/notebook-and-coffee.jpeg';
 import library from '../content/images/library.jpeg';
+import reactRoutes from '../content/images/react-routes.png';
 
 export default [
   {
@@ -536,5 +537,16 @@ export default [
     timeToRead: 12,
     title:
       'Destructuring Arrays & Objects: JavaScript ES6 Feature Series (Pt 10)',
+  },
+  {
+    date: moment('2019-12-09').format('ll'),
+    img: reactRoutes,
+    url:
+      'https://medium.com/better-programming/how-to-pass-multiple-route-parameters-in-a-react-url-path-4b919de0abbe',
+    subTitle:
+      'Redirects are fairly common. Passing more than one piece of dynamic data with them is not.',
+    tags: ['javascript', 'react'],
+    timeToRead: 8,
+    title: 'How to Pass Multiple Route Parameters in a React URL Path',
   },
 ];
