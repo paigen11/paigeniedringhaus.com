@@ -1,6 +1,6 @@
 @import '../../styles/colors.scss';
 
-@keyframes AnimationName {
+@keyframes TransitioningBackground {
   0% {
     background-position: 1% 0%;
   }
@@ -23,11 +23,12 @@
   position: relative;
   overflow: hidden;
   border-radius: 5px;
-  background: linear-gradient(270deg, $medBlueTint2, $medBlue);
+  background-image: (linear-gradient(270deg, $medBlueTint2, $medBlue));
   background-size: 400% 400%;
 
-  animation: AnimationName 10s ease infinite;
+  animation: TransitioningBackground 10s ease infinite;
 
+  // psuedo-element shine animation left side
   &::before {
     content: '';
     display: block;
@@ -42,12 +43,13 @@
     transform: translateX(-100px) skewX(-15deg);
   }
 
+  // psuedo-element shine animation right side
   &::after {
     content: '';
     display: block;
     position: absolute;
     background: rgba(255, 255, 255, 0.2);
-    width: 30px;
+    width: 100px;
     height: 100%;
     left: 30px;
     top: 0;
@@ -56,17 +58,20 @@
     transform: translateX(-100px) skewX(-15deg);
   }
 
+  // grow button and change background gradient on hover
   &:hover {
     background-image: (linear-gradient(to left, #2d8fe5 0%, #d155b8 100%));
-    height: 75px;
     width: 215px;
+    height: 75px;
     cursor: pointer;
 
-    &:before {
+    // psuedo-element for right-side shine animation softer and more translucent
+    &::before {
       transform: translateX(300px) skewX(-15deg);
       opacity: 0.6;
       transition: 0.7s;
     }
+    // psuedo-element for left-side shine animation fully opaque
     &::after {
       transform: translateX(300px) skewX(-15deg);
       opacity: 1;
