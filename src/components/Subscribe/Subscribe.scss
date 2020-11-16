@@ -62,7 +62,7 @@
 
   // grow button and change background gradient on hover
   &:hover {
-    background-image: (linear-gradient(to left, #2d8fe5 0%, #d155b8 100%));
+    background-image: (linear-gradient(to left, #2d8fe5, #d155b8));
     width: 215px;
     height: 75px;
     cursor: pointer;
