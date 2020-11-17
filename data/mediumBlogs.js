@@ -47,6 +47,11 @@ import notebookAndCoffee from '../content/images/notebook-and-coffee.jpeg';
 import library from '../content/images/library.jpeg';
 import reactRoutes from '../content/images/react-routes.png';
 import stopSigns from '../content/images/stop-signs.jpeg';
+import multiScreens from '../content/images/multi-screens.jpeg';
+import phone from '../content/images/phone.jpeg';
+import jumping from '../content/images/jumping.jpeg';
+import epcot from '../content/images/epcot.jpeg';
+import dualMonitors from '../content/images/dual-monitors.jpeg';
 
 export default [
   {
@@ -560,5 +565,57 @@ export default [
     tags: ['javascript', 'react', 'express'],
     timeToRead: 9,
     title: 'JavaScript Error Handling from Express.js to React',
+  },
+  {
+    date: moment('2020-01-20').format('ll'),
+    img: multiScreens,
+    url:
+      'https://medium.com/better-programming/pure-css-media-queries-and-responsive-web-design-with-react-bac7a31e84b4',
+    subTitle: "Build your webpages and apps to suit you user's device size",
+    tags: ['css', 'javascript', 'react'],
+    timeToRead: 11,
+    title: 'Pure CSS Media Queries and Responsive Web Design with React',
+  },
+  {
+    date: moment('2020-02-04').format('ll'),
+    img: phone,
+    url:
+      'https://medium.com/better-programming/react-socks-and-responsive-web-design-with-react-63b766d000bd',
+    subTitle:
+      'A React-specific way to build webpages and apps to suit your users device size',
+    tags: ['css', 'javascript', 'react'],
+    timeToRead: 10,
+    title: 'React Socks and Responsive Web Design with React',
+  },
+  {
+    date: moment('2020-02-16').format('ll'),
+    img: jumping,
+    url:
+      'https://itnext.io/javascripts-optional-chaining-proposal-bc9e6e5f2877',
+    subTitle: 'Kiss undefined errors that stop you dead in your tracks goodbye',
+    tags: ['javascript'],
+    timeToRead: 7,
+    title: "JavaScript's Optional Chaining Proposal",
+  },
+  {
+    date: moment('2020-03-03').format('ll'),
+    img: epcot,
+    url:
+      'https://medium.com/better-programming/how-to-use-reacts-context-api-and-usecontext-hooks-effectively-ed98ad9343b6',
+    subTitle:
+      'Avoid prop drilling both your values and your functions with the help of Context',
+    tags: ['javascript', 'react'],
+    timeToRead: 7,
+    title: "How to Use React's Context API and useContext() Hooks Effectively",
+  },
+  {
+    date: moment('2020-04-01').format('ll'),
+    img: dualMonitors,
+    url:
+      'https://medium.com/better-programming/9-react-testing-library-tips-and-tricks-5cce3e458282',
+    subTitle: 'Writing tests is hard. These tips make it a little easier',
+    tags: ['javascript', 'react', 'testing'],
+    timeToRead: 12,
+    title: '9 React Testing Library Tips and Tricks',
   },
 ];
