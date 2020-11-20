@@ -202,18 +202,9 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-plugin-prefetch-google-fonts`,
+      resolve: `gatsby-plugin-google-fonts`,
       options: {
-        fonts: [
-          {
-            family: `Baloo 2`,
-            variants: [`400`, `600`, `700`],
-          },
-          {
-            family: `Baloo 2`,
-            subsets: [`latin`],
-          },
-        ],
+        fonts: [`Baloo 2\:400,600,700`, `Baloo 2\:latin`],
       },
     },
     `gatsby-plugin-mailgo`,
