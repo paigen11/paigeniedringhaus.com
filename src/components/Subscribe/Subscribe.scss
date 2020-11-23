@@ -20,9 +20,9 @@
   width: 200px;
   height: 60px;
   border-radius: 5px;
-  // for shine effect
-  overflow: hidden;
+  // for shine & gradient effects to work
   position: relative;
+  overflow: hidden;
   // for background color shift
   background-image: (linear-gradient(270deg, $medBlueTint2, $medBlue));
   background-size: 400% 400%;
