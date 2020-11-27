@@ -59,8 +59,8 @@
   // grow button and change background gradient on hover
   &:hover {
     background-image: (linear-gradient(to left, #2d8fe5, #d155b8));
-    width: 215px;
-    height: 75px;
+    // makes button grow from its center instead of growing right and down to expand
+    transform: scale(1.2);
     cursor: pointer;
 
     // psuedo-elements for right- and left-side shine animations
