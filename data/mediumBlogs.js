@@ -52,6 +52,7 @@ import phone from '../content/images/phone.jpeg';
 import jumping from '../content/images/jumping.jpeg';
 import epcot from '../content/images/epcot.jpeg';
 import dualMonitors from '../content/images/dual-monitors.jpeg';
+import marionette from '../content/images/marionette.jpeg';
 
 export default [
   {
@@ -617,5 +618,16 @@ export default [
     tags: ['javascript', 'react', 'testing'],
     timeToRead: 12,
     title: '9 React Testing Library Tips and Tricks',
+  },
+  {
+    date: moment('2020-04-14').format('ll'),
+    img: marionette,
+    url:
+      'https://blog.bitsrc.io/animating-reactjs-with-react-transition-group-2af6c87cab0c',
+    subTitle:
+      'Another handy React animation library to have in your tool belt.',
+    tags: ['javascript', 'react', 'css'],
+    timeToRead: 11,
+    title: 'Animating React with React Transition Group',
   },
 ];
