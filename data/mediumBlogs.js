@@ -53,6 +53,7 @@ import jumping from '../content/images/jumping.jpeg';
 import epcot from '../content/images/epcot.jpeg';
 import dualMonitors from '../content/images/dual-monitors.jpeg';
 import marionette from '../content/images/marionette.jpeg';
+import stopwatch from '../content/images/stopwatch.jpeg';
 
 export default [
   {
@@ -629,5 +630,16 @@ export default [
     tags: ['javascript', 'react', 'css'],
     timeToRead: 11,
     title: 'Animating React with React Transition Group',
+  },
+  {
+    date: moment('2020=05-11').format('ll'),
+    img: stopwatch,
+    url:
+      'https://blog.bitsrc.io/polling-in-react-using-the-useinterval-custom-hook-e2bcefda4197',
+    subTitle:
+      "useInterval is a custom Hook that's certain to make intervals simpler in your app.",
+    tags: ['javascript', 'react'],
+    timeToRead: 8,
+    title: 'Polling in React using the useInterval Custom Hook',
   },
 ];
