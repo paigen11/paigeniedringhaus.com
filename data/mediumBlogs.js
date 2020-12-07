@@ -54,6 +54,7 @@ import epcot from '../content/images/epcot.jpeg';
 import dualMonitors from '../content/images/dual-monitors.jpeg';
 import marionette from '../content/images/marionette.jpeg';
 import stopwatch from '../content/images/stopwatch.jpeg';
+import loader from '../content/images/loader.png';
 
 export default [
   {
@@ -641,5 +642,17 @@ export default [
     tags: ['javascript', 'react'],
     timeToRead: 8,
     title: 'Polling in React using the useInterval Custom Hook',
+  },
+  {
+    date: moment('2020-06-10').format('ll'),
+    img: loader,
+    url:
+      'https://www.amazon.com/Parblo-Two-Finger-Graphics-Drawing-Tracing/dp/B018VASU3O/',
+    subTitle:
+      "Loading screens are needed everywhere - don't reinvent the wheel every time.",
+    tags: ['javascript', 'react'],
+    timeToRead: 8,
+    title:
+      'Building a Universal Higher-Order Component Page Loader for your React App',
   },
 ];
