@@ -11,6 +11,30 @@
     justify-content: center;
   }
 
+  .post-articles-links {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    padding-top: 1.5em;
+    border-top: 2px solid;
+    a {
+      background-color: $lightBlue;
+      padding: 5px 10px;
+      border-radius: 4px;
+      border: $medBlueTint2 solid 2px;
+    }
+
+    a:hover {
+      background-color: darken($lightBlue, 10%);
+    }
+
+    .next-post {
+      grid-column-start: 1;
+    }
+    .prev-post {
+      grid-column-start: 3;
+    }
+  }
+
   .gatsby-highlight {
     background-color: $medBlue;
     border-radius: 0.3em;

@@ -6,6 +6,7 @@ import PostTags from '../components/PostTags/PostTags';
 import SEO from '../components/SEO/SEO';
 import SocialLinks from '../components/SocialLinks/SocialLinks';
 import config from '../../data/SiteConfig';
+import Subscribe from '../components/Subscribe/Subscribe';
 import './b16-tomorrow-dark.css';
 import './post.scss';
 
@@ -15,24 +16,26 @@ const Post = (props) => {
   const postNode = data.markdownRemark;
   const post = postNode.frontmatter;
 
-  const { nextslug, nexttitle, prevslug, prevtitle } = pageContext;
-  const nextArticle = nextslug && (
-    <Link to={nextslug} style={{ maxWidth: '25%' }}>
+  const { nextSlug, nextTitle, prevSlug, prevTitle } = pageContext;
+  console.log(pageContext);
+  const nextArticle = nextSlug ? (
+    <Link className="next-post" to={nextSlug}>
       <strong>Next Article</strong> <br />
-      {nexttitle}
+      {nextTitle}
     </Link>
-  );
+  ) : null;
 
-  const prevArticle = prevslug && (
-    <Link to={prevslug} style={{ maxWidth: '25%' }}>
+  const prevArticle = prevSlug ? (
+    <Link className="prev-post" to={prevSlug}>
       <strong>Previous Article</strong> <br />
-      {prevtitle}
+      {prevTitle}
     </Link>
-  );
+  ) : null;
 
   if (!post.id) {
     post.id = slug;
   }
+
   return (
     <Layout>
       <div>
@@ -45,11 +48,17 @@ const Post = (props) => {
           <div dangerouslySetInnerHTML={{ __html: postNode.html }} />
           <div className="post-meta">
             <PostTags tags={post.tags} />
-            {/* // todo make these links look better*/}
-            <span>{nextArticle}</span>
-            <span>{prevArticle}</span>
             <SocialLinks postPath={slug} postNode={postNode} />
+            <div className="post-articles-links">
+              {nextArticle}
+              {prevArticle}
+            </div>
           </div>
+          <p>
+            Want to be notified first when I publish new content? Subscribe to
+            my newsletter.
+          </p>
+          <Subscribe />
         </div>
       </div>
     </Layout>

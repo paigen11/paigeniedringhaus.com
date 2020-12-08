@@ -16,8 +16,8 @@ const CategoryTemplate = (props) => {
         <Helmet
           title={`Posts in category "${category}" | ${config.siteTitle}`}
         />
-        //todo replace this with component which filters by post categories in
-        the future?
+        {/* todo replace this with component which filters by post categories in
+        the future? */}
         <PostListing postEdges={postEdges} />
       </div>
     </Layout>
