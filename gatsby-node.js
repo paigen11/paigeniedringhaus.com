@@ -42,7 +42,7 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions;
   const postPage = path.resolve('src/templates/post.js');
-  const categoryPage = path.resolve('src/templates/category.js');
+  // const categoryPage = path.resolve('src/templates/category.js');
 
   // Get a full list of markdown posts
   const markdownQueryResult = await graphql(`
@@ -75,7 +75,7 @@ exports.createPages = async ({ graphql, actions }) => {
 
   const postsEdges = markdownQueryResult.data.allMarkdownRemark.edges;
 
-  // Sort posts
+  // Sort posts from most recent to oldest
   postsEdges.sort((postA, postB) => {
     const dateA = moment(
       postA.node.frontmatter.date,
@@ -108,8 +108,8 @@ exports.createPages = async ({ graphql, actions }) => {
     }
 
     // Create post pages
-    const nextID = index + 1 < postsEdges.length ? index + 1 : 0;
-    const prevID = index - 1 >= 0 ? index - 1 : postsEdges.length - 1;
+    const prevID = index + 1 < postsEdges.length ? index + 1 : null;
+    const nextID = index - 1 >= 0 ? index - 1 : null;
     const nextEdge = postsEdges[nextID];
     const prevEdge = postsEdges[prevID];
 
@@ -118,21 +118,22 @@ exports.createPages = async ({ graphql, actions }) => {
       component: postPage,
       context: {
         slug: edge.node.fields.slug,
-        nexttitle: nextEdge.node.frontmatter.title,
-        nextslug: nextEdge.node.fields.slug,
-        prevtitle: prevEdge.node.frontmatter.title,
-        prevslug: prevEdge.node.fields.slug,
+        nextTitle:
+          nextEdge !== undefined ? nextEdge.node.frontmatter.title : null,
+        nextSlug: nextEdge !== undefined ? nextEdge.node.fields.slug : null,
+        prevTitle:
+          prevEdge !== undefined ? prevEdge.node.frontmatter.title : null,
+        prevSlug: prevEdge !== undefined ? prevEdge.node.fields.slug : null,
       },
     });
   });
 
-  // todo replace category post display
-  // Create category pages
-  categorySet.forEach((category) => {
-    createPage({
-      path: `/categories/${_.kebabCase(category)}/`,
-      component: categoryPage,
-      context: { category },
-    });
-  });
+  // Create category pages - maybe in the future
+  // categorySet.forEach((category) => {
+  //   createPage({
+  //     path: `/categories/${_.kebabCase(category)}/`,
+  //     component: categoryPage,
+  //     context: { category },
+  //   });
+  // });
 };

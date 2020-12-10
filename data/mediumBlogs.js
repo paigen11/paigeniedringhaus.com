@@ -1,5 +1,5 @@
 import moment from 'moment';
-import webDevLaptop from '../content/images/web-dev-laptop.jpeg';
+import webDevLaptop from '../content/images/overhead-work.jpeg';
 import overheadWork from '../content/images/overhead-work.jpeg';
 import code from '../content/images/code.jpg';
 import graphql from '../content/images/graphql.png';
@@ -414,11 +414,12 @@ export default [
     date: moment('2019-06-11').format('ll'),
     img: allForOne,
     url:
-      'https://medium.com/better-programming/github-templates-the-smarter-way-to-formalize-pull-requests-among-development-teams-89f8d6a204f',
+      'https://medium.com/better-programming/github-contentlates-the-smarter-way-to-formalize-pull-requests-among-development-teams-89f8d6a204f',
     subTitle: 'No More Confusing Pull Requests',
     tags: ['github', 'git', 'programming'],
     timeToRead: 6,
-    title: 'Github Templates: The Smarter Way to Formalize PRs Among Dev Teams',
+    title:
+      'Github contentlates: The Smarter Way to Formalize PRs Among Dev Teams',
   },
   {
     date: moment('2019-06-23').format('ll'),
@@ -485,11 +486,11 @@ export default [
     date: moment('2019-09-16').format('ll'),
     img: pen,
     url:
-      'https://medium.com/better-programming/string-template-literals-javascript-es6-feature-series-pt-5-a40e55a5485b',
-    subTitle: 'Why developers need to know the back-ticks key is',
+      'https://medium.com/better-programming/string-contentlate-literals-javascript-es6-feature-series-pt-5-a40e55a5485b',
+    subTitle: 'Why developers need to know where the back-ticks key is',
     tags: ['javascript', 'es6'],
     timeToRead: 8,
-    title: 'String Template Literals: JavaScript ES6 Feature Series (Pt 5)',
+    title: 'String contentlate Literals: JavaScript ES6 Feature Series (Pt 5)',
   },
   {
     date: moment('2019-09-29').format('ll'),
@@ -529,7 +530,7 @@ export default [
     url:
       'https://medium.com/better-programming/object-keys-values-and-entries-javascript-es6-feature-series-part-9-d71268791089',
     subTitle:
-      'Finally, ECMAScript has introduced some much-needed object manipulation methods',
+      'Finally, ECMAScript has some much-needed object manipulation methods',
     tags: ['javascript', 'es6'],
     timeToRead: 10,
     title:
@@ -553,7 +554,7 @@ export default [
     url:
       'https://medium.com/better-programming/how-to-pass-multiple-route-parameters-in-a-react-url-path-4b919de0abbe',
     subTitle:
-      'Redirects are fairly common. Passing more than one piece of dynamic data with them is not.',
+      'Redirects are common. Passing more than one piece of dynamic data with them is not.',
     tags: ['javascript', 'react'],
     timeToRead: 8,
     title: 'How to Pass Multiple Route Parameters in a React URL Path',
