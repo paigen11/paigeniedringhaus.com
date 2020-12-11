@@ -33,16 +33,16 @@ const MediaPage = () => {
           appearing as a guest on podcasts.
         </p>
         <p className="intro">
-          Since 2020, I've also been a regular panelist on the popular tech podcast
-          &nbsp;
+          Since 2020, I've also been a regular panelist on the popular tech
+          podcast&nbsp;
           <a
             href="https://devchat.tv/react-round-up/"
             target="_blank"
             rel="noopener noreferrer"
           >
-            React Round Up
+            React&nbsp;Round&nbsp;Up&nbsp;
           </a>
-          &nbsp;, a bi-monthly podcast dedicated to React and the development
+          , a bi-monthly podcast dedicated to React and the development
           community. Each episode we talk to different experts in the community
           about all things React and beyond.
         </p>

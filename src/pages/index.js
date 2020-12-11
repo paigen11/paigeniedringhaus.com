@@ -44,7 +44,7 @@ const App = () => {
         <h2 className="latest-title">Newsletter</h2>
         <p>
           My goal with this blog is to create useful content for web developers.
-          Subscribe to be notified when I have something new to share.
+          Subscribe to be notified when I share something new.
         </p>
         <Subscribe />
       </div>

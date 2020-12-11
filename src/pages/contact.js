@@ -1,5 +1,12 @@
 import React from 'react';
 import Helmet from 'react-helmet';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {
+  faTwitter,
+  faGithub,
+  faMedium,
+} from '@fortawesome/free-brands-svg-icons';
+import { faEnvelope, faRssSquare } from '@fortawesome/free-solid-svg-icons';
 import config from '../../data/SiteConfig';
 import Layout from '../components/Layout/Layout';
 import Subscribe from '../components/Subscribe/Subscribe';
@@ -15,7 +22,10 @@ const ContactPage = () => {
           Thanks again for visiting my site, I hope you like it. <br />
           If you'd like to get in touch...
         </h2>
-        <h2>Send me an email</h2>
+        <h2>
+          Send me an email&nbsp;
+          <FontAwesomeIcon icon={faEnvelope} />
+        </h2>
         <p>
           If you'd like to say "hi" or there's anything you want to chat about,
           feel free to reach me at &nbsp;
@@ -24,7 +34,10 @@ const ContactPage = () => {
           </a>
           . I may not reply immediately, but I will eventually.
         </p>
-        <h2>Follow me and start a conversation on social media</h2>
+        <h2>
+          Follow me and start a conversation on social media&nbsp;
+          <FontAwesomeIcon icon={faTwitter} />
+        </h2>
         <ul>
           <li>
             I'm on Twitter at&nbsp;
@@ -47,7 +60,10 @@ const ContactPage = () => {
             </a>
           </li>
         </ul>
-        <h2>Check out my Github profile</h2>
+        <h2>
+          Check out my Github profile&nbsp;
+          <FontAwesomeIcon icon={faGithub} />
+        </h2>
         <p>
           All of the&nbsp;
           <a
@@ -60,7 +76,10 @@ const ContactPage = () => {
           &nbsp; I build for myself (mostly to learn new stuff) are open source,
           and I'm happy for people to fork them and put them to good use.
         </p>
-        <h2>Or subscribe to my newsletter</h2>
+        <h2>
+          Or subscribe to my newsletter&nbsp;
+          <FontAwesomeIcon icon={faRssSquare} />
+        </h2>
         <p>
           I promise to never send spam, only useful emails about new articles
           I've written or links to talks I've given.
