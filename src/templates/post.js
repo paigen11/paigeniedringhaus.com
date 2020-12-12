@@ -49,10 +49,6 @@ const Post = (props) => {
           <div className="post-meta">
             <PostTags tags={post.tags} />
             <SocialLinks postPath={slug} postNode={postNode} />
-            <div className="post-articles-links">
-              {nextArticle}
-              {prevArticle}
-            </div>
           </div>
           <p>
             Want to be notified first when I publish new content? Subscribe to

@@ -7,17 +7,14 @@ import config from '../../data/SiteConfig';
 
 const CategoryTemplate = (props) => {
   const { category } = props.pageContext;
-  console.log(category);
   const postEdges = props.data.allMarkdownRemark.edges;
-  console.log(postEdges);
   return (
     <Layout>
       <div className="category-container">
         <Helmet
           title={`Posts in category "${category}" | ${config.siteTitle}`}
         />
-        {/* todo replace this with component which filters by post categories in
-        the future? */}
+        {/* todo replace this with component which filters by post categories in the future? maybe */}
         <PostListing postEdges={postEdges} />
       </div>
     </Layout>
