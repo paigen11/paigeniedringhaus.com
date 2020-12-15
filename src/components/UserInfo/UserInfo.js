@@ -5,7 +5,7 @@ const UserInfo = (props) => {
   const { userTwitter } = props.config;
   const { expanded } = props;
   return (
-    // todo style this button?
+    // todo style this button? later maybe
     <Follow
       username={userTwitter}
       options={{ count: expanded ? true : 'none' }}
