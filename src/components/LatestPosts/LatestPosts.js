@@ -54,8 +54,8 @@ const LatestPosts = () => {
                     <>
                       <Link to={post.path} key={post.title}>
                         <p className="post-title">{post.title}</p>
+                        {post.excerpt ? <p>{post.excerpt}</p> : null}
                       </Link>
-                      {post.excerpt && <p>{post.excerpt}</p>}
                       <PostTags tags={post.tags} />
                       <Link to={post.path}>
                         <p className="read-more">Read full article &gt;</p>
@@ -69,8 +69,8 @@ const LatestPosts = () => {
                         rel="noopener noreferrer"
                       >
                         <p className="post-title">{post.title}</p>
+                        <p>{post.subTitle}</p>
                       </a>
-                      <p>{post.subTitle}</p>
                       <PostTags tags={post.tags} />
                       <a
                         href={post.url}
@@ -84,9 +84,9 @@ const LatestPosts = () => {
                 </div>
               ))
             : null}
-          <p>
-            <Link to="/blog">View all articles</Link>
-          </p>
+          <h2>
+            <Link to="/blog">View all articles &gt;</Link>
+          </h2>
         </div>
       </>
     </>
