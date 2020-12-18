@@ -55,6 +55,7 @@ import dualMonitors from '../content/images/dual-monitors.jpeg';
 import marionette from '../content/images/marionette.jpeg';
 import stopwatch from '../content/images/stopwatch.jpeg';
 import loader from '../content/images/loader.png';
+import laptopGraph from '../content/images/laptopGraph.jpeg';
 
 export default [
   {
@@ -655,5 +656,15 @@ export default [
     timeToRead: 8,
     title:
       'Building a Universal Higher-Order Component Page Loader for your React App',
+  },
+  {
+    date: moment('2020-07-08').format('ll'),
+    img: laptopGraph,
+    url:
+      'https://blog.bitsrc.io/gatsby-fetching-data-at-the-component-level-with-usestaticquery-397e35e648e',
+    subTitle: 'Queries are no longer relegated to just page level components',
+    tags: ['javascript', 'gatsby', 'react'],
+    timeToRead: 8,
+    title: 'Gatsby: Fetching Data at The Component Level with useStaticQuery',
   },
 ];
