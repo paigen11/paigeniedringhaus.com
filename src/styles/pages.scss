@@ -32,6 +32,12 @@ input {
   font-size: 1.25rem;
 }
 
+@media only screen and (max-width: 767px) {
+  .page-body {
+    margin: auto;
+  }
+}
+
 // main page
 .main-page {
   display: flex;
