@@ -34,7 +34,7 @@ input {
 
 @media only screen and (max-width: 767px) {
   .page-body {
-    margin: auto;
+    margin: auto auto 30px auto;
   }
 }
 
@@ -51,6 +51,15 @@ input {
   img {
     max-height: 15rem;
     border-radius: 50%;
+  }
+}
+
+@media only screen and (max-width: 375px) {
+  .main-page {
+    flex-direction: column;
+    h1 {
+      font-size: 1.95rem;
+    }
   }
 }
 
