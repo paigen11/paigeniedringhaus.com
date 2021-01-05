@@ -1,11 +1,7 @@
 import React from 'react';
 import Helmet from 'react-helmet';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {
-  faTwitter,
-  faGithub,
-  faMedium,
-} from '@fortawesome/free-brands-svg-icons';
+import { faTwitter, faGithub } from '@fortawesome/free-brands-svg-icons';
 import { faEnvelope, faRssSquare } from '@fortawesome/free-solid-svg-icons';
 import config from '../../data/SiteConfig';
 import Layout from '../components/Layout/Layout';
@@ -19,7 +15,8 @@ const ContactPage = () => {
         <Helmet title={`Contact | ${config.siteTitle}`} />
         <h1>Contact</h1>
         <h2>
-          Thanks again for visiting my site, I hope you like it. <br />
+          Thanks again for visiting my site, I hope you like it.
+          <br />
           If you'd like to get in touch...
         </h2>
         <h2>
@@ -27,15 +24,15 @@ const ContactPage = () => {
           <FontAwesomeIcon icon={faEnvelope} />
         </h2>
         <p>
-          If you'd like to say "hi" or there's anything you want to chat about,
-          feel free to reach me at &nbsp;
+          If you'd like to say "hi" or want to talk, feel free to reach me at
+          &nbsp;
           <a href="#mailgo" data-address="hellopaigen" data-domain="gmail.com">
             hellopaigen@gmail.com
           </a>
           . I may not reply immediately, but I will eventually.
         </p>
         <h2>
-          Follow me and start a conversation on social media&nbsp;
+          Follow me and chat on social media&nbsp;
           <FontAwesomeIcon icon={faTwitter} />
         </h2>
         <ul>
@@ -74,7 +71,7 @@ const ContactPage = () => {
             projects
           </a>
           &nbsp; I build for myself (mostly to learn new stuff) are open source,
-          and I'm happy for people to fork them and put them to good use.
+          and I'm happy for people to fork them and put them to use.
         </p>
         <h2>
           Or subscribe to my newsletter&nbsp;
