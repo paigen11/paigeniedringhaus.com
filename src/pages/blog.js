@@ -13,7 +13,7 @@ const BlogPage = () => {
         <Helmet title={`Blog | ${config.siteTitle}`} />
         <h1 className="blog-title">Blog</h1>
         <PostListing />
-        <div className="page-body">
+        <div className="blog page-body">
           <h2 className="latest-title">Newsletter</h2>
           <p>
             Like what you see? Subscribe to my newsletter to be the first to get
