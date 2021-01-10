@@ -1,27 +1,33 @@
 @import '../../src/styles/colors.scss';
+.post-container {
+  display: flex;
+  justify-content: center;
+  .post-wrapper {
+    margin: 30px 20px;
+    max-width: 800px;
+    color: $darkBlueTint;
 
-.post-wrapper {
-  margin: 30px auto;
-  max-width: 800px;
-  color: $darkBlueTint;
+    .post-meta {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
 
-  .post-meta {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-
-  .gatsby-highlight {
-    background-color: $medBlue;
-    border-radius: 0.3em;
-    margin: 0.5em 0;
-    padding: 1em;
-    overflow: auto;
+    .gatsby-highlight {
+      background-color: $medBlue;
+      border-radius: 0.3em;
+      margin: 0.5em 0;
+      padding: 1em;
+      overflow: auto;
+    }
   }
 }
 
 @media only screen and (max-width: 767px) {
-  .post-wrapper {
-    margin: 20px 20px;
+  .post-container {
+    display: block;
+    .post-wrapper {
+      margin: 20px 20px;
+    }
   }
 }

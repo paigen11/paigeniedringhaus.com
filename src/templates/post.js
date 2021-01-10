@@ -16,29 +16,13 @@ const Post = (props) => {
   const postNode = data.markdownRemark;
   const post = postNode.frontmatter;
 
-  const { nextSlug, nextTitle, prevSlug, prevTitle } = pageContext;
-  console.log(pageContext);
-  const nextArticle = nextSlug ? (
-    <Link className="next-post" to={nextSlug}>
-      <strong>Next Article</strong> <br />
-      {nextTitle}
-    </Link>
-  ) : null;
-
-  const prevArticle = prevSlug ? (
-    <Link className="prev-post" to={prevSlug}>
-      <strong>Previous Article</strong> <br />
-      {prevTitle}
-    </Link>
-  ) : null;
-
   if (!post.id) {
     post.id = slug;
   }
 
   return (
     <Layout>
-      <div>
+      <div className="post-container">
         <Helmet>
           <title>{`${post.title} | ${config.siteTitle}`}</title>
         </Helmet>
