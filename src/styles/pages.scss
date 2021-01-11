@@ -33,6 +33,23 @@ input {
 }
 
 @media only screen and (max-width: 767px) {
+  h1 {
+    font-size: 1.95rem;
+    margin-bottom: 0;
+  }
+
+  h2 {
+    font-size: clamp(1.1rem, unquote('0.7153rem + 1.6368vw'), 1.5rem);
+  }
+
+  p,
+  li,
+  input {
+    font-size: clamp(1rem, unquote('0.8798rem + 0.5115vw'), 1.125rem);
+  }
+}
+
+@media only screen and (max-width: 767px) {
   .page-body {
     margin: auto auto 30px auto;
   }
@@ -54,11 +71,16 @@ input {
   }
 }
 
-@media only screen and (max-width: 375px) {
+@media only screen and (max-width: 767px) {
   .main-page {
     flex-direction: column;
-    h1 {
-      font-size: 1.95rem;
+
+    .main-intro {
+      max-width: none;
+    }
+
+    img {
+      max-height: 10rem;
     }
   }
 }
@@ -74,7 +96,33 @@ input {
   border-bottom: 2px solid $medBlue;
 }
 
-// about page scss
+// blog page
+.blog-container {
+  min-height: calc(100vh - 186px);
+
+  .blog-title {
+    margin: 50px auto 0 auto;
+    max-width: 800px;
+    padding: 0 2rem;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .blog-container {
+    min-height: calc(100vh - 143px);
+    .blog-title {
+      margin-top: 21px;
+    }
+  }
+}
+
+@media only screen and (max-width: 650px) {
+  .blog-container {
+    min-height: calc(100vh - 168px);
+  }
+}
+
+// about page
 .about-container {
   a {
     font-weight: 600;
@@ -90,7 +138,7 @@ input {
   }
 }
 
-@media only screen and (max-width: 375px) {
+@media only screen and (max-width: 767px) {
   .about-container {
     img {
       width: 340px;
@@ -98,7 +146,7 @@ input {
   }
 }
 
-// media page scss
+// media page
 .media-container {
   h2 {
     border-bottom: 2px solid $medBlue;
@@ -144,20 +192,25 @@ input {
   }
 }
 
-@media only screen and (max-width: 375px) {
+@media only screen and (max-width: 767px) {
   .media-container {
     .media-items {
-      font-size: 1rem;
-
+      font-size: clamp(1.1rem, unquote('0.9558rem + 0.6138vw'), 1.25rem);
       .title,
       .articles {
         border-bottom: 1px solid $medBlue;
         width: 100%;
       }
+
       .date {
         display: none;
       }
     }
+  }
+}
+
+@media only screen and (max-width: 375px) {
+  .media-container {
     .companies {
       padding-left: 5px;
     }
@@ -175,6 +228,30 @@ input {
 
   a {
     font-weight: 600;
+  }
+}
+
+// 404 page
+.not-found-container {
+  .title-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    h1 {
+      margin-bottom: 0;
+    }
+    img {
+      height: 60px;
+    }
+  }
+
+  h2 {
+    margin-top: 0;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .not-found-container {
+    margin: unset;
   }
 }
 
