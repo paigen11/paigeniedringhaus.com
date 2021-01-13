@@ -10,12 +10,10 @@ const SocialLinks = (props) => {
   const url = urljoin(config.siteUrl, config.pathPrefix, postPath);
   return (
     <div className="social-links">
-      <hr />
       <span>If you found this useful:</span>
       <TwitterShareButton url={url} title={`${post.title} ✍️ @pniedri`}>
         Share on Twitter
       </TwitterShareButton>
-      <hr />
     </div>
   );
 };

@@ -3,21 +3,17 @@
 .social-links {
   display: grid;
   grid-template-columns: 1fr auto auto 1fr;
-  margin: 15px 0;
   align-items: center;
+  text-align: center;
   color: $darkBlueTint;
 
-  hr {
-    border-top: 2px solid $darkBlueTint;
-    width: 100%;
-  }
-
   span {
-    margin: 5px 5px 5px 15px;
+    grid-column-start: 2;
+    margin: 0.25rem;
   }
 
   button {
-    margin: 5px 15px 5px 5px;
+    margin: 0.25rem;
     cursor: pointer;
     font-weight: 600 !important;
     color: $blueViolet !important;
@@ -27,4 +23,12 @@
   button:hover {
     color: $medBlue !important;
   }
+}
+
+.social-links::before,
+.social-links::after {
+  content: '';
+  height: 2px;
+  background-color: $darkBlueTint;
+  width: 100%;
 }
