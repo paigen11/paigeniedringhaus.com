@@ -1,3 +1,5 @@
+@import '../../styles/colors.scss';
+
 * {
   box-sizing: border-box;
 }
@@ -20,8 +22,6 @@ body {
   min-width: 100vw;
 }
 
-@import '../../styles/colors.scss';
-
 .layout-container {
   margin: 0 auto;
   padding: 0;
@@ -31,4 +31,13 @@ body {
   min-height: 100vh;
   min-width: 100vw;
   background: $medBlueTint;
+}
+
+// applies only when viewed on mobile device
+@media only screen and (max-width: 767px) {
+  .open {
+    position: fixed;
+    overflow: hidden;
+    width: 100%;
+  }
 }
