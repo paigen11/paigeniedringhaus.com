@@ -20,7 +20,7 @@
 
     .navigation-names {
       justify-content: space-between;
-      a {
+      .link {
         display: flex;
         align-items: center;
         text-decoration: none;
@@ -38,7 +38,7 @@
 
     .navigation-links {
       justify-content: space-between;
-      a {
+      .link {
         text-decoration: none;
         font-size: 20px;
         color: $darkBlue;
@@ -47,10 +47,87 @@
         border-radius: 3px;
         margin: 0 0.5rem;
       }
-      a.active,
-      a:hover {
+      .link.active,
+      .link:hover {
         color: $medBlue;
         background-color: $lightGreen;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .headroom-wrapper {
+    z-index: 2;
+
+    .navigation-wrapper {
+      padding: 0 1.5rem;
+
+      .navigation-header {
+        height: auto;
+
+        .navigation-names > a > span {
+          display: none;
+        }
+
+        .navigation-links {
+          // mobile menu styling / animating
+          .mobile-menu {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            width: 2rem;
+            height: 2rem;
+            background: transparent;
+            border: none;
+            padding: 0;
+            right: 1.5rem;
+
+            &:focus {
+              outline: none;
+            }
+
+            .bar-one,
+            .bar-two,
+            .bar-three {
+              width: 2rem;
+              height: 0.25rem;
+              background: $darkBlue;
+              border-radius: 10px;
+              transition: all 0.3s linear;
+              position: relative;
+              transform-origin: 1px;
+            }
+
+            .bar-one {
+              transform: rotate(0);
+            }
+
+            .bar-two {
+              opacity: 1;
+              transform: translateX(0);
+            }
+
+            .bar-three {
+              transform: rotate(0);
+            }
+          }
+
+          .open {
+            .bar-one {
+              transform: rotate(45deg);
+            }
+
+            .bar-two {
+              opacity: 0;
+              transform: translateX(20px);
+            }
+
+            .bar-three {
+              transform: rotate(-45deg);
+            }
+          }
+        }
       }
     }
   }
