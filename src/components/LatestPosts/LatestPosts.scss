@@ -15,11 +15,6 @@
     box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px;
     border-radius: 5px;
 
-    .post-date {
-      font-size: 1rem;
-      margin: 0;
-    }
-
     .post-title {
       color: $darkBlueTint;
       font-weight: 600;
@@ -37,6 +32,29 @@
 
     .read-more {
       font-size: 1rem;
+      font-weight: 600;
+    }
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  p {
+    font-size: clamp(1rem, unquote('0.8798rem + 0.5115vw'), 1.125rem);
+  }
+
+  .latest-posts-wrapper {
+    .post {
+      margin: 0.5rem 0;
+      padding: 0.5rem;
+
+      .post-title {
+        font-size: clamp(1.1rem, unquote('0.7153rem + 1.6368vw'), 1.5rem);
+        line-height: unset;
+      }
+
+      .post-tag-container {
+        display: none;
+      }
     }
   }
 }
