@@ -55,7 +55,13 @@ import dualMonitors from '../content/images/dual-monitors.jpeg';
 import marionette from '../content/images/marionette.jpeg';
 import stopwatch from '../content/images/stopwatch.jpeg';
 import loader from '../content/images/loader.png';
-import laptopGraph from '../content/images/laptopGraph.jpeg';
+import laptopGraph from '../content/images/laptop-graph.jpeg';
+import uxFlows from '../content/images/ux-flows.jpeg';
+import holdingHands from '../content/images/holding-hands.jpeg';
+import laptopMetrics from '../content/images/laptop-metrics.jpeg';
+import coloredSmoke from '../content/images/colored-smoke.jpeg';
+import cables from '../content/images/cables.jpeg';
+import fistBump from '../content/images/fist-bump.jpeg';
 
 export default [
   {
@@ -649,7 +655,7 @@ export default [
     date: moment('2020-06-10').format('ll'),
     img: loader,
     url:
-      'https://www.amazon.com/Parblo-Two-Finger-Graphics-Drawing-Tracing/dp/B018VASU3O/',
+      'https://blog.bitsrc.io/building-a-universal-higher-order-component-page-loader-for-your-react-app-46d74f7a6958',
     subTitle:
       "Loading screens are needed everywhere - don't reinvent the wheel every time.",
     tags: ['javascript', 'react'],
@@ -666,5 +672,69 @@ export default [
     tags: ['javascript', 'gatsby', 'react'],
     timeToRead: 8,
     title: 'Gatsby: Fetching Data at The Component Level with useStaticQuery',
+  },
+  {
+    date: moment('2020-08-13').format('ll'),
+    img: uxFlows,
+    url:
+      'https://blog.bitsrc.io/mocking-http-calls-in-cypress-end-to-end-tests-fa2e6b7caaf7',
+    subTitle:
+      "Don't let unreliable test data keep your new features from making it to production",
+    tags: ['javascript', 'cypress', 'testing'],
+    timeToRead: 10,
+    title: 'Mocking HTTP Calls in Cypress End-to-End Tests',
+  },
+  {
+    date: moment('2020-09-09').format('ll'),
+    img: holdingHands,
+    url:
+      'https://blog.bitsrc.io/recent-advances-and-improvements-to-javascript-promises-561790897a5d',
+    subTitle:
+      "They've come a long way since the days of Promise.resolve() and Promise.reject()",
+    tags: ['javascript', 'promises'],
+    timeToRead: 8,
+    title: 'Recent Advances and Improvements to JavaScript Promises',
+  },
+  {
+    date: moment('2020-10-20').format('ll'),
+    img: laptopMetrics,
+    url:
+      'https://blog.bitsrc.io/vs-codes-rest-client-plugin-is-all-you-need-to-make-api-calls-e9e95fcfd85a',
+    subTitle: "Why leave the IDE to test new endpoints? Now you don't have to.",
+    tags: ['vscode', 'javascript', 'api'],
+    timeToRead: 9,
+    title: "VS Code's REST Client Plugin is All You Need to Make API Calls",
+  },
+  {
+    date: moment('2020-11-24').format('ll'),
+    img: coloredSmoke,
+    url:
+      'https://blog.bitsrc.io/pure-css-to-make-a-button-shine-and-gently-change-colors-over-time-5b685d9c6a7e',
+    subTitle: 'Because animations and gradients in CSS are delightful.',
+    tags: ['css'],
+    timeToRead: 11,
+    title:
+      'Pure CSS to Make a Button "Shine" and Gently Change Colors Over Time',
+  },
+  {
+    date: moment('2020-12-23').format('ll'),
+    img: cables,
+    url:
+      'https://blog.bitsrc.io/setting-up-axios-interceptors-for-all-http-calls-in-an-application-71bc2c636e4e',
+    subTitle:
+      "Automatically intercept all the requests and responses so you don't have to remember to do it yourself.",
+    tags: ['javascript'],
+    timeToRead: 9,
+    title: 'Setting up Axios Interceptors for all HTTP call in an application',
+  },
+  {
+    date: moment('2021-01-19').format('ll'),
+    img: fistBump,
+    url:
+      'https://blog.bitsrc.io/css-clamp-the-responsive-combination-weve-all-been-waiting-for-f1ce1981ea6',
+    subTitle: 'Bringing together the best of CSS min() and CSS max() functions',
+    tags: ['css'],
+    timeToRead: 8,
+    title: "CSS Clamp(): The Responsive Combination We've All Been Waiting For",
   },
 ];
