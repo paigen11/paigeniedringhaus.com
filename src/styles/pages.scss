@@ -99,10 +99,13 @@ input {
 // blog page
 .blog-container {
   min-height: calc(100vh - 186px);
+  display: flex;
+  flex-direction: column;
 
   .blog-title {
     margin: 50px auto 0 auto;
     max-width: 800px;
+    width: 800px;
     padding: 0 2rem;
   }
 }
@@ -111,6 +114,8 @@ input {
   .blog-container {
     min-height: calc(100vh - 143px);
     .blog-title {
+      width: unset;
+      margin: unset;
       margin-top: 21px;
     }
   }
