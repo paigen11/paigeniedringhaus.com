@@ -76,52 +76,58 @@ const PostListing = () => {
         <Loader message="Loading blog posts" />
       )}
       <>
-        <span className="post-search-wrapper page-body">
-          <input
-            className="searchInput"
-            type="search"
-            aria-label="Search"
-            placeholder="Filter blog posts by title or tag"
-            onChange={(e) => filterPosts(e)}
-          ></input>
-          <span className="post-count-wrapper">
-            <p className="post-count">{postCount}&nbsp;</p>
-            {postCount === 1 ? <p>post</p> : <p>posts</p>}
+        <span className="post-wrapper">
+          <span className="post-search-wrapper page-body">
+            <input
+              className="searchInput"
+              type="search"
+              aria-label="Search"
+              placeholder="Filter blog posts by title or tag"
+              onChange={(e) => filterPosts(e)}
+            ></input>
+            <span className="post-count-wrapper">
+              <p className="post-count">{postCount}&nbsp;</p>
+              {postCount === 1 ? <p>post</p> : <p>posts</p>}
+            </span>
           </span>
-        </span>
-        <div className="posts-wrapper wide-page-body">
-          {posts.length ? (
-            posts.map((post, index) => (
-              <div className="post" key={index}>
-                <p className="post-date">
-                  {post.date} {'\u2022'} {post.timeToRead} min read
-                </p>
-                {post.path ? (
-                  <Link to={post.path} key={post.title}>
-                    <p className="post-title">{post.title}</p>
-                    <Img fixed={post.thumbnail} />
-                    {post.excerpt && <p>{post.excerpt}</p>}
-                  </Link>
-                ) : (
-                  <a href={post.url} target="_blank" rel="noopener noreferrer">
-                    <p className="post-title">{post.title}</p>
-                    <img
-                      src={post.img}
-                      style={{ width: 200 }}
-                      alt="blog post thumbnail image"
-                    />
-                    <p>{post.subTitle}</p>
-                  </a>
-                )}
-                <PostTags tags={post.tags} />
+          <div className="posts-wrapper wide-page-body">
+            {posts.length ? (
+              posts.map((post, index) => (
+                <div className="post" key={index}>
+                  <p className="post-date">
+                    {post.date} {'\u2022'} {post.timeToRead} min read
+                  </p>
+                  {post.path ? (
+                    <Link to={post.path} key={post.title}>
+                      <p className="post-title">{post.title}</p>
+                      <Img fixed={post.thumbnail} />
+                      {post.excerpt && <p>{post.excerpt}</p>}
+                    </Link>
+                  ) : (
+                    <a
+                      href={post.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <p className="post-title">{post.title}</p>
+                      <img
+                        src={post.img}
+                        style={{ width: 200 }}
+                        alt="blog post thumbnail image"
+                      />
+                      <p>{post.subTitle}</p>
+                    </a>
+                  )}
+                  <PostTags tags={post.tags} />
+                </div>
+              ))
+            ) : (
+              <div className="empty-results">
+                <h2>Sorry, no search results match your query.</h2>
               </div>
-            ))
-          ) : (
-            <div className="empty-results">
-              <h2>Sorry, no search results match your query.</h2>
-            </div>
-          )}
-        </div>
+            )}
+          </div>
+        </span>
       </>
     </>
   );
