@@ -94,4 +94,10 @@ export default [
     path: null,
     img: techElevator,
   },
+  {
+    title: 'The Home Depot Lightning Talk: Being Heard as a Woman in Tech',
+    date: moment('2021-02-05').format('LL'),
+    path: null,
+    img: theHomeDepot,
+  },
 ];
