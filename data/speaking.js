@@ -50,7 +50,7 @@ export default [
   {
     title: 'Connect.Tech 2019: Responsive Design with ReactJS',
     date: moment('2019-10-18').format('LL'),
-    path: 'https://connect.tech/session/?id=4664',
+    path: 'https://vimeo.com/390565827',
     img: connectTech,
   },
   {
