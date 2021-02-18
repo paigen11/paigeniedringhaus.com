@@ -13,6 +13,7 @@ export const usePostListingQuery = () => {
             excerpt
             timeToRead
             frontmatter {
+              omit
               title
               tags
               date

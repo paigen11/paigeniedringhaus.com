@@ -19,6 +19,7 @@ export const useLatestPostsQuery = () => {
               title
               tags
               date
+              omit
             }
           }
         }
