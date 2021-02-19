@@ -2,6 +2,7 @@ import moment from 'moment';
 import jsJabber from '../src/images/thumbnails/jsJabber.jpg';
 import myJsStory from '../src/images/thumbnails/myJsStory.jpg';
 import reactRoundUp from '../src/images/thumbnails/reactRoundUp.png';
+import telerik from '../src/images/thumbnails/telerik.png';
 
 export default [
   {
@@ -24,5 +25,13 @@ export default [
     path:
       'https://devchat.tv/react-round-up/rru-106-react-socks-for-easy-responsive-design-with-paige-niedringhaus',
     img: reactRoundUp,
+  },
+  {
+    title:
+      'React Wednesdays: Working in Large React Apps with Paige Niedringhaus',
+    date: moment('2021-02-17').format('LL'),
+    path:
+      'https://www.telerik.com/react-wednesdays/working-in-large-react-apps-with-paige-niedringhaus',
+    img: telerik,
   },
 ];
