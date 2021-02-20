@@ -119,19 +119,16 @@ const SEO = (props) => {
       {/* General tags */}
       <meta name="description" content={description} />
       <meta name="image" content={image} />
-
       {/* Schema.org tags */}
       <script type="application/ld+json">
         {JSON.stringify(schemaOrgJSONLD)}
       </script>
-
       {/* OpenGraph tags */}
       <meta property="og:url" content={postSEO ? postURL : blogURL} />
       {postSEO ? <meta property="og:type" content="article" /> : null}
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
       <meta property="og:image" content={image} />
-
       {/* Twitter Card tags */}
       <meta name="twitter:card" content="summary_large_image" />
       <meta
