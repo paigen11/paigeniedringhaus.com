@@ -18,12 +18,14 @@ const LatestPosts = () => {
     );
     const latestPostList = [];
     posts.allMarkdownRemark.edges.forEach((postEdge) => {
-      latestPostList.push({
-        path: postEdge.node.fields.slug,
-        title: postEdge.node.frontmatter.title,
-        date: postEdge.node.fields.date,
-        excerpt: postEdge.node.excerpt,
-      });
+      if (!postEdge.node.frontmatter.omit) {
+        latestPostList.push({
+          path: postEdge.node.fields.slug,
+          title: postEdge.node.frontmatter.title,
+          date: postEdge.node.fields.date,
+          excerpt: postEdge.node.excerpt,
+        });
+      }
     });
     const fullPostList = latestPostList.concat(latestMediumBlogs);
     const sortedPostsList = sortArrayByDate(fullPostList);
