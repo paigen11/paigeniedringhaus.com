@@ -62,6 +62,7 @@ import laptopMetrics from '../content/images/laptop-metrics.jpeg';
 import coloredSmoke from '../content/images/colored-smoke.jpeg';
 import cables from '../content/images/cables.jpeg';
 import fistBump from '../content/images/fist-bump.jpeg';
+import scientist from '../content/images/scientist.jpeg';
 
 export default [
   {
@@ -736,5 +737,15 @@ export default [
     tags: ['css'],
     timeToRead: 8,
     title: "CSS Clamp(): The Responsive Combination We've All Been Waiting For",
+  },
+  {
+    date: moment('2021-02-22').format('ll'),
+    img: scientist,
+    url:
+      'https://blog.bitsrc.io/successfully-throwing-async-errors-with-the-jest-testing-library-fda17261733a',
+    subTitle: 'The One Time Errors Should Happen in your Code',
+    tags: ['jest', 'testing', 'javascript'],
+    timeToRead: 8,
+    title: 'Successfully Throwing Async Errors with the Jest Testing Library',
   },
 ];
