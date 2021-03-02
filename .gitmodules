@@ -1,4 +1,4 @@
 [submodule "content"]
 	path = content
-	url = https://github.com/paigen11/pn-blog-posts
+	url = git@github.com:paigen11/pn-blog-posts.git
   branch = main
