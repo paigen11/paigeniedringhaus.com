@@ -46,6 +46,7 @@ const MediaPage = () => {
           about all things JavaScript and beyond.
         </p>
         <h2>Talks</h2>
+        <p>(Note: Talks that were recorded are hyper-linked in purple.)</p>
         <ul>
           {sortedSpeaking.map((talk) => {
             return (

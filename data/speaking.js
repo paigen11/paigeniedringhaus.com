@@ -63,8 +63,7 @@ export default [
     title:
       'DigitalCrafts Elective Workshop: React Testing Library Tips and Tricks',
     date: moment('2020-06-03').format('LL'),
-    path:
-      'https://us02web.zoom.us/rec/share/-e1HIK7L8H5OZKvXxk3dda8ZQ6Tqeaa8gSEW-vFezSQQqxeDKTctYEhQODwaXE8?startTime=1591223149000',
+    path: null,
     img: digitalCrafts,
   },
   {
