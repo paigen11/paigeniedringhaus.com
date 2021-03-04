@@ -36,8 +36,9 @@ const App = () => {
         <p className="welcome">
           While you're here, you can check out my&nbsp;
           <Link to="/blog">blog posts</Link>, see my&nbsp;
-          <Link to="/media">talks and interviews</Link>, or learn more&nbsp;
-          <Link to="/about">about me</Link>.
+          <Link to="/media">talks and interviews</Link>, learn more&nbsp;
+          <Link to="/about">about me</Link>, or&nbsp;
+          <Link to="/contact">get in touch</Link>.
         </p>
         <h2 className="latest-title">Latest Blog Posts</h2>
         <LatestPosts />
