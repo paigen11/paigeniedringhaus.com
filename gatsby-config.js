@@ -147,7 +147,8 @@ module.exports = {
                   { author: config.userEmail },
                   {
                     cover:
-                      edge.node.frontmatter.cover.childImageSharp.fixed.src,
+                      edge.node.frontmatter.featuredImage.childImageSharp.fixed
+                        .src,
                   },
                 ],
               }));
@@ -174,9 +175,9 @@ module.exports = {
                       date
                       category
                       tags
-                      cover {
+                      featuredImage {
                         childImageSharp {
-                          fixed(width: 300) {
+                          fixed(width: 200, height: 200) {
                             src
                           }
                         }
