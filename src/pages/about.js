@@ -116,7 +116,7 @@ const AboutPage = () => {
           my art 🎨, traveling ✈️ (at least when there's not a global pandemic
           on), and hanging out with family and friends. I've recently gotten
           into learning to paint digitally (Procreate and my iPad is what I'm
-          using), so if you have tips to improve, please let know!
+          using), so if you have tips to improve, please let me know!
         </p>
         <figure>
           <img src={seanAndPaige} alt="sean and paige photo" />
