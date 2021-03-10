@@ -37,7 +37,7 @@ const Navigation = () => {
           <div className="navigation-header">
             <span className="navigation-names">
               <Link className="link" to="/">
-                <img src={logo}></img>
+                <img className="logo" src={logo}></img>
                 <span>Paige Niedringhaus</span>
               </Link>
             </span>
