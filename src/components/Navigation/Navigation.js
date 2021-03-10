@@ -37,13 +37,14 @@ const Navigation = () => {
           <div className="navigation-header">
             <span className="navigation-names">
               <Link className="link" to="/">
-                <img className="logo" src={logo}></img>
+                <img className="logo" src={logo} alt="pn initials logo"></img>
                 <span>Paige Niedringhaus</span>
               </Link>
             </span>
             <span className="navigation-links">
               {mobileNavContext.showMobileNavMenu ? (
                 <button
+                  aria-label="Toggle Mobile Menu Button"
                   className={active}
                   onClick={() => {
                     mobileNavContext.toggleMobileNav(

@@ -9,13 +9,17 @@
   text-decoration: none;
 
   a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     padding: 10px;
+    color: $darkBlue;
     svg {
-      color: $darkBlue;
       font-size: 30px;
     }
-    svg:hover {
-      color: $medBlue;
-    }
+  }
+
+  a:hover {
+    color: $medBlue;
   }
 }

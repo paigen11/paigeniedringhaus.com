@@ -8,7 +8,12 @@ const Subscribe = () => {
       target="_blank"
       rel="noopener noreferrer"
     >
-      <button className="subscribe-button">Join my newsletter</button>
+      <button
+        aria-label="Join Substack Newsletter Button"
+        className="subscribe-button"
+      >
+        Join my newsletter
+      </button>
     </a>
   );
 };

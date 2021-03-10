@@ -27,8 +27,14 @@ const UserLinks = (props) => {
   const getLinkElements = () => {
     const { userLinks } = config;
     return userLinks.map((link) => (
-      <a href={link.url} target="_blank" key={link.label}>
+      <a
+        href={link.url}
+        target="_blank"
+        rel="noopener noreferrer"
+        key={link.label}
+      >
         {getLinkIcons(link.iconClassName)}
+        <div className="user-link-text">{link.label}</div>
       </a>
     ));
   };
@@ -40,8 +46,9 @@ const UserLinks = (props) => {
   return (
     <div className="user-links">
       {getLinkElements()}
-      <a href={siteRss} target="_blank">
+      <a href={siteRss} target="_blank" rel="noopener noreferrer">
         <FontAwesomeIcon icon={faRssSquare} />
+        <div>RSS</div>
       </a>
     </div>
   );

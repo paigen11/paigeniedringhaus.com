@@ -14,6 +14,7 @@ const App = () => {
     <Layout>
       <div className="page-body">
         <Helmet>
+          <title>Paige Niedringhaus</title>
           <meta name="description" content={config.siteDescription} />
           <link rel="shortcut icon" type="image/png" href={favicon} />
           <html lang="en" />
