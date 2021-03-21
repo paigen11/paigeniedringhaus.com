@@ -63,6 +63,7 @@ import coloredSmoke from '../content/images/colored-smoke.jpeg';
 import cables from '../content/images/cables.jpeg';
 import fistBump from '../content/images/fist-bump.jpeg';
 import scientist from '../content/images/scientist.jpeg';
+import puzzle from '../content/images/puzzle.jpg';
 
 export default [
   {
@@ -747,5 +748,16 @@ export default [
     tags: ['jest', 'testing', 'javascript'],
     timeToRead: 8,
     title: 'Successfully Throwing Async Errors with the Jest Testing Library',
+  },
+  {
+    date: moment('2021-03-18').format('ll'),
+    img: puzzle,
+    url:
+      'https://blog.bitsrc.io/how-to-utilize-submodules-within-git-repos-5dfdd1c62d09',
+    subTitle:
+      'One Solution When the Primary Code Can be Open Source, but Specific Content Needs to be Private',
+    tags: ['git', 'netlify', 'github'],
+    timeToRead: 12,
+    title: 'How to Utilize Submodules within Git Repos',
   },
 ];
