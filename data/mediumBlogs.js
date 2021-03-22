@@ -1,5 +1,5 @@
 import moment from 'moment';
-import webDevLaptop from '../content/images/overhead-work.jpeg';
+import webDevLaptop from '../content/images/web-dev-laptop.jpeg';
 import overheadWork from '../content/images/overhead-work.jpeg';
 import code from '../content/images/code.jpg';
 import graphql from '../content/images/graphql.png';
