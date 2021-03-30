@@ -39,7 +39,7 @@
 
 @media only screen and (max-width: 767px) {
   p {
-    font-size: clamp(1rem, unquote('0.8798rem + 0.5115vw'), 1.125rem);
+    font-size: clamp(1.125rem, unquote('0.8798rem + 0.5115vw'), 1.25rem);
   }
 
   .latest-posts-wrapper {
@@ -48,7 +48,7 @@
       padding: 0.5rem;
 
       .post-title {
-        font-size: clamp(1.1rem, unquote('0.7153rem + 1.6368vw'), 1.5rem);
+        font-size: clamp(1.2rem, unquote('0.7153rem + 1.6368vw'), 1.5rem);
         line-height: unset;
       }
 

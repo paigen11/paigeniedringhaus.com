@@ -39,13 +39,13 @@ input {
   }
 
   h2 {
-    font-size: clamp(1.1rem, unquote('0.7153rem + 1.6368vw'), 1.5rem);
+    font-size: clamp(1.2rem, unquote('0.7153rem + 1.6368vw'), 1.5rem);
   }
 
   p,
   li,
   input {
-    font-size: clamp(1rem, unquote('0.8798rem + 0.5115vw'), 1.125rem);
+    font-size: clamp(1.125rem, unquote('0.8798rem + 0.5115vw'), 1.25rem);
   }
 }
 
@@ -201,7 +201,7 @@ input {
 @media only screen and (max-width: 767px) {
   .media-container {
     .media-items {
-      font-size: clamp(1.1rem, unquote('0.9558rem + 0.6138vw'), 1.25rem);
+      font-size: clamp(1.2rem, unquote('0.9558rem + 0.6138vw'), 1.25rem);
       .title,
       .articles {
         border-bottom: 1px solid $medBlue;
