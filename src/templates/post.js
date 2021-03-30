@@ -1,6 +1,6 @@
 import React from 'react';
 import Helmet from 'react-helmet';
-import { graphql, Link } from 'gatsby';
+import { graphql } from 'gatsby';
 import Layout from '../components/Layout/Layout';
 import PostTags from '../components/PostTags/PostTags';
 import SEO from '../components/SEO/SEO';
@@ -53,13 +53,14 @@ export const pageQuery = graphql`
     markdownRemark(fields: { slug: { eq: $slug } }) {
       html
       timeToRead
-      excerpt
       frontmatter {
         title
+        subTitle
         featuredImage {
           childImageSharp {
-            fixed(width: 200, height: 200) {
-              ...GatsbyImageSharpFixed
+            fluid(maxWidth: 680, quality: 100) {
+              ...GatsbyImageSharpFluid
+              ...GatsbyImageSharpFluidLimitPresentationSize
             }
           }
         }

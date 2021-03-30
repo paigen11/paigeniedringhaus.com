@@ -13,10 +13,10 @@ export const useLatestPostsQuery = () => {
               slug
               date(formatString: "MMM D, YYYY")
             }
-            excerpt
             timeToRead
             frontmatter {
               title
+              subTitle
               tags
               date
               omit

@@ -10,11 +10,11 @@ export const usePostListingQuery = () => {
               slug
               date(formatString: "MMM D, YYYY")
             }
-            excerpt
             timeToRead
             frontmatter {
               omit
               title
+              subTitle
               tags
               date
               thumbnail {

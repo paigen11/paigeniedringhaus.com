@@ -1,5 +1,4 @@
 import moment from 'moment';
-import webDevLaptop from '../content/images/web-dev-laptop.jpeg';
 import overheadWork from '../content/images/overhead-work.jpeg';
 import code from '../content/images/code.jpg';
 import graphql from '../content/images/graphql.png';
@@ -66,18 +65,6 @@ import scientist from '../content/images/scientist.jpeg';
 import puzzle from '../content/images/puzzle.jpg';
 
 export default [
-  {
-    date: moment('2018-04-08').format('ll'),
-    img: webDevLaptop,
-    url:
-      'https://medium.com/@paigen11/how-i-went-from-a-digital-marketer-to-a-software-engineer-in-4-months-7ed99c65d360',
-    subTitle:
-      "Like many people, my career path to web development wasn't a straight line.",
-    tags: ['career change', 'advice'],
-    timeToRead: 10,
-    title:
-      'How I Went From a Digital Marketer to a Software Engineer in 4 Months',
-  },
   {
     date: moment('2018-04-15').format('ll'),
     img: overheadWork,

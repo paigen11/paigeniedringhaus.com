@@ -22,8 +22,8 @@ const LatestPosts = () => {
         latestPostList.push({
           path: postEdge.node.fields.slug,
           title: postEdge.node.frontmatter.title,
+          subTitle: postEdge.node.frontmatter.subTitle,
           date: postEdge.node.fields.date,
-          excerpt: postEdge.node.excerpt,
         });
       }
     });
@@ -56,7 +56,7 @@ const LatestPosts = () => {
                     <>
                       <Link to={post.path} key={post.title}>
                         <p className="post-title">{post.title}</p>
-                        {post.excerpt ? <p>{post.excerpt}</p> : null}
+                        {post.subTitle ? <p>{post.subTitle}</p> : null}
                       </Link>
                       <PostTags tags={post.tags} />
                       <Link to={post.path}>

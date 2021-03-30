@@ -28,8 +28,8 @@ const PostListing = () => {
           tags: postEdge.node.frontmatter.tags,
           thumbnail: postEdge.node.frontmatter.thumbnail.childImageSharp.fixed,
           title: postEdge.node.frontmatter.title,
+          subTitle: postEdge.node.frontmatter.subTitle,
           date: postEdge.node.fields.date,
-          excerpt: postEdge.node.excerpt,
           timeToRead: postEdge.node.timeToRead,
         });
       }
@@ -55,8 +55,6 @@ const PostListing = () => {
         post.title.toLowerCase().includes(query.toLowerCase()) ||
         (post.subTitle &&
           post.subTitle.toLowerCase().includes(query.toLowerCase())) ||
-        (post.excerpt &&
-          post.excerpt.toLowerCase().includes(query.toLowerCase())) ||
         (post.tags &&
           post.tags.join('').toLowerCase().includes(query.toLowerCase()))
       );
@@ -104,7 +102,7 @@ const PostListing = () => {
                     <Link to={post.path} key={post.title}>
                       <p className="post-title">{post.title}</p>
                       <Img fixed={post.thumbnail} />
-                      {post.excerpt && <p>{post.excerpt}</p>}
+                      <p>{post.subTitle}</p>
                     </Link>
                   ) : (
                     <a

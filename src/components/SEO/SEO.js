@@ -17,8 +17,8 @@ const SEO = (props) => {
     ({ title } = postMeta);
     description = postMeta.description
       ? postMeta.description
-      : postNode.excerpt;
-    image = postNode.frontmatter.featuredImage.childImageSharp.fixed.src;
+      : postNode.subTitle;
+    image = postNode.frontmatter.featuredImage.childImageSharp.fluid.src;
     postURL = urljoin(config.siteUrl, config.pathPrefix, postPath);
     canonical = postMeta.canonical;
   } else {

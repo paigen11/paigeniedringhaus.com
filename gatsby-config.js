@@ -123,6 +123,7 @@ module.exports = {
                 site_url
                 feed_url
                 title
+                subTitle
                 description
                 image_url
                 copyright
@@ -139,6 +140,7 @@ module.exports = {
                 categories: edge.node.frontmatter.tags,
                 date: edge.node.fields.date,
                 title: edge.node.frontmatter.title,
+                subTitle: edge.node.frontmatter.subTitle,
                 description: edge.node.excerpt,
                 url: rssMetadata.site_url + edge.node.fields.slug,
                 guid: rssMetadata.site_url + edge.node.fields.slug,
@@ -172,6 +174,7 @@ module.exports = {
                     frontmatter {
                       omit
                       title
+                      subTitle
                       date
                       category
                       tags
