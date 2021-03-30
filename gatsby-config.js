@@ -123,7 +123,6 @@ module.exports = {
                 site_url
                 feed_url
                 title
-                subTitle
                 description
                 image_url
                 copyright
