@@ -7,6 +7,26 @@
     max-width: 800px;
     color: $darkBlueTint;
 
+    h1,
+    h2 {
+      border-bottom: 3px solid;
+    }
+
+    blockquote {
+      border-left: 3px solid;
+      background: $lightBlue;
+      padding: 1px 0;
+      border-radius: 4px;
+
+      p {
+        margin-left: 10px;
+      }
+    }
+
+    figcaption {
+      color: $darkBlueTint2;
+    }
+
     .post-meta {
       display: flex;
       flex-direction: column;

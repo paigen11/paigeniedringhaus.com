@@ -27,9 +27,10 @@ const ContactPage = () => {
           If you'd like to say "hi" or want to talk, feel free to reach me at
           &nbsp;
           <a href="#mailgo" data-address="hellopaigen" data-domain="gmail.com">
-            hellopaigen@gmail.com
+            hellopaigen&nbsp;@&nbsp;gmail.com
           </a>
-          . I may not reply immediately, but I will eventually.
+          .
+          <br />I may not reply immediately, but I will eventually.
         </p>
         <h2>
           Follow me and chat on social media&nbsp;

@@ -76,8 +76,13 @@ const AboutPage = () => {
         <h2>And now, I want to help others find the joy in coding too.</h2>
         <p>
           Today, I work with a team of developers as a senior software engineer.
-          I'm always learning new things, but my focus right now is on web
-          development technologies like React, Gatsby and Node.js.
+          I'm always learning new things, but my focus and interest right now is
+          on&nbsp;
+          <strong>
+            frontend web development technologies like React, Gatsby and Next.js
+            and (of course) JavaScript
+          </strong>
+          .
         </p>
         <p>
           Bringing cool user interfaces to life with HTML, CSS and JavaScript,
