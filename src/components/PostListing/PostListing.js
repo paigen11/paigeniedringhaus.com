@@ -20,19 +20,16 @@ const PostListing = () => {
 
   const getAndFormatAllPosts = (posts) => {
     const postList = [];
-    // filter out posts that should not be visible (i.e. sample posts or unfinished posts)
     posts.allMarkdownRemark.edges.forEach((postEdge) => {
-      if (!postEdge.node.frontmatter.omit) {
-        postList.push({
-          path: postEdge.node.fields.slug,
-          tags: postEdge.node.frontmatter.tags,
-          thumbnail: postEdge.node.frontmatter.thumbnail.childImageSharp.fixed,
-          title: postEdge.node.frontmatter.title,
-          subTitle: postEdge.node.frontmatter.subTitle,
-          date: postEdge.node.fields.date,
-          timeToRead: postEdge.node.timeToRead,
-        });
-      }
+      postList.push({
+        path: postEdge.node.fields.slug,
+        tags: postEdge.node.frontmatter.tags,
+        thumbnail: postEdge.node.frontmatter.thumbnail.childImageSharp.fixed,
+        title: postEdge.node.frontmatter.title,
+        subTitle: postEdge.node.frontmatter.subTitle,
+        date: postEdge.node.fields.date,
+        timeToRead: postEdge.node.timeToRead,
+      });
     });
     const fullPostList = postList.concat(mediumBlogs);
     const sortedPostsList = sortArrayByDate(fullPostList);

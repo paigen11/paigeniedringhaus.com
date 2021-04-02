@@ -3,7 +3,10 @@ import { useStaticQuery, graphql } from 'gatsby';
 export const usePostListingQuery = () => {
   const postListData = useStaticQuery(graphql`
     query PostQuery {
-      allMarkdownRemark(sort: { fields: [fields___date], order: DESC }) {
+      allMarkdownRemark(
+        filter: { frontmatter: { omit: { eq: false } } }
+        sort: { fields: [fields___date], order: DESC }
+      ) {
         edges {
           node {
             fields {

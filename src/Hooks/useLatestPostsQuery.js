@@ -4,6 +4,7 @@ export const useLatestPostsQuery = () => {
   const latestPostsData = useStaticQuery(graphql`
     query LatestPostQuery {
       allMarkdownRemark(
+        filter: { frontmatter: { omit: { eq: false } } }
         sort: { fields: [fields___date], order: DESC }
         limit: 4
       ) {
