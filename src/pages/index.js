@@ -24,7 +24,7 @@ const App = () => {
             <h1>Hi everyone, I'm Paige</h1>
             <h2>
               I'm a full stack software engineer with a focus on frontend
-              development, and I write about web development, JavaScript and
+              development. I also write about web development, JavaScript and
               technology.
             </h2>
           </div>

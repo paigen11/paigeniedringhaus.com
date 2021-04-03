@@ -108,6 +108,10 @@ input {
     width: 800px;
     padding: 0 2rem;
   }
+
+  .blog-disclaimer {
+    margin: 30px auto 0 auto;
+  }
 }
 
 @media only screen and (max-width: 767px) {
@@ -230,6 +234,10 @@ input {
 .contact-container {
   h2:not(:first-of-type) {
     border-bottom: 2px solid $medBlue;
+  }
+
+  p {
+    margin: inherit;
   }
 
   a {

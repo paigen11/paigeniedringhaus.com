@@ -79,7 +79,7 @@ const AboutPage = () => {
           I'm always learning new things, but my focus and interest right now is
           on&nbsp;
           <strong>
-            frontend web development technologies like React, Gatsby and Next.js
+            frontend web development technologies like React, Gatsby, Next.js
             and (of course) JavaScript
           </strong>
           .
