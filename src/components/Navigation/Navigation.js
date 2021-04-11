@@ -57,7 +57,7 @@ const Navigation = () => {
                   <div className="bar-three" />
                 </button>
               ) : (
-                <>
+                <nav aria-label="desktop navigation">
                   <Link className="link" activeClassName="active" to="/blog">
                     Blog
                   </Link>
@@ -70,7 +70,7 @@ const Navigation = () => {
                   <Link className="link" activeClassName="active" to="/contact">
                     Contact
                   </Link>
-                </>
+                </nav>
               )}
             </span>
           </div>

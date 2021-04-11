@@ -9,7 +9,7 @@ const MobileNavLinks = ({ open }) => {
   });
 
   return (
-    <div className={displayMobileNavLinks}>
+    <nav arai-label="mobile navigation" className={displayMobileNavLinks}>
       <Link className="mobile-link" activeClassName="active" to="/blog">
         Blog
       </Link>
@@ -22,7 +22,7 @@ const MobileNavLinks = ({ open }) => {
       <Link className="mobile-link" activeClassName="active" to="/contact">
         Contact
       </Link>
-    </div>
+    </nav>
   );
 };
 
