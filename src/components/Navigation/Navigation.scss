@@ -101,17 +101,14 @@
               transform-origin: 1px;
             }
 
-            .bar-one {
+            .bar-one,
+            .bar-three {
               transform: rotate(0);
             }
 
             .bar-two {
               opacity: 1;
               transform: translateX(0);
-            }
-
-            .bar-three {
-              transform: rotate(0);
             }
           }
 
