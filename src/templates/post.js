@@ -1,6 +1,7 @@
 import React from 'react';
 import Helmet from 'react-helmet';
 import { graphql } from 'gatsby';
+import moment from 'moment';
 import Layout from '../components/Layout/Layout';
 import PostTags from '../components/PostTags/PostTags';
 import SEO from '../components/SEO/SEO';
@@ -29,6 +30,9 @@ const Post = (props) => {
         <SEO postPath={slug} postNode={postNode} postSEO />
         <div className="post-wrapper">
           <h1>{post.title}</h1>
+          <figcaption>
+            Originally published {moment(post.date).format('ll')}
+          </figcaption>
           <div dangerouslySetInnerHTML={{ __html: postNode.html }} />
           <div className="post-meta">
             <PostTags tags={post.tags} />
