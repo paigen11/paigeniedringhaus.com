@@ -114,7 +114,7 @@ exports.createPages = async ({ graphql, actions }) => {
     const prevEdge = postsEdges[prevID];
 
     createPage({
-      path: edge.node.fields.slug,
+      path: `/blog${edge.node.fields.slug}`,
       component: postPage,
       context: {
         slug: edge.node.fields.slug,

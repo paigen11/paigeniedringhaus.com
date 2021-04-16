@@ -96,7 +96,7 @@ const PostListing = () => {
                     {post.date} {'\u2022'} {post.timeToRead} min read
                   </p>
                   {post.path ? (
-                    <Link to={post.path} key={post.title}>
+                    <Link to={`/blog${post.path}`} key={post.title}>
                       <p className="post-title">{post.title}</p>
                       <Img fixed={post.thumbnail} />
                       <p>{post.subTitle}</p>

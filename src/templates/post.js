@@ -27,7 +27,7 @@ const Post = (props) => {
         <Helmet>
           <title>{`${post.title} | ${config.siteTitle}`}</title>
         </Helmet>
-        <SEO postPath={slug} postNode={postNode} postSEO />
+        <SEO postPath={`/blog${slug}`} postNode={postNode} postSEO />
         <div className="post-wrapper">
           <h1>{post.title}</h1>
           <figcaption>
@@ -36,7 +36,7 @@ const Post = (props) => {
           <div dangerouslySetInnerHTML={{ __html: postNode.html }} />
           <div className="post-meta">
             <PostTags tags={post.tags} />
-            <SocialLinks postPath={slug} postNode={postNode} />
+            <SocialLinks postPath={`/blog${slug}`} postNode={postNode} />
           </div>
           <p>
             Want to be notified first when I publish new content? Subscribe to
