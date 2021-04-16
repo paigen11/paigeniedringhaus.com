@@ -29,6 +29,7 @@ const Post = (props) => {
         </Helmet>
         <SEO postPath={`/blog${slug}`} postNode={postNode} postSEO />
         <div className="post-wrapper">
+          <p className="post-category">{post.category}</p>
           <h1>{post.title}</h1>
           <figcaption>
             Originally published {moment(post.date).format('ll')}

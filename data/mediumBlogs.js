@@ -66,17 +66,6 @@ import puzzle from '../content/images/puzzle.jpg';
 
 export default [
   {
-    date: moment('2018-04-15').format('ll'),
-    img: overheadWork,
-    url:
-      'https://medium.com/@paigen11/how-i-earned-a-full-time-software-engineer-offer-in-6-months-b0fe0d0b6cfa',
-    subTitle:
-      'After I graduated from coding bootcamp, the hard work was only just beginning.',
-    tags: ['career change', 'advice'],
-    timeToRead: 9,
-    title: 'How I Earned a Full-time Software Engineer Offer in 6 Months',
-  },
-  {
     date: moment('2018-04-30').format('ll'),
     img: code,
     url:

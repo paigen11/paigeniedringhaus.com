@@ -29,6 +29,15 @@
       margin: auto;
     }
 
+    .post-category {
+      font-weight: 600;
+      font-size: 1em;
+      text-transform: uppercase;
+      width: min-content;
+      margin: auto;
+      color: $darkBlueTint2;
+    }
+
     .post-meta {
       display: flex;
       flex-direction: column;
