@@ -1,6 +1,4 @@
 import moment from 'moment';
-import overheadWork from '../content/images/overhead-work.jpeg';
-import code from '../content/images/code.jpg';
 import graphql from '../content/images/graphql.png';
 import screenOfCode from '../content/images/screen-of-code.jpeg';
 import moreCode from '../content/images/more-code.jpeg';
@@ -65,16 +63,6 @@ import scientist from '../content/images/scientist.jpeg';
 import puzzle from '../content/images/puzzle.jpg';
 
 export default [
-  {
-    date: moment('2018-04-30').format('ll'),
-    img: code,
-    url:
-      'https://medium.com/@paigen11/javascript-array-methods-to-make-you-a-better-developer-4ce42052d54c',
-    subTitle: 'Learn to manipulate arrays like a pro.',
-    tags: ['javascript'],
-    timeToRead: 7,
-    title: 'JavaScript Array Methods to Make You a Better Developer',
-  },
   {
     date: moment('2018-05-12').format('ll'),
     img: graphql,
