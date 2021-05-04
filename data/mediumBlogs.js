@@ -61,6 +61,7 @@ import cables from '../content/images/cables.jpeg';
 import fistBump from '../content/images/fist-bump.jpeg';
 import scientist from '../content/images/scientist.jpeg';
 import puzzle from '../content/images/puzzle.jpg';
+import paigeSite from '../content/images/paige-site.png';
 
 export default [
   {
@@ -723,5 +724,17 @@ export default [
     tags: ['git', 'netlify', 'github'],
     timeToRead: 12,
     title: 'How to Utilize Submodules within Git Repos',
+  },
+  {
+    date: moment('2021-05-03').format('ll'),
+    img: paigeSite,
+    url:
+      'https://blog.bitsrc.io/animate-a-mobile-hamburger-bar-menu-using-css-and-just-a-hint-of-javascript-f31f928eb992',
+    subTitle:
+      'Add those extra little touches, and propel a site from working to wow.',
+    tags: ['css', 'javascript'],
+    timeToRead: 10,
+    title:
+      'Animate a Mobile Hamburger Bar Menu Using CSS and Just a Hint of JavaScript',
   },
 ];
