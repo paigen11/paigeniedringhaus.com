@@ -447,7 +447,7 @@ export default [
       'Default Function Parameter Values: JavaScript ES6 Feature Series (Pt 3)book',
   },
   {
-    date: moment('2019-09=01').format('ll'),
+    date: moment('2019-09-01').format('ll'),
     img: highlighters,
     url:
       'https://itnext.io/spread-rest-parameters-javascript-es6-feature-series-pt-4-c9e9f0c0228f',
@@ -608,7 +608,7 @@ export default [
     title: 'Animating React with React Transition Group',
   },
   {
-    date: moment('2020=05-11').format('ll'),
+    date: moment('2020-05-11').format('ll'),
     img: stopwatch,
     url:
       'https://blog.bitsrc.io/polling-in-react-using-the-useinterval-custom-hook-e2bcefda4197',
