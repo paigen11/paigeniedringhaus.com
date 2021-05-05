@@ -19,9 +19,8 @@ const PostListing = () => {
   const localSitePosts = usePostListingQuery();
 
   const getAndFormatAllPosts = (posts) => {
-    const postList = [];
-    posts.allMarkdownRemark.edges.forEach((postEdge) => {
-      postList.push({
+    const postList = posts.allMarkdownRemark.edges.map((postEdge) => {
+      return {
         path: postEdge.node.fields.slug,
         tags: postEdge.node.frontmatter.tags,
         thumbnail: postEdge.node.frontmatter.thumbnail.childImageSharp.fixed,
@@ -29,7 +28,7 @@ const PostListing = () => {
         subTitle: postEdge.node.frontmatter.subTitle,
         date: postEdge.node.fields.date,
         timeToRead: postEdge.node.timeToRead,
-      });
+      };
     });
     const fullPostList = postList.concat(mediumBlogs);
     const sortedPostsList = sortArrayByDate(fullPostList);

@@ -33,7 +33,7 @@ const ContactPage = () => {
           <br />I may not reply immediately, but I will eventually.
         </p>
         <h2>
-          Follow me and chat on social media&nbsp;
+          Follow me & chat on social media&nbsp;
           <FontAwesomeIcon icon={faTwitter} />
         </h2>
         <ul>
