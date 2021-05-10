@@ -15,9 +15,7 @@ const SEO = (props) => {
   if (postSEO) {
     const postMeta = postNode.frontmatter;
     ({ title } = postMeta);
-    description = postMeta.description
-      ? postMeta.description
-      : postNode.subTitle;
+    description = postMeta.subTitle;
     image = postNode.frontmatter.featuredImage.childImageSharp.fluid.src;
     postURL = urljoin(config.siteUrl, config.pathPrefix, postPath);
     canonical = postMeta.canonical;
@@ -110,6 +108,7 @@ const SEO = (props) => {
       },
     );
   }
+  console.log('image', image);
   return (
     <Helmet
       link={
