@@ -28,7 +28,7 @@ const Post = (props) => {
           <title>{`${post.title} | ${config.siteTitle}`}</title>
         </Helmet>
         <SEO postPath={`/blog${slug}`} postNode={postNode} postSEO />
-        <div className="post-wrapper">
+        <article className="post-wrapper">
           <p className="post-category">{post.category}</p>
           <h1>{post.title}</h1>
           <figcaption>
@@ -44,7 +44,7 @@ const Post = (props) => {
             my newsletter.
           </p>
           <Subscribe />
-        </div>
+        </article>
       </div>
     </Layout>
   );

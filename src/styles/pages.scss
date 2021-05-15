@@ -236,8 +236,12 @@ input {
 }
 
 .contact-container {
-  h2:not(:first-of-type) {
+  h2 {
     border-bottom: 2px solid $medBlue;
+  }
+
+  .constact-no-underline {
+    border-bottom: none;
   }
 
   p {

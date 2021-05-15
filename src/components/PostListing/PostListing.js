@@ -90,7 +90,7 @@ const PostListing = () => {
           <div className="posts-wrapper wide-page-body">
             {posts.length ? (
               posts.map((post, index) => (
-                <div className="post" key={index}>
+                <article className="post" key={index}>
                   <p className="post-date">
                     {post.date} {'\u2022'} {post.timeToRead} min read
                   </p>
@@ -116,7 +116,7 @@ const PostListing = () => {
                     </a>
                   )}
                   <PostTags tags={post.tags} />
-                </div>
+                </article>
               ))
             ) : (
               <div className="empty-results">
