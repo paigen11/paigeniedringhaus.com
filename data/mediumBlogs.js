@@ -1,5 +1,4 @@
 import moment from 'moment';
-import graphql from '../content/images/graphql.png';
 import screenOfCode from '../content/images/screen-of-code.jpeg';
 import moreCode from '../content/images/more-code.jpeg';
 import laptopWithCode from '../content/images/laptop-with-code.jpeg';
@@ -64,16 +63,6 @@ import puzzle from '../content/images/puzzle.jpg';
 import paigeSite from '../content/images/paige-site.png';
 
 export default [
-  {
-    date: moment('2018-05-12').format('ll'),
-    img: graphql,
-    url: 'https://medium.com/@paigen11/what-is-graphql-really-76c48e720202',
-    subTitle:
-      'The API standard providing a more efficient, powerful and flexible alternative to REST.',
-    tags: ['graphql'],
-    timeToRead: 10,
-    title: 'What is GraphQL, really?',
-  },
   {
     date: moment('2018-05-26').format('ll'),
     img: screenOfCode,
