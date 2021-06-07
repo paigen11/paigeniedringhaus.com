@@ -34,4 +34,11 @@ export default [
       'https://www.telerik.com/react-wednesdays/working-in-large-react-apps-with-paige-niedringhaus',
     img: telerik,
   },
+  {
+    title: 'React Wednesdays React All-Day: Modernizing Enterprise React Apps',
+    date: moment('2021-06-02').format('LL'),
+    path:
+      'https://www.telerik.com/react-wednesdays/react-all-day-modernizing-enterprise-react-apps',
+    img: telerik,
+  },
 ];
