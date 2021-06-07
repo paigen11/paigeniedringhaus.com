@@ -16,15 +16,11 @@ const MainLayout = ({ children }) => {
   });
 
   useEffect(() => {
-    const checkInitialViewportSize = () => {
-      if (window.innerWidth > 767) {
-        setShowMobileNavMenu(false);
-      } else if (window.innerWidth < 767) {
-        setShowMobileNavMenu(true);
-      }
-    };
-
-    checkInitialViewportSize();
+    if (window.innerWidth > 767) {
+      setShowMobileNavMenu(false);
+    } else if (window.innerWidth < 767) {
+      setShowMobileNavMenu(true);
+    }
   }, []);
 
   return (
