@@ -28,7 +28,7 @@ const Navigation = () => {
     return () => {
       window.removeEventListener('resize', handleResize);
     };
-  });
+  }, []);
 
   return (
     <>
