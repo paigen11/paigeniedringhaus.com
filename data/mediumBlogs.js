@@ -433,7 +433,7 @@ export default [
     tags: ['javascript', 'es6'],
     timeToRead: 8,
     title:
-      'Default Function Parameter Values: JavaScript ES6 Feature Series (Pt 3)book',
+      'Default Function Parameter Values: JavaScript ES6 Feature Series (Pt 3)',
   },
   {
     date: moment('2019-09-01').format('ll'),
