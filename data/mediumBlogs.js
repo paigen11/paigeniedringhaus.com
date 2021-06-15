@@ -64,18 +64,6 @@ import paigeSite from '../content/images/paige-site.png';
 
 export default [
   {
-    date: moment('2018-05-26').format('ll'),
-    img: screenOfCode,
-    url:
-      'https://medium.com/@paigen11/why-a-cloud-config-server-is-crucial-to-a-good-ci-cd-pipeline-and-how-to-set-it-up-pt-1-fa628a125776',
-    subTitle:
-      'Store and update variables your application will need to run in just one place.',
-    tags: ['java', 'spring boot', 'devops'],
-    timeToRead: 7,
-    title:
-      'Why a Spring Cloud Config Server is Crucial to a Good CI/CD Pipeline (Pt 1)',
-  },
-  {
     date: moment('2018-06-02').format('ll'),
     img: moreCode,
     url:

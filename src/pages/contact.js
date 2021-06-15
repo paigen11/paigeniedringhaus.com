@@ -59,7 +59,7 @@ const ContactPage = () => {
             <li>
               And I publish on Medium under&nbsp;
               <a
-                href="https://medium.com/@paigen11"
+                href="https://paigen11.medium.com"
                 target="_blank"
                 rel="noopener noreferrer"
               >

@@ -16,8 +16,15 @@ const BlogPage = () => {
           <p className="page-body blog-disclaimer">
             <strong>Please note:</strong> I'm in the process of hosting all of
             these posts here on my personal site, but until that's complete,
-            clicking on many will take you to the original Medium article in a
-            new tab.
+            clicking on many will take you to the original&npsp;
+            <a
+              href="https://paigen11.medium.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Medium article
+            </a>
+            &nbsp; new tab.
           </p>
         </section>
         <section>

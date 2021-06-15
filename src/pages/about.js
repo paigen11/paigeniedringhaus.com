@@ -70,7 +70,7 @@ const AboutPage = () => {
             &nbsp;📻, and wrote about my early experiences as a new developer in
             a few&nbsp;
             <a
-              href="https://medium.com/@paigen11/how-i-went-from-a-digital-marketer-to-a-software-engineer-in-4-months-7ed99c65d360"
+              href="https://www.paigeniedringhaus.com/blog/how-i-went-from-a-digital-marketer-to-a-software-engineer-in-4-months"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -104,7 +104,7 @@ const AboutPage = () => {
           <p>
             I've written regularly on&nbsp;
             <a
-              href="https://medium.com/@paigen11"
+              href="https://paigen11.medium.com"
               target="_blank"
               rel="noopener noreferrer"
             >
