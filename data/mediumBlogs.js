@@ -1,5 +1,4 @@
 import moment from 'moment';
-import screenOfCode from '../content/images/screen-of-code.jpeg';
 import moreCode from '../content/images/more-code.jpeg';
 import laptopWithCode from '../content/images/laptop-with-code.jpeg';
 import docker1 from '../content/images/docker-1.jpeg';
@@ -61,6 +60,7 @@ import fistBump from '../content/images/fist-bump.jpeg';
 import scientist from '../content/images/scientist.jpeg';
 import puzzle from '../content/images/puzzle.jpg';
 import paigeSite from '../content/images/paige-site.png';
+import iphoneIpad from '../content/images/iphone-ipad-coffee.jpg';
 
 export default [
   {
@@ -713,5 +713,15 @@ export default [
     timeToRead: 10,
     title:
       'Animate a Mobile Hamburger Bar Menu Using CSS and Just a Hint of JavaScript',
+  },
+  {
+    date: moment('2021-06-24').format('ll'),
+    img: iphoneIpad,
+    url:
+      'https://blog.bitsrc.io/using-react-hooks-to-recognize-respond-to-current-viewport-size-c385009005c0',
+    subTitle: 'Because Edge Cases are the Only Certainty in Development',
+    tags: ['react', 'javascript'],
+    timeToRead: 8,
+    title: 'Using React Hooks to Recognize & Respond to Current Viewport Size',
   },
 ];
