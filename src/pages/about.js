@@ -95,7 +95,7 @@ const AboutPage = () => {
             focus and interest right now is on&nbsp;
             <strong>
               frontend web development technologies like React, Next.js and Hugo,
-              and Internet of Things hardware like Blues makes.
+              and Internet of Things hardware like Blues makes
             </strong>
             .
           </p>
