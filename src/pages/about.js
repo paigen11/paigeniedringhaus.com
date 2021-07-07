@@ -83,7 +83,15 @@ const AboutPage = () => {
           <h2>And now, I want to help others find the joy in coding too.</h2>
           <p>
             Today, I work with a team of talented folks as a staff software
-            engineer at the IoT startup [Blues Wireless](https://blues.io/). I'm always learning new things, but my
+            engineer at the IoT startup&nbsp; 
+            <a
+              href="https://blues.io/"
+              target="_blank"
+              rel="nooperner noreferrer"
+            >
+              Blues Wireless
+            </a>
+            &nbsp;. I'm always learning new things, but my
             focus and interest right now is on&nbsp;
             <strong>
               frontend web development technologies like React, Next.js and Hugo,
