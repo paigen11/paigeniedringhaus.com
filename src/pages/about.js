@@ -15,7 +15,7 @@ const AboutPage = () => {
         <section>
           <h2>Hey, I'm Paige Niedringhaus.</h2>
           <p>
-            I'm a full stack senior software engineer, technical writer, and
+            I'm a full stack staff software engineer, technical writer, and
             speaker, originally from St. Louis, MO 🇺🇸.
           </p>
         </section>
@@ -82,14 +82,18 @@ const AboutPage = () => {
         <section>
           <h2>And now, I want to help others find the joy in coding too.</h2>
           <p>
-            Today, I work with a team of developers as a senior software
-            engineer at The Home Depot. I'm always learning new things, but my
+            Today, I work with a team of talented folks as a staff software
+            engineer at the IoT startup [Blues Wireless](https://blues.io/). I'm always learning new things, but my
             focus and interest right now is on&nbsp;
             <strong>
-              frontend web development technologies like React, Gatsby, Next.js
-              and (of course) JavaScript
+              frontend web development technologies like React, Next.js and Hugo,
+              and Internet of Things hardware like Blues makes.
             </strong>
             .
+          </p>
+          <p>
+            Previously, I was a senior software 
+            engineer at The Home Depot.
           </p>
           <p>
             Bringing cool user interfaces to life with HTML, CSS and JavaScript,
@@ -136,7 +140,7 @@ const AboutPage = () => {
           <figure>
             <img src={seanAndPaige} alt="sean and paige photo" />
             <figcaption>
-              Sean and I, looking extra spiffy for our friend's wedding.
+              Sean and me, looking extra spiffy for our friend's wedding.
             </figcaption>
           </figure>
         </section>
