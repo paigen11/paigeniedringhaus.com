@@ -41,4 +41,11 @@ export default [
       'https://www.telerik.com/react-wednesdays/react-all-day-modernizing-enterprise-react-apps',
     img: telerik,
   },
+    {
+    title: "React Wednesdays: Let's Try GitHub Copilot Together",
+    date: moment('2021-07-14').format('LL'),
+    path:
+      'https://www.telerik.com/react-wednesdays/react-wednesdays-let-s-try-github-copilot-together',
+    img: telerik,
+  },
 ];
