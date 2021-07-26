@@ -1,5 +1,4 @@
 import moment from 'moment';
-import moreCode from '../content/images/more-code.jpeg';
 import laptopWithCode from '../content/images/laptop-with-code.jpeg';
 import docker1 from '../content/images/docker-1.jpeg';
 import docker2 from '../content/images/docker-2.png';
@@ -63,18 +62,6 @@ import paigeSite from '../content/images/paige-site.png';
 import iphoneIpad from '../content/images/iphone-ipad-coffee.jpg';
 
 export default [
-  {
-    date: moment('2018-06-02').format('ll'),
-    img: moreCode,
-    url:
-      'https://medium.com/@paigen11/leveraging-a-spring-cloud-config-server-in-a-nodejs-application-for-feature-toggles-pt-2-f331c08dfdb6',
-    subTitle:
-      'Yes, you can use a Java config server to alter a Node.js service.',
-    tags: ['spring boot', 'nodejs', 'javascript', 'devops'],
-    timeToRead: 9,
-    title:
-      "Leveraging a Spring Cloud Config Server in a Node.js App's Feature Toggles (Pt 2)",
-  },
   {
     date: moment('2018-06-08').format('ll'),
     img: laptopWithCode,

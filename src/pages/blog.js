@@ -16,7 +16,7 @@ const BlogPage = () => {
           <p className="page-body blog-disclaimer">
             <strong>Please note:</strong> I'm in the process of hosting all of
             these posts here on my personal site, but until that's complete,
-            clicking on many will take you to the original&npsp;
+            clicking on many will take you to the original&nbsp;
             <a
               href="https://paigen11.medium.com"
               target="_blank"

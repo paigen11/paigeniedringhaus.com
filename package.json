@@ -74,7 +74,10 @@
     "tech",
     "articles",
     "blog",
-    "developer"
+    "developer",
+    "frontend",
+    "react",
+    "gatsby"
   ],
   "license": "MIT",
   "main": "n/a",
@@ -96,5 +99,9 @@
     "plugins": [
       "remark-preset-lint-recommended"
     ]
+  },
+  "volta": {
+    "node": "14.16.1",
+    "npm": "7.20.1"
   }
 }
