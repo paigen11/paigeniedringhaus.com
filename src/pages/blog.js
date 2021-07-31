@@ -24,7 +24,7 @@ const BlogPage = () => {
             >
               Medium article
             </a>
-            &nbsp; new tab.
+            &nbsp;in a new tab.
           </p>
         </section>
         <section>
