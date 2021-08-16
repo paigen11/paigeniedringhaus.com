@@ -13,7 +13,7 @@
     }
 
     blockquote {
-      border-left: 3px solid;
+      border-left: 3px solid $lightBlueTint2;
       background: $lightBlue;
       padding: 1px 0;
       border-radius: 4px;
@@ -60,7 +60,7 @@
 
     a .language-text {
       color: $blueViolet;
-      background: rgba(0, 0, 0, 0.35);
+      background: rgba(0, 0, 0, 0.25);
     }
 
     .gatsby-code-title {

@@ -83,7 +83,7 @@ const AboutPage = () => {
           <h2>And now, I want to help others find the joy in coding too.</h2>
           <p>
             Today, I work with a team of talented folks as a staff software
-            engineer at the IoT startup&nbsp; 
+            engineer at the IoT startup&nbsp;
             <a
               href="https://blues.io/"
               target="_blank"
@@ -91,18 +91,15 @@ const AboutPage = () => {
             >
               Blues Wireless
             </a>
-            &nbsp;. I'm always learning new things, but my
-            focus and interest right now is on&nbsp;
+            &nbsp;. I'm always learning new things, but my focus and interest
+            right now is on&nbsp;
             <strong>
-              frontend web development technologies like React, Next.js and Hugo,
-              and Internet of Things hardware like Blues makes
+              frontend web development technologies like React and Next.js,
+              Hugo, and Internet of Things hardware like Blues makes
             </strong>
             .
           </p>
-          <p>
-            Previously, I was a senior software 
-            engineer at The Home Depot.
-          </p>
+          <p>Previously, I was a senior software engineer at The Home Depot.</p>
           <p>
             Bringing cool user interfaces to life with HTML, CSS and JavaScript,
             and solving new problems daily is what I enjoy most about my job.

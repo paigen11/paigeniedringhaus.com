@@ -33,6 +33,18 @@ const Post = (props) => {
           <h1>{post.title}</h1>
           <figcaption>
             Originally published {moment(post.date).format('ll')}
+            {post.canonical ? (
+              <>
+                &nbsp;in&nbsp;
+                <a
+                  href={post.canonical}
+                  target="_blank"
+                  rel="nooperner noreferrer"
+                >
+                  <strong>{post.publication}</strong>
+                </a>
+              </>
+            ) : null}
           </figcaption>
           <div dangerouslySetInnerHTML={{ __html: postNode.html }} />
           <div className="post-meta">
@@ -73,6 +85,7 @@ export const pageQuery = graphql`
         category
         tags
         canonical
+        publication
       }
       fields {
         slug
