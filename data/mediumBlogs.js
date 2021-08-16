@@ -1,5 +1,4 @@
 import moment from 'moment';
-import laptopWithCode from '../content/images/laptop-with-code.jpeg';
 import docker1 from '../content/images/docker-1.jpeg';
 import docker2 from '../content/images/docker-2.png';
 import googleJib from '../content/images/google-jib.png';
@@ -62,17 +61,6 @@ import paigeSite from '../content/images/paige-site.png';
 import iphoneIpad from '../content/images/iphone-ipad-coffee.jpg';
 
 export default [
-  {
-    date: moment('2018-06-08').format('ll'),
-    img: laptopWithCode,
-    url:
-      'https://itnext.io/react-svg-images-and-the-webpack-loader-to-make-them-play-nice-2d177ae34d2b',
-    subTitle:
-      'React and SVGs did not start out friends. One NPM package offered an answer.',
-    tags: ['react', 'javascript'],
-    timeToRead: 5,
-    title: 'React, SVG Images and the Webpack Loader to Make Them Play Nice',
-  },
   {
     date: moment('2018-06-23').format('ll'),
     img: docker1,
