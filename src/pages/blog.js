@@ -24,6 +24,14 @@ const BlogPage = () => {
             >
               Medium article
             </a>
+            &nbsp;or&nbsp;
+            <a
+              href="https://www.hackster.io/paige-niedringhaus"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Hackster.io project
+            </a>
             &nbsp;in a new tab.
           </p>
         </section>

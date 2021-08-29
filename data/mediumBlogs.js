@@ -59,6 +59,7 @@ import scientist from '../content/images/scientist.jpeg';
 import puzzle from '../content/images/puzzle.jpg';
 import paigeSite from '../content/images/paige-site.png';
 import iphoneIpad from '../content/images/iphone-ipad-coffee.jpg';
+import gpsTracker from '../content/images/gps-tracker.jpeg';
 
 export default [
   {
@@ -698,5 +699,15 @@ export default [
     tags: ['react', 'javascript'],
     timeToRead: 8,
     title: 'Using React Hooks to Recognize & Respond to Current Viewport Size',
+  },
+  {
+    date: moment('2021-08-24').format('ll'),
+    img: gpsTracker,
+    url:
+      'https://www.hackster.io/paige-niedringhaus/low-code-gps-asset-tracker-and-map-display-b10419',
+    subTitle:
+      'Build a GPS tracker with a Blues Wireless Notecarrier, and map it with Datacake.',
+    tags: ['iot', 'gps', 'cellular', 'blues wireless', 'datacake'],
+    title: 'Low Code GPS Asset Tracker and Map Display',
   },
 ];

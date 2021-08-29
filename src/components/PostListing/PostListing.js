@@ -92,7 +92,12 @@ const PostListing = () => {
               posts.map((post, index) => (
                 <article className="post" key={index}>
                   <p className="post-date">
-                    {post.date} {'\u2022'} {post.timeToRead} min read
+                    {post.date}&nbsp;
+                    {post.timeToRead ? (
+                      <>
+                        {'\u2022'} {post.timeToRead} min read
+                      </>
+                    ) : null}
                   </p>
                   {post.path ? (
                     <Link to={`/blog${post.path}`} key={post.title}>
