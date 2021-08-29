@@ -32,12 +32,12 @@ const Post = (props) => {
           <p className="post-category">{post.category}</p>
           <h1>{post.title}</h1>
           <figcaption>
-            Originally published {moment(post.date).format('ll')}
-            {post.canonical ? (
+            First published {moment(post.date).format('ll')}
+            {post.ogLink ? (
               <>
                 &nbsp;in&nbsp;
                 <a
-                  href={post.canonical}
+                  href={post.ogLink}
                   target="_blank"
                   rel="nooperner noreferrer"
                 >
@@ -85,6 +85,7 @@ export const pageQuery = graphql`
         category
         tags
         canonical
+        ogLink
         publication
       }
       fields {
