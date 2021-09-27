@@ -1,5 +1,4 @@
 import moment from 'moment';
-import docker1 from '../content/images/docker-1.jpeg';
 import docker2 from '../content/images/docker-2.png';
 import googleJib from '../content/images/google-jib.png';
 import sequelize from '../content/images/sequelize.png';
@@ -62,17 +61,6 @@ import iphoneIpad from '../content/images/iphone-ipad-coffee.jpg';
 import gpsTracker from '../content/images/gps-tracker.jpeg';
 
 export default [
-  {
-    date: moment('2018-06-23').format('ll'),
-    img: docker1,
-    url:
-      'https://itnext.io/docker-101-fundamentals-the-dockerfile-b33b59d0f14b',
-    subTitle:
-      'Containerize all project dependencies in one place for easy deployments anywhere.',
-    tags: ['docker', 'devops'],
-    timeToRead: 11,
-    title: 'Docker 101: Fundamentals & The Dockerfile',
-  },
   {
     date: moment('2018-07-07').format('ll'),
     img: docker2,

@@ -19,7 +19,7 @@ body {
 
 #___gatsby #gatsby-focus-wrapper {
   min-height: 100vh;
-  min-width: 100vw;
+  min-width: 100%;
 }
 
 .layout-container {
@@ -29,7 +29,7 @@ body {
   flex-direction: column;
   justify-content: space-between;
   min-height: 100vh;
-  min-width: 100vw;
+  min-width: 100%;
   background: $medBlueTint;
 }
 
