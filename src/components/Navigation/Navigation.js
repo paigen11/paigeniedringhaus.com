@@ -61,6 +61,9 @@ const Navigation = () => {
                   <Link className="link" activeClassName="active" to="/blog">
                     Blog
                   </Link>
+                  <Link className="link" activeClassName="active" to="/courses">
+                    Courses
+                  </Link>
                   <Link className="link" activeClassName="active" to="/media">
                     Media
                   </Link>

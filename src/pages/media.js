@@ -25,7 +25,7 @@ const MediaPage = () => {
     <Layout>
       <div className="media-container page-body">
         <Helmet title={`Media | ${config.siteTitle}`} />
-        <h1>Media</h1>
+        <h1>Media & Courses</h1>
         <section>
           <p className="intro">
             In addition to my own <Link to="/blog">blog posts</Link>, I've been
@@ -34,8 +34,7 @@ const MediaPage = () => {
             and appearing as a guest on podcasts.
           </p>
           <p className="intro">
-            Since 2020, I've also been a regular co-host of the tech
-            podcast&nbsp;
+            Since 2020, I've been a regular co-host of the tech podcast&nbsp;
             <a
               href="https://devchat.tv/react-round-up/"
               target="_blank"

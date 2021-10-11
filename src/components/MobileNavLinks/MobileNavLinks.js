@@ -13,6 +13,9 @@ const MobileNavLinks = ({ open }) => {
       <Link className="mobile-link" activeClassName="active" to="/blog">
         Blog
       </Link>
+      <Link className="link" activeClassName="active" to="/courses">
+        Courses
+      </Link>
       <Link className="mobile-link" activeClassName="active" to="/media">
         Media
       </Link>

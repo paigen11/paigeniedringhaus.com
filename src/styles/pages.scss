@@ -135,6 +135,20 @@ input {
   }
 }
 
+// courses page
+.courses-container {
+  .intro:last-child {
+    border-bottom: 2px solid $medBlue;
+    padding-bottom: 1.5rem;
+  }
+
+  .course-items {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0.25rem 0;
+  }
+}
 // about page
 .about-container {
   a {
