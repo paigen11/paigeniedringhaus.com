@@ -162,6 +162,8 @@ input {
 
     img {
       border-radius: 5px;
+      min-width: 280px;
+      width: 100%;
     }
   }
 }
@@ -170,17 +172,6 @@ input {
   .courses-container {
     .course-items {
       padding: 20px 10px;
-
-      .title {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-      }
-
-      img {
-        max-width: 280px;
-      }
     }
   }
 }
