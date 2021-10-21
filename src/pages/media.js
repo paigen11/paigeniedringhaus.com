@@ -42,9 +42,9 @@ const MediaPage = () => {
             >
               React&nbsp;Round&nbsp;Up&nbsp;
             </a>
-            , a bi-monthly podcast dedicated to React and the development
-            community. Each episode we talk to different experts in the
-            community about all things JavaScript and beyond.
+            , a weekly podcast dedicated to React and the development community.
+            Each episode we talk to different experts in the community about all
+            things JavaScript and beyond.
           </p>
         </section>
         <section>
