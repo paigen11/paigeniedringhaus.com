@@ -34,8 +34,7 @@ const MediaPage = () => {
             and appearing as a guest on podcasts.
           </p>
           <p className="intro">
-            Since 2020, I've also been a regular co-host of the tech
-            podcast&nbsp;
+            Since 2020, I've been a regular co-host of the tech podcast&nbsp;
             <a
               href="https://devchat.tv/react-round-up/"
               target="_blank"

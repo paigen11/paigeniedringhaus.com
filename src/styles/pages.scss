@@ -135,6 +135,47 @@ input {
   }
 }
 
+// courses page
+.courses-container {
+  .intro:last-child {
+    border-bottom: 2px solid $medBlue;
+    padding-bottom: 1.5rem;
+  }
+
+  ul {
+    padding: 0;
+  }
+
+  .course-items {
+    display: flex;
+    border-radius: 5px;
+    padding: 20px 30px;
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px;
+
+    .title {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    img {
+      border-radius: 5px;
+      min-width: 280px;
+      width: 100%;
+    }
+  }
+}
+
+@media only screen and (max-width: 375px) {
+  .courses-container {
+    .course-items {
+      padding: 20px 10px;
+    }
+  }
+}
+
 // about page
 .about-container {
   a {
