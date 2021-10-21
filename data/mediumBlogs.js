@@ -589,7 +589,7 @@ export default [
       'https://blog.bitsrc.io/mocking-http-calls-in-cypress-end-to-end-tests-fa2e6b7caaf7',
     subTitle:
       "Don't let unreliable test data keep your new features from making it to production",
-    tags: ['javascript', 'cypress', 'testing'],
+    tags: ['javascript', 'cypress', 'testing', 'e2e'],
     timeToRead: 10,
     title: 'Mocking HTTP Calls in Cypress End-to-End Tests',
   },
@@ -709,5 +709,15 @@ export default [
     tags: ['javascript', 'react', 'nodejs', 'nvm', 'volta'],
     title:
       "Introducing Volta - it manages Node.js versions so you don't have to",
+  },
+  {
+    date: moment('2021-10-21').format('ll'),
+    img: dualMonitors,
+    url:
+      'https://www.newline.co/write/cypress-studio-the-underrated-feature-speeding-up-e2e-testing--7bc4616b',
+    subTitle:
+      'The unsung feature dramatically cutting down the time it takes to write end-to-end tests',
+    tags: ['javascript', 'testing', 'e2e', 'cypress'],
+    title: 'Cypress Studio - the underrated  feature speeding up e2e testing',
   },
 ];
