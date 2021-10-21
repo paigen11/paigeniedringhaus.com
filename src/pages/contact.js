@@ -37,7 +37,6 @@ const ContactPage = () => {
               hellopaigen&nbsp;@&nbsp;gmail.com
             </a>
             .
-            <br />I may not reply immediately, but I will eventually.
           </p>
         </section>
         <section>
@@ -95,7 +94,10 @@ const ContactPage = () => {
             I promise to never send spam, only useful emails about new articles
             I've written or links to talks I've given.
           </p>
+          <br />
           <Subscribe />
+          <br />
+          <br />
           <p>Thanks and have a great day!</p>
         </section>
       </div>

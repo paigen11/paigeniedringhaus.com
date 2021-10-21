@@ -8,7 +8,6 @@ import '../styles/pages.scss';
 
 const CoursesPage = () => {
   return (
-    // todo give this a background and shadow to make it look like a card and test mobile view
     <Layout>
       <div className="courses-container page-body">
         <Helmet title={`Courses | ${config.siteTitle}`} />
@@ -16,31 +15,37 @@ const CoursesPage = () => {
         <section>
           <p className="intro">
             Having spent the majority of my development career building
-            enterprise level applications, in 2021&nbsp;
-            {/* todo make this a separate check it out button  */}
+            enterprise level applications, I wrote the React course I wish I
+            could have learned from early on.
+          </p>
+          <p className="intro">
+            There's so much to know when it comes to long-lived, business
+            critical applications in large organizations.
+          </p>
+          <p className="intro">
+            From upgrading and refactoring an existing application, to tooling
+            and linting, to design sytems and testing - the list is long.
+          </p>
+          <p className="intro">
+            I packed all I've learned into a single course about building and
+            maintaining enterprise-sized apps. Get lots of material and hands-on
+            practice updating a React app to meet today's high software
+            standards.
+          </p>
+          <div className="intro">
             <a
               href="https://www.newline.co/courses/newline-guide-to-modernizing-an-enterprise-react-app"
               target="_blank"
               rel="noopener noreferrer"
             >
-              I wrote the React course I wish I could have learned from early on
+              <button
+                aria-label="Check out newline Guide to Modernizing Enterprise React Apps"
+                className="subscribe-button"
+              >
+                Check out the course
+              </button>
             </a>
-            .
-          </p>
-          <p className="intro">
-            While most React tutorials start with the latest version of the
-            framework, and may touch on testing and tooling, there's so much
-            more involved when it comes to long-lived, business critical
-            applications in large organizations.
-          </p>
-          <p className="intro">
-            From upgrading and refactoring an existing application to use Hooks,
-            to adding project tooling and linting configs, to incorporating
-            design libraries and adding integration and end-to-end tests, I
-            tried to pack as much of what I've learned into a single course as
-            we update an example React app similar to what you'd find in the
-            real world.
-          </p>
+          </div>
         </section>
         <section>
           <ul>

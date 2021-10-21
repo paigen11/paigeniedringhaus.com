@@ -25,7 +25,7 @@ const MediaPage = () => {
     <Layout>
       <div className="media-container page-body">
         <Helmet title={`Media | ${config.siteTitle}`} />
-        <h1>Media & Courses</h1>
+        <h1>Media</h1>
         <section>
           <p className="intro">
             In addition to my own <Link to="/blog">blog posts</Link>, I've been
