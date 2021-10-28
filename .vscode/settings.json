@@ -22,5 +22,6 @@
     "statusBarItem.remoteBackground": "#a30b5e",
     "statusBarItem.remoteForeground": "#e7e7e7"
   },
-  "peacock.color": "#a30b5e"
+  "peacock.color": "#a30b5e",
+  "window.zoomLevel": 0
 }

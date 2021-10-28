@@ -6,6 +6,7 @@ import theHomeDepot from '../src/images/thumbnails/theHomeDepot.png';
 import breakingTheGlass from '../src/images/thumbnails/breakingTheGlass.png';
 import react from '../content/images/react.png';
 import techElevator from '../src/images/thumbnails/techElevator.png';
+import bluesWireless from '../src/images/thumbnails/bluesWireless.png';
 
 export default [
   {
@@ -36,7 +37,7 @@ export default [
   },
   {
     title:
-      'The Home Depot Tech Talk: Google Jib: Getting Expert Docker Results Without Any Knowledge of Docker',
+      'The Home Depot Tech Talk: Google Jib: Expert Docker Results Without Docker Knowledge',
     date: moment('2018-10-03').format('LL'),
     path: null,
     img: theHomeDepot,
@@ -98,5 +99,17 @@ export default [
     date: moment('2021-02-05').format('LL'),
     path: null,
     img: theHomeDepot,
+  },
+  {
+    title: 'Blues Wireless: Cypress End-to-End Testing Demo',
+    date: moment('2021-10-26').format('LL'),
+    path: null,
+    img: bluesWireless,
+  },
+  {
+    title: 'DigitalCrafts Alumni Speaker Panel',
+    date: moment('2021-10-28').format('LL'),
+    path: null,
+    img: digitalCrafts,
   },
 ];

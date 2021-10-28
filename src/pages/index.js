@@ -39,7 +39,8 @@ const App = () => {
         <section>
           <p className="welcome">
             While you're here, you can check out my&nbsp;
-            <Link to="/blog">blog posts</Link>, see my&nbsp;
+            <Link to="/blog">blog posts</Link> and&nbsp;
+            <Link to="/courses">courses</Link>, see my&nbsp;
             <Link to="/media">talks and interviews</Link>, learn more&nbsp;
             <Link to="/about">about me</Link>, or&nbsp;
             <Link to="/contact">get in touch</Link>.
