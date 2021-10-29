@@ -7,6 +7,7 @@ import breakingTheGlass from '../src/images/thumbnails/breakingTheGlass.png';
 import react from '../content/images/react.png';
 import techElevator from '../src/images/thumbnails/techElevator.png';
 import bluesWireless from '../src/images/thumbnails/bluesWireless.png';
+import newline from '../src/images/thumbnails/newline-logo.png';
 
 export default [
   {
@@ -111,5 +112,12 @@ export default [
     date: moment('2021-10-28').format('LL'),
     path: null,
     img: digitalCrafts,
+  },
+  {
+    title:
+      'Upgrade an Outdated React App (React Hooks & more) with Paige Niedringhaus',
+    date: moment('2021-10-29').format('LL'),
+    path: 'https://www.youtube.com/watch?v=Prv6Pt1Ltrs',
+    img: newline,
   },
 ];

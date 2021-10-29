@@ -32,20 +32,28 @@ const CoursesPage = () => {
             practice updating a React app to meet today's high software
             standards.
           </p>
-          <div className="intro">
+          <p className="intro">
+            If you'd like a sneak peek of everything in my course, check out
+            this free YouTube video. It covers the exact techniques in use at
+            leading companies to support their line of business React apps.
+          </p>
+          <div className="intro button">
             <a
-              href="https://www.newline.co/courses/newline-guide-to-modernizing-an-enterprise-react-app"
+              href="https://www.youtube.com/watch?v=Prv6Pt1Ltrs"
               target="_blank"
               rel="noopener noreferrer"
             >
               <button
-                aria-label="Check out newline Guide to Modernizing Enterprise React Apps"
+                aria-label="Check out a free video on YouTube giving you a taste of The newline Guide to Modernizing Enterprise React Apps"
                 className="subscribe-button"
               >
-                Check out the course
+                Free course sneak peek
               </button>
             </a>
           </div>
+          <p className="intro">
+            Or click the link below to go straight to my full course.
+          </p>
         </section>
         <section>
           <ul>

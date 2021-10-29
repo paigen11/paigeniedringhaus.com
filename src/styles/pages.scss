@@ -170,6 +170,11 @@ input {
 
 @media only screen and (max-width: 375px) {
   .courses-container {
+    .intro.button {
+      display: flex;
+      justify-content: center;
+    }
+
     .course-items {
       padding: 20px 10px;
     }
