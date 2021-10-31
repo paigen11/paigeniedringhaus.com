@@ -9,12 +9,14 @@ import podcasts from '../../data/podcasts';
 import Layout from '../components/Layout/Layout';
 import logRocket from '../images/thumbnails/logRocket.jpg';
 import butterCMS from '../images/thumbnails/butterCMS.png';
+import newline from '../images/thumbnails/newline-logo.png';
 import '../styles/pages.scss';
 
 const MediaPage = () => {
   const companyMap = {
     ButterCMS: butterCMS,
     LogRocket: logRocket,
+    newline: newline,
   };
 
   const companies = Object.entries(publications);

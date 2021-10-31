@@ -56,7 +56,7 @@ const ContactPage = () => {
               </a>
             </li>
             <li>
-              And I publish on Medium under&nbsp;
+              I publish on Medium under&nbsp;
               <a
                 href="https://paigen11.medium.com"
                 target="_blank"
@@ -64,6 +64,17 @@ const ContactPage = () => {
               >
                 @paigen11
               </a>
+            </li>
+            <li>
+              And I've started sharing my IoT projects on&nbsp;
+              <a
+                href="https://www.hackster.io/paige-niedringhaus"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Hackster.io
+              </a>
+              &nbsp;too.
             </li>
           </ul>
         </section>
