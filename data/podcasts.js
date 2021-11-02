@@ -3,6 +3,7 @@ import jsJabber from '../src/images/thumbnails/jsJabber.jpg';
 import myJsStory from '../src/images/thumbnails/myJsStory.jpg';
 import reactRoundUp from '../src/images/thumbnails/reactRoundUp.png';
 import telerik from '../src/images/thumbnails/telerik.png';
+import seDaily from '../src/images/thumbnails/seDaily.png';
 
 export default [
   {
@@ -55,5 +56,13 @@ export default [
     path:
       'https://reactroundup.com/modernizing-enterprise-react-apps-with-paige-niedringhaus-rru-160',
     img: reactRoundUp,
+  },
+  {
+    title:
+      'Software Engineering Daily: Enterprise React Apps with Paige Niedringhaus',
+    date: moment('2021-11-02').format('LL'),
+    path:
+      'https://softwareengineeringdaily.com/2021/11/02/enterprise-react-apps-with-paige-niedringhaus/',
+    img: seDaily,
   },
 ];
