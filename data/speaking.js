@@ -120,4 +120,10 @@ export default [
     path: 'https://www.youtube.com/watch?v=Prv6Pt1Ltrs',
     img: newline,
   },
+  {
+    title: 'The Niedringhaus Effect (Ep 1): IoT for React Developers',
+    date: moment('2021-11-02').format('LL'),
+    path: 'https://www.youtube.com/watch?v=Nr-VclCFwzE',
+    img: bluesWireless,
+  },
 ];

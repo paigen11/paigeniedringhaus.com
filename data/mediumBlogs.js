@@ -59,6 +59,7 @@ import puzzle from '../content/images/puzzle.jpg';
 import paigeSite from '../content/images/paige-site.png';
 import iphoneIpad from '../content/images/iphone-ipad-coffee.jpg';
 import gpsTracker from '../content/images/gps-tracker.jpeg';
+import reactBlues from '../content/images/react-blues.png';
 
 export default [
   {
@@ -697,5 +698,14 @@ export default [
       'Build a GPS tracker with a Blues Wireless Notecarrier, and map it with Datacake.',
     tags: ['iot', 'gps', 'cellular', 'blues wireless', 'datacake'],
     title: 'Low Code GPS Asset Tracker and Map Display',
+  },
+  {
+    date: moment('2021-11-02').format('ll'),
+    img: reactBlues,
+    url: 'https://blues.io/blog/reactjs-vs-blues-wireless-iot/',
+    subTitle:
+      'You can build without React or Blues Wireless, but why would you?',
+    tags: ['iot', 'react', 'blues wireless', 'javascript'],
+    title: 'Blues Wireless - Just Like React, but for IoT',
   },
 ];

@@ -10,6 +10,7 @@ import Layout from '../components/Layout/Layout';
 import logRocket from '../images/thumbnails/logRocket.jpg';
 import butterCMS from '../images/thumbnails/butterCMS.png';
 import newline from '../images/thumbnails/newline-logo.png';
+import bluesWireless from '../images/thumbnails/bluesWireless.png';
 import '../styles/pages.scss';
 
 const MediaPage = () => {
@@ -17,11 +18,13 @@ const MediaPage = () => {
     ButterCMS: butterCMS,
     LogRocket: logRocket,
     newline: newline,
+    bluesWireless: bluesWireless,
   };
 
   const companies = Object.entries(publications);
   const sortedPodcasts = sortArrayByDate(podcasts);
   const sortedSpeaking = sortArrayByDate(speaking);
+  // todo consider a separate videos section for Blues TV & stuff
 
   return (
     <Layout>
@@ -50,7 +53,7 @@ const MediaPage = () => {
           </p>
         </section>
         <section>
-          <h2>Talks</h2>
+          <h2>Talks & Videos</h2>
           <p>(Note: Talks that were recorded are hyperlinked in purple.)</p>
           <ul>
             {sortedSpeaking.map((talk) => {
@@ -80,7 +83,7 @@ const MediaPage = () => {
           </ul>
         </section>
         <section>
-          <h2>Podcast interviews</h2>
+          <h2>Podcasts</h2>
           <ul>
             {sortedPodcasts.map((episode) => {
               return (

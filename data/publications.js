@@ -30,4 +30,11 @@ export default {
         'https://www.newline.co/write/cypress-studio-the-underrated-feature-speeding-up-e2e-testing--7bc4616b',
     },
   ],
+  bluesWireless: [
+    {
+      title: 'Blues Wireless - Just Like React, but for IoT',
+      date: moment('2021-11-02').format('LL'),
+      path: 'https://blues.io/blog/reactjs-vs-blues-wireless-iot/',
+    },
+  ],
 };
