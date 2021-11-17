@@ -23,6 +23,7 @@ const LatestPosts = () => {
           path: postEdge.node.fields.slug,
           title: postEdge.node.frontmatter.title,
           subTitle: postEdge.node.frontmatter.subTitle,
+          tags: postEdge.node.frontmatter.tags,
           date: postEdge.node.fields.date,
         });
       }
@@ -43,6 +44,7 @@ const LatestPosts = () => {
   }, []);
 
   const posts = latestPostList;
+  console.log(posts);
 
   return (
     <>
@@ -54,7 +56,7 @@ const LatestPosts = () => {
                 <div className="post" key={index}>
                   {post.path ? (
                     <>
-                      <Link to={post.path} key={post.title}>
+                      <Link to={`/blog${post.path}`} key={post.title}>
                         <p className="post-title">{post.title}</p>
                         {post.subTitle ? <p>{post.subTitle}</p> : null}
                       </Link>
