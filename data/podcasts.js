@@ -4,6 +4,7 @@ import myJsStory from '../src/images/thumbnails/myJsStory.jpg';
 import reactRoundUp from '../src/images/thumbnails/reactRoundUp.png';
 import telerik from '../src/images/thumbnails/telerik.png';
 import seDaily from '../src/images/thumbnails/seDaily.png';
+import modernWeb from '../src/images/thumbnails/modernWeb.jpeg';
 
 export default [
   {
@@ -64,5 +65,13 @@ export default [
     path:
       'https://softwareengineeringdaily.com/2021/11/02/enterprise-react-apps-with-paige-niedringhaus/',
     img: seDaily,
+  },
+  {
+    title:
+      'Modern Web Podcast - Modernizing React Apps with Paige Niedringhaus & Mark Erikson',
+    date: moment('2021-11-23').format('LL'),
+    path:
+      'https://modernweb.podbean.com/e/modernizing-react-apps-with-paige-niedringhaus-mark-erikson/',
+    img: modernWeb,
   },
 ];

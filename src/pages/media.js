@@ -18,7 +18,7 @@ const MediaPage = () => {
     ButterCMS: butterCMS,
     LogRocket: logRocket,
     newline: newline,
-    bluesWireless: bluesWireless,
+    'Blues Wireless': bluesWireless,
   };
 
   const companies = Object.entries(publications);
@@ -54,7 +54,7 @@ const MediaPage = () => {
         </section>
         <section>
           <h2>Talks & Videos</h2>
-          <p>(Note: Talks that were recorded are hyperlinked in purple.)</p>
+          <p>(Note: Recorded talks are hyperlinked in purple.)</p>
           <ul>
             {sortedSpeaking.map((talk) => {
               return (
@@ -110,7 +110,10 @@ const MediaPage = () => {
         <section>
           <h2>Company articles</h2>
           {companies.reverse().map((publication) => {
-            const companyName = publication[0];
+            const companyName =
+              publication[0] === 'bluesWireless'
+                ? 'Blues Wireless'
+                : publication[0];
             const articles = publication[1];
             return (
               <article key={companyName}>
