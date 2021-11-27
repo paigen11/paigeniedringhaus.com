@@ -1,5 +1,4 @@
 import moment from 'moment';
-import docker2 from '../content/images/docker-2.png';
 import googleJib from '../content/images/google-jib.png';
 import sequelize from '../content/images/sequelize.png';
 import developers from '../content/images/developers.jpeg';
@@ -62,16 +61,6 @@ import gpsTracker from '../content/images/gps-tracker.jpeg';
 import reactBlues from '../content/images/react-blues.png';
 
 export default [
-  {
-    date: moment('2018-07-07').format('ll'),
-    img: docker2,
-    url: 'https://itnext.io/docker-102-docker-compose-6bec46f18a0e',
-    subTitle:
-      'The recipe card for getting all your Dockerized apps to work together seamlessly.',
-    tags: ['docker', 'devops'],
-    timeToRead: 11,
-    title: 'Docker 102: Docker-Compose',
-  },
   {
     date: moment('2018-07-18').format('ll'),
     img: googleJib,
