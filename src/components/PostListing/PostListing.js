@@ -37,7 +37,6 @@ const PostListing = () => {
     });
     setFullPostList(sortedPostsList);
     setState({ postCount: sortedPostsList.length });
-    return sortedPostsList;
   };
 
   useEffect(() => {

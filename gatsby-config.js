@@ -56,6 +56,7 @@ module.exports = {
               maxWidth: 690,
             },
           },
+          'gatsby-remark-embed-video',
           {
             resolve: 'gatsby-remark-responsive-iframe',
           },
