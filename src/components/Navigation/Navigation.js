@@ -45,6 +45,7 @@ const Navigation = () => {
               {mobileNavContext.showMobileNavMenu ? (
                 <button
                   aria-label="Toggle Mobile Menu Button"
+                  aria-expanded={mobileNavContext.mobileNavOpen}
                   className={active}
                   onClick={() => {
                     mobileNavContext.toggleMobileNav(
