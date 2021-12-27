@@ -24,7 +24,7 @@ const CoursesPage = () => {
           </p>
           <p className="intro">
             From upgrading and refactoring an existing application, to tooling
-            and linting, to design sytems and testing - the list is long.
+            and linting, to design systems and testing - the list is long.
           </p>
           <p className="intro">
             I packed all I've learned into a single course about building and
