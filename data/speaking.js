@@ -133,4 +133,11 @@ export default [
     path: 'https://www.youtube.com/watch?v=hlhLujLmH78',
     img: newline,
   },
+  {
+    title:
+      'useState Hook (Full Course, Part 2 of 6) with Blues Wireless Staff Software Engineer, Paige N.',
+    date: moment('2022-01-12').format('LL'),
+    path: 'https://www.youtube.com/watch?v=rg3aSmiZgX0',
+    img: newline,
+  },
 ];

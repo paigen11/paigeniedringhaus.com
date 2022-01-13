@@ -37,6 +37,7 @@ const CoursesPage = () => {
             this free YouTube video. It covers the exact techniques in use at
             leading companies to support their line of business React apps.
           </p>
+          {/* todo add 6-part video series on React Hooks here when it's complete */}
           <div className="intro button">
             <a
               href="https://www.youtube.com/watch?v=Prv6Pt1Ltrs"
