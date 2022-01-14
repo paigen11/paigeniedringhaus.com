@@ -5,6 +5,7 @@ import reactRoundUp from '../src/images/thumbnails/reactRoundUp.png';
 import telerik from '../src/images/thumbnails/telerik.png';
 import seDaily from '../src/images/thumbnails/seDaily.png';
 import modernWeb from '../src/images/thumbnails/modernWeb.jpeg';
+import shesInTech from '../src/images/thumbnails/shesInTech.jpeg';
 
 export default [
   {
@@ -73,5 +74,13 @@ export default [
     path:
       'https://modernweb.podbean.com/e/modernizing-react-apps-with-paige-niedringhaus-mark-erikson/',
     img: modernWeb,
+  },
+  {
+    title:
+      "Escaping the Application Blackhole with Paige Niedringhaus - She's in Tech 24",
+    date: moment('2021-12-21').format('LL'),
+    path:
+      'https://shesintechpodcast.com/escaping-application-blackhole-paige-niedringhaus-shes-in-tech24-',
+    img: shesInTech,
   },
 ];
