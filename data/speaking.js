@@ -140,4 +140,11 @@ export default [
     path: 'https://www.youtube.com/watch?v=rg3aSmiZgX0',
     img: newline,
   },
+  {
+    title:
+      'useEffect Hook (Full Course, Part 3 of 6) with Blues Wireless Staff Software Engineer, Paige N.',
+    date: moment('2022-01-13').format('LL'),
+    path: 'https://www.youtube.com/watch?v=28MnBPqqDVk',
+    img: newline,
+  },
 ];
