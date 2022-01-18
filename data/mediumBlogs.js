@@ -1,5 +1,4 @@
 import moment from 'moment';
-import googleJib from '../content/images/google-jib.png';
 import sequelize from '../content/images/sequelize.png';
 import developers from '../content/images/developers.jpeg';
 import insomniaPostman from '../content/images/insomnia-postman.png';
@@ -31,7 +30,7 @@ import chalkboard from '../content/images/chalkboard.jpeg';
 import books from '../content/images/books.jpeg';
 import highlighters from '../content/images/highlighters.jpeg';
 import pen from '../content/images/pen.jpeg';
-import glasses from '../content/images/glasses.jpeg';
+import glasses from '../content/images/full-time-software-engineer-offer/glasses.jpeg';
 import pencils from '../content/images/pencils.jpeg';
 import cars from '../content/images/cars.jpeg';
 import notebookAndCoffee from '../content/images/notebook-and-coffee.jpeg';
@@ -61,16 +60,6 @@ import gpsTracker from '../content/images/gps-tracker.jpeg';
 import reactBlues from '../content/images/react-blues.png';
 
 export default [
-  {
-    date: moment('2018-07-18').format('ll'),
-    img: googleJib,
-    url:
-      'https://itnext.io/jib-getting-expert-docker-results-without-any-knowledge-of-docker-ef5cba294e05',
-    subTitle: 'All of the containerization benefits, none of the complexity.',
-    tags: ['docker', 'devops', 'java ', 'jib'],
-    timeToRead: 4,
-    title: 'Jib: Getting Expert Docker Results Without Any Knowledge of Docker',
-  },
   {
     date: moment('2018-08-04').format('ll'),
     img: sequelize,
