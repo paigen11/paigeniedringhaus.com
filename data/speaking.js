@@ -147,4 +147,18 @@ export default [
     path: 'https://www.youtube.com/watch?v=28MnBPqqDVk',
     img: newline,
   },
+  {
+    title:
+      'useRef Hook (Full Course, Part 4 of 6) with Blues Wireless Staff Software Engineer, Paige N.',
+    date: moment('2022-01-16').format('LL'),
+    path: 'https://www.youtube.com/watch?v=dBMTFAizsEA',
+    img: newline,
+  },
+  {
+    title:
+      'useContext Hook (Full Course, Part 5 of 6) with Blues Wireless Staff Software Engineer, Paige N.',
+    date: moment('2022-01-17').format('LL'),
+    path: 'https://www.youtube.com/watch?v=j-WjpVJB6Rc',
+    img: newline,
+  },
 ];
