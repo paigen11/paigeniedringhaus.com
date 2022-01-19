@@ -161,4 +161,11 @@ export default [
     path: 'https://www.youtube.com/watch?v=j-WjpVJB6Rc',
     img: newline,
   },
+  {
+    title:
+      'Custom Hooks & Summary (Full Course, Part 6 of 6) with Blues Wireless Staff Software Engineer, Paige N.',
+    date: moment('2022-01-18').format('LL'),
+    path: 'https://www.youtube.com/watch?v=aCu4PaygeP4',
+    img: newline,
+  },
 ];
