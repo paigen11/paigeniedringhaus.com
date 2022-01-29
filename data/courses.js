@@ -1,4 +1,5 @@
 import moment from 'moment';
+import newlineHero from '../content/images/newline/newline-hero.png';
 
 export default [
   {
@@ -8,5 +9,6 @@ export default [
     date: moment('2021-10-18').format('LL'),
     path:
       'https://www.newline.co/courses/newline-guide-to-modernizing-an-enterprise-react-app',
+    img: newlineHero,
   },
 ];

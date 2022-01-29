@@ -128,7 +128,7 @@ export default [
   },
   {
     title:
-      'Intro to React Hooks (Part 1 of 6) with Blues Wireless Staff Software Engineer, Paige Niedringhaus',
+      'Intro to React Hooks (Full Course, Part 1 of 6) with Blues Wireless Staff Software Engineer, Paige N.',
     date: moment('2022-01-11').format('LL'),
     path: 'https://www.youtube.com/watch?v=hlhLujLmH78',
     img: newline,

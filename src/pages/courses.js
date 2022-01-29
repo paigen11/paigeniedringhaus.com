@@ -1,9 +1,10 @@
 import React from 'react';
 import Helmet from 'react-helmet';
-import newlineHero from '../images/paige-newline-hero-image.png';
 import config from '../../data/SiteConfig';
 import courses from '../../data/courses';
+import courseVideos from '../../data/courseVideos';
 import Layout from '../components/Layout/Layout';
+import VideoCard from '../components/VideoCard/VideoCard';
 import '../styles/pages.scss';
 
 const CoursesPage = () => {
@@ -33,30 +34,12 @@ const CoursesPage = () => {
             standards.
           </p>
           <p className="intro">
-            If you'd like a sneak peek of everything in my course, check out
-            this free YouTube video. It covers the exact techniques in use at
-            leading companies to support their line of business React apps.
-          </p>
-          {/* todo add 6-part video series on React Hooks here when it's complete */}
-          <div className="intro button">
-            <a
-              href="https://www.youtube.com/watch?v=Prv6Pt1Ltrs"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <button
-                aria-label="Check out a free video on YouTube giving you a taste of The newline Guide to Modernizing Enterprise React Apps"
-                className="subscribe-button"
-              >
-                Free course sneak peek
-              </button>
-            </a>
-          </div>
-          <p className="intro">
-            Or click the link below to go straight to my full course.
+            It covers the exact techniques used at leading companies to support
+            their line of business React apps.
           </p>
         </section>
         <section>
+          <h2>Modernize an Enterprise React App</h2>
           <ul>
             {courses.map((course) => {
               return (
@@ -68,7 +51,7 @@ const CoursesPage = () => {
                     className="title"
                   >
                     <img
-                      src={newlineHero}
+                      src={course.img}
                       alt="Cover image for The newline Guide to Modernizing an Enterprise React App"
                     />
                     <h4>{course.title}</h4>
@@ -78,6 +61,24 @@ const CoursesPage = () => {
               );
             })}
           </ul>
+        </section>
+      </div>
+      <div className="courses-container video-wrapper">
+        <section>
+          <h2 className="intro">Free YouTube Videos</h2>
+          <p className="intro">
+            Or if you'd like an idea of everything in my course, check out these
+            free YouTube videos. They introduce you to all my course has to
+            offer and some of the most commonly used React Hooks you'll reach
+            for daily.
+          </p>
+          <div className="videos">
+            {courseVideos.length
+              ? courseVideos.map((course, index) => (
+                  <VideoCard course={course} index={index} />
+                ))
+              : null}
+          </div>
         </section>
       </div>
     </Layout>

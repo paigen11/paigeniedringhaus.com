@@ -56,14 +56,23 @@ const ContactPage = () => {
               </a>
             </li>
             <li>
-              I publish on Medium under&nbsp;
+              I publish on&nbsp;
               <a
                 href="https://paigen11.medium.com"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                @paigen11
+                Medium
               </a>
+              &nbsp;and&nbsp;
+              <a
+                href="https://dev.to/paigen11"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                dev.to
+              </a>
+              &nbsp;under @paigen11.
             </li>
             <li>
               And I've started sharing my IoT projects on&nbsp;

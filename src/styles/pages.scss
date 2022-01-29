@@ -107,6 +107,7 @@ input {
     max-width: 765px;
     width: 765px;
     padding: 0 2rem;
+    font-size: 2rem;
   }
 
   .blog-disclaimer {
@@ -137,6 +138,7 @@ input {
 
 // courses page
 .courses-container {
+  section:nth-child(3),
   .intro:last-child {
     border-bottom: 2px solid $medBlue;
     padding-bottom: 1.5rem;
@@ -165,6 +167,24 @@ input {
       min-width: 280px;
       width: 100%;
     }
+  }
+}
+
+.courses-container.video-wrapper {
+  max-width: 800px;
+  width: 100%;
+  margin: 0 auto;
+  color: $darkBlueTint;
+
+  .intro {
+    padding: 0 2rem;
+  }
+
+  .videos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-bottom: 30px;
   }
 }
 
