@@ -168,4 +168,10 @@ export default [
     path: 'https://www.youtube.com/watch?v=aCu4PaygeP4',
     img: newline,
   },
+  {
+    title: 'Tech Elevator: Lessons I Learned in my IT Career Panel',
+    date: moment('2022-02-04').format('LL'),
+    path: null,
+    img: techElevator,
+  },
 ];
