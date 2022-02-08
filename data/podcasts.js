@@ -6,6 +6,7 @@ import telerik from '../src/images/thumbnails/telerik.png';
 import seDaily from '../src/images/thumbnails/seDaily.png';
 import modernWeb from '../src/images/thumbnails/modernWeb.jpeg';
 import shesInTech from '../src/images/thumbnails/shesInTech.jpeg';
+import podRocket from '../src/images/thumbnails/podRocket.jpeg';
 
 export default [
   {
@@ -77,10 +78,16 @@ export default [
   },
   {
     title:
-      "Escaping the Application Blackhole with Paige Niedringhaus - She's in Tech 24",
+      "Escaping the Application Blackhole with Paige Niedringhaus - She's in Tech #24",
     date: moment('2021-12-21').format('LL'),
     path:
       'https://shesintechpodcast.com/escaping-application-blackhole-paige-niedringhaus-shes-in-tech24-',
     img: shesInTech,
+  },
+  {
+    title: 'PodRocket - Modern React with Paige Niedringhaus',
+    date: moment('2022-02-08').format('LL'),
+    path: 'https://podrocket.logrocket.com/modern-react',
+    img: podRocket,
   },
 ];
