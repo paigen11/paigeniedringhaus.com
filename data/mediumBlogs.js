@@ -58,6 +58,7 @@ import paigeSite from '../content/images/paige-site.png';
 import iphoneIpad from '../content/images/iphone-ipad-coffee.jpg';
 import gpsTracker from '../content/images/gps-tracker.jpeg';
 import reactBlues from '../content/images/react-blues.png';
+import assetTrackerMap from '../content/images/blues-asset-tracker-map.png';
 
 export default [
   {
@@ -685,5 +686,15 @@ export default [
       'You can build without React or Blues Wireless, but why would you?',
     tags: ['iot', 'react', 'blues wireless', 'javascript'],
     title: 'Blues Wireless - Just Like React, but for IoT',
+  },
+  {
+    date: moment('2022-02-23').format('ll'),
+    img: assetTrackerMap,
+    url:
+      'https://blues.io/blog/gps-asset-tracker-with-blues-wireless-and-react/',
+    subTitle:
+      'Build your own asset tracker from hardware to software and everything in between.',
+    tags: ['iot', 'javascript', 'blues wireless', 'typescript', 'gps'],
+    title: 'Low Fi LoJack with Blues Wireless and React',
   },
 ];

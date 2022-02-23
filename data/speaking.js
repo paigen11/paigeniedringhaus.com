@@ -174,4 +174,10 @@ export default [
     path: null,
     img: techElevator,
   },
+  {
+    title: 'The Niedringhaus Effect (Ep 2): Grand Theft Auto Edition',
+    date: moment('2022-02-23').format('LL'),
+    path: 'https://www.youtube.com/watch?v=H1oHs9GvNzY',
+    img: bluesWireless,
+  },
 ];
