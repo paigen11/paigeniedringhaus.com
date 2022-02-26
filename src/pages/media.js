@@ -126,7 +126,7 @@ const MediaPage = () => {
                   <h3>{companyName}</h3>
                 </span>
                 <ul>
-                  {articles.map((article) => {
+                  {articles.reverse().map((article) => {
                     return (
                       <li className="media-items articles" key={article.title}>
                         <a

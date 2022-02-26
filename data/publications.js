@@ -37,7 +37,7 @@ export default {
       path: 'https://blues.io/blog/reactjs-vs-blues-wireless-iot/',
     },
     {
-      title: 'Low Fi LoJack with Blues Wireless and React',
+      title: 'Low Fi LoJack® with Blues Wireless and React',
       date: moment('2022-02-23').format('LL'),
       path:
         'https://blues.io/blog/gps-asset-tracker-with-blues-wireless-and-react/',

@@ -58,6 +58,7 @@ import iphoneIpad from '../content/images/iphone-ipad-coffee.jpg';
 import gpsTracker from '../content/images/gps-tracker.jpeg';
 import reactBlues from '../content/images/react-blues.png';
 import assetTrackerMap from '../content/images/blues-asset-tracker-map.png';
+import nodeBackground from '../content/images/node-12/node-background.png';
 
 export default [
   {
@@ -324,6 +325,15 @@ export default [
     tags: ['javascript', 'programming', 'internationalization'],
     timeToRead: 12,
     title: 'JavaScript International Methods',
+  },
+  {
+    date: moment('2019-07-15').format('ll'),
+    img: nodeBackground,
+    url: 'https://blog.logrocket.com/node-js-12/',
+    subTitle: 'Node, new and improved in so many ways',
+    tags: ['javascript', 'nodejs', 'programming'],
+    timeToRead: 6,
+    title: 'Node.js 12: The future of server-side JavaScript',
   },
   {
     date: moment('2019-07-28').format('ll'),
@@ -684,6 +694,6 @@ export default [
     subTitle:
       'Build your own asset tracker from hardware to software and everything in between.',
     tags: ['iot', 'javascript', 'blues wireless', 'typescript', 'gps'],
-    title: 'Low Fi LoJack with Blues Wireless and React',
+    title: 'Low Fi LoJack® with Blues Wireless and React',
   },
 ];
