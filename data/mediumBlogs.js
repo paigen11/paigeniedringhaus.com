@@ -1,5 +1,4 @@
 import moment from 'moment';
-import sequelize from '../content/images/sequelize.png';
 import developers from '../content/images/developers.jpeg';
 import insomniaPostman from '../content/images/insomnia-postman.png';
 import jwtImg from '../content/images/jwt.png';
@@ -61,16 +60,6 @@ import reactBlues from '../content/images/react-blues.png';
 import assetTrackerMap from '../content/images/blues-asset-tracker-map.png';
 
 export default [
-  {
-    date: moment('2018-08-04').format('ll'),
-    img: sequelize,
-    url:
-      'https://medium.com/@paigen11/sequelize-the-orm-for-sql-databases-with-nodejs-daa7c6d5aca3',
-    subTitle: 'The ORM For SQL Databases with Node.js',
-    tags: ['javascript', 'nodejs', 'sql', 'express'],
-    timeToRead: 8,
-    title: 'Sequelize: Like Mongoose But For SQL',
-  },
   {
     date: moment('2018-08-17').format('ll'),
     img: developers,
