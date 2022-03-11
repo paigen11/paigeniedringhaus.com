@@ -55,10 +55,11 @@ import scientist from '../content/images/scientist.jpeg';
 import puzzle from '../content/images/puzzle.jpg';
 import paigeSite from '../content/images/paige-site.png';
 import iphoneIpad from '../content/images/iphone-ipad-coffee.jpg';
-import gpsTracker from '../content/images/gps-tracker.jpeg';
+import gpsTracker from '../content/images/hackster-low-code-gps-tracker/gps-tracker.jpeg';
 import reactBlues from '../content/images/react-blues.png';
 import assetTrackerMap from '../content/images/blues-asset-tracker-map.png';
 import nodeBackground from '../content/images/node-12/node-background.png';
+import antiTheftHero from '../content/images/hackster-blues-wheres-my-car/hackster-hero.png';
 
 export default [
   {
@@ -695,5 +696,15 @@ export default [
       'Build your own asset tracker from hardware to software and everything in between.',
     tags: ['iot', 'javascript', 'blues wireless', 'typescript', 'gps'],
     title: 'Low Fi LoJack® with Blues Wireless and React',
+  },
+  {
+    date: moment('2022-03-04').format('ll'),
+    img: antiTheftHero,
+    url:
+      'https://www.hackster.io/paige-niedringhaus/blues-where-s-my-car-5eac7d',
+    subTitle:
+      'Sounds the (silent) alarm: anti-theft alerting & asset recovery with a Blues Wireless Notecard.',
+    tags: ['iot', 'gps', 'cellular', 'blues wireless', 'alert'],
+    title: "Blues, Where's My Car?",
   },
 ];
