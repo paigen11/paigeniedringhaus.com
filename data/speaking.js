@@ -180,4 +180,11 @@ export default [
     path: 'https://www.youtube.com/watch?v=H1oHs9GvNzY',
     img: bluesWireless,
   },
+  {
+    title:
+      'Mastering Global Asset Tracking with a Cellular Notecard and Datacake',
+    date: moment('2022-03-24').format('LL'),
+    path: 'https://www.youtube.com/watch?v=gzQEJyIeobU&t=7s',
+    img: bluesWireless,
+  },
 ];

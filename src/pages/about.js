@@ -94,8 +94,13 @@ const AboutPage = () => {
             &nbsp;. I'm always learning new things, but my focus and interest
             right now is on&nbsp;
             <strong>
-              frontend web development technologies like React and Next.js,
-              Hugo, and Internet of Things hardware like Blues makes
+              frontend web development technologies like React, Next.js, and
+              Hugo
+            </strong>
+            ,&nbsp; and&nbsp;
+            <strong>
+              building Internet of Things projects powered by the hardware Blues
+              makes
             </strong>
             .
           </p>
