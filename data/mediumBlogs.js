@@ -1,5 +1,4 @@
 import moment from 'moment';
-import developers from '../content/images/developers.jpeg';
 import insomniaPostman from '../content/images/insomnia-postman.png';
 import jwtImg from '../content/images/jwt.png';
 import eureka from '../content/images/eureka.png';
@@ -62,17 +61,6 @@ import nodeBackground from '../content/images/node-12/node-background.png';
 import antiTheftHero from '../content/images/hackster-blues-wheres-my-car/hackster-hero.png';
 
 export default [
-  {
-    date: moment('2018-08-17').format('ll'),
-    img: developers,
-    url:
-      'https://medium.com/@paigen11/using-docker-docker-compose-to-improve-your-full-stack-application-development-1e41280748f4',
-    subTitle:
-      "The hardest part of a new project can be getting all the pieces running, but it doesn't have to be.",
-    tags: ['docker', 'javascript', 'sql', 'express', 'nodejs'],
-    timeToRead: 7,
-    title: 'Using Docker To Improve Your Full Stack Application Development',
-  },
   {
     date: moment('2018-09-01').format('ll'),
     img: insomniaPostman,
