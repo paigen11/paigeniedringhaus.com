@@ -7,24 +7,25 @@ import seDaily from '../src/images/thumbnails/seDaily.png';
 import modernWeb from '../src/images/thumbnails/modernWeb.jpeg';
 import shesInTech from '../src/images/thumbnails/shesInTech.jpeg';
 import podRocket from '../src/images/thumbnails/podRocket.jpeg';
+import js20min from '../src/images/thumbnails/20-min-js.jpeg';
 
 export default [
   {
-    title: 'JavaScript Jabber 398: Node 12 with Paige Niedringhaus',
+    title: 'JavaScript Jabber: Node 12 with Paige Niedringhaus',
     date: moment('2019-10-08').format('LL'),
     path:
       'https://devchat.tv/js-jabber/jsj-398-node-12-with-paige-niedringhaus',
     img: jsJabber,
   },
   {
-    title: 'My JavaScript Story 143: Paige Niedringhaus',
+    title: 'My JavaScript Story: Paige Niedringhaus',
     date: moment('2020-03-21').format('LL'),
     path: 'https://devchat.tv/my-javascript-story/mjs-143-paige-niedringhaus',
     img: myJsStory,
   },
   {
     title:
-      'React Round Up 106: React Socks for Easy Responsive Design with Paige Niedringhaus',
+      'React Round Up: React Socks for Easy Responsive Design with Paige Niedringhaus',
     date: moment('2020-04-14').format('LL'),
     path:
       'https://devchat.tv/react-round-up/rru-106-react-socks-for-easy-responsive-design-with-paige-niedringhaus',
@@ -54,7 +55,7 @@ export default [
   },
   {
     title:
-      'React Round Up 160: Modernizing Enterprise React Apps with Paige Niedringhaus',
+      'React Round Up: Modernizing Enterprise React Apps with Paige Niedringhaus',
     date: moment('2021-10-20').format('LL'),
     path:
       'https://reactroundup.com/modernizing-enterprise-react-apps-with-paige-niedringhaus-rru-160',
@@ -70,7 +71,7 @@ export default [
   },
   {
     title:
-      'Modern Web Podcast - Modernizing React Apps with Paige Niedringhaus & Mark Erikson',
+      'Modern Web Podcast: Modernizing React Apps with Paige Niedringhaus & Mark Erikson',
     date: moment('2021-11-23').format('LL'),
     path:
       'https://modernweb.podbean.com/e/modernizing-react-apps-with-paige-niedringhaus-mark-erikson/',
@@ -78,16 +79,23 @@ export default [
   },
   {
     title:
-      "Escaping the Application Blackhole with Paige Niedringhaus - She's in Tech #24",
+      "She's in Tech: Escaping the Application Blackhole with Paige Niedringhaus",
     date: moment('2021-12-21').format('LL'),
     path:
       'https://shesintechpodcast.com/escaping-application-blackhole-paige-niedringhaus-shes-in-tech24-',
     img: shesInTech,
   },
   {
-    title: 'PodRocket - Modern React with Paige Niedringhaus',
+    title: 'PodRocket: Modern React with Paige Niedringhaus',
     date: moment('2022-02-08').format('LL'),
     path: 'https://podrocket.logrocket.com/modern-react',
     img: podRocket,
+  },
+  {
+    title: '20minJS: State Management in React with Paige Niedringhaus',
+    date: moment('2022-03-29').format('LL'),
+    path:
+      'https://podcast.20minjs.com/1952066/10330403-episode-4-state-management-in-react-with-paige-niedringhaus',
+    img: js20min,
   },
 ];

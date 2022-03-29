@@ -664,6 +664,7 @@ export default [
     subTitle:
       'Build a GPS tracker with a Blues Wireless Notecarrier, and map it with Datacake.',
     tags: ['iot', 'gps', 'cellular', 'blues wireless', 'datacake'],
+    timeToRead: 16,
     title: 'Low Code GPS Asset Tracker and Map Display',
   },
   {
@@ -693,6 +694,7 @@ export default [
     subTitle:
       'Sounds the (silent) alarm: anti-theft alerting & asset recovery with a Blues Wireless Notecard.',
     tags: ['iot', 'gps', 'cellular', 'blues wireless', 'alert'],
+    timeToRead: 15,
     title: "Blues, Where's My Car?",
   },
 ];
