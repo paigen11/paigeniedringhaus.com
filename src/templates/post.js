@@ -30,7 +30,6 @@ const Post = (props) => {
         <SEO postPath={`/blog${slug}`} postNode={postNode} postSEO />
         <article className="post-wrapper">
           <p className="post-category">{post.category}</p>
-          <h1>{post.title}</h1>
           <figcaption>
             First published {moment(post.date).format('ll')}
             {post.ogLink ? (
@@ -46,6 +45,8 @@ const Post = (props) => {
               </>
             ) : null}
           </figcaption>
+          <h1>{post.title}</h1>
+          <h3>{post.subTitle}</h3>
           <div dangerouslySetInnerHTML={{ __html: postNode.html }} />
           <div className="post-meta">
             <PostTags tags={post.tags} />
