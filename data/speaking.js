@@ -187,4 +187,10 @@ export default [
     path: 'https://www.youtube.com/watch?v=gzQEJyIeobU&t=7s',
     img: bluesWireless,
   },
+  {
+    title: "The Niedringhaus Effect (Ep 3): Blues, Where's My Car?",
+    date: moment('2022-04-13').format('LL'),
+    path: 'https://www.youtube.com/watch?v=222JbIOauIg',
+    img: bluesWireless,
+  },
 ];

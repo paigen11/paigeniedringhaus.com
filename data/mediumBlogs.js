@@ -59,6 +59,7 @@ import reactBlues from '../content/images/react-blues.png';
 import assetTrackerMap from '../content/images/blues-asset-tracker-map.png';
 import nodeBackground from '../content/images/node-12/node-background.png';
 import antiTheftHero from '../content/images/hackster-blues-wheres-my-car/hackster-hero.png';
+import sms from '../content/images/hackster-blues-wheres-my-car/sms-2.png';
 
 export default [
   {
@@ -696,5 +697,15 @@ export default [
     tags: ['iot', 'gps', 'cellular', 'blues wireless', 'alert'],
     timeToRead: 15,
     title: "Blues, Where's My Car?",
+  },
+
+  {
+    date: moment('2022-04-13').format('ll'),
+    img: sms,
+    url: 'https://blues.io/blog/anti-theft-iot-gps-asset-tracker/',
+    subTitle:
+      'Build a Notecard-powered anti-theft device complete with SMS alerts when movement is detected.',
+    tags: ['iot', 'gps', 'cellular', 'blues wireless', 'alert'],
+    title: 'Anti-Theft GPS Tracker and Recovery System',
   },
 ];
