@@ -1,4 +1,3 @@
-const getSrc = require('gatsby-plugin-image');
 const urljoin = require('url-join');
 const path = require('path');
 const config = require('./data/SiteConfig');
@@ -153,10 +152,9 @@ module.exports = {
                   { 'content:encoded': edge.node.html },
                   { author: config.userEmail },
                   {
-                    cover: getSrc(
+                    cover:
                       edge.node.frontmatter.featuredImage.childImageSharp
                         .gatsbyImageData,
-                    ),
                   },
                 ],
               }));
