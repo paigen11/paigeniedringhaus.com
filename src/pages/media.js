@@ -41,11 +41,11 @@ const MediaPage = () => {
           <p className="intro">
             Since 2020, I've been a regular co-host of the tech podcast&nbsp;
             <a
-              href="https://devchat.tv/react-round-up/"
+              href="https://reactroundup.com/"
               target="_blank"
               rel="noopener noreferrer"
             >
-              React&nbsp;Round&nbsp;Up&nbsp;
+              React Round Up
             </a>
             , a weekly podcast dedicated to React and the development community.
             Each episode we talk to different experts in the community about all

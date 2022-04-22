@@ -111,7 +111,7 @@ const SEO = (props) => {
       },
     );
   }
-  console.log('image', image);
+
   return (
     <Helmet
       link={

@@ -70,7 +70,7 @@ const ContactPage = () => {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                dev.to
+                DEV
               </a>
               &nbsp;under @paigen11.
             </li>
@@ -107,7 +107,7 @@ const ContactPage = () => {
         </section>
         <section>
           <h2>
-            Or subscribe to my newsletter&nbsp;
+            Or subscribe to my Substack newsletter&nbsp;
             <FontAwesomeIcon icon={faRssSquare} />
           </h2>
           <p>
