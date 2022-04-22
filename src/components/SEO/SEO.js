@@ -1,4 +1,5 @@
 import React from 'react';
+import { getSrc } from 'gatsby-plugin-image';
 import Helmet from 'react-helmet';
 import urljoin from 'url-join';
 import moment from 'moment';
@@ -16,7 +17,9 @@ const SEO = (props) => {
     const postMeta = postNode.frontmatter;
     ({ title } = postMeta);
     description = postMeta.subTitle;
-    image = postNode.frontmatter.featuredImage.childImageSharp.fluid.src;
+    image = getSrc(
+      postNode.frontmatter.featuredImage.childImageSharp.gatsbyImageData,
+    );
     postURL = urljoin(config.siteUrl, config.pathPrefix, postPath);
     canonical = postMeta.canonical;
   } else {

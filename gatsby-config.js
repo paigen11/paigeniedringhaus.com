@@ -1,3 +1,4 @@
+const getSrc = require('gatsby-plugin-image');
 const urljoin = require('url-join');
 const path = require('path');
 const config = require('./data/SiteConfig');
@@ -19,6 +20,9 @@ module.exports = {
     },
   },
   plugins: [
+    `gatsby-plugin-image`,
+    `gatsby-plugin-sharp`,
+    `gatsby-transformer-sharp`,
     'gatsby-plugin-react-helmet',
     {
       resolve: `gatsby-plugin-react-helmet-canonical-urls`,
@@ -149,9 +153,10 @@ module.exports = {
                   { 'content:encoded': edge.node.html },
                   { author: config.userEmail },
                   {
-                    cover:
-                      edge.node.frontmatter.featuredImage.childImageSharp.fixed
-                        .src,
+                    cover: getSrc(
+                      edge.node.frontmatter.featuredImage.childImageSharp
+                        .gatsbyImageData,
+                    ),
                   },
                 ],
               }));
