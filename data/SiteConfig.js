@@ -29,6 +29,11 @@ const config = {
       iconClassName: 'faMedium',
     },
     {
+      label: 'DEV',
+      url: 'https://dev.to/paigen11',
+      iconClassName: 'faDev',
+    },
+    {
       label: 'GitHub',
       url: 'https://github.com/paigen11',
       iconClassName: 'faGithub',
