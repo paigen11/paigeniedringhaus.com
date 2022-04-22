@@ -5705,7 +5705,7 @@ gatsby-legacy-polyfills@^2.12.1, gatsby-legacy-polyfills@^2.7.0:
     "@babel/runtime" "^7.15.4"
     core-js-compat "3.9.0"
 
-gatsby-link@^4.7.0:
+gatsby-link@^4.7.1:
   version "4.12.1"
   resolved "https://registry.yarnpkg.com/gatsby-link/-/gatsby-link-4.12.1.tgz#131448e9c51e0c9a65e2a342603d496e85cea2da"
   integrity sha512-ILWYNqyTlEt2bOVWgzwmbijwC+Ow4CZVbnWOyaQ/jvu5z3ZGL0z5tGGD+sjZAHc8anOMWn/JWhL0BKGVaxjMGQ==
@@ -6151,10 +6151,10 @@ gatsby-worker@^1.7.0:
     "@babel/core" "^7.15.5"
     "@babel/runtime" "^7.15.4"
 
-gatsby@4.7.0:
-  version "4.7.0"
-  resolved "https://registry.yarnpkg.com/gatsby/-/gatsby-4.7.0.tgz#220811752523aad0a50e6f197aca647ce75c02d9"
-  integrity sha512-xudU3fBaM+ibh+hvgxEUoWElJG9qapflXcD4mXikcR3LK9aCeAjFjQXbdsIqhHEvAI5NRb7XtneWDXARhPzHbA==
+gatsby@4.7.2:
+  version "4.7.2"
+  resolved "https://registry.yarnpkg.com/gatsby/-/gatsby-4.7.2.tgz#3bc8f7fa762361e83308dfc3d67316a236ab168e"
+  integrity sha512-DY7qoFQ8y+14UsmEkzWigHWPkkJ79elu6A2nDjg19YV8K8k96PlexkYLDYOI5kSBiCmCV+ZURVfexuVU0U0HDA==
   dependencies:
     "@babel/code-frame" "^7.14.0"
     "@babel/core" "^7.15.5"
@@ -6227,7 +6227,7 @@ gatsby@4.7.0:
     gatsby-core-utils "^3.7.0"
     gatsby-graphiql-explorer "^2.7.0"
     gatsby-legacy-polyfills "^2.7.0"
-    gatsby-link "^4.7.0"
+    gatsby-link "^4.7.1"
     gatsby-page-utils "^2.7.0"
     gatsby-plugin-page-creator "^4.7.0"
     gatsby-plugin-typescript "^4.7.0"
