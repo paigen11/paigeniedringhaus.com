@@ -233,5 +233,6 @@ module.exports = {
       },
     },
     `gatsby-plugin-mailgo`,
+    `gatsby-plugin-netlify`,
   ],
 };
