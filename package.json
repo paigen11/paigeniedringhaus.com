@@ -26,7 +26,7 @@
     "gatsby-plugin-react-helmet": "^5.12.1",
     "gatsby-plugin-react-helmet-canonical-urls": "^1.4.0",
     "gatsby-plugin-sass": "^5.12.1",
-    "gatsby-plugin-sharp": "4.9.0",
+    "gatsby-plugin-sharp": "4.7.0",
     "gatsby-plugin-sitemap": "^5.12.1",
     "gatsby-plugin-twitter": "4.7.0",
     "gatsby-remark-autolink-headers": "^5.12.1",
