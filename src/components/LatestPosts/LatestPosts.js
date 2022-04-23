@@ -44,7 +44,6 @@ const LatestPosts = () => {
   }, []);
 
   const posts = latestPostList;
-  console.log(posts);
 
   return (
     <>

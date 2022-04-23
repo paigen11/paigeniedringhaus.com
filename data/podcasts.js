@@ -13,22 +13,20 @@ export default [
   {
     title: 'JavaScript Jabber: Node 12 with Paige Niedringhaus',
     date: moment('2019-10-08').format('LL'),
-    path:
-      'https://devchat.tv/js-jabber/jsj-398-node-12-with-paige-niedringhaus',
+    path: 'https://javascriptjabber.com/403',
     img: jsJabber,
   },
   {
     title: 'My JavaScript Story: Paige Niedringhaus',
     date: moment('2020-03-21').format('LL'),
-    path: 'https://devchat.tv/my-javascript-story/mjs-143-paige-niedringhaus',
+    path: 'https://myjavascriptstory.com/145',
     img: myJsStory,
   },
   {
     title:
       'React Round Up: React Socks for Easy Responsive Design with Paige Niedringhaus',
     date: moment('2020-04-14').format('LL'),
-    path:
-      'https://devchat.tv/react-round-up/rru-106-react-socks-for-easy-responsive-design-with-paige-niedringhaus',
+    path: 'https://reactroundup.com/108',
     img: reactRoundUp,
   },
   {

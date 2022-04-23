@@ -22,7 +22,7 @@ const BlogPage = () => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              article
+              <strong>article</strong>
             </a>
             &nbsp;or&nbsp;
             <a
@@ -30,7 +30,7 @@ const BlogPage = () => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              project
+              <strong>project</strong>
             </a>
             &nbsp;in a new tab.
           </p>

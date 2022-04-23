@@ -66,33 +66,29 @@ const Post = (props) => {
 export default Post;
 
 /* eslint no-undef: "off" */
-export const pageQuery = graphql`
-  query BlogPostBySlug($slug: String!) {
-    markdownRemark(fields: { slug: { eq: $slug } }) {
-      html
-      timeToRead
-      frontmatter {
-        title
-        subTitle
-        featuredImage {
-          childImageSharp {
-            fluid(maxWidth: 680, quality: 100) {
-              ...GatsbyImageSharpFluid
-              ...GatsbyImageSharpFluidLimitPresentationSize
-            }
-          }
+export const pageQuery = graphql`query BlogPostBySlug($slug: String!) {
+  markdownRemark(fields: {slug: {eq: $slug}}) {
+    html
+    timeToRead
+    frontmatter {
+      title
+      subTitle
+      featuredImage {
+        childImageSharp {
+          gatsbyImageData(width: 680, quality: 100, layout: CONSTRAINED)
         }
-        date
-        category
-        tags
-        canonical
-        ogLink
-        publication
       }
-      fields {
-        slug
-        date
-      }
+      date
+      category
+      tags
+      canonical
+      ogLink
+      publication
+    }
+    fields {
+      slug
+      date
     }
   }
+}
 `;

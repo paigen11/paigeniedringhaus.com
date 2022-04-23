@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'gatsby';
-import Img from 'gatsby-image';
+import { GatsbyImage } from 'gatsby-plugin-image';
 import { usePostListingQuery } from '../../Hooks/usePostListingQuery';
 import Loader from '../Loader/Loader';
 import { sortArrayByDate } from '../../helpers/helpers';
@@ -23,7 +23,8 @@ const PostListing = () => {
       return {
         path: postEdge.node.fields.slug,
         tags: postEdge.node.frontmatter.tags,
-        thumbnail: postEdge.node.frontmatter.thumbnail.childImageSharp.fixed,
+        thumbnail:
+          postEdge.node.frontmatter.thumbnail.childImageSharp.gatsbyImageData,
         title: postEdge.node.frontmatter.title,
         subTitle: postEdge.node.frontmatter.subTitle,
         date: postEdge.node.fields.date,
@@ -101,7 +102,7 @@ const PostListing = () => {
                   {post.path ? (
                     <Link to={`/blog${post.path}`} key={post.title}>
                       <p className="post-title">{post.title}</p>
-                      <Img fixed={post.thumbnail} />
+                      <GatsbyImage image={post.thumbnail} alt="" />
                       <p>{post.subTitle}</p>
                     </Link>
                   ) : (

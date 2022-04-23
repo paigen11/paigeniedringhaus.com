@@ -4,6 +4,7 @@ import {
   faTwitter,
   faGithub,
   faMedium,
+  faDev,
 } from '@fortawesome/free-brands-svg-icons';
 import { faEnvelope, faRssSquare } from '@fortawesome/free-solid-svg-icons';
 import './UserLinks.scss';
@@ -21,6 +22,8 @@ const UserLinks = (props) => {
         return <FontAwesomeIcon icon={faEnvelope} />;
       case 'faMedium':
         return <FontAwesomeIcon icon={faMedium} />;
+      case 'faDev':
+        return <FontAwesomeIcon icon={faDev} />;
     }
   };
 

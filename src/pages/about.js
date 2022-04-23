@@ -61,7 +61,7 @@ const AboutPage = () => {
             got started in web development, I shared my origin story on the
             podcast&nbsp;
             <a
-              href="https://devchat.tv/my-javascript-story/mjs-143-paige-niedringhaus"
+              href="https://myjavascriptstory.com/145"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -69,11 +69,7 @@ const AboutPage = () => {
             </a>
             &nbsp;📻, and wrote about my early experiences as a new developer in
             a few&nbsp;
-            <a
-              href="https://www.paigeniedringhaus.com/blog/how-i-went-from-a-digital-marketer-to-a-software-engineer-in-4-months"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
+            <a href="/blog/how-i-went-from-a-digital-marketer-to-a-software-engineer-in-4-months">
               blog
             </a>
             &nbsp;posts.
@@ -97,12 +93,15 @@ const AboutPage = () => {
               frontend web development technologies like React, Next.js, and
               Hugo
             </strong>
-            ,&nbsp; and&nbsp;
-            <strong>
-              building Internet of Things projects powered by the hardware Blues
-              makes
-            </strong>
-            .
+            , and building&nbsp;
+            <a
+              hrerf="https://www.hackster.io/paige-niedringhaus"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Internet of Things projects
+            </a>
+            &nbsp;powered by Blues Wireless hardware.
           </p>
           <p>Previously, I was a senior software engineer at The Home Depot.</p>
           <p>
@@ -142,10 +141,9 @@ const AboutPage = () => {
           </p>
           <p>
             And when I'm not programming, I like to spend my spare time working
-            on my art 🎨, traveling ✈️ (at least when there's not a global
-            pandemic on), and hanging out with family and friends. I've recently
-            gotten into learning to paint digitally (Procreate and my iPad is
-            what I'm using), so if you have tips to improve, please let me know!
+            on my art 🎨, traveling ✈️, and hanging out with family and friends.
+            I've recently gotten into mastering handstands and handbalancing, so
+            if you have tips, let me know!
           </p>
           <figure>
             <img src={seanAndPaige} alt="sean and paige photo" />

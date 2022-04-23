@@ -169,7 +169,7 @@ export default [
     img: newline,
   },
   {
-    title: 'Tech Elevator: Lessons I Learned in my IT Career Panel',
+    title: 'Tech Elevator: Lessons I Learned in My IT Career Panel',
     date: moment('2022-02-04').format('LL'),
     path: null,
     img: techElevator,
