@@ -1,5 +1,5 @@
 [[plugins]]
-package = @netlify/plugin-gatsby
+package = "@netlify/plugin-gatsby"
 [build]
   publish = "public"
   command = "gatsby build"
