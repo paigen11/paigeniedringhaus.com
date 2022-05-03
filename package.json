@@ -42,7 +42,7 @@
     "gatsby-transformer-sharp": "^4.13.0",
     "lodash": "^4.17.15",
     "moment": "^2.24.0",
-    "node-sass": "^4.0.1",
+    "node-sass": "^6.0.1",
     "prismjs": "^1.22.0",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
@@ -54,20 +54,20 @@
   },
   "devDependencies": {
     "cli-glob": "^0.1.0",
-    "eslint": "^6.8.0",
-    "eslint-config-airbnb": "^18.1.0",
-    "eslint-config-prettier": "^6.10.1",
+    "eslint": "^8.14.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-import": "^2.20.2",
     "eslint-plugin-jsx-a11y": "^6.2.1",
     "eslint-plugin-react": "^7.19.0",
     "gatsby-plugin-netlify": "^4.3.1",
-    "gh-pages": "^2.2.0",
+    "gh-pages": "^3.2.3",
     "prettier": "^2.0.2",
-    "remark-cli": "^8.0.0",
-    "remark-preset-lint-recommended": "^4.0.0",
-    "stylelint": "^13.2.1",
-    "stylelint-config-prettier": "^8.0.1",
-    "stylelint-config-standard": "^20.0.0",
+    "remark-cli": "^10.0.1",
+    "remark-preset-lint-recommended": "^6.1.2",
+    "stylelint": "^14.8.1",
+    "stylelint-config-prettier": "^9.0.3",
+    "stylelint-config-standard": "^25.0.0",
     "write-good": "^1.0.1"
   },
   "keywords": [
@@ -104,7 +104,7 @@
     ]
   },
   "volta": {
-    "node": "14.16.1",
+    "node": "16.0.0",
     "npm": "7.20.1",
     "yarn": "1.22.17"
   }

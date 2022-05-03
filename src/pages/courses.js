@@ -74,8 +74,8 @@ const CoursesPage = () => {
           </p>
           <div className="videos">
             {courseVideos.length
-              ? courseVideos.map((course, index) => (
-                  <VideoCard course={course} index={index} />
+              ? courseVideos.map((course) => (
+                  <VideoCard course={course} key={course.title} />
                 ))
               : null}
           </div>
