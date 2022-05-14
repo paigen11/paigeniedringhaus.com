@@ -638,7 +638,7 @@ export default [
     img: sms,
     url: 'https://blues.io/blog/anti-theft-iot-gps-asset-tracker/',
     subTitle:
-      'Build a Notecard-powered anti-theft device complete with SMS alerts when movement is detected.',
+      'Build a Notecard-based anti-theft device with SMS alerts when movement is detected.',
     tags: ['iot', 'gps', 'cellular', 'blues wireless', 'alert'],
     title: 'Anti-Theft GPS Tracker and Recovery System',
   },
