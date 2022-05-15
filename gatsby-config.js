@@ -80,7 +80,7 @@ module.exports = {
       options: {
         // You can add multiple tracking ids and a pageview event will be fired for all of them.
         trackingIds: [
-          'G-33LYCFN2QF', // Google Analytics / GA
+          config.newGoogleAnalyticsID, // Google Analytics / GA
         ],
         // This object gets passed directly to the gtag config command
         // This config will be shared across all trackingIds
@@ -165,14 +165,15 @@ module.exports = {
           {
             serialize(ctx) {
               const { rssMetadata } = ctx.query.site.siteMetadata;
+              console.log('RSS metadata ', rssMetadata);
               return ctx.query.allMarkdownRemark.edges.map((edge) => ({
                 categories: edge.node.frontmatter.tags,
                 date: edge.node.fields.date,
                 title: edge.node.frontmatter.title,
                 subTitle: edge.node.frontmatter.subTitle,
                 description: edge.node.excerpt,
-                url: rssMetadata.site_url + edge.node.fields.slug,
-                guid: rssMetadata.site_url + edge.node.fields.slug,
+                url: rssMetadata.site_url + '/blog' + edge.node.fields.slug,
+                guid: rssMetadata.site_url + '/blog' + edge.node.fields.slug,
                 custom_elements: [
                   { 'content:encoded': edge.node.html },
                   { author: config.userEmail },

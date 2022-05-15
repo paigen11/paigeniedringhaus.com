@@ -10,6 +10,7 @@ const config = {
   siteRss: '/rss.xml',
   siteRssTitle: 'Paige Niedringhaus RSS feed',
   googleAnalyticsID: 'UA-85613962-11',
+  newGoogleAnalyticsID: 'G-33LYCFN2QF',
   dateFromFormat: 'YYYY-MM-DD',
   dateFormat: 'DD/MM/YYYY',
   postsPerPage: 4,
