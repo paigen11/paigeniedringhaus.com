@@ -6,6 +6,7 @@ import favicon from '../../images/favicon-pn.png';
 import Navigation from '../Navigation/Navigation';
 import Footer from '../Footer/Footer';
 import MobileNavContext from '../../context/MobileNavContext';
+import SEO from '../SEO/SEO';
 import './Layout.scss';
 
 const MainLayout = ({ children }) => {
@@ -38,6 +39,7 @@ const MainLayout = ({ children }) => {
           <link rel="shortcut icon" type="image/png" href={favicon} />
           <html lang="en" />
         </Helmet>
+        <SEO />
         <Navigation />
         {children}
         <Footer />

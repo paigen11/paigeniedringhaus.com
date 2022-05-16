@@ -3,6 +3,7 @@ const config = {
   siteTitleShort: 'Paige Niedringhaus',
   siteTitleAlt: 'Paige Niedringhaus',
   siteLogo: '/logos/pn-logo-1024.png',
+  siteAltImage: '/site-hero-image.png',
   siteUrl: 'https://www.paigeniedringhaus.com',
   pathPrefix: '/',
   siteDescription:
