@@ -3,11 +3,11 @@ const config = {
   siteTitleShort: 'Paige Niedringhaus',
   siteTitleAlt: 'Paige Niedringhaus',
   siteLogo: '/logos/pn-logo-1024.png',
-  siteAltImage: '/site-hero-image.png',
+  siteAltImage: '/pn-hero-image.png',
   siteUrl: 'https://www.paigeniedringhaus.com',
   pathPrefix: '/',
   siteDescription:
-    'Paige Niedringhaus is a full stack software engineer with a focus on front end development.',
+    'Paige Niedringhaus is a full stack software engineer with a focus on frontend development.',
   siteRss: '/rss.xml',
   siteRssTitle: 'Paige Niedringhaus RSS feed',
   googleAnalyticsID: 'UA-85613962-11',
