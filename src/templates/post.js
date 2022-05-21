@@ -45,8 +45,8 @@ const Post = (props) => {
               </>
             ) : null}
           </figcaption>
-          <h1>{post.title}</h1>
-          <h3>{post.subTitle}</h3>
+          <h1 className="post-title">{post.title}</h1>
+          <h2 className="post-subtitle">{post.subTitle}</h2>
           <div dangerouslySetInnerHTML={{ __html: postNode.html }} />
           <div className="post-meta">
             <PostTags tags={post.tags} />
@@ -66,29 +66,30 @@ const Post = (props) => {
 export default Post;
 
 /* eslint no-undef: "off" */
-export const pageQuery = graphql`query BlogPostBySlug($slug: String!) {
-  markdownRemark(fields: {slug: {eq: $slug}}) {
-    html
-    timeToRead
-    frontmatter {
-      title
-      subTitle
-      featuredImage {
-        childImageSharp {
-          gatsbyImageData(width: 680, quality: 100, layout: CONSTRAINED)
+export const pageQuery = graphql`
+  query BlogPostBySlug($slug: String!) {
+    markdownRemark(fields: { slug: { eq: $slug } }) {
+      html
+      timeToRead
+      frontmatter {
+        title
+        subTitle
+        featuredImage {
+          childImageSharp {
+            gatsbyImageData(width: 680, quality: 100, layout: CONSTRAINED)
+          }
         }
+        date
+        category
+        tags
+        canonical
+        ogLink
+        publication
       }
-      date
-      category
-      tags
-      canonical
-      ogLink
-      publication
-    }
-    fields {
-      slug
-      date
+      fields {
+        slug
+        date
+      }
     }
   }
-}
 `;

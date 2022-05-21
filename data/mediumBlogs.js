@@ -1,5 +1,4 @@
 import moment from 'moment';
-import jwtImg from '../content/images/jwt.png';
 import eureka from '../content/images/eureka.png';
 import node1 from '../content/images/node-1.png';
 import node2 from '../content/images/node-2.jpeg';
@@ -61,16 +60,6 @@ import antiTheftHero from '../content/images/hackster-blues-wheres-my-car/hackst
 import sms from '../content/images/hackster-blues-wheres-my-car/sms-2.png';
 
 export default [
-  {
-    date: moment('2018-09-12').format('ll'),
-    img: jwtImg,
-    url: 'https://itnext.io/implementing-json-web-tokens-passport-js-in-a-javascript-application-with-react-b86b1f313436',
-    subTitle:
-      'How and why to use the various auth options Passport.js has to offer.',
-    tags: ['javascript', 'react', 'jwt', 'security', 'express'],
-    timeToRead: 13,
-    title: 'Implementing JSON Web Tokens & Passport.js in a React Application',
-  },
   {
     date: moment('2018-09-30').format('ll'),
     img: eureka,

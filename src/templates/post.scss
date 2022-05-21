@@ -7,9 +7,19 @@
     max-width: 800px;
     color: $darkBlueTint;
 
-    h1,
     h2 {
       border-bottom: 3px solid;
+    }
+
+    .post-title {
+      border: none;
+      font-size: 2em;
+      line-height: 1.15;
+    }
+
+    .post-subtitle {
+      border: none;
+      line-height: 1;
     }
 
     blockquote {
