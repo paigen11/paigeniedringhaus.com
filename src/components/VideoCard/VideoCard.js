@@ -14,8 +14,11 @@ const VideoCard = ({ course }) => (
         style={{ width: 200 }}
         alt="video card thumbnail image"
       />
-      <h4>{course.title}</h4>
+      <h4 className="video-title">{course.title}</h4>
       <h4 className="video-card-subtitle">{course.subtitle}</h4>
+      <h4 className="watch-now">
+        Watch now <span className="carot">&gt;</span>
+      </h4>
     </a>
   </article>
 );

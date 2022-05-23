@@ -56,6 +56,9 @@ const CoursesPage = () => {
                     />
                     <h4>{course.title}</h4>
                     <p>{course.hook}</p>
+                    <h4 className="learn-more">
+                      Learn more <span className="carot">&gt;</span>
+                    </h4>
                   </a>
                 </li>
               );

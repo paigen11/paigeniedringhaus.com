@@ -9,7 +9,7 @@ import newlineVideoSix from '../content/images/newline/tutorial-6-hero.jpeg';
 
 export default [
   {
-    title: 'Upgrade an Outdated React App',
+    title: 'Update a Legacy React App',
     subtitle: '(React Hooks & More)',
     date: moment('2021-10-25').format('LL'),
     path: 'https://www.youtube.com/watch?v=Prv6Pt1Ltrs',

@@ -54,33 +54,32 @@ const LatestPosts = () => {
             ? posts.map((post, index) => (
                 <div className="post" key={index}>
                   {post.path ? (
-                    <>
-                      <Link to={`/blog${post.path}`} key={post.title}>
-                        <p className="post-title">{post.title}</p>
-                        {post.subTitle ? <p>{post.subTitle}</p> : null}
-                      </Link>
+                    <Link
+                      className="post-link"
+                      to={`/blog${post.path}`}
+                      key={post.title}
+                    >
+                      <p className="post-title">{post.title}</p>
+                      <p className="post-sub-title">{post.subTitle}</p>
                       <PostTags tags={post.tags} />
-                      <Link to={post.path}>
-                        <p className="read-more">Read full article &gt;</p>
-                      </Link>
-                    </>
+                      <p className="read-more">
+                        Read more <span className="carot">&gt;</span>
+                      </p>
+                    </Link>
                   ) : (
                     <>
                       <a
+                        className="post-link"
                         href={post.url}
                         target="_blank"
                         rel="noopener noreferrer"
                       >
                         <p className="post-title">{post.title}</p>
-                        <p>{post.subTitle}</p>
-                      </a>
-                      <PostTags tags={post.tags} />
-                      <a
-                        href={post.url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        <p className="read-more">Read full article &gt;</p>
+                        <p className="post-sub-title">{post.subTitle}</p>
+                        <PostTags tags={post.tags} />
+                        <p className="read-more">
+                          Read more <span className="carot">&gt;</span>
+                        </p>
                       </a>
                     </>
                   )}

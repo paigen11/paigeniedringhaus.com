@@ -35,11 +35,11 @@ const App = () => {
             <img src={paige} alt="paige picture" />
           </div>
         </section>
-        <p>
-          Welcome and thanks for stopping by. I hope you enjoy exploring this
-          site as much as I've enjoyed building it.
-        </p>
         <section>
+          <p>
+            Welcome and thanks for stopping by. I hope you enjoy exploring this
+            site as much as I've enjoyed building it.
+          </p>
           <p className="welcome">
             While you're here, you can check out my&nbsp;
             <Link to="/blog">blog posts</Link> and&nbsp;

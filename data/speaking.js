@@ -13,8 +13,7 @@ export default [
   {
     title: 'Women in Tech Speaker Panel',
     date: moment('2017-02-23').format('LL'),
-    path:
-      'https://www.meetup.com/learn-to-code-in-atlanta-digitalcrafts/events/237763832',
+    path: 'https://www.meetup.com/learn-to-code-in-atlanta-digitalcrafts/events/237763832',
     img: digitalCrafts,
   },
   {
@@ -115,7 +114,7 @@ export default [
   },
   {
     title:
-      'Upgrade an Outdated React App (React Hooks & more) with Paige Niedringhaus',
+      'Update a Legacy React App (React Hooks & more) with Paige Niedringhaus',
     date: moment('2021-10-29').format('LL'),
     path: 'https://www.youtube.com/watch?v=Prv6Pt1Ltrs',
     img: newline,

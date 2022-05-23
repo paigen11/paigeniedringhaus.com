@@ -20,14 +20,12 @@ export default {
       title:
         "Introducing Volta - it manages Node.js versions so you don't have to",
       date: moment('2021-10-18').format('LL'),
-      path:
-        'https://www.newline.co/@paigen11/introducing-volta-it-manages-your-nodejs-versions-so-you-dont-have-to--eef49522',
+      path: 'https://www.newline.co/@paigen11/introducing-volta-it-manages-your-nodejs-versions-so-you-dont-have-to--eef49522',
     },
     {
       title: 'Cypress Studio - the underrated  feature speeding up e2e testing',
       date: moment('2021-10-21').format('LL'),
-      path:
-        'https://www.newline.co/write/cypress-studio-the-underrated-feature-speeding-up-e2e-testing--7bc4616b',
+      path: 'https://www.newline.co/write/cypress-studio-the-underrated-feature-speeding-up-e2e-testing--7bc4616b',
     },
   ],
   bluesWireless: [
@@ -39,8 +37,12 @@ export default {
     {
       title: 'Low Fi LoJack® with Blues Wireless and React',
       date: moment('2022-02-23').format('LL'),
-      path:
-        'https://blues.io/blog/gps-asset-tracker-with-blues-wireless-and-react/',
+      path: 'https://blues.io/blog/gps-asset-tracker-with-blues-wireless-and-react/',
+    },
+    {
+      title: 'Anti-Theft GPS Tracker and Recovery System',
+      date: moment('2022-04-13').format('LL'),
+      path: 'https://blues.io/blog/anti-theft-iot-gps-asset-tracker/',
     },
   ],
 };
