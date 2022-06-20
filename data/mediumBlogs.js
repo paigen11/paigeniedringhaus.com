@@ -1,5 +1,4 @@
 import moment from 'moment';
-import eureka from '../content/images/eureka.png';
 import node1 from '../content/images/node-1.png';
 import node2 from '../content/images/node-2.jpeg';
 import mostInterestingMan from '../content/images/most-interesting-man.jpeg';
@@ -60,15 +59,6 @@ import antiTheftHero from '../content/images/hackster-blues-wheres-my-car/hackst
 import sms from '../content/images/hackster-blues-wheres-my-car/sms-2.png';
 
 export default [
-  {
-    date: moment('2018-09-30').format('ll'),
-    img: eureka,
-    url: 'https://itnext.io/how-to-use-netflixs-eureka-and-spring-cloud-for-service-registry-8b43c8acdf4e',
-    subTitle: 'Remove the complexity of microservice architecture ',
-    tags: ['java ', 'nodejs', 'spring boot', 'javascript'],
-    timeToRead: 10,
-    title: 'How to Use Netflix’s Eureka and Spring Cloud for Service Registry',
-  },
   {
     date: moment('2018-10-11').format('ll'),
     img: node1,
