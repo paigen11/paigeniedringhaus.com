@@ -53,10 +53,11 @@ import paigeSite from '../content/images/paige-site.png';
 import iphoneIpad from '../content/images/iphone-ipad-coffee.jpg';
 import gpsTracker from '../content/images/hackster-low-code-gps-tracker/gps-tracker.jpeg';
 import reactBlues from '../content/images/react-blues.png';
-import assetTrackerMap from '../content/images/blues-asset-tracker-map.png';
+import assetTrackerMap from '../content/images/asset-tracker-map-nextjs-react-leaflet/blues-asset-tracker-map.png';
 import nodeBackground from '../content/images/node-12/node-background.png';
 import antiTheftHero from '../content/images/hackster-blues-wheres-my-car/hackster-hero.png';
 import sms from '../content/images/hackster-blues-wheres-my-car/sms-2.png';
+import leakDetectorHero from '../content/images/hackster-leak-detector/hackster-hero.jpg';
 
 export default [
   {
@@ -619,5 +620,14 @@ export default [
       'Build a Notecard-based anti-theft device with SMS alerts when movement is detected.',
     tags: ['iot', 'gps', 'cellular', 'blues wireless', 'alert'],
     title: 'Anti-Theft GPS Tracker and Recovery System',
+  },
+  {
+    date: moment('2022-07-08').format('ll'),
+    img: leakDetectorHero,
+    url: 'https://www.hackster.io/paige-niedringhaus/leave-the-water-running-build-an-iot-smart-leak-detector-3cc099',
+    subTitle:
+      "Build a leak detector complete with SMS notifications if a leak's detected. 🪣",
+    tags: ['iot', 'cellular', 'blues wireless', 'alert'],
+    title: 'Leave the Water Running? Build an IoT Smart Leak Detector',
   },
 ];
