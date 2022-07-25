@@ -1,5 +1,4 @@
 import moment from 'moment';
-import node1 from '../content/images/node-1.png';
 import node2 from '../content/images/node-2.jpeg';
 import mostInterestingMan from '../content/images/most-interesting-man.jpeg';
 import nodemailer from '../content/images/nodemailer.png';
@@ -60,15 +59,6 @@ import sms from '../content/images/hackster-blues-wheres-my-car/sms-2.png';
 import leakDetectorHero from '../content/images/hackster-leak-detector/hackster-hero.jpg';
 
 export default [
-  {
-    date: moment('2018-10-11').format('ll'),
-    img: node1,
-    url: 'https://itnext.io/using-node-js-to-read-really-really-large-files-pt-1-d2057fe76b33',
-    subTitle: 'Node can handle big data pretty, darn well.',
-    tags: ['javascript', 'nodejs', 'big data'],
-    timeToRead: 7,
-    title: 'Using Node.js to Read Really, Really Large Datasets & Files (Pt 1)',
-  },
   {
     date: moment('2018-10-24').format('ll'),
     img: node2,
@@ -626,7 +616,7 @@ export default [
     img: leakDetectorHero,
     url: 'https://www.hackster.io/paige-niedringhaus/leave-the-water-running-build-an-iot-smart-leak-detector-3cc099',
     subTitle:
-      "Build a leak detector complete with SMS notifications if a leak's detected. 🪣",
+      "Build a leak detector complete with SMS notifications if a leak's detected.",
     tags: ['iot', 'cellular', 'blues wireless', 'alert'],
     title: 'Leave the Water Running? Build an IoT Smart Leak Detector',
   },
