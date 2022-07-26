@@ -8,6 +8,7 @@ import react from '../content/images/react.png';
 import techElevator from '../src/images/thumbnails/techElevator.png';
 import bluesWireless from '../src/images/thumbnails/bluesWireless.png';
 import newline from '../src/images/thumbnails/newline-logo.png';
+import thisDotMedia from '../src/images/thumbnails/thisDotMedia.jpeg';
 
 export default [
   {
@@ -191,5 +192,11 @@ export default [
     date: moment('2022-04-13').format('LL'),
     path: 'https://www.youtube.com/watch?v=222JbIOauIg',
     img: bluesWireless,
+  },
+  {
+    title: 'State of React Ecosystem',
+    date: moment('2022-07-14').format('LL'),
+    path: 'https://www.youtube.com/watch?v=e3faQlkUQf4&ab_channel=ThisDotMedia',
+    img: thisDotMedia,
   },
 ];
