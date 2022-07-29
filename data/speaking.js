@@ -199,4 +199,10 @@ export default [
     path: 'https://www.youtube.com/watch?v=e3faQlkUQf4&ab_channel=ThisDotMedia',
     img: thisDotMedia,
   },
+  {
+    title: 'The Niedringhaus Effect (Ep 4): Build an IoT Leak Detector',
+    date: moment('2022-07-29').format('LL'),
+    path: 'https://www.youtube.com/watch?v=9z5KNZMN__0',
+    img: bluesWireless,
+  },
 ];

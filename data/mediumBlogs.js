@@ -57,6 +57,7 @@ import nodeBackground from '../content/images/node-12/node-background.png';
 import antiTheftHero from '../content/images/hackster-blues-wheres-my-car/hackster-hero.png';
 import sms from '../content/images/hackster-blues-wheres-my-car/sms-2.png';
 import leakDetectorHero from '../content/images/hackster-leak-detector/hackster-hero.jpg';
+import leakDetectorParts from '../content/images/hackster-leak-detector/leak-detector-parts.jpg';
 
 export default [
   {
@@ -619,5 +620,14 @@ export default [
       "Build a leak detector complete with SMS notifications if a leak's detected.",
     tags: ['iot', 'cellular', 'blues wireless', 'alert'],
     title: 'Leave the Water Running? Build an IoT Smart Leak Detector',
+  },
+  {
+    date: moment('2022-07-29').format('ll'),
+    img: leakDetectorParts,
+    url: 'https://blues.io/blog/build-an-iot-smart-leak-detector-with-sms-alerts/',
+    subTitle:
+      "Learn how to build a low-cost, cellular-enabled water leak detection device complete with SMS notifications if a leak's detected",
+    tags: ['iot', 'cellular', 'blues wireless', 'alert'],
+    title: 'Build an IoT Smart Leak Detector with SMS Alerts',
   },
 ];

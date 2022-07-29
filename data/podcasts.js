@@ -33,54 +33,47 @@ export default [
     title:
       'React Wednesdays: Working in Large React Apps with Paige Niedringhaus',
     date: moment('2021-02-17').format('LL'),
-    path:
-      'https://www.telerik.com/react-wednesdays/working-in-large-react-apps-with-paige-niedringhaus',
+    path: 'https://www.telerik.com/react-wednesdays/working-in-large-react-apps-with-paige-niedringhaus',
     img: telerik,
   },
   {
     title: 'React Wednesdays React All-Day: Modernizing Enterprise React Apps',
     date: moment('2021-06-02').format('LL'),
-    path:
-      'https://www.telerik.com/react-wednesdays/react-all-day-modernizing-enterprise-react-apps',
+    path: 'https://www.telerik.com/react-wednesdays/react-all-day-modernizing-enterprise-react-apps',
     img: telerik,
   },
   {
     title: "React Wednesdays: Let's Try GitHub Copilot Together",
     date: moment('2021-07-14').format('LL'),
-    path:
-      'https://www.telerik.com/react-wednesdays/react-wednesdays-let-s-try-github-copilot-together',
+    path: 'https://www.telerik.com/react-wednesdays/react-wednesdays-let-s-try-github-copilot-together',
     img: telerik,
   },
   {
     title:
       'React Round Up: Modernizing Enterprise React Apps with Paige Niedringhaus',
     date: moment('2021-10-20').format('LL'),
-    path:
-      'https://reactroundup.com/modernizing-enterprise-react-apps-with-paige-niedringhaus-rru-160',
+    path: 'https://reactroundup.com/modernizing-enterprise-react-apps-with-paige-niedringhaus-rru-160',
     img: reactRoundUp,
   },
   {
     title:
       'Software Engineering Daily: Enterprise React Apps with Paige Niedringhaus',
     date: moment('2021-11-02').format('LL'),
-    path:
-      'https://softwareengineeringdaily.com/2021/11/02/enterprise-react-apps-with-paige-niedringhaus/',
+    path: 'https://softwareengineeringdaily.com/2021/11/02/enterprise-react-apps-with-paige-niedringhaus/',
     img: seDaily,
   },
   {
     title:
       'Modern Web Podcast: Modernizing React Apps with Paige Niedringhaus & Mark Erikson',
     date: moment('2021-11-23').format('LL'),
-    path:
-      'https://modernweb.podbean.com/e/modernizing-react-apps-with-paige-niedringhaus-mark-erikson/',
+    path: 'https://modernweb.podbean.com/e/modernizing-react-apps-with-paige-niedringhaus-mark-erikson/',
     img: modernWeb,
   },
   {
     title:
       "She's in Tech: Escaping the Application Blackhole with Paige Niedringhaus",
     date: moment('2021-12-21').format('LL'),
-    path:
-      'https://shesintechpodcast.com/escaping-application-blackhole-paige-niedringhaus-shes-in-tech24-',
+    path: 'https://shesintechpodcast.com/escaping-application-blackhole-paige-niedringhaus-shes-in-tech24-',
     img: shesInTech,
   },
   {
@@ -92,8 +85,7 @@ export default [
   {
     title: '20minJS: State Management in React with Paige Niedringhaus',
     date: moment('2022-03-29').format('LL'),
-    path:
-      'https://podcast.20minjs.com/1952066/10330403-episode-4-state-management-in-react-with-paige-niedringhaus',
+    path: 'https://podcast.20minjs.com/1952066/10330403-episode-4-state-management-in-react-with-paige-niedringhaus',
     img: js20min,
   },
 ];

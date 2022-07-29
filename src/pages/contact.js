@@ -83,7 +83,7 @@ const ContactPage = () => {
               >
                 Hackster.io
               </a>
-              &nbsp;too.
+              &nbsp;.
             </li>
           </ul>
         </section>

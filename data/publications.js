@@ -44,5 +44,10 @@ export default {
       date: moment('2022-04-13').format('LL'),
       path: 'https://blues.io/blog/anti-theft-iot-gps-asset-tracker/',
     },
+    {
+      title: 'Build an IoT Smart Leak Detector with SMS Alerts',
+      date: moment('2022-07-29').format('LL'),
+      path: 'https://blues.io/blog/build-an-iot-smart-leak-detector-with-sms-alerts/',
+    },
   ],
 };

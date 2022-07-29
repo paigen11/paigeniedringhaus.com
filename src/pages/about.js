@@ -91,7 +91,7 @@ const AboutPage = () => {
             right now is on&nbsp;
             <strong>
               frontend web development technologies like React, Next.js, and
-              Hugo
+              Svelte
             </strong>
             , and building&nbsp;
             <a
@@ -111,7 +111,7 @@ const AboutPage = () => {
           <p>
             But I also love seeing other developers improve, build fun things
             they dreamed up, and succeed in their careers, which is why I mentor
-            devs, write about what I've learned online and speak at conferences
+            devs, write about what I've learned online, and speak at conferences
             and meetups.
           </p>
           <p>
@@ -124,10 +124,9 @@ const AboutPage = () => {
               Medium
             </a>
             &nbsp;and other <Link to="/media">publications</Link> about web
-            development and technology for a few years, but I wanted to build my
-            own site to share my knowledge with a broader audience (and
-            hopefully learn new things from them as well!). I hope you find
-            my&nbsp;
+            development and technology for years, but I wanted to build my own
+            site to share my knowledge with a broader audience (and hopefully
+            learn new things from them as well!). I hope you find my&nbsp;
             <Link to="/blog">posts</Link>&nbsp;useful as you build your own
             awesome stuff.
           </p>
@@ -141,9 +140,9 @@ const AboutPage = () => {
           </p>
           <p>
             And when I'm not programming, I like to spend my spare time working
-            on my art 🎨, traveling ✈️, and hanging out with family and friends.
-            I've recently gotten into mastering handstands and handbalancing, so
-            if you have tips, let me know!
+            on my art 🎨 (watercolors), traveling ✈️, and hanging out with
+            family and friends. I've recently gotten into mastering handstands
+            and handbalancing, so if you have tips, let me know!
           </p>
           <figure>
             <img src={seanAndPaige} alt="sean and paige photo" />
