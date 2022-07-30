@@ -626,7 +626,7 @@ export default [
     img: leakDetectorParts,
     url: 'https://blues.io/blog/build-an-iot-smart-leak-detector-with-sms-alerts/',
     subTitle:
-      "Learn how to build a low-cost, cellular-enabled water leak detection device complete with SMS notifications if a leak's detected",
+      'Learn to build a low-cost, cellular-enabled water leak detection device complete with SMS alerts.',
     tags: ['iot', 'cellular', 'blues wireless', 'alert'],
     title: 'Build an IoT Smart Leak Detector with SMS Alerts',
   },
