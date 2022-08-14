@@ -1,5 +1,4 @@
 import moment from 'moment';
-import node2 from '../content/images/node-2.jpeg';
 import mostInterestingMan from '../content/images/most-interesting-man.jpeg';
 import nodemailer from '../content/images/nodemailer.png';
 import puppeteer from '../content/images/puppeteer.png';
@@ -60,16 +59,6 @@ import leakDetectorHero from '../content/images/hackster-leak-detector/hackster-
 import leakDetectorParts from '../content/images/hackster-leak-detector/leak-detector-parts.jpg';
 
 export default [
-  {
-    date: moment('2018-10-24').format('ll'),
-    img: node2,
-    url: 'https://itnext.io/streams-for-the-win-a-performance-comparison-of-nodejs-methods-for-reading-large-datasets-pt-2-bcfa732fa40e',
-    subTitle: 'How readFile(), createReadStream() and event-stream Stack Up',
-    tags: ['javascript', 'nodejs', 'big data', 'testing', 'performance'],
-    timeToRead: 8,
-    title:
-      'A Performance Comparison of Node.js Methods for Reading Large Datasets (Pt 2)',
-  },
   {
     date: moment('2018-11-11').format('ll'),
     img: mostInterestingMan,
