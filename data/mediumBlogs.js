@@ -62,7 +62,7 @@ export default [
   {
     date: moment('2018-11-11').format('ll'),
     img: mostInterestingMan,
-    url: 'https://itnext.io/the-absolute-easiest-way-to-debug-node-js-with-vscode-2e02ef5b1bad',
+    url: 'https://medium.com/itnext/the-absolute-easiest-way-to-debug-node-js-with-vscode-2e02ef5b1bad',
     subTitle:
       'Let’s face it…debugging Node.js is (and always has been) kind of a pain.',
     tags: ['nodejs', 'vscode', 'testing'],
@@ -72,7 +72,7 @@ export default [
   {
     date: moment('2018-11-22').format('ll'),
     img: nodemailer,
-    url: 'https://itnext.io/password-reset-emails-in-your-react-app-made-easy-with-nodemailer-bb27968310d7',
+    url: 'https://medium.com/itnext/password-reset-emails-in-your-react-app-made-easy-with-nodemailer-bb27968310d7',
     subTitle:
       'Resetting Passwords in JavaScript Apps Doesn’t Have to be Complicated',
     tags: ['javascript', 'nodejs', 'react', 'express'],
@@ -82,7 +82,7 @@ export default [
   {
     date: moment('2018-12-08').format('ll'),
     img: puppeteer,
-    url: 'https://itnext.io/getting-started-using-puppeteer-headless-chrome-for-end-to-end-testing-8487718e4d97',
+    url: 'https://medium.com/itnext/getting-started-using-puppeteer-headless-chrome-for-end-to-end-testing-8487718e4d97',
     subTitle:
       'And A Brief Primer on Integrating Puppeteer Into Your Jest Testing',
     tags: ['javascript', 'testing', 'puppeteer', 'react', 'jest'],
@@ -92,7 +92,7 @@ export default [
   {
     date: moment('2018-12-22').format('ll'),
     img: fineDog,
-    url: 'https://itnext.io/keep-code-consistent-across-developers-the-easy-way-with-prettier-eslint-60bb7e91b76c',
+    url: 'https://medium.com/itnext/keep-code-consistent-across-developers-the-easy-way-with-prettier-eslint-60bb7e91b76c',
     subTitle:
       'Writing Code is Tough Enough, Don’t Make it Tougher with Bad Formatting',
     tags: ['vscode', 'javascript', 'eslint'],
@@ -103,7 +103,7 @@ export default [
   {
     date: moment('2019-01-04').format('ll'),
     img: java,
-    url: 'https://itnext.io/using-java-to-read-really-really-large-files-a6f8a3f44649',
+    url: 'https://medium.com/itnext/using-java-to-read-really-really-large-files-a6f8a3f44649',
     subTitle: 'This is the kind of stuff Java was made for.',
     tags: ['java ', 'big data', 'performance', 'testing'],
     timeToRead: 16,
@@ -112,7 +112,7 @@ export default [
   {
     date: moment('2019-01-21').format('ll'),
     img: swagger,
-    url: 'https://itnext.io/setting-up-swagger-in-a-node-js-application-d3c4d7aa56d4',
+    url: 'https://medium.com/itnext/setting-up-swagger-in-a-node-js-application-d3c4d7aa56d4',
     subTitle: 'Spring Boot makes Swagger APIs look easy, Node.js not so much.',
     tags: ['nodejs', 'swagger', 'api', 'testing', 'javascript'],
     timeToRead: 18,
@@ -121,7 +121,7 @@ export default [
   {
     date: moment('2019-02-03').format('ll'),
     img: errorMsg,
-    url: 'https://itnext.io/the-case-for-standardized-error-handling-in-your-web-application-6428ff60cc31',
+    url: 'https://medium.com/itnext/the-case-for-standardized-error-handling-in-your-web-application-6428ff60cc31',
     subTitle:
       'Because Bad Error Messages — or Worse, Invisible Errors are Doing No One Any Favors',
     tags: ['api', 'errors', 'programming'],
@@ -141,7 +141,7 @@ export default [
   {
     date: moment('2019-02-17').format('ll'),
     img: esLint,
-    url: 'https://itnext.io/how-eslint-makes-me-a-better-react-developer-237fb14c00ae',
+    url: 'https://medium.com/itnext/how-eslint-makes-me-a-better-react-developer-237fb14c00ae',
     subTitle: 'JavaScript’s Loose Standards are a Blessing and a Curse',
     tags: ['javascript', 'eslint', 'react', 'self improvement'],
     timeToRead: 11,
@@ -150,7 +150,7 @@ export default [
   {
     date: moment('2019-03-03').format('ll'),
     img: nvm,
-    url: 'https://itnext.io/nvm-the-easiest-way-to-switch-node-js-environments-on-your-machine-in-a-flash-17babb7d5f1b',
+    url: 'https://medium.com/itnext/nvm-the-easiest-way-to-switch-node-js-environments-on-your-machine-in-a-flash-17babb7d5f1b',
     subTitle:
       'Nope, I didn’t Misspell NPM — Node Version Manager is it’s Own Handy Dev Tool',
     tags: ['javascript', 'nodejs', 'nvm', 'programming'],
@@ -161,7 +161,7 @@ export default [
   {
     date: moment('2019-03-15').format('ll'),
     img: multipleDevs,
-    url: 'https://itnext.io/update-feature-toggles-in-a-react-app-without-redeploying-5b95674a5bb1',
+    url: 'https://medium.com/itnext/update-feature-toggles-in-a-react-app-without-redeploying-5b95674a5bb1',
     subTitle:
       'Spring Cloud Makes Feature Toggles Easy, a Node Endpoint Makes Redeploying Unneeded',
     tags: ['javascript', 'nodejs', 'react', 'spring boot'],
@@ -171,7 +171,7 @@ export default [
   {
     date: moment('2019-03-31').format('ll'),
     img: npm,
-    url: 'https://itnext.io/node-engines-helping-developers-everywhere-avoid-phantom-bugs-2eef519604b2',
+    url: 'https://medium.com/itnext/node-engines-helping-developers-everywhere-avoid-phantom-bugs-2eef519604b2',
     subTitle:
       'Specific Node.js Engines Should Be a Required Field for Every Package.json',
     tags: ['javascript', 'nodejs', 'programming', 'npm'],
@@ -181,7 +181,7 @@ export default [
   {
     date: moment('2019-04-13').format('ll'),
     img: vsCode,
-    url: 'https://itnext.io/settings-sync-with-vs-code-c3d4f126989',
+    url: 'https://medium.com/itnext/settings-sync-with-vs-code-c3d4f126989',
     subTitle:
       'Just When You Thought Visual Studio Code Couldn’t Get Any Better, It Did',
     tags: ['javascript', 'vscode', 'programming'],
@@ -191,7 +191,7 @@ export default [
   {
     date: moment('2019-05-02').format('ll'),
     img: multiNode,
-    url: 'https://itnext.io/4-solutions-to-run-multiple-node-js-or-npm-commands-simultaneously-9edaa6215a93',
+    url: 'https://medium.com/itnext/4-solutions-to-run-multiple-node-js-or-npm-commands-simultaneously-9edaa6215a93',
     subTitle: 'At Some Point, Everyone Has this Problem…',
     tags: ['javascript', 'nodejs', 'npm'],
     timeToRead: 8,
@@ -200,7 +200,7 @@ export default [
   {
     date: moment('2019-05-12').format('ll'),
     img: officeSpace,
-    url: 'https://itnext.io/javascripts-async-await-versus-promise-the-great-debate-6308cb2e10b3',
+    url: 'https://medium.com/itnext/javascripts-async-await-versus-promise-the-great-debate-6308cb2e10b3',
     subTitle: 'Prepare Yourselves, You’re Stepping into a Minefield',
     tags: ['javascript', 'async', 'es6', 'promises'],
     timeToRead: 11,
@@ -209,7 +209,7 @@ export default [
   {
     date: moment('2019-05-27').format('ll'),
     img: sparta,
-    url: 'https://itnext.io/using-es6-to-destructure-nested-objects-in-javascript-avoid-undefined-errors-that-break-your-code-612ae67913e9',
+    url: 'https://medium.com/itnext/using-es6-to-destructure-nested-objects-in-javascript-avoid-undefined-errors-that-break-your-code-612ae67913e9',
     subTitle: 'Because Airbnb’s ESLint is Merciless in React',
     tags: ['javascript', 'react', 'es6', 'eslint'],
     timeToRead: 10,
@@ -227,7 +227,7 @@ export default [
   {
     date: moment('2019-06-23').format('ll'),
     img: cssIsAwesome,
-    url: 'https://itnext.io/viewport-units-the-css-you-didnt-know-about-but-should-24b104483429',
+    url: 'https://medium.com/itnext/viewport-units-the-css-you-didnt-know-about-but-should-24b104483429',
     subTitle: 'Because CSS Done Right is Awesome',
     tags: ['css', 'programming'],
     timeToRead: 6,
@@ -236,7 +236,7 @@ export default [
   {
     date: moment('2019-07-07').format('ll'),
     img: stumpedDev,
-    url: 'https://itnext.io/javascript-international-methods-b70a2de09d92',
+    url: 'https://medium.com/itnext/javascript-international-methods-b70a2de09d92',
     subTitle:
       'Because Date Formatting is Pain & International Formatting is Impossible',
     tags: ['javascript', 'programming', 'internationalization'],
@@ -255,7 +255,7 @@ export default [
   {
     date: moment('2019-07-28').format('ll'),
     img: blocks,
-    url: 'https://itnext.io/var-let-const-javascript-es6-feature-series-pt-1-fa603567809e',
+    url: 'https://medium.com/itnext/var-let-const-javascript-es6-feature-series-pt-1-fa603567809e',
     subTitle: "Let's Begin at the Beginning...",
     tags: ['javascript', 'es6'],
     timeToRead: 10,
@@ -264,7 +264,7 @@ export default [
   {
     date: moment('2019-08-06').format('ll'),
     img: chalkboard,
-    url: 'https://itnext.io/arrow-functions-javascript-es6-feature-series-pt-2-e8c31c823392',
+    url: 'https://medium.com/itnext/arrow-functions-javascript-es6-feature-series-pt-2-e8c31c823392',
     subTitle: 'When is a Function Not a Function? When it’s an Arrow',
     tags: ['javascript', 'es6'],
     timeToRead: 11,
@@ -273,7 +273,7 @@ export default [
   {
     date: moment('2019-08-23').format('ll'),
     img: books,
-    url: 'https://itnext.io/default-function-parameter-values-javascript-es6-feature-series-pt-3-bd8392a88a12',
+    url: 'https://medium.com/itnext/default-function-parameter-values-javascript-es6-feature-series-pt-3-bd8392a88a12',
     subTitle: "Less Parameter Undefined Checks Make Developers' Lives Easier",
     tags: ['javascript', 'es6'],
     timeToRead: 8,
@@ -283,7 +283,7 @@ export default [
   {
     date: moment('2019-09-01').format('ll'),
     img: highlighters,
-    url: 'https://itnext.io/spread-rest-parameters-javascript-es6-feature-series-pt-4-c9e9f0c0228f',
+    url: 'https://medium.com/itnext/spread-rest-parameters-javascript-es6-feature-series-pt-4-c9e9f0c0228f',
     subTitle: 'The Syntax so Nice ES6 Used it Twice',
     tags: ['javascript', 'es6'],
     timeToRead: 11,
@@ -301,7 +301,7 @@ export default [
   {
     date: moment('2019-09-29').format('ll'),
     img: glasses,
-    url: 'https://itnext.io/enhanced-object-literal-value-shorthand-javascript-es6-feature-series-pt-6-e00dfdc24f64',
+    url: 'https://medium.com/itnext/enhanced-object-literal-value-shorthand-javascript-es6-feature-series-pt-6-e00dfdc24f64',
     subTitle: 'Because typing the same thing twice in an object is crazy',
     tags: ['javascript', 'es6'],
     timeToRead: 8,
@@ -321,7 +321,7 @@ export default [
   {
     date: moment('2019-10-27').format('ll'),
     img: cars,
-    url: 'https://itnext.io/classes-and-inheritance-javascript-es6-feature-series-part-8-4a81fa3adf0f',
+    url: 'https://medium.com/itnext/classes-and-inheritance-javascript-es6-feature-series-part-8-4a81fa3adf0f',
     subTitle: 'Prototypes are still there...under the hood',
     tags: ['javascript', 'es6'],
     timeToRead: 11,
@@ -341,7 +341,7 @@ export default [
   {
     date: moment('2019-11-24').format('ll'),
     img: library,
-    url: 'https://itnext.io/destructuring-arrays-objects-javascript-es6-feature-series-pt-10-507108471c07',
+    url: 'https://medium.com/itnext/destructuring-arrays-objects-javascript-es6-feature-series-pt-10-507108471c07',
     subTitle:
       'For concise variable syntax, curly braces have never been more critical',
     tags: ['javascript', 'es6'],
@@ -362,7 +362,7 @@ export default [
   {
     date: moment('2019-12-23').format('ll'),
     img: stopSigns,
-    url: 'https://itnext.io/javascript-error-handling-from-express-js-to-react-810deb5e5e28',
+    url: 'https://medium.com/itnext/javascript-error-handling-from-express-js-to-react-810deb5e5e28',
     subTitle:
       'Because errors are bound to happen and we need to handle them correctly.',
     tags: ['javascript', 'react', 'express'],
@@ -391,7 +391,7 @@ export default [
   {
     date: moment('2020-02-16').format('ll'),
     img: jumping,
-    url: 'https://itnext.io/javascripts-optional-chaining-proposal-bc9e6e5f2877',
+    url: 'https://medium.com/itnext/javascripts-optional-chaining-proposal-bc9e6e5f2877',
     subTitle: 'Kiss undefined errors that stop you dead in your tracks goodbye',
     tags: ['javascript'],
     timeToRead: 7,
@@ -419,7 +419,7 @@ export default [
   {
     date: moment('2020-04-14').format('ll'),
     img: marionette,
-    url: 'https://blog.bitsrc.io/animating-reactjs-with-react-transition-group-2af6c87cab0c',
+    url: 'https://medium.com/bitsrc/animating-reactjs-with-react-transition-group-2af6c87cab0c',
     subTitle:
       'Another handy React animation library to have in your tool belt.',
     tags: ['javascript', 'react', 'css'],
@@ -429,7 +429,7 @@ export default [
   {
     date: moment('2020-05-11').format('ll'),
     img: stopwatch,
-    url: 'https://blog.bitsrc.io/polling-in-react-using-the-useinterval-custom-hook-e2bcefda4197',
+    url: 'https://medium.com/bitsrc/polling-in-react-using-the-useinterval-custom-hook-e2bcefda4197',
     subTitle:
       "useInterval is a custom Hook that's certain to make intervals simpler in your app.",
     tags: ['javascript', 'react'],
@@ -439,7 +439,7 @@ export default [
   {
     date: moment('2020-06-10').format('ll'),
     img: loader,
-    url: 'https://blog.bitsrc.io/building-a-universal-higher-order-component-page-loader-for-your-react-app-46d74f7a6958',
+    url: 'https://medium.com/bitsrc/building-a-universal-higher-order-component-page-loader-for-your-react-app-46d74f7a6958',
     subTitle:
       "Loading screens are needed everywhere - don't reinvent the wheel every time.",
     tags: ['javascript', 'react'],
@@ -450,7 +450,7 @@ export default [
   {
     date: moment('2020-07-08').format('ll'),
     img: laptopGraph,
-    url: 'https://blog.bitsrc.io/gatsby-fetching-data-at-the-component-level-with-usestaticquery-397e35e648e',
+    url: 'https://medium.com/bitsrc/gatsby-fetching-data-at-the-component-level-with-usestaticquery-397e35e648e',
     subTitle: 'Queries are no longer relegated to just page level components',
     tags: ['javascript', 'gatsby', 'react'],
     timeToRead: 8,
@@ -459,7 +459,7 @@ export default [
   {
     date: moment('2020-08-13').format('ll'),
     img: uxFlows,
-    url: 'https://blog.bitsrc.io/mocking-http-calls-in-cypress-end-to-end-tests-fa2e6b7caaf7',
+    url: 'https://medium.com/bitsrc/mocking-http-calls-in-cypress-end-to-end-tests-fa2e6b7caaf7',
     subTitle:
       "Don't let unreliable test data keep your new features from making it to production",
     tags: ['javascript', 'cypress', 'testing', 'e2e'],
@@ -469,7 +469,7 @@ export default [
   {
     date: moment('2020-09-09').format('ll'),
     img: holdingHands,
-    url: 'https://blog.bitsrc.io/recent-advances-and-improvements-to-javascript-promises-561790897a5d',
+    url: 'https://medium.com/bitsrc/recent-advances-and-improvements-to-javascript-promises-561790897a5d',
     subTitle:
       "They've come a long way since the days of Promise.resolve() and Promise.reject()",
     tags: ['javascript', 'promises'],
@@ -479,7 +479,7 @@ export default [
   {
     date: moment('2020-10-20').format('ll'),
     img: laptopMetrics,
-    url: 'https://blog.bitsrc.io/vs-codes-rest-client-plugin-is-all-you-need-to-make-api-calls-e9e95fcfd85a',
+    url: 'https://medium.com/bitsrc/vs-codes-rest-client-plugin-is-all-you-need-to-make-api-calls-e9e95fcfd85a',
     subTitle: "Why leave the IDE to test new endpoints? Now you don't have to.",
     tags: ['vscode', 'javascript', 'api'],
     timeToRead: 9,
@@ -488,7 +488,7 @@ export default [
   {
     date: moment('2020-11-24').format('ll'),
     img: coloredSmoke,
-    url: 'https://blog.bitsrc.io/pure-css-to-make-a-button-shine-and-gently-change-colors-over-time-5b685d9c6a7e',
+    url: 'https://medium.com/bitsrc/pure-css-to-make-a-button-shine-and-gently-change-colors-over-time-5b685d9c6a7e',
     subTitle: 'Because animations and gradients in CSS are delightful.',
     tags: ['css'],
     timeToRead: 11,
@@ -498,7 +498,7 @@ export default [
   {
     date: moment('2020-12-23').format('ll'),
     img: cables,
-    url: 'https://blog.bitsrc.io/setting-up-axios-interceptors-for-all-http-calls-in-an-application-71bc2c636e4e',
+    url: 'https://medium.com/bitsrc/setting-up-axios-interceptors-for-all-http-calls-in-an-application-71bc2c636e4e',
     subTitle:
       "Automatically intercept all the requests and responses so you don't have to remember to do it yourself.",
     tags: ['javascript'],
@@ -508,7 +508,7 @@ export default [
   {
     date: moment('2021-01-19').format('ll'),
     img: fistBump,
-    url: 'https://blog.bitsrc.io/css-clamp-the-responsive-combination-weve-all-been-waiting-for-f1ce1981ea6',
+    url: 'https://medium.com/bitsrc/css-clamp-the-responsive-combination-weve-all-been-waiting-for-f1ce1981ea6e',
     subTitle: 'Bringing together the best of CSS min() and CSS max() functions',
     tags: ['css'],
     timeToRead: 8,
@@ -517,7 +517,7 @@ export default [
   {
     date: moment('2021-02-22').format('ll'),
     img: scientist,
-    url: 'https://blog.bitsrc.io/successfully-throwing-async-errors-with-the-jest-testing-library-fda17261733a',
+    url: 'https://medium.com/bitsrc/successfully-throwing-async-errors-with-the-jest-testing-library-fda17261733a',
     subTitle: 'The One Time Errors Should Happen in your Code',
     tags: ['jest', 'testing', 'javascript'],
     timeToRead: 8,
@@ -526,7 +526,7 @@ export default [
   {
     date: moment('2021-03-18').format('ll'),
     img: puzzle,
-    url: 'https://blog.bitsrc.io/how-to-utilize-submodules-within-git-repos-5dfdd1c62d09',
+    url: 'https://medium.com/bitsrc/how-to-utilize-submodules-within-git-repos-5dfdd1c62d09',
     subTitle:
       'One Solution When the Primary Code Can be Open Source, but Specific Content Needs to be Private',
     tags: ['git', 'netlify', 'github'],
@@ -536,7 +536,7 @@ export default [
   {
     date: moment('2021-05-03').format('ll'),
     img: paigeSite,
-    url: 'https://blog.bitsrc.io/animate-a-mobile-hamburger-bar-menu-using-css-and-just-a-hint-of-javascript-f31f928eb992',
+    url: 'https://medium.com/bitsrc/animate-a-mobile-hamburger-bar-menu-using-css-and-just-a-hint-of-javascript-f31f928eb992',
     subTitle:
       'Add those extra little touches, and propel a site from working to wow.',
     tags: ['css', 'javascript'],
@@ -547,7 +547,7 @@ export default [
   {
     date: moment('2021-06-24').format('ll'),
     img: iphoneIpad,
-    url: 'https://blog.bitsrc.io/using-react-hooks-to-recognize-respond-to-current-viewport-size-c385009005c0',
+    url: 'https://medium.com/bitsrc/using-react-hooks-to-recognize-respond-to-current-viewport-size-c385009005c0',
     subTitle: 'Because Edge Cases are the Only Certainty in Development',
     tags: ['react', 'javascript'],
     timeToRead: 8,
