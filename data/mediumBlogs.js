@@ -57,6 +57,7 @@ import antiTheftHero from '../content/images/hackster-blues-wheres-my-car/hackst
 import sms from '../content/images/hackster-blues-wheres-my-car/sms-2.png';
 import leakDetectorHero from '../content/images/hackster-leak-detector/hackster-hero.jpg';
 import leakDetectorParts from '../content/images/hackster-leak-detector/leak-detector-parts.jpg';
+import snowflakeStreamlitLogos from '../content/images/custom-iot-dashboards-snowflake-streamlit-blues/snowflake-streamlit-blues.png';
 
 export default [
   {
@@ -618,5 +619,15 @@ export default [
       'Learn to build a low-cost, cellular-enabled water leak detection device complete with SMS alerts.',
     tags: ['iot', 'cellular', 'blues wireless', 'alert'],
     title: 'Build an IoT Smart Leak Detector with SMS Alerts',
+  },
+  {
+    date: moment('2022-09-08').format('ll'),
+    img: snowflakeStreamlitLogos,
+    url: 'https://blues.io/blog/build-custom-iot-dashboards-with-snowflake-streamlit-and-blues/',
+    subTitle:
+      'Some basic Python code can create beautiful, highly customized IoT data visualizations in no time.',
+    tags: ['iot', 'python', 'blues wireless', 'big data', 'data visualization'],
+    title:
+      'Quickly Build Custom IoT Dashboards with Snowflake, Streamlit, and Blues Wireless',
   },
 ];

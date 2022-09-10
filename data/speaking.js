@@ -205,4 +205,11 @@ export default [
     path: 'https://www.youtube.com/watch?v=9z5KNZMN__0',
     img: bluesWireless,
   },
+  {
+    title:
+      'The Niedringhaus Effect (Ep 5): Custom IoT Dashboards with Snowflake, Streamlit, & the Notecard',
+    date: moment('2022-09-08').format('LL'),
+    path: 'https://www.youtube.com/watch?v=ahwr3ZB2Bm4',
+    img: bluesWireless,
+  },
 ];

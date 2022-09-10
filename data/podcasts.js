@@ -13,20 +13,20 @@ export default [
   {
     title: 'JavaScript Jabber: Node 12 with Paige Niedringhaus',
     date: moment('2019-10-08').format('LL'),
-    path: 'https://javascriptjabber.com/403',
+    path: 'https://topenddevs.com/podcasts/javascript-jabber/episodes/jsj-398-node-12-with-paige-niedringhaus',
     img: jsJabber,
   },
   {
     title: 'My JavaScript Story: Paige Niedringhaus',
     date: moment('2020-03-21').format('LL'),
-    path: 'https://myjavascriptstory.com/145',
+    path: 'https://topenddevs.com/podcasts/my-javascript-story/episodes/mjs-143-paige-niedringhaus',
     img: myJsStory,
   },
   {
     title:
       'React Round Up: React Socks for Easy Responsive Design with Paige Niedringhaus',
     date: moment('2020-04-14').format('LL'),
-    path: 'https://reactroundup.com/108',
+    path: 'https://topenddevs.com/podcasts/react-round-up/episodes/rru-106-react-socks-for-easy-responsive-design-with-paige-niedringhaus',
     img: reactRoundUp,
   },
   {
@@ -52,7 +52,7 @@ export default [
     title:
       'React Round Up: Modernizing Enterprise React Apps with Paige Niedringhaus',
     date: moment('2021-10-20').format('LL'),
-    path: 'https://reactroundup.com/modernizing-enterprise-react-apps-with-paige-niedringhaus-rru-160',
+    path: 'https://topenddevs.com/podcasts/react-round-up/episodes/modernizing-enterprise-react-apps-with-paige-niedringhaus-rru-160',
     img: reactRoundUp,
   },
   {
@@ -75,6 +75,12 @@ export default [
     date: moment('2021-12-21').format('LL'),
     path: 'https://shesintechpodcast.com/escaping-application-blackhole-paige-niedringhaus-shes-in-tech24-',
     img: shesInTech,
+  },
+  {
+    title: 'React Round Up: Nailing Your Interview with Paige Niedringhaus',
+    date: moment('2022-01-05').format('LL'),
+    path: 'https://topenddevs.com/podcasts/react-round-up/episodes/nailing-your-interview-with-paige-niedringhaus-react-167',
+    img: reactRoundUp,
   },
   {
     title: 'PodRocket: Modern React with Paige Niedringhaus',

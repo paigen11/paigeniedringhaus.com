@@ -41,7 +41,7 @@ const MediaPage = () => {
           <p className="intro">
             Since 2020, I've been a regular co-host of the tech podcast&nbsp;
             <a
-              href="https://reactroundup.com/"
+              href="https://topenddevs.com/podcasts/react-round-up/"
               target="_blank"
               rel="noopener noreferrer"
             >
