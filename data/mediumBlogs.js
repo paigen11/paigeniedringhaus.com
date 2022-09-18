@@ -1,5 +1,4 @@
 import moment from 'moment';
-import mostInterestingMan from '../content/images/most-interesting-man.jpeg';
 import nodemailer from '../content/images/nodemailer.png';
 import puppeteer from '../content/images/puppeteer.png';
 import fineDog from '../content/images/fine-dog.jpeg';
@@ -60,16 +59,6 @@ import leakDetectorParts from '../content/images/hackster-leak-detector/leak-det
 import snowflakeStreamlitLogos from '../content/images/custom-iot-dashboards-snowflake-streamlit-blues/snowflake-streamlit-blues.png';
 
 export default [
-  {
-    date: moment('2018-11-11').format('ll'),
-    img: mostInterestingMan,
-    url: 'https://medium.com/itnext/the-absolute-easiest-way-to-debug-node-js-with-vscode-2e02ef5b1bad',
-    subTitle:
-      'Let’s face it…debugging Node.js is (and always has been) kind of a pain.',
-    tags: ['nodejs', 'vscode', 'testing'],
-    timeToRead: 7,
-    title: 'The Absolute Easiest Way to Debug Node.js — with VS Code',
-  },
   {
     date: moment('2018-11-22').format('ll'),
     img: nodemailer,
