@@ -57,6 +57,7 @@ import sms from '../content/images/hackster-blues-wheres-my-car/sms-2.png';
 import leakDetectorHero from '../content/images/hackster-leak-detector/hackster-hero.jpg';
 import leakDetectorParts from '../content/images/hackster-leak-detector/leak-detector-parts.jpg';
 import snowflakeStreamlitLogos from '../content/images/custom-iot-dashboards-snowflake-streamlit-blues/snowflake-streamlit-blues.png';
+import fridgeFleetMonitor from '../content/images/nifty-fifty-fridge-fleet-monitor/fridge-fleet-monitor-hero.png';
 
 export default [
   {
@@ -618,5 +619,14 @@ export default [
     tags: ['iot', 'python', 'blues wireless', 'big data', 'data visualization'],
     title:
       'Quickly Build Custom IoT Dashboards with Snowflake, Streamlit, and Blues Wireless',
+  },
+  {
+    date: moment('2022-10-07').format('ll'),
+    img: fridgeFleetMonitor,
+    url: 'https://www.hackster.io/blues-wireless/refrigerator-fleet-monitoring-made-easy-with-lora-e6163e',
+    subTitle:
+      'Monitor temp, humidity, and door open/close state across fleets of refrigerators with LoRa-based sensors.',
+    tags: ['iot', 'blues wireless'],
+    title: 'Refrigerator Fleet Monitoring Made Easy with LoRa',
   },
 ];
