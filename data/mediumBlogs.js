@@ -1,5 +1,4 @@
 import moment from 'moment';
-import nodemailer from '../content/images/nodemailer.png';
 import puppeteer from '../content/images/puppeteer.png';
 import fineDog from '../content/images/fine-dog.jpeg';
 import java from '../content/images/java.png';
@@ -60,16 +59,6 @@ import snowflakeStreamlitLogos from '../content/images/custom-iot-dashboards-sno
 import fridgeFleetMonitor from '../content/images/nifty-fifty-fridge-fleet-monitor/fridge-fleet-monitor-hero.png';
 
 export default [
-  {
-    date: moment('2018-11-22').format('ll'),
-    img: nodemailer,
-    url: 'https://medium.com/itnext/password-reset-emails-in-your-react-app-made-easy-with-nodemailer-bb27968310d7',
-    subTitle:
-      'Resetting Passwords in JavaScript Apps Doesn’t Have to be Complicated',
-    tags: ['javascript', 'nodejs', 'react', 'express'],
-    timeToRead: 11,
-    title: 'Password Reset Emails In Your React App Made Easy with Nodemailer',
-  },
   {
     date: moment('2018-12-08').format('ll'),
     img: puppeteer,
