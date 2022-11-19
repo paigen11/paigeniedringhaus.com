@@ -57,6 +57,7 @@ import leakDetectorHero from '../content/images/hackster-leak-detector/hackster-
 import leakDetectorParts from '../content/images/hackster-leak-detector/leak-detector-parts.jpg';
 import snowflakeStreamlitLogos from '../content/images/custom-iot-dashboards-snowflake-streamlit-blues/snowflake-streamlit-blues.png';
 import fridgeFleetMonitor from '../content/images/nifty-fifty-fridge-fleet-monitor/fridge-fleet-monitor-hero.png';
+import parkingLotHelpRequest from '../content/images/hackster-parking-lot-help-request-button/parking-nf6_hackster.jpg';
 
 export default [
   {
@@ -617,5 +618,14 @@ export default [
       'Monitor temp, humidity, and door open/close state across fleets of refrigerators with LoRa-based sensors.',
     tags: ['iot', 'blues wireless'],
     title: 'Refrigerator Fleet Monitoring Made Easy with LoRa',
+  },
+  {
+    date: moment('2022-11-07').format('ll'),
+    img: parkingLotHelpRequest,
+    url: 'https://www.hackster.io/blues-wireless/host-free-smart-parking-lot-help-request-device-f4a03c',
+    subTitle:
+      'Use cellular IoT to alert parking lot attendants when customers need assistance with an SMS message of their current location.',
+    tags: ['iot', 'blues wireless', 'cellular', 'alert'],
+    title: 'Host-free Smart Parking Lot Help Request Device',
   },
 ];
