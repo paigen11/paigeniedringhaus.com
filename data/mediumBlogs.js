@@ -1,5 +1,4 @@
 import moment from 'moment';
-import puppeteer from '../content/images/puppeteer.png';
 import fineDog from '../content/images/fine-dog.jpeg';
 import java from '../content/images/java.png';
 import swagger from '../content/images/swagger.png';
@@ -57,19 +56,9 @@ import leakDetectorHero from '../content/images/hackster-leak-detector/hackster-
 import leakDetectorParts from '../content/images/hackster-leak-detector/leak-detector-parts.jpg';
 import snowflakeStreamlitLogos from '../content/images/custom-iot-dashboards-snowflake-streamlit-blues/snowflake-streamlit-blues.png';
 import fridgeFleetMonitor from '../content/images/nifty-fifty-fridge-fleet-monitor/fridge-fleet-monitor-hero.png';
-import parkingLotHelpRequest from '../content/images/hackster-parking-lot-help-request-button/parking-nf6_hackster.jpg';
+import parkingLotHelpRequest from '../content/images/nifty-fifty-parking-lot-help-request-button/parking-nf6_hackster.jpg';
 
 export default [
-  {
-    date: moment('2018-12-08').format('ll'),
-    img: puppeteer,
-    url: 'https://medium.com/itnext/getting-started-using-puppeteer-headless-chrome-for-end-to-end-testing-8487718e4d97',
-    subTitle:
-      'And A Brief Primer on Integrating Puppeteer Into Your Jest Testing',
-    tags: ['javascript', 'testing', 'puppeteer', 'react', 'jest'],
-    timeToRead: 10,
-    title: 'Getting Started Using Puppeteer for End-to-End Testing',
-  },
   {
     date: moment('2018-12-22').format('ll'),
     img: fineDog,
