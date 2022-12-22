@@ -1,5 +1,4 @@
 import moment from 'moment';
-import fineDog from '../content/images/fine-dog.jpeg';
 import java from '../content/images/java.png';
 import swagger from '../content/images/swagger.png';
 import errorMsg from '../content/images/error-msg.png';
@@ -59,17 +58,6 @@ import fridgeFleetMonitor from '../content/images/nifty-fifty-fridge-fleet-monit
 import parkingLotHelpRequest from '../content/images/nifty-fifty-parking-lot-help-request-button/parking-nf6_hackster.jpg';
 
 export default [
-  {
-    date: moment('2018-12-22').format('ll'),
-    img: fineDog,
-    url: 'https://medium.com/itnext/keep-code-consistent-across-developers-the-easy-way-with-prettier-eslint-60bb7e91b76c',
-    subTitle:
-      'Writing Code is Tough Enough, Don’t Make it Tougher with Bad Formatting',
-    tags: ['vscode', 'javascript', 'eslint'],
-    timeToRead: 11,
-    title:
-      'Keep Code Consistent Across Developers The Easy Way — With Prettier & ESLint',
-  },
   {
     date: moment('2019-01-04').format('ll'),
     img: java,
