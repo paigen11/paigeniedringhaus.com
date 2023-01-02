@@ -70,10 +70,18 @@ const CoursesPage = () => {
         <section>
           <h2 className="intro">Free YouTube Videos</h2>
           <p className="intro">
-            Or if you'd like an idea of everything in my course, check out these
-            free YouTube videos. They introduce you to all my course has to
-            offer and some of the most commonly used React Hooks you'll reach
-            for daily.
+            Or if you'd like an idea of everything in my course, check out
+            these&nbsp;
+            <a
+              href="https://www.youtube.com/playlist?list=PLqcl38GHd4J9aJ1cAngJ3CoGyTnjL1x7i"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="title"
+            >
+              free YouTube videos
+            </a>
+            . They introduce you to all my course has to offer and some of the
+            most commonly used React Hooks you'll reach for daily.
           </p>
           <div className="videos">
             {courseVideos.length

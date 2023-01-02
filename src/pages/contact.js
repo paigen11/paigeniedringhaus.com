@@ -54,9 +54,10 @@ const ContactPage = () => {
               >
                 @pniedri
               </a>
+              .
             </li>
             <li>
-              I publish on&nbsp;
+              I publish blogs on&nbsp;
               <a
                 href="https://paigen11.medium.com"
                 target="_blank"
@@ -72,10 +73,18 @@ const ContactPage = () => {
               >
                 DEV
               </a>
-              &nbsp;under @paigen11.
+              &nbsp;under @paigen11, with accompanying videos on&nbsp;
+              <a
+                href="https://www.youtube.com/c/PaigeNiedringhaus"
+                target="blank"
+                rel="noopener noreferrer"
+              >
+                YouTube
+              </a>
+              .
             </li>
             <li>
-              And I've started sharing my IoT projects on&nbsp;
+              And I share my IoT projects on&nbsp;
               <a
                 href="https://www.hackster.io/paige-niedringhaus"
                 target="_blank"

@@ -49,5 +49,11 @@ export default {
       date: moment('2022-07-29').format('LL'),
       path: 'https://blues.io/blog/build-an-iot-smart-leak-detector-with-sms-alerts/',
     },
+    {
+      title:
+        'Quickly Build Custom IoT Dashboards with Snowflake, Streamlit, and Blues Wireless',
+      date: moment('2022-09-08').format('LL'),
+      path: 'https://blues.io/blog/build-custom-iot-dashboards-with-snowflake-streamlit-and-blues/',
+    },
   ],
 };

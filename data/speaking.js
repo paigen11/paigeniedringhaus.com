@@ -14,7 +14,7 @@ export default [
   {
     title: 'Women in Tech Speaker Panel',
     date: moment('2017-02-23').format('LL'),
-    path: 'https://www.meetup.com/learn-to-code-in-atlanta-digitalcrafts/events/237763832',
+    path: null,
     img: digitalCrafts,
   },
   {
@@ -33,7 +33,7 @@ export default [
     title:
       'Girl Develop It Panelist Series: A Day in the Life of UX Designers and Developers',
     date: moment('2018-07-10').format('LL'),
-    path: 'https://www.meetup.com/Girl-Develop-It-Atlanta/events/251904253',
+    path: null,
     img: girlDevelopIt,
   },
   {
