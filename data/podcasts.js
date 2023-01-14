@@ -94,4 +94,10 @@ export default [
     path: 'https://podcast.20minjs.com/1952066/10330403-episode-4-state-management-in-react-with-paige-niedringhaus',
     img: js20min,
   },
+  {
+    title: 'The Launch Pad with Tru Narla, Trash Dev, and Paige Niedringhaus',
+    date: moment('2023-01-13').format('LL'),
+    path: 'https://podrocket.logrocket.com/launch-pad-episode-2',
+    img: podRocket,
+  },
 ];
