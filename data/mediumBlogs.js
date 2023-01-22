@@ -1,5 +1,4 @@
 import moment from 'moment';
-import java from '../content/images/java.png';
 import swagger from '../content/images/swagger.png';
 import errorMsg from '../content/images/error-msg.png';
 import angularToReact from '../content/images/angular-react.jpeg';
@@ -58,15 +57,6 @@ import fridgeFleetMonitor from '../content/images/nifty-fifty-fridge-fleet-monit
 import parkingLotHelpRequest from '../content/images/nifty-fifty-parking-lot-help-request-button/parking-nf6_hackster.jpg';
 
 export default [
-  {
-    date: moment('2019-01-04').format('ll'),
-    img: java,
-    url: 'https://medium.com/itnext/using-java-to-read-really-really-large-files-a6f8a3f44649',
-    subTitle: 'This is the kind of stuff Java was made for.',
-    tags: ['java ', 'big data', 'performance', 'testing'],
-    timeToRead: 16,
-    title: 'Using Java to Read Really, Really Large Files',
-  },
   {
     date: moment('2019-01-21').format('ll'),
     img: swagger,
