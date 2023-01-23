@@ -9,6 +9,7 @@ import techElevator from '../src/images/thumbnails/techElevator.png';
 import bluesWireless from '../src/images/thumbnails/bluesWireless.png';
 import newline from '../src/images/thumbnails/newline-logo.png';
 import thisDotMedia from '../src/images/thumbnails/thisDotMedia.jpeg';
+import thatConf from '../src/images/thumbnails/that-conf.png';
 
 export default [
   {
@@ -211,5 +212,11 @@ export default [
     date: moment('2022-09-08').format('LL'),
     path: 'https://www.youtube.com/watch?v=ahwr3ZB2Bm4',
     img: bluesWireless,
+  },
+  {
+    title: 'Why IoT Development Needs its own Create React App',
+    date: moment('2023-01-18').format('LL'),
+    path: 'https://that.us/activities/alCWEaBSKnmG71HOFtqi',
+    img: thatConf,
   },
 ];
