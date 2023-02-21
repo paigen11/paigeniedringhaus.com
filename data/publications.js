@@ -55,5 +55,11 @@ export default {
       date: moment('2022-09-08').format('LL'),
       path: 'https://blues.io/blog/build-custom-iot-dashboards-with-snowflake-streamlit-and-blues/',
     },
+    {
+      title:
+        'Introducing Notehub JS - the JavaScript Library for the Notehub API',
+      date: moment('2023-02-21').format('LL'),
+      path: 'https://blues.io/blog/introducing-notehub-js-the-javascript-library-for-the-notehub-api/',
+    },
   ],
 };

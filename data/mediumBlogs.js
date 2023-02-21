@@ -55,6 +55,7 @@ import leakDetectorParts from '../content/images/hackster-leak-detector/leak-det
 import snowflakeStreamlitLogos from '../content/images/custom-iot-dashboards-snowflake-streamlit-blues/snowflake-streamlit-blues.png';
 import fridgeFleetMonitor from '../content/images/nifty-fifty-fridge-fleet-monitor/fridge-fleet-monitor-hero.png';
 import parkingLotHelpRequest from '../content/images/nifty-fifty-parking-lot-help-request-button/parking-nf6_hackster.jpg';
+import notehubJsLogo from '../content/images/notehub-js-javascript-lib-notehub-api/notehub-js.webp';
 
 export default [
   {
@@ -100,7 +101,7 @@ export default [
     img: nvm,
     url: 'https://medium.com/itnext/nvm-the-easiest-way-to-switch-node-js-environments-on-your-machine-in-a-flash-17babb7d5f1b',
     subTitle:
-      'Nope, I didn’t Misspell NPM — Node Version Manager is it’s Own Handy Dev Tool',
+      'Nope, I didn’t Misspell npm — Node Version Manager is it’s Own Handy Dev Tool',
     tags: ['javascript', 'nodejs', 'nvm', 'programming'],
     timeToRead: 7,
     title:
@@ -594,5 +595,15 @@ export default [
       'Use cellular IoT to alert parking lot attendants when customers need assistance with an SMS message of their current location.',
     tags: ['iot', 'blues wireless', 'cellular', 'alert'],
     title: 'Host-free Smart Parking Lot Help Request Device',
+  },
+  {
+    date: moment('2023-02-21').format('ll'),
+    img: notehubJsLogo,
+    url: 'https://blues.io/blog/introducing-notehub-js-the-javascript-library-for-the-notehub-api/',
+    subTitle:
+      'Notehub JS connects you to the Notehub API, allowing you to interact with Notehub.io in a JavaScript-friendly way.',
+    tags: ['blues wireless', 'javascript', 'api', 'iot', 'npm'],
+    title:
+      'Introducing Notehub JS – the JavaScript Library for the Notehub API',
   },
 ];
