@@ -2,7 +2,7 @@
   "extends": ["airbnb", "prettier"],
   "plugins": ["react", "jsx-a11y", "import"],
   "rules": {
-    "react/prefer-stateless-function": "on",
+    "react/prefer-stateless-function": "1",
     "react/prop-types": "off",
     "react/no-danger": "off",
     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
