@@ -1,5 +1,4 @@
 import moment from 'moment';
-import swagger from '../content/images/swagger.png';
 import errorMsg from '../content/images/error-msg.png';
 import angularToReact from '../content/images/angular-react.jpeg';
 import esLint from '../content/images/eslint-success.jpeg';
@@ -58,15 +57,6 @@ import parkingLotHelpRequest from '../content/images/nifty-fifty-parking-lot-hel
 import notehubJsLogo from '../content/images/notehub-js-javascript-lib-notehub-api/notehub-js.webp';
 
 export default [
-  {
-    date: moment('2019-01-21').format('ll'),
-    img: swagger,
-    url: 'https://medium.com/itnext/setting-up-swagger-in-a-node-js-application-d3c4d7aa56d4',
-    subTitle: 'Spring Boot makes Swagger APIs look easy, Node.js not so much.',
-    tags: ['nodejs', 'swagger', 'api', 'testing', 'javascript'],
-    timeToRead: 18,
-    title: 'Setting Up Swagger to API Test In a JavaScript Application',
-  },
   {
     date: moment('2019-02-03').format('ll'),
     img: errorMsg,
