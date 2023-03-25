@@ -1,5 +1,4 @@
 import moment from 'moment';
-import errorMsg from '../content/images/error-msg.png';
 import angularToReact from '../content/images/angular-react.jpeg';
 import esLint from '../content/images/eslint-success.jpeg';
 import nvm from '../content/images/nvm.png';
@@ -57,17 +56,6 @@ import parkingLotHelpRequest from '../content/images/nifty-fifty-parking-lot-hel
 import notehubJsLogo from '../content/images/notehub-js-javascript-lib-notehub-api/notehub-js.webp';
 
 export default [
-  {
-    date: moment('2019-02-03').format('ll'),
-    img: errorMsg,
-    url: 'https://medium.com/itnext/the-case-for-standardized-error-handling-in-your-web-application-6428ff60cc31',
-    subTitle:
-      'Because Bad Error Messages — or Worse, Invisible Errors are Doing No One Any Favors',
-    tags: ['api', 'errors', 'programming'],
-    timeToRead: 9,
-    title:
-      'The Case for Standardized Error Handling in Your Web Application’s APIs',
-  },
   {
     date: moment('2019-02-11').format('ll'),
     img: angularToReact,
@@ -304,7 +292,7 @@ export default [
     url: 'https://medium.com/itnext/javascript-error-handling-from-express-js-to-react-810deb5e5e28',
     subTitle:
       'Because errors are bound to happen and we need to handle them correctly.',
-    tags: ['javascript', 'react', 'express'],
+    tags: ['javascript', 'react', 'express', 'errors'],
     timeToRead: 9,
     title: 'JavaScript Error Handling from Express.js to React',
   },
@@ -458,7 +446,7 @@ export default [
     img: scientist,
     url: 'https://medium.com/bitsrc/successfully-throwing-async-errors-with-the-jest-testing-library-fda17261733a',
     subTitle: 'The One Time Errors Should Happen in your Code',
-    tags: ['jest', 'testing', 'javascript'],
+    tags: ['jest', 'testing', 'javascript', 'errors'],
     timeToRead: 8,
     title: 'Successfully Throwing Async Errors with the Jest Testing Library',
   },
