@@ -35,11 +35,11 @@ const MediaPage = () => {
           <p className="intro">
             In addition to my own <Link to="/blog">blog posts</Link>, I've been
             fortunate enough to share what I've learned through speaking at
-            conferences and meetups, writing technical articles for companies,
-            and appearing as a guest on podcasts.
+            conferences and meetups, writing technical articles, and appearing
+            on podcasts.
           </p>
           <p className="intro">
-            Since 2020, I've been a regular co-host of the tech podcast&nbsp;
+            Since 2020, I've been a regular co-host of the podcast&nbsp;
             <a
               href="https://topenddevs.com/podcasts/react-round-up/"
               target="_blank"
@@ -47,9 +47,17 @@ const MediaPage = () => {
             >
               React Round Up
             </a>
-            , a weekly podcast dedicated to React and the development community.
-            Each episode we talk to different experts in the community about all
-            things JavaScript and beyond.
+            , and in 2023, I joined the LogRocket podcast&nbsp;
+            <a
+              href="https://podrocket.logrocket.com/hosts/paige-niedringhaus"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              PodRocket
+            </a>
+            &nbsp;as a co-host, as well. In both podcasts, I get to talk to
+            expert developers in the community about libraries, frameworks, and
+            all things JavaScript and beyond.
           </p>
         </section>
         <section>
