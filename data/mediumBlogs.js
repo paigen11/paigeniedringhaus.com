@@ -1,6 +1,5 @@
 import moment from 'moment';
 import angularToReact from '../content/images/angular-react.jpeg';
-import esLint from '../content/images/eslint-success.jpeg';
 import nvm from '../content/images/nvm.png';
 import multipleDevs from '../content/images/multiple-devs.jpeg';
 import npm from '../content/images/npm.png';
@@ -64,15 +63,6 @@ export default [
     tags: ['javascript', 'react', 'angular', 'spring boot'],
     timeToRead: 10,
     title: 'Migrating from AngularJS to React',
-  },
-  {
-    date: moment('2019-02-17').format('ll'),
-    img: esLint,
-    url: 'https://medium.com/itnext/how-eslint-makes-me-a-better-react-developer-237fb14c00ae',
-    subTitle: 'JavaScript’s Loose Standards are a Blessing and a Curse',
-    tags: ['javascript', 'eslint', 'react', 'self improvement'],
-    timeToRead: 11,
-    title: 'How ESLint Makes Me a Better React Developer',
   },
   {
     date: moment('2019-03-03').format('ll'),
