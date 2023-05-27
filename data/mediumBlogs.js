@@ -1,6 +1,5 @@
 import moment from 'moment';
 import angularToReact from '../content/images/angular-react.jpeg';
-import nvm from '../content/images/nvm.png';
 import multipleDevs from '../content/images/multiple-devs.jpeg';
 import npm from '../content/images/npm.png';
 import vsCode from '../content/images/vs-code.png';
@@ -63,17 +62,6 @@ export default [
     tags: ['javascript', 'react', 'angular', 'spring boot'],
     timeToRead: 10,
     title: 'Migrating from AngularJS to React',
-  },
-  {
-    date: moment('2019-03-03').format('ll'),
-    img: nvm,
-    url: 'https://medium.com/itnext/nvm-the-easiest-way-to-switch-node-js-environments-on-your-machine-in-a-flash-17babb7d5f1b',
-    subTitle:
-      'Nope, I didn’t Misspell npm — Node Version Manager is it’s Own Handy Dev Tool',
-    tags: ['javascript', 'nodejs', 'nvm', 'programming'],
-    timeToRead: 7,
-    title:
-      'NVM, the Easiest Way to Switch Node.js Environments on Your Machine in a Flash',
   },
   {
     date: moment('2019-03-15').format('ll'),
