@@ -463,8 +463,8 @@ export default [
     img: gpsTracker,
     url: 'https://www.hackster.io/paige-niedringhaus/low-code-gps-asset-tracker-and-map-display-b10419',
     subTitle:
-      'Build a GPS tracker with a Blues Wireless Notecarrier, and map it with Datacake.',
-    tags: ['iot', 'gps', 'cellular', 'blues wireless', 'datacake'],
+      'Build a GPS tracker with a Blues Notecarrier, and map it with Datacake.',
+    tags: ['iot', 'gps', 'cellular', 'blues', 'datacake'],
     timeToRead: 16,
     title: 'Low Code GPS Asset Tracker and Map Display',
   },
@@ -472,10 +472,9 @@ export default [
     date: moment('2021-11-02').format('ll'),
     img: reactBlues,
     url: 'https://blues.io/blog/reactjs-vs-blues-wireless-iot/',
-    subTitle:
-      'You can build without React or Blues Wireless, but why would you?',
-    tags: ['iot', 'react', 'blues wireless', 'javascript'],
-    title: 'Blues Wireless - Just Like React, but for IoT',
+    subTitle: 'You can build without React or Blues, but why would you?',
+    tags: ['iot', 'react', 'blues', 'javascript'],
+    title: 'Blues - Just Like React, but for IoT',
   },
   {
     date: moment('2022-02-23').format('ll'),
@@ -483,16 +482,16 @@ export default [
     url: 'https://blues.io/blog/gps-asset-tracker-with-blues-wireless-and-react/',
     subTitle:
       'Build your own asset tracker from hardware to software and everything in between.',
-    tags: ['iot', 'javascript', 'blues wireless', 'typescript', 'gps'],
-    title: 'Low Fi LoJack® with Blues Wireless and React',
+    tags: ['iot', 'javascript', 'blues', 'typescript', 'gps'],
+    title: 'Low Fi LoJack® with Blues and React',
   },
   {
     date: moment('2022-03-04').format('ll'),
     img: antiTheftHero,
     url: 'https://www.hackster.io/paige-niedringhaus/blues-where-s-my-car-5eac7d',
     subTitle:
-      'Sounds the (silent) alarm: anti-theft alerting & asset recovery with a Blues Wireless Notecard.',
-    tags: ['iot', 'gps', 'cellular', 'blues wireless', 'alert'],
+      'Sounds the (silent) alarm: anti-theft alerting & asset recovery with a Blues Notecard.',
+    tags: ['iot', 'gps', 'cellular', 'blues', 'alert'],
     timeToRead: 15,
     title: "Blues, Where's My Car?",
   },
@@ -503,7 +502,7 @@ export default [
     url: 'https://blues.io/blog/anti-theft-iot-gps-asset-tracker/',
     subTitle:
       'Build a Notecard-based anti-theft device with SMS alerts when movement is detected.',
-    tags: ['iot', 'gps', 'cellular', 'blues wireless', 'alert'],
+    tags: ['iot', 'gps', 'cellular', 'blues', 'alert'],
     title: 'Anti-Theft GPS Tracker and Recovery System',
   },
   {
@@ -512,7 +511,7 @@ export default [
     url: 'https://www.hackster.io/paige-niedringhaus/leave-the-water-running-build-an-iot-smart-leak-detector-3cc099',
     subTitle:
       "Build a leak detector complete with SMS notifications if a leak's detected.",
-    tags: ['iot', 'cellular', 'blues wireless', 'alert'],
+    tags: ['iot', 'cellular', 'blues', 'alert'],
     title: 'Leave the Water Running? Build an IoT Smart Leak Detector',
   },
   {
@@ -521,7 +520,7 @@ export default [
     url: 'https://blues.io/blog/build-an-iot-smart-leak-detector-with-sms-alerts/',
     subTitle:
       'Learn to build a low-cost, cellular-enabled water leak detection device complete with SMS alerts.',
-    tags: ['iot', 'cellular', 'blues wireless', 'alert'],
+    tags: ['iot', 'cellular', 'blues', 'alert'],
     title: 'Build an IoT Smart Leak Detector with SMS Alerts',
   },
   {
@@ -530,9 +529,9 @@ export default [
     url: 'https://blues.io/blog/build-custom-iot-dashboards-with-snowflake-streamlit-and-blues/',
     subTitle:
       'Some basic Python code can create beautiful, highly customized IoT data visualizations in no time.',
-    tags: ['iot', 'python', 'blues wireless', 'big data', 'data visualization'],
+    tags: ['iot', 'python', 'blues', 'big data', 'data visualization'],
     title:
-      'Quickly Build Custom IoT Dashboards with Snowflake, Streamlit, and Blues Wireless',
+      'Quickly Build Custom IoT Dashboards with Snowflake, Streamlit, and Blues',
   },
   {
     date: moment('2022-10-07').format('ll'),
@@ -540,7 +539,7 @@ export default [
     url: 'https://www.hackster.io/blues-wireless/refrigerator-fleet-monitoring-made-easy-with-lora-e6163e',
     subTitle:
       'Monitor temp, humidity, and door open/close state across fleets of refrigerators with LoRa-based sensors.',
-    tags: ['iot', 'blues wireless'],
+    tags: ['iot', 'blues'],
     title: 'Refrigerator Fleet Monitoring Made Easy with LoRa',
   },
   {
@@ -549,7 +548,7 @@ export default [
     url: 'https://www.hackster.io/blues-wireless/host-free-smart-parking-lot-help-request-device-f4a03c',
     subTitle:
       'Use cellular IoT to alert parking lot attendants when customers need assistance with an SMS message of their current location.',
-    tags: ['iot', 'blues wireless', 'cellular', 'alert'],
+    tags: ['iot', 'blues', 'cellular', 'alert'],
     title: 'Host-free Smart Parking Lot Help Request Device',
   },
   {
@@ -558,7 +557,7 @@ export default [
     url: 'https://blues.io/blog/introducing-notehub-js-the-javascript-library-for-the-notehub-api/',
     subTitle:
       'Notehub JS connects you to the Notehub API, allowing you to interact with Notehub.io in a JavaScript-friendly way.',
-    tags: ['blues wireless', 'javascript', 'api', 'iot', 'npm'],
+    tags: ['blues', 'javascript', 'api', 'iot', 'npm'],
     title:
       'Introducing Notehub JS – the JavaScript Library for the Notehub API',
   },

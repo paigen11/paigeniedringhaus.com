@@ -10,7 +10,7 @@ import Layout from '../components/Layout/Layout';
 import logRocket from '../images/thumbnails/logRocket.jpg';
 import butterCMS from '../images/thumbnails/butterCMS.png';
 import newline from '../images/thumbnails/newline-logo.png';
-import bluesWireless from '../images/thumbnails/bluesWireless.png';
+import blues from '../images/thumbnails/blues-favicon.svg';
 import '../styles/pages.scss';
 
 const MediaPage = () => {
@@ -18,13 +18,12 @@ const MediaPage = () => {
     ButterCMS: butterCMS,
     LogRocket: logRocket,
     newline: newline,
-    'Blues Wireless': bluesWireless,
+    Blues: blues,
   };
 
   const companies = Object.entries(publications);
   const sortedPodcasts = sortArrayByDate(podcasts);
   const sortedSpeaking = sortArrayByDate(speaking);
-  // todo consider a separate videos section for Blues TV & stuff
 
   return (
     <Layout>
@@ -118,10 +117,7 @@ const MediaPage = () => {
         <section>
           <h2>Company articles</h2>
           {companies.reverse().map((publication) => {
-            const companyName =
-              publication[0] === 'bluesWireless'
-                ? 'Blues Wireless'
-                : publication[0];
+            const companyName = publication[0];
             const articles = publication[1];
             return (
               <article key={companyName}>

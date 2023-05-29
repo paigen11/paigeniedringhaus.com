@@ -6,7 +6,7 @@ import theHomeDepot from '../src/images/thumbnails/theHomeDepot.png';
 import breakingTheGlass from '../src/images/thumbnails/breakingTheGlass.png';
 import react from '../content/images/react.png';
 import techElevator from '../src/images/thumbnails/techElevator.png';
-import bluesWireless from '../src/images/thumbnails/bluesWireless.png';
+import blues from '../src/images/thumbnails/blues-favicon.svg';
 import newline from '../src/images/thumbnails/newline-logo.png';
 import thisDotMedia from '../src/images/thumbnails/thisDotMedia.jpeg';
 import thatConf from '../src/images/thumbnails/that-conf.png';
@@ -103,10 +103,10 @@ export default [
     img: theHomeDepot,
   },
   {
-    title: 'Blues Wireless: Cypress End-to-End Testing Demo',
+    title: 'Blues: Cypress End-to-End Testing Demo',
     date: moment('2021-10-26').format('LL'),
     path: null,
-    img: bluesWireless,
+    img: blues,
   },
   {
     title: 'DigitalCrafts Alumni Speaker Panel',
@@ -125,46 +125,46 @@ export default [
     title: 'The Niedringhaus Effect (Ep 1): IoT for React Developers',
     date: moment('2021-11-02').format('LL'),
     path: 'https://www.youtube.com/watch?v=Nr-VclCFwzE',
-    img: bluesWireless,
+    img: blues,
   },
   {
     title:
-      'Intro to React Hooks (Full Course, Part 1 of 6) with Blues Wireless Staff Software Engineer, Paige N.',
+      'Intro to React Hooks (Full Course, Part 1 of 6) with Blues Staff Software Engineer, Paige N.',
     date: moment('2022-01-11').format('LL'),
     path: 'https://www.youtube.com/watch?v=hlhLujLmH78',
     img: newline,
   },
   {
     title:
-      'useState Hook (Full Course, Part 2 of 6) with Blues Wireless Staff Software Engineer, Paige N.',
+      'useState Hook (Full Course, Part 2 of 6) with Blues Staff Software Engineer, Paige N.',
     date: moment('2022-01-12').format('LL'),
     path: 'https://www.youtube.com/watch?v=rg3aSmiZgX0',
     img: newline,
   },
   {
     title:
-      'useEffect Hook (Full Course, Part 3 of 6) with Blues Wireless Staff Software Engineer, Paige N.',
+      'useEffect Hook (Full Course, Part 3 of 6) with Blues Staff Software Engineer, Paige N.',
     date: moment('2022-01-13').format('LL'),
     path: 'https://www.youtube.com/watch?v=28MnBPqqDVk',
     img: newline,
   },
   {
     title:
-      'useRef Hook (Full Course, Part 4 of 6) with Blues Wireless Staff Software Engineer, Paige N.',
+      'useRef Hook (Full Course, Part 4 of 6) with Blues Staff Software Engineer, Paige N.',
     date: moment('2022-01-16').format('LL'),
     path: 'https://www.youtube.com/watch?v=dBMTFAizsEA',
     img: newline,
   },
   {
     title:
-      'useContext Hook (Full Course, Part 5 of 6) with Blues Wireless Staff Software Engineer, Paige N.',
+      'useContext Hook (Full Course, Part 5 of 6) with Blues Staff Software Engineer, Paige N.',
     date: moment('2022-01-17').format('LL'),
     path: 'https://www.youtube.com/watch?v=j-WjpVJB6Rc',
     img: newline,
   },
   {
     title:
-      'Custom Hooks & Summary (Full Course, Part 6 of 6) with Blues Wireless Staff Software Engineer, Paige N.',
+      'Custom Hooks & Summary (Full Course, Part 6 of 6) with Blues Staff Software Engineer, Paige N.',
     date: moment('2022-01-18').format('LL'),
     path: 'https://www.youtube.com/watch?v=aCu4PaygeP4',
     img: newline,
@@ -179,20 +179,20 @@ export default [
     title: 'The Niedringhaus Effect (Ep 2): Grand Theft Auto Edition',
     date: moment('2022-02-23').format('LL'),
     path: 'https://www.youtube.com/watch?v=H1oHs9GvNzY',
-    img: bluesWireless,
+    img: blues,
   },
   {
     title:
       'Mastering Global Asset Tracking with a Cellular Notecard and Datacake',
     date: moment('2022-03-24').format('LL'),
     path: 'https://www.youtube.com/watch?v=gzQEJyIeobU&t=7s',
-    img: bluesWireless,
+    img: blues,
   },
   {
     title: "The Niedringhaus Effect (Ep 3): Blues, Where's My Car?",
     date: moment('2022-04-13').format('LL'),
     path: 'https://www.youtube.com/watch?v=222JbIOauIg',
-    img: bluesWireless,
+    img: blues,
   },
   {
     title: 'State of React Ecosystem',
@@ -204,19 +204,25 @@ export default [
     title: 'The Niedringhaus Effect (Ep 4): Build an IoT Leak Detector',
     date: moment('2022-07-29').format('LL'),
     path: 'https://www.youtube.com/watch?v=9z5KNZMN__0',
-    img: bluesWireless,
+    img: blues,
   },
   {
     title:
       'The Niedringhaus Effect (Ep 5): Custom IoT Dashboards with Snowflake, Streamlit, & the Notecard',
     date: moment('2022-09-08').format('LL'),
     path: 'https://www.youtube.com/watch?v=ahwr3ZB2Bm4',
-    img: bluesWireless,
+    img: blues,
   },
   {
     title: 'Why IoT Development Needs its own Create React App',
     date: moment('2023-01-18').format('LL'),
     path: 'https://that.us/activities/alCWEaBSKnmG71HOFtqi',
     img: thatConf,
+  },
+  {
+    title: 'Webinar: 50 Ways to Accelerate Your IoT Project',
+    date: moment('2023-05-24').format('LL'),
+    path: 'https://www.youtube.com/watch?v=SVCITCTn6Qc',
+    img: blues,
   },
 ];

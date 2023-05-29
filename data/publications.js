@@ -28,14 +28,14 @@ export default {
       path: 'https://www.newline.co/write/cypress-studio-the-underrated-feature-speeding-up-e2e-testing--7bc4616b',
     },
   ],
-  bluesWireless: [
+  Blues: [
     {
-      title: 'Blues Wireless - Just Like React, but for IoT',
+      title: 'Blues - Just Like React, but for IoT',
       date: moment('2021-11-02').format('LL'),
       path: 'https://blues.io/blog/reactjs-vs-blues-wireless-iot/',
     },
     {
-      title: 'Low Fi LoJack® with Blues Wireless and React',
+      title: 'Low Fi LoJack® with Blues and React',
       date: moment('2022-02-23').format('LL'),
       path: 'https://blues.io/blog/gps-asset-tracker-with-blues-wireless-and-react/',
     },
@@ -51,7 +51,7 @@ export default {
     },
     {
       title:
-        'Quickly Build Custom IoT Dashboards with Snowflake, Streamlit, and Blues Wireless',
+        'Quickly Build Custom IoT Dashboards with Snowflake, Streamlit, and Blues',
       date: moment('2022-09-08').format('LL'),
       path: 'https://blues.io/blog/build-custom-iot-dashboards-with-snowflake-streamlit-and-blues/',
     },

@@ -85,7 +85,7 @@ const AboutPage = () => {
               target="_blank"
               rel="nooperner noreferrer"
             >
-              Blues Wireless
+              Blues
             </a>
             &nbsp;. I'm always learning new things, but my focus and interest
             right now is on&nbsp;
@@ -101,7 +101,7 @@ const AboutPage = () => {
             >
               Internet of Things projects
             </a>
-            &nbsp;powered by Blues Wireless hardware.
+            &nbsp;powered by Blues hardware.
           </p>
           <p>Previously, I was a senior software engineer at The Home Depot.</p>
           <p>
@@ -140,9 +140,9 @@ const AboutPage = () => {
           </p>
           <p>
             And when I'm not programming, I like to spend my spare time working
-            on my art 🎨 (watercolors), traveling ✈️, and hanging out with
-            family and friends. I've recently gotten into mastering handstands
-            and handbalancing, so if you have tips, let me know!
+            on my art 🎨, scuba diving, traveling ✈️, and hanging out with
+            family and friends. I've recently gotten into mastering
+            handbalancing, so if you have tips, let me know!
           </p>
           <figure>
             <img src={seanAndPaige} alt="sean and paige photo" />
