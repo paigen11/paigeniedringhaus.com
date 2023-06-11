@@ -31,7 +31,7 @@ const Post = (props) => {
         <article className="post-wrapper">
           <p className="post-category">{post.category}</p>
           <figcaption>
-            First published {moment(post.date).format('ll')}
+            First published {moment(post.date).format('LL')}
             {post.ogLink ? (
               <>
                 &nbsp;in&nbsp;
