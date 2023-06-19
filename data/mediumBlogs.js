@@ -1,6 +1,5 @@
 import moment from 'moment';
 import angularToReact from '../content/images/angular-react.jpeg';
-import multipleDevs from '../content/images/multiple-devs.jpeg';
 import npm from '../content/images/npm.png';
 import vsCode from '../content/images/vs-code.png';
 import multiNode from '../content/images/multiple-nodes.png';
@@ -62,16 +61,6 @@ export default [
     tags: ['javascript', 'react', 'angular', 'spring boot'],
     timeToRead: 10,
     title: 'Migrating from AngularJS to React',
-  },
-  {
-    date: moment('2019-03-15').format('ll'),
-    img: multipleDevs,
-    url: 'https://medium.com/itnext/update-feature-toggles-in-a-react-app-without-redeploying-5b95674a5bb1',
-    subTitle:
-      'Spring Cloud Makes Feature Toggles Easy, a Node Endpoint Makes Redeploying Unneeded',
-    tags: ['javascript', 'nodejs', 'react', 'spring boot'],
-    timeToRead: 11,
-    title: 'Update Feature Toggles in a React App without Redeploying',
   },
   {
     date: moment('2019-03-31').format('ll'),
