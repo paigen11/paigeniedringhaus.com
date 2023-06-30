@@ -10,6 +10,7 @@ import blues from '../src/images/thumbnails/blues-favicon.svg';
 import newline from '../src/images/thumbnails/newline-logo.png';
 import thisDotMedia from '../src/images/thumbnails/thisDotMedia.jpeg';
 import thatConf from '../src/images/thumbnails/that-conf.png';
+import riot from '../src/images/thumbnails/riot.jpeg';
 
 export default [
   {
@@ -224,5 +225,11 @@ export default [
     date: moment('2023-05-24').format('LL'),
     path: 'https://www.youtube.com/watch?v=SVCITCTn6Qc',
     img: blues,
+  },
+  {
+    title: 'Why IoT Development Needs its own Create React App',
+    date: moment('2023-06-29').format('LL'),
+    path: 'https://www.youtube.com/watch?v=7LMJWFwhB6o',
+    img: riot,
   },
 ];
