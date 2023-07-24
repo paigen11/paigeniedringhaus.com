@@ -1,6 +1,5 @@
 import moment from 'moment';
 import angularToReact from '../content/images/angular-react.jpeg';
-import npm from '../content/images/npm.png';
 import vsCode from '../content/images/vs-code.png';
 import multiNode from '../content/images/multiple-nodes.png';
 import officeSpace from '../content/images/office-space.jpeg';
@@ -61,16 +60,6 @@ export default [
     tags: ['javascript', 'react', 'angular', 'spring boot'],
     timeToRead: 10,
     title: 'Migrating from AngularJS to React',
-  },
-  {
-    date: moment('2019-03-31').format('ll'),
-    img: npm,
-    url: 'https://medium.com/itnext/node-engines-helping-developers-everywhere-avoid-phantom-bugs-2eef519604b2',
-    subTitle:
-      'Specific Node.js Engines Should Be a Required Field for Every Package.json',
-    tags: ['javascript', 'nodejs', 'programming', 'npm'],
-    timeToRead: 7,
-    title: 'Node Engines: Helping Developers Everywhere Avoid Phantom Bugs',
   },
   {
     date: moment('2019-04-13').format('ll'),
