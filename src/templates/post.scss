@@ -33,6 +33,14 @@
       }
     }
 
+    p {
+      img {
+        margin-left: auto;
+        display: block;
+        margin-right: auto;
+      }
+    }
+
     figcaption {
       color: $darkBlueTint2;
       margin: auto;

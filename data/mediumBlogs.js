@@ -1,6 +1,5 @@
 import moment from 'moment';
 import angularToReact from '../content/images/angular-react.jpeg';
-import vsCode from '../content/images/vs-code.png';
 import multiNode from '../content/images/multiple-nodes.png';
 import officeSpace from '../content/images/office-space.jpeg';
 import sparta from '../content/images/sparta-destructuring.jpeg';
@@ -60,16 +59,6 @@ export default [
     tags: ['javascript', 'react', 'angular', 'spring boot'],
     timeToRead: 10,
     title: 'Migrating from AngularJS to React',
-  },
-  {
-    date: moment('2019-04-13').format('ll'),
-    img: vsCode,
-    url: 'https://medium.com/itnext/settings-sync-with-vs-code-c3d4f126989',
-    subTitle:
-      'Just When You Thought Visual Studio Code Couldn’t Get Any Better, It Did',
-    tags: ['javascript', 'vscode', 'programming'],
-    timeToRead: 9,
-    title: 'Take Your VS Code Configuration Anywhere Easily with Settings Sync',
   },
   {
     date: moment('2019-05-02').format('ll'),
