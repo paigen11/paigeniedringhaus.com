@@ -1,6 +1,5 @@
 import moment from 'moment';
 import angularToReact from '../content/images/angular-react.jpeg';
-import multiNode from '../content/images/multiple-nodes.png';
 import officeSpace from '../content/images/office-space.jpeg';
 import sparta from '../content/images/sparta-destructuring.jpeg';
 import allForOne from '../content/images/all-for-one.jpeg';
@@ -59,15 +58,6 @@ export default [
     tags: ['javascript', 'react', 'angular', 'spring boot'],
     timeToRead: 10,
     title: 'Migrating from AngularJS to React',
-  },
-  {
-    date: moment('2019-05-02').format('ll'),
-    img: multiNode,
-    url: 'https://medium.com/itnext/4-solutions-to-run-multiple-node-js-or-npm-commands-simultaneously-9edaa6215a93',
-    subTitle: 'At Some Point, Everyone Has this Problem…',
-    tags: ['javascript', 'nodejs', 'npm'],
-    timeToRead: 8,
-    title: '4 Solutions To Run Multiple Node.js or NPM Commands Simultaneously',
   },
   {
     date: moment('2019-05-12').format('ll'),
