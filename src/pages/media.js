@@ -38,7 +38,7 @@ const MediaPage = () => {
             on podcasts.
           </p>
           <p className="intro">
-            Since 2020, I've been a regular co-host of the podcast&nbsp;
+            From 2020 to 2023, I co-hosted the&nbsp;
             <a
               href="https://topenddevs.com/podcasts/react-round-up/"
               target="_blank"
@@ -46,7 +46,22 @@ const MediaPage = () => {
             >
               React Round Up
             </a>
-            , and in 2023, I joined the LogRocket podcast&nbsp;
+            &nbsp;podcast.
+          </p>
+        </section>
+        <section>
+          <p className="intro">
+            And in 2023, my friends Jack Herrington, TJ VanToll, and I created
+            the&nbsp;
+            <a
+              href="https://www.buzzsprout.com/2226499"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Front-end Fire
+            </a>
+            &nbsp;podcast to bring developers the latest greatest news in the
+            frontend world. I also joined the LogRocket podcast&nbsp;
             <a
               href="https://podrocket.logrocket.com/hosts/paige-niedringhaus"
               target="_blank"
@@ -54,9 +69,14 @@ const MediaPage = () => {
             >
               PodRocket
             </a>
-            &nbsp;as a co-host, as well. In both podcasts, I get to talk to
-            expert developers in the community about libraries, frameworks, and
-            all things JavaScript and beyond.
+            &nbsp;as a co-host, too.
+          </p>
+        </section>
+        <section>
+          <p className="intro">
+            In both podcasts, I get to talk to my friends and experts in the web
+            dev community about the latest libraries, frameworks, and all things
+            frontend and beyond.
           </p>
         </section>
         <section>
@@ -90,7 +110,7 @@ const MediaPage = () => {
           </ul>
         </section>
         <section>
-          <h2>Podcasts</h2>
+          <h2>Podcasts I was interviewed on</h2>
           <ul>
             {sortedPodcasts.map((episode) => {
               return (

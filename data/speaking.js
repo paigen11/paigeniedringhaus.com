@@ -232,4 +232,10 @@ export default [
     path: 'https://www.youtube.com/watch?v=7LMJWFwhB6o',
     img: riot,
   },
+  {
+    title: 'Accelerate Your IoT with these Open-Source Starter Apps from Blues',
+    date: moment('2023-09-27').format('LL'),
+    path: 'https://www.youtube.com/watch?v=FOgCK5b1L3w',
+    img: riot,
+  },
 ];
