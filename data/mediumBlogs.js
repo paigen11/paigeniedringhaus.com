@@ -1,6 +1,5 @@
 import moment from 'moment';
 import angularToReact from '../content/images/angular-react.jpeg';
-import officeSpace from '../content/images/office-space.jpeg';
 import sparta from '../content/images/sparta-destructuring.jpeg';
 import allForOne from '../content/images/all-for-one.jpeg';
 import cssIsAwesome from '../content/images/css-is-awesome.jpeg';
@@ -58,15 +57,6 @@ export default [
     tags: ['javascript', 'react', 'angular', 'spring boot'],
     timeToRead: 10,
     title: 'Migrating from AngularJS to React',
-  },
-  {
-    date: moment('2019-05-12').format('ll'),
-    img: officeSpace,
-    url: 'https://medium.com/itnext/javascripts-async-await-versus-promise-the-great-debate-6308cb2e10b3',
-    subTitle: 'Prepare Yourselves, You’re Stepping into a Minefield',
-    tags: ['javascript', 'async', 'es6', 'promises'],
-    timeToRead: 11,
-    title: 'JavaScript’s Async/Await versus Promises: The Great Debate',
   },
   {
     date: moment('2019-05-27').format('ll'),

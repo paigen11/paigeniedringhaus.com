@@ -100,4 +100,10 @@ export default [
     path: 'https://podrocket.logrocket.com/launch-pad-episode-2',
     img: podRocket,
   },
+  {
+    title: 'Your JavaScript questions answered',
+    date: moment('2023-10-27').format('LL'),
+    path: 'https://podrocket.logrocket.com/javascript-questions-answered',
+    img: podRocket,
+  },
 ];
