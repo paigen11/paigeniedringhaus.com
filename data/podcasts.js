@@ -106,4 +106,10 @@ export default [
     path: 'https://podrocket.logrocket.com/javascript-questions-answered',
     img: podRocket,
   },
+  {
+    title: 'Rocket surgery: 2023 in review',
+    date: moment('2023-12-21').format('LL'),
+    path: 'https://podrocket.logrocket.com/rocket-surgery-2023-in-review',
+    img: podRocket,
+  },
 ];
