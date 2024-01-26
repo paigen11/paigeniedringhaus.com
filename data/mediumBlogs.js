@@ -1,6 +1,5 @@
 import moment from 'moment';
 import angularToReact from '../content/images/angular-react.jpeg';
-import sparta from '../content/images/sparta-destructuring.jpeg';
 import allForOne from '../content/images/all-for-one.jpeg';
 import cssIsAwesome from '../content/images/css-is-awesome.jpeg';
 import stumpedDev from '../content/images/stumped-dev.jpeg';
@@ -57,15 +56,6 @@ export default [
     tags: ['javascript', 'react', 'angular', 'spring boot'],
     timeToRead: 10,
     title: 'Migrating from AngularJS to React',
-  },
-  {
-    date: moment('2019-05-27').format('ll'),
-    img: sparta,
-    url: 'https://medium.com/itnext/using-es6-to-destructure-nested-objects-in-javascript-avoid-undefined-errors-that-break-your-code-612ae67913e9',
-    subTitle: 'Because Airbnb’s ESLint is Merciless in React',
-    tags: ['javascript', 'react', 'es6', 'eslint'],
-    timeToRead: 10,
-    title: 'Using ES6 To Destructure Deeply Nested Objects in JavaScript',
   },
   {
     date: moment('2019-06-11').format('ll'),

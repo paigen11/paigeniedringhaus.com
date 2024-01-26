@@ -15,6 +15,7 @@
 
 h1 {
   color: $darkBlue;
+  font-size: 1.9rem;
 }
 
 a {
@@ -34,7 +35,7 @@ input {
 
 @media only screen and (max-width: 767px) {
   h1 {
-    font-size: 1.95rem;
+    font-size: clamp(1.4rem, unquote('1.26rem + 0.64vw'), 1.9rem);
     margin-bottom: 0;
   }
 

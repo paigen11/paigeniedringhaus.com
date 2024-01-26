@@ -9,6 +9,11 @@
 
     h2 {
       border-bottom: 3px solid;
+      font-size: 1.7rem;
+    }
+
+    h3 {
+      font-size: 1.5rem;
     }
 
     .post-title {
@@ -73,6 +78,7 @@
       padding: 4.5px 6px;
       background: rgba(0, 0, 0, 0.4);
       border-radius: 3px;
+      white-space: pre-wrap;
     }
 
     a .language-text {
@@ -97,11 +103,24 @@
   }
 }
 
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width: 850px) {
   .post-container {
     display: block;
     .post-wrapper {
       margin: 20px 20px;
+
+      .post-title {
+        font-size: clamp(1.5rem, unquote('1.36rem + 0.64vw'), 2rem);
+        margin-bottom: 0;
+      }
+
+      h2 {
+        font-size: clamp(1.2rem, unquote('0.7153rem + 1.6368vw'), 1.5rem);
+      }
+
+      h3 {
+        font-size: clamp(1rem, unquote('0.7153rem + 1.6368vw'), 1.2rem);
+      }
     }
   }
 }
