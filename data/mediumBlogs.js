@@ -1,6 +1,5 @@
 import moment from 'moment';
 import angularToReact from '../content/images/angular-react.jpeg';
-import allForOne from '../content/images/all-for-one.jpeg';
 import cssIsAwesome from '../content/images/css-is-awesome.jpeg';
 import stumpedDev from '../content/images/stumped-dev.jpeg';
 import blocks from '../content/images/blocks.jpeg';
@@ -56,15 +55,6 @@ export default [
     tags: ['javascript', 'react', 'angular', 'spring boot'],
     timeToRead: 10,
     title: 'Migrating from AngularJS to React',
-  },
-  {
-    date: moment('2019-06-11').format('ll'),
-    img: allForOne,
-    url: 'https://betterprogramming.pub/github-templates-the-smarter-way-to-formalize-pull-requests-among-development-teams-89f8d6a204f',
-    subTitle: 'No More Confusing Pull Requests',
-    tags: ['github', 'git', 'programming'],
-    timeToRead: 6,
-    title: 'Github Templates: The Smarter Way to Formalize PRs Among Dev Teams',
   },
   {
     date: moment('2019-06-23').format('ll'),
