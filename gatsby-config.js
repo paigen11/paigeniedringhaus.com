@@ -73,6 +73,13 @@ module.exports = {
               rel: 'noopener noreferrer',
             },
           },
+          {
+            resolve: 'gatsby-remark-codepen',
+            options: {
+              theme: 'dark',
+              height: 400,
+            },
+          },
         ],
       },
     },
