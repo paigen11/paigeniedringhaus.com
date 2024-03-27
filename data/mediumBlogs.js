@@ -1,6 +1,5 @@
 import moment from 'moment';
 import angularToReact from '../content/images/angular-react.jpeg';
-import cssIsAwesome from '../content/images/css-is-awesome.jpeg';
 import stumpedDev from '../content/images/stumped-dev.jpeg';
 import blocks from '../content/images/blocks.jpeg';
 import chalkboard from '../content/images/chalkboard.jpeg';
@@ -55,15 +54,6 @@ export default [
     tags: ['javascript', 'react', 'angular', 'spring boot'],
     timeToRead: 10,
     title: 'Migrating from AngularJS to React',
-  },
-  {
-    date: moment('2019-06-23').format('ll'),
-    img: cssIsAwesome,
-    url: 'https://medium.com/itnext/viewport-units-the-css-you-didnt-know-about-but-should-24b104483429',
-    subTitle: 'Because CSS Done Right is Awesome',
-    tags: ['css', 'programming'],
-    timeToRead: 6,
-    title: 'Viewport Units, the CSS You Didn’t Know About But Should',
   },
   {
     date: moment('2019-07-07').format('ll'),

@@ -112,4 +112,10 @@ export default [
     path: 'https://podrocket.logrocket.com/rocket-surgery-2023-in-review',
     img: podRocket,
   },
+  {
+    title: 'Devin, INP, and the diminishing frontend dev',
+    date: moment('2024-03-27').format('LL'),
+    path: 'https://podrocket.logrocket.com/devin-inp-diminishing-frontend-dev',
+    img: podRocket,
+  },
 ];
