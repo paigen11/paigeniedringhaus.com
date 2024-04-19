@@ -1,10 +1,10 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
-  faTwitter,
   faGithub,
   faMedium,
   faDev,
+  faXTwitter,
 } from '@fortawesome/free-brands-svg-icons';
 import { faEnvelope, faRssSquare } from '@fortawesome/free-solid-svg-icons';
 import './UserLinks.scss';
@@ -16,8 +16,8 @@ const UserLinks = (props) => {
     switch (icon) {
       case 'faGithub':
         return <FontAwesomeIcon icon={faGithub} />;
-      case 'faTwitter':
-        return <FontAwesomeIcon icon={faTwitter} />;
+      case 'faXTwitter':
+        return <FontAwesomeIcon icon={faXTwitter} />;
       case 'faEnvelope':
         return <FontAwesomeIcon icon={faEnvelope} />;
       case 'faMedium':

@@ -1,7 +1,7 @@
 import React from 'react';
 import Helmet from 'react-helmet';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faTwitter, faGithub } from '@fortawesome/free-brands-svg-icons';
+import { faXTwitter, faGithub } from '@fortawesome/free-brands-svg-icons';
 import { faEnvelope, faRssSquare } from '@fortawesome/free-solid-svg-icons';
 import config from '../../data/SiteConfig';
 import Layout from '../components/Layout/Layout';
@@ -42,11 +42,11 @@ const ContactPage = () => {
         <section>
           <h2>
             Follow me & chat on social media&nbsp;
-            <FontAwesomeIcon icon={faTwitter} />
+            <FontAwesomeIcon icon={faXTwitter} />
           </h2>
           <ul>
             <li>
-              I'm on Twitter at&nbsp;
+              I'm on X at&nbsp;
               <a
                 href="https://twitter.com/pniedri"
                 target="_blank"

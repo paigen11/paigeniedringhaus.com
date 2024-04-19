@@ -21,9 +21,9 @@ const config = {
   userLocation: 'Atlanta, GA',
   userLinks: [
     {
-      label: 'Twitter',
+      label: 'X',
       url: 'https://twitter.com/pniedri',
-      iconClassName: 'faTwitter',
+      iconClassName: 'faXTwitter',
     },
     {
       label: 'Medium',

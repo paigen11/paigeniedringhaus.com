@@ -12,7 +12,7 @@ const SocialLinks = (props) => {
     <div className="social-links">
       <span>If you found this useful:</span>
       <TwitterShareButton url={url} title={`${post.title} ✍️ @pniedri`}>
-        Share on Twitter
+        Share on X
       </TwitterShareButton>
     </div>
   );
