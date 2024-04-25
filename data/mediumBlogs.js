@@ -1,6 +1,5 @@
 import moment from 'moment';
 import angularToReact from '../content/images/angular-react.jpeg';
-import stumpedDev from '../content/images/stumped-dev.jpeg';
 import blocks from '../content/images/blocks.jpeg';
 import chalkboard from '../content/images/chalkboard.jpeg';
 import books from '../content/images/books.jpeg';
@@ -54,16 +53,6 @@ export default [
     tags: ['javascript', 'react', 'angular', 'spring boot'],
     timeToRead: 10,
     title: 'Migrating from AngularJS to React',
-  },
-  {
-    date: moment('2019-07-07').format('ll'),
-    img: stumpedDev,
-    url: 'https://medium.com/itnext/javascript-international-methods-b70a2de09d92',
-    subTitle:
-      'Because Date Formatting is Pain & International Formatting is Impossible',
-    tags: ['javascript', 'programming', 'internationalization'],
-    timeToRead: 12,
-    title: 'JavaScript International Methods',
   },
   {
     date: moment('2019-07-15').format('ll'),

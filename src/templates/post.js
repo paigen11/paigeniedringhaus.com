@@ -16,6 +16,7 @@ const Post = (props) => {
   const { slug } = pageContext;
   const postNode = data.markdownRemark;
   const post = postNode.frontmatter;
+  const sortedTags = post.tags?.sort();
 
   if (!post.id) {
     post.id = slug;
@@ -49,7 +50,7 @@ const Post = (props) => {
           <h2 className="post-subtitle">{post.subTitle}</h2>
           <div dangerouslySetInnerHTML={{ __html: postNode.html }} />
           <div className="post-meta">
-            <PostTags tags={post.tags} />
+            <PostTags tags={sortedTags} />
             <SocialLinks postPath={`/blog${slug}`} postNode={postNode} />
           </div>
           <p>
