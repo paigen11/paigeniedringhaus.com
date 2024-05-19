@@ -1,6 +1,5 @@
 import moment from 'moment';
 import angularToReact from '../content/images/angular-react.jpeg';
-import blocks from '../content/images/blocks.jpeg';
 import chalkboard from '../content/images/chalkboard.jpeg';
 import books from '../content/images/books.jpeg';
 import highlighters from '../content/images/highlighters.jpeg';
@@ -62,15 +61,6 @@ export default [
     tags: ['javascript', 'nodejs', 'programming'],
     timeToRead: 6,
     title: 'Node.js 12: The future of server-side JavaScript',
-  },
-  {
-    date: moment('2019-07-28').format('ll'),
-    img: blocks,
-    url: 'https://medium.com/itnext/var-let-const-javascript-es6-feature-series-pt-1-fa603567809e',
-    subTitle: "Let's Begin at the Beginning...",
-    tags: ['javascript', 'es6'],
-    timeToRead: 10,
-    title: 'Var, Let & Const: JavaScript ES6 Feature Series (Pt 1)',
   },
   {
     date: moment('2019-08-06').format('ll'),
