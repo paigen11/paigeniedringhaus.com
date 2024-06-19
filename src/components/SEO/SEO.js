@@ -1,5 +1,5 @@
 import React from 'react';
-import { getSrc } from 'gatsby-plugin-image';
+import { getImage } from 'gatsby-plugin-image';
 import Helmet from 'react-helmet';
 import urljoin from 'url-join';
 import moment from 'moment';
@@ -17,9 +17,7 @@ const SEO = (props) => {
     const postMeta = postNode.frontmatter;
     ({ title } = postMeta);
     description = postMeta.subTitle;
-    image = getSrc(
-      postNode.frontmatter.featuredImage.childImageSharp.gatsbyImageData,
-    );
+    image = getImage(postNode.frontmatter.featuredImage);
     postURL = urljoin(config.siteUrl, config.pathPrefix, postPath);
     canonical = postMeta.canonical;
   } else {
@@ -49,7 +47,7 @@ const SEO = (props) => {
     return moment(postNode.frontmatter.date, config.dateFromFormat).toDate();
   };
 
-  image = getImagePath(image);
+  // image = getImagePath(image);
 
   const datePublished = getPublicationDate();
 
