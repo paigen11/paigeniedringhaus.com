@@ -61,5 +61,10 @@ export default {
       date: moment('2023-02-21').format('LL'),
       path: 'https://blues.io/blog/introducing-notehub-js-the-javascript-library-for-the-notehub-api/',
     },
+    {
+      title: 'Introducing Notehub Py - the Python SDK for the Notehub API',
+      date: moment('2024-06-11').format('LL'),
+      path: 'https://dev.blues.io/blog/notehub-python-sdk-library/',
+    },
   ],
 };

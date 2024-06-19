@@ -42,6 +42,7 @@ import snowflakeStreamlitLogos from '../content/images/custom-iot-dashboards-sno
 import fridgeFleetMonitor from '../content/images/nifty-fifty-fridge-fleet-monitor/fridge-fleet-monitor-hero.png';
 import parkingLotHelpRequest from '../content/images/nifty-fifty-parking-lot-help-request-button/parking-nf6_hackster.jpg';
 import notehubJsLogo from '../content/images/notehub-js-javascript-lib-notehub-api/notehub-js.webp';
+import notehubPyLogo from '../content/images/notehub-py/notehub-py-logo.png';
 
 export default [
   {
@@ -456,5 +457,14 @@ export default [
     tags: ['blues', 'javascript', 'api', 'iot', 'npm'],
     title:
       'Introducing Notehub JS – the JavaScript Library for the Notehub API',
+  },
+  {
+    date: moment('2024-06-11').format('ll'),
+    img: notehubPyLogo,
+    url: 'https://dev.blues.io/blog/notehub-python-sdk-library/',
+    subTitle:
+      'Notehub Py helps you with the Notehub API, interacting with data in a Python-friendly manner.',
+    tags: ['blues', 'python', 'api', 'iot'],
+    title: 'Introducing Notehub Py - the Python SDK for Notehub',
   },
 ];
