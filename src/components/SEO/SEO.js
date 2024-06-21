@@ -47,8 +47,6 @@ const SEO = (props) => {
     return moment(postNode.frontmatter.date, config.dateFromFormat).toDate();
   };
 
-  // image = getImagePath(image);
-
   const datePublished = getPublicationDate();
 
   const authorJSONLD = {
