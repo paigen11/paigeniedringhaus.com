@@ -1,6 +1,5 @@
 import moment from 'moment';
 import angularToReact from '../content/images/angular-react.jpeg';
-import books from '../content/images/books.jpeg';
 import highlighters from '../content/images/highlighters.jpeg';
 import pen from '../content/images/pen.jpeg';
 import glasses from '../content/images/full-time-software-engineer-offer/glasses.jpeg';
@@ -61,16 +60,6 @@ export default [
     tags: ['javascript', 'nodejs', 'programming'],
     timeToRead: 6,
     title: 'Node.js 12: The future of server-side JavaScript',
-  },
-  {
-    date: moment('2019-08-23').format('ll'),
-    img: books,
-    url: 'https://medium.com/itnext/default-function-parameter-values-javascript-es6-feature-series-pt-3-bd8392a88a12',
-    subTitle: "Less Parameter Undefined Checks Make Developers' Lives Easier",
-    tags: ['javascript', 'es6'],
-    timeToRead: 8,
-    title:
-      'Default Function Parameter Values: JavaScript ES6 Feature Series (Pt 3)',
   },
   {
     date: moment('2019-09-01').format('ll'),
