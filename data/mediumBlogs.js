@@ -1,6 +1,5 @@
 import moment from 'moment';
 import angularToReact from '../content/images/angular-react.jpeg';
-import highlighters from '../content/images/highlighters.jpeg';
 import pen from '../content/images/pen.jpeg';
 import glasses from '../content/images/full-time-software-engineer-offer/glasses.jpeg';
 import pencils from '../content/images/pencils.jpeg';
@@ -60,15 +59,6 @@ export default [
     tags: ['javascript', 'nodejs', 'programming'],
     timeToRead: 6,
     title: 'Node.js 12: The future of server-side JavaScript',
-  },
-  {
-    date: moment('2019-09-01').format('ll'),
-    img: highlighters,
-    url: 'https://medium.com/itnext/spread-rest-parameters-javascript-es6-feature-series-pt-4-c9e9f0c0228f',
-    subTitle: 'The Syntax so Nice ES6 Used it Twice',
-    tags: ['javascript', 'es6'],
-    timeToRead: 11,
-    title: 'Spread & Rest Parameters: JavaScript ES6 Feature Series (Pt 4)',
   },
   {
     date: moment('2019-09-16').format('ll'),
