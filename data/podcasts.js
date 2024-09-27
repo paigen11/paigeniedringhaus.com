@@ -118,4 +118,10 @@ export default [
     path: 'https://podrocket.logrocket.com/devin-inp-diminishing-frontend-dev',
     img: podRocket,
   },
+  {
+    title: 'SSR performance, Remix and ChatGPT, and favorite new tools',
+    date: moment('2024-09-26').format('LL'),
+    path: 'https://podrocket.logrocket.com/ssr-performance-remix-chatgpt-new-tools',
+    img: podRocket,
+  },
 ];
