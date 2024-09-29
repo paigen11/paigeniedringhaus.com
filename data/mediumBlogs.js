@@ -1,6 +1,5 @@
 import moment from 'moment';
 import angularToReact from '../content/images/angular-react.jpeg';
-import pen from '../content/images/pen.jpeg';
 import glasses from '../content/images/full-time-software-engineer-offer/glasses.jpeg';
 import pencils from '../content/images/pencils.jpeg';
 import cars from '../content/images/cars.jpeg';
@@ -59,15 +58,6 @@ export default [
     tags: ['javascript', 'nodejs', 'programming'],
     timeToRead: 6,
     title: 'Node.js 12: The future of server-side JavaScript',
-  },
-  {
-    date: moment('2019-09-16').format('ll'),
-    img: pen,
-    url: 'https://medium.com/better-programming/string-contentlate-literals-javascript-es6-feature-series-pt-5-a40e55a5485b',
-    subTitle: 'Why developers need to know where the back-ticks key is',
-    tags: ['javascript', 'es6'],
-    timeToRead: 8,
-    title: 'String contentlate Literals: JavaScript ES6 Feature Series (Pt 5)',
   },
   {
     date: moment('2019-09-29').format('ll'),
