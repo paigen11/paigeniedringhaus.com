@@ -1,11 +1,12 @@
-@import './colors.scss';
+@use "sass:string";
+@use 'colors.scss';
 
 .page-body {
   max-width: 800px;
   width: 100%;
   margin: 30px auto;
   padding: 0 2rem;
-  color: $darkBlueTint;
+  color: colors.$darkBlueTint;
 }
 
 .wide-page-body {
@@ -14,17 +15,17 @@
 }
 
 h1 {
-  color: $darkBlue;
+  color: colors.$darkBlue;
   font-size: 1.9rem;
 }
 
 a {
   text-decoration: none;
-  color: $blueViolet;
+  color: colors.$blueViolet;
 }
 
 a:hover {
-  color: $medBlue;
+  color: colors.$medBlue;
 }
 
 p,
@@ -35,18 +36,18 @@ input {
 
 @media only screen and (max-width: 767px) {
   h1 {
-    font-size: clamp(1.4rem, unquote('1.26rem + 0.64vw'), 1.9rem);
+    font-size: clamp(1.4rem, string.unquote('1.26rem + 0.64vw'), 1.9rem);
     margin-bottom: 0;
   }
 
   h2 {
-    font-size: clamp(1.2rem, unquote('0.7153rem + 1.6368vw'), 1.5rem);
+    font-size: clamp(1.2rem, string.unquote('0.7153rem + 1.6368vw'), 1.5rem);
   }
 
   p,
   li,
   input {
-    font-size: clamp(1.125rem, unquote('0.8798rem + 0.5115vw'), 1.25rem);
+    font-size: clamp(1.125rem, string.unquote('0.8798rem + 0.5115vw'), 1.25rem);
   }
 }
 
@@ -98,7 +99,7 @@ input {
 }
 
 .latest-title {
-  border-bottom: 2px solid $medBlue;
+  border-bottom: 2px solid colors.$medBlue;
 }
 
 // blog page
@@ -145,7 +146,7 @@ input {
 .courses-container {
   section:nth-child(3),
   .intro:last-child {
-    border-bottom: 2px solid $medBlue;
+    border-bottom: 2px solid colors.$medBlue;
     padding-bottom: 1.5rem;
   }
 
@@ -161,7 +162,7 @@ input {
     box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px;
 
     a {
-      color: $darkBlueTint;
+      color: colors.$darkBlueTint;
     }
 
     .title {
@@ -192,7 +193,7 @@ input {
 
   .course-items:hover {
     h4 {
-      color: $medBlue;
+      color: colors.$medBlue;
     }
 
     .carot {
@@ -205,7 +206,7 @@ input {
   max-width: 800px;
   width: 100%;
   margin: 0 auto;
-  color: $darkBlueTint;
+  color: colors.$darkBlueTint;
 
   .intro {
     padding: 0 2rem;
@@ -259,7 +260,7 @@ input {
 // media page
 .media-container {
   h2 {
-    border-bottom: 2px solid $medBlue;
+    border-bottom: 2px solid colors.$medBlue;
   }
 
   h3 {
@@ -306,10 +307,10 @@ input {
 @media only screen and (max-width: 767px) {
   .media-container {
     .media-items {
-      font-size: clamp(1.2rem, unquote('0.9558rem + 0.6138vw'), 1.25rem);
+      font-size: clamp(1.2rem, string.unquote('0.9558rem + 0.6138vw'), 1.25rem);
       .title,
       .articles {
-        border-bottom: 1px solid $medBlue;
+        border-bottom: 1px solid colors.$medBlue;
         width: 100%;
       }
 
@@ -334,7 +335,7 @@ input {
 
 .contact-container {
   h2 {
-    border-bottom: 2px solid $medBlue;
+    border-bottom: 2px solid colors.$medBlue;
   }
 
   .constact-no-underline {
@@ -376,31 +377,31 @@ input {
 
 // email modal plugin
 .m-modal-content {
-  color: $darkBlueTint !important;
-  background-color: $lightestGreen !important;
+  color: colors.$darkBlueTint !important;
+  background-color: colors.$lightestGreen !important;
 
   a:hover {
     background-color: rgba(0, 0, 0, 0.08) !important;
   }
 
   #m-gmail {
-    color: $darkBlue;
+    color: colors.$darkBlue;
   }
 
   #m-outlook {
-    color: $medBlue;
+    color: colors.$medBlue;
   }
 
   .m-yahoo {
-    color: $darkBlueTint !important;
+    color: colors.$darkBlueTint !important;
   }
 
   #m-open {
-    color: $blueViolet;
+    color: colors.$blueViolet;
   }
 
   #m-copy {
-    color: $darkBlueTint;
+    color: colors.$darkBlueTint;
   }
 
   .m-by {

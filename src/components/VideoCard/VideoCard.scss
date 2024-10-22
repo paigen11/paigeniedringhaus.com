@@ -1,4 +1,4 @@
-@import '../../styles/colors.scss';
+@use '../../styles/colors.scss';
 
 .video-card {
   width: 240px;
@@ -9,7 +9,7 @@
   border-radius: 5px;
 
   a {
-    color: $darkBlueTint;
+    color: colors.$darkBlueTint;
   }
 
   h4 {
@@ -27,7 +27,7 @@
 
   .video-card-subtitle {
     margin: 0;
-    color: $darkBlueTint;
+    color: colors.$darkBlueTint;
   }
 
   .watch-now {
@@ -41,7 +41,7 @@
 .video-card:hover {
   .video-title,
   .watch-now {
-    color: $medBlue;
+    color: colors.$medBlue;
   }
 
   .carot {

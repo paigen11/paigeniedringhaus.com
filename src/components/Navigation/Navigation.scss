@@ -1,7 +1,7 @@
-@import '../../styles/colors.scss';
+@use '../../styles/colors.scss';
 
 .navigation-wrapper {
-  background-color: $green;
+  background-color: colors.$green;
   padding: 0.5rem 1rem;
 
   .navigation-header {
@@ -32,7 +32,7 @@
         span {
           font-size: 24px;
           font-weight: 700;
-          color: $darkBlue;
+          color: colors.$darkBlue;
           width: 100%;
         }
       }
@@ -43,7 +43,7 @@
       .link {
         text-decoration: none;
         font-size: 20px;
-        color: $darkBlue;
+        color: colors.$darkBlue;
         font-weight: 600;
         padding: 0.5rem;
         border-radius: 3px;
@@ -51,8 +51,8 @@
       }
       .link.active,
       .link:hover {
-        color: $medBlue;
-        background-color: $lightGreen;
+        color: colors.$medBlue;
+        background-color: colors.$lightGreen;
       }
     }
   }
@@ -94,7 +94,7 @@
             .bar-three {
               width: 2rem;
               height: 0.25rem;
-              background: $darkBlue;
+              background: colors.$darkBlue;
               border-radius: 10px;
               transition: all 0.3s linear;
               position: relative;

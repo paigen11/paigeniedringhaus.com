@@ -1,11 +1,11 @@
-@import '../../styles/colors.scss';
+@use '../../styles/colors.scss';
 
 .mobile-nav-wrapper {
   z-index: 1;
   width: 100%;
   display: flex;
   flex-direction: column;
-  background-color: $green;
+  background-color: colors.$green;
   align-items: center;
   justify-content: center;
   position: fixed;
@@ -37,8 +37,8 @@
 }
 
 .mobile-link.active {
-  color: $medBlue;
-  background-color: $lightGreen;
+  color: colors.$medBlue;
+  background-color: colors.$lightGreen;
   border-radius: 5px;
   width: 90%;
 }

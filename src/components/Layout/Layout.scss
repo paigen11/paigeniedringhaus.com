@@ -1,4 +1,4 @@
-@import '../../styles/colors.scss';
+@use '../../styles/colors.scss';
 
 * {
   box-sizing: border-box;
@@ -30,7 +30,7 @@ body {
   justify-content: space-between;
   min-height: 100vh;
   min-width: 100%;
-  background: $medBlueTint;
+  background: colors.$medBlueTint;
 }
 
 // applies only when viewed on mobile device

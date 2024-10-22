@@ -1,4 +1,4 @@
-@import '../../styles/colors.scss';
+@use '../../styles/colors.scss';
 
 .loader-wrapper {
   display: flex;
@@ -6,8 +6,8 @@
   align-items: center;
 
   .loader {
-    border: 16px solid $lighterGrey;
-    border-top: 16px solid $darkBlueTint;
+    border: 16px solid colors.$lighterGrey;
+    border-top: 16px solid colors.$darkBlueTint;
     border-radius: 50%;
     width: 80px;
     height: 80px;

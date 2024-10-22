@@ -1,11 +1,11 @@
-@import '../../styles/colors.scss';
+@use '../../styles/colors.scss';
 
 .social-links {
   display: grid;
   grid-template-columns: 1fr auto auto 1fr;
   align-items: center;
   text-align: center;
-  color: $darkBlueTint;
+  color: colors.$darkBlueTint;
 
   span {
     grid-column-start: 2;
@@ -16,12 +16,12 @@
     margin: 0.25rem;
     cursor: pointer;
     font-weight: 600 !important;
-    color: $blueViolet !important;
+    color: colors.$blueViolet !important;
     font-size: 1.25rem;
   }
 
   button:hover {
-    color: $medBlue !important;
+    color: colors.$medBlue !important;
   }
 }
 
@@ -29,6 +29,6 @@
 .social-links::after {
   content: '';
   height: 2px;
-  background-color: $darkBlueTint;
+  background-color: colors.$darkBlueTint;
   width: 100%;
 }

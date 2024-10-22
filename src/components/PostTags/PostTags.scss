@@ -1,4 +1,4 @@
-@import '../../styles/colors.scss';
+@use '../../styles/colors.scss';
 
 .post-tag-container {
   display: flex;
@@ -327,5 +327,10 @@
 
   .csv {
     background-color: #33d4ff;
+  }
+
+  .pypi {
+    background-color: #016dad;
+    color: white;
   }
 }

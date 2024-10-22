@@ -1,4 +1,4 @@
-@import '../../styles/colors.scss';
+@use '../../styles/colors.scss';
 
 @keyframes TransitioningBackground {
   0% {
@@ -24,7 +24,7 @@
   position: relative;
   overflow: hidden;
   // for background color shift
-  background-image: (linear-gradient(270deg, $medBlueTint2, $medBlue));
+  background-image: (linear-gradient(270deg, colors.$medBlueTint2, colors.$medBlue));
   background-size: 400% 400%;
   animation: TransitioningBackground 10s ease infinite;
   // to ease the button growth on hover
