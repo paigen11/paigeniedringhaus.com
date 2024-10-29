@@ -1,6 +1,5 @@
 import moment from 'moment';
 import angularToReact from '../content/images/angular-react.jpeg';
-import glasses from '../content/images/full-time-software-engineer-offer/glasses.jpeg';
 import pencils from '../content/images/pencils.jpeg';
 import cars from '../content/images/cars.jpeg';
 import notebookAndCoffee from '../content/images/notebook-and-coffee.jpeg';
@@ -58,16 +57,6 @@ export default [
     tags: ['javascript', 'nodejs', 'programming'],
     timeToRead: 6,
     title: 'Node.js 12: The future of server-side JavaScript',
-  },
-  {
-    date: moment('2019-09-29').format('ll'),
-    img: glasses,
-    url: 'https://medium.com/itnext/enhanced-object-literal-value-shorthand-javascript-es6-feature-series-pt-6-e00dfdc24f64',
-    subTitle: 'Because typing the same thing twice in an object is crazy',
-    tags: ['javascript', 'es6'],
-    timeToRead: 8,
-    title:
-      'Enhanced Object Literal Values Shorthand: JavaScript ES6 Feature Series (Pt 6)',
   },
   {
     date: moment('2019-10-14').format('ll'),
