@@ -1,6 +1,5 @@
 import moment from 'moment';
 import angularToReact from '../content/images/angular-react.jpeg';
-import cars from '../content/images/cars.jpeg';
 import notebookAndCoffee from '../content/images/notebook-and-coffee.jpeg';
 import library from '../content/images/library.jpeg';
 import reactRoutes from '../content/images/react-routes.png';
@@ -56,15 +55,6 @@ export default [
     tags: ['javascript', 'nodejs', 'programming'],
     timeToRead: 6,
     title: 'Node.js 12: The future of server-side JavaScript',
-  },
-  {
-    date: moment('2019-10-27').format('ll'),
-    img: cars,
-    url: 'https://medium.com/itnext/classes-and-inheritance-javascript-es6-feature-series-part-8-4a81fa3adf0f',
-    subTitle: 'Prototypes are still there...under the hood',
-    tags: ['javascript', 'es6'],
-    timeToRead: 11,
-    title: 'Classes and Inheritance: JavaScript ES6 Feature Series (Pt 8)',
   },
   {
     date: moment('2019-11-12').format('ll'),
