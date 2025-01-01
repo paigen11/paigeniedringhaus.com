@@ -124,4 +124,10 @@ export default [
     path: 'https://podrocket.logrocket.com/ssr-performance-remix-chatgpt-new-tools',
     img: podRocket,
   },
+  {
+    title: 'Rocket Surgery 2024: Year in review',
+    date: moment('2024-12-19').format('LL'),
+    path: 'https://podrocket.logrocket.com/rocket-surgery-2024-year-in-review',
+    img: podRocket,
+  },
 ];
