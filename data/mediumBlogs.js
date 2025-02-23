@@ -1,6 +1,5 @@
 import moment from 'moment';
 import angularToReact from '../content/images/angular-react.jpeg';
-import notebookAndCoffee from '../content/images/notebook-and-coffee.jpeg';
 import library from '../content/images/library.jpeg';
 import reactRoutes from '../content/images/react-routes.png';
 import stopSigns from '../content/images/stop-signs.jpeg';
@@ -55,17 +54,6 @@ export default [
     tags: ['javascript', 'nodejs', 'programming'],
     timeToRead: 6,
     title: 'Node.js 12: The future of server-side JavaScript',
-  },
-  {
-    date: moment('2019-11-12').format('ll'),
-    img: notebookAndCoffee,
-    url: 'https://medium.com/better-programming/object-keys-values-and-entries-javascript-es6-feature-series-part-9-d71268791089',
-    subTitle:
-      'Finally, ECMAScript has some much-needed object manipulation methods',
-    tags: ['javascript', 'es6'],
-    timeToRead: 10,
-    title:
-      'Object Keys, Values, and Entries: JavaScript ES6 Feature Series (Pt 9)',
   },
   {
     date: moment('2019-11-24').format('ll'),
