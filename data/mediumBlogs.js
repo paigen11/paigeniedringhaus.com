@@ -1,6 +1,5 @@
 import moment from 'moment';
 import angularToReact from '../content/images/angular-react.jpeg';
-import library from '../content/images/library.jpeg';
 import reactRoutes from '../content/images/react-routes.png';
 import stopSigns from '../content/images/stop-signs.jpeg';
 import multiScreens from '../content/images/multi-screens.jpeg';
@@ -54,17 +53,6 @@ export default [
     tags: ['javascript', 'nodejs', 'programming'],
     timeToRead: 6,
     title: 'Node.js 12: The future of server-side JavaScript',
-  },
-  {
-    date: moment('2019-11-24').format('ll'),
-    img: library,
-    url: 'https://medium.com/itnext/destructuring-arrays-objects-javascript-es6-feature-series-pt-10-507108471c07',
-    subTitle:
-      'For concise variable syntax, curly braces have never been more critical',
-    tags: ['javascript', 'es6'],
-    timeToRead: 12,
-    title:
-      'Destructuring Arrays & Objects: JavaScript ES6 Feature Series (Pt 10)',
   },
   {
     date: moment('2019-12-09').format('ll'),
