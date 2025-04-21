@@ -1,6 +1,5 @@
 import moment from 'moment';
 import angularToReact from '../content/images/angular-react.jpeg';
-import reactRoutes from '../content/images/react-routes.png';
 import stopSigns from '../content/images/stop-signs.jpeg';
 import multiScreens from '../content/images/multi-screens.jpeg';
 import phone from '../content/images/phone.jpeg';
@@ -53,16 +52,6 @@ export default [
     tags: ['javascript', 'nodejs', 'programming'],
     timeToRead: 6,
     title: 'Node.js 12: The future of server-side JavaScript',
-  },
-  {
-    date: moment('2019-12-09').format('ll'),
-    img: reactRoutes,
-    url: 'https://medium.com/better-programming/how-to-pass-multiple-route-parameters-in-a-react-url-path-4b919de0abbe',
-    subTitle:
-      'Redirects are common. Passing more than one piece of dynamic data with them is not.',
-    tags: ['javascript', 'react'],
-    timeToRead: 8,
-    title: 'How to Pass Multiple Route Parameters in a React URL Path',
   },
   {
     date: moment('2019-12-23').format('ll'),
