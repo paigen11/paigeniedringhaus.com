@@ -1,6 +1,5 @@
 import moment from 'moment';
 import angularToReact from '../content/images/angular-react.jpeg';
-import stopSigns from '../content/images/stop-signs.jpeg';
 import multiScreens from '../content/images/multi-screens.jpeg';
 import phone from '../content/images/phone.jpeg';
 import jumping from '../content/images/jumping.jpeg';
@@ -52,16 +51,6 @@ export default [
     tags: ['javascript', 'nodejs', 'programming'],
     timeToRead: 6,
     title: 'Node.js 12: The future of server-side JavaScript',
-  },
-  {
-    date: moment('2019-12-23').format('ll'),
-    img: stopSigns,
-    url: 'https://medium.com/itnext/javascript-error-handling-from-express-js-to-react-810deb5e5e28',
-    subTitle:
-      'Because errors are bound to happen and we need to handle them correctly.',
-    tags: ['javascript', 'react', 'express', 'errors'],
-    timeToRead: 9,
-    title: 'JavaScript Error Handling from Express.js to React',
   },
   {
     date: moment('2020-01-20').format('ll'),
