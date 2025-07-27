@@ -1,6 +1,5 @@
 import moment from 'moment';
 import angularToReact from '../content/images/angular-react.jpeg';
-import multiScreens from '../content/images/multi-screens.jpeg';
 import phone from '../content/images/phone.jpeg';
 import jumping from '../content/images/jumping.jpeg';
 import epcot from '../content/images/epcot.jpeg';
@@ -51,15 +50,6 @@ export default [
     tags: ['javascript', 'nodejs', 'programming'],
     timeToRead: 6,
     title: 'Node.js 12: The future of server-side JavaScript',
-  },
-  {
-    date: moment('2020-01-20').format('ll'),
-    img: multiScreens,
-    url: 'https://medium.com/better-programming/pure-css-media-queries-and-responsive-web-design-with-react-bac7a31e84b4',
-    subTitle: "Build your webpages and apps to suit you user's device size",
-    tags: ['css', 'javascript', 'react'],
-    timeToRead: 11,
-    title: 'Pure CSS Media Queries and Responsive Web Design with React',
   },
   {
     date: moment('2020-02-04').format('ll'),
