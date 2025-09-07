@@ -1,6 +1,5 @@
 import moment from 'moment';
 import angularToReact from '../content/images/angular-react.jpeg';
-import phone from '../content/images/phone.jpeg';
 import jumping from '../content/images/jumping.jpeg';
 import epcot from '../content/images/epcot.jpeg';
 import dualMonitors from '../content/images/dual-monitors.jpeg';
@@ -50,16 +49,6 @@ export default [
     tags: ['javascript', 'nodejs', 'programming'],
     timeToRead: 6,
     title: 'Node.js 12: The future of server-side JavaScript',
-  },
-  {
-    date: moment('2020-02-04').format('ll'),
-    img: phone,
-    url: 'https://medium.com/better-programming/react-socks-and-responsive-web-design-with-react-63b766d000bd',
-    subTitle:
-      'A React-specific way to build webpages and apps to suit your users device size',
-    tags: ['css', 'javascript', 'react'],
-    timeToRead: 10,
-    title: 'React Socks and Responsive Web Design with React',
   },
   {
     date: moment('2020-02-16').format('ll'),
