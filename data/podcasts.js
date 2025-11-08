@@ -130,4 +130,23 @@ export default [
     path: 'https://podrocket.logrocket.com/rocket-surgery-2024-year-in-review',
     img: podRocket,
   },
+  {
+    title:
+      'Navigating the AI bubble, the 10x AI engineer, and the Cloudflare vs. Perplexity data grab',
+    date: moment('2025-08-28').format('LL'),
+    path: 'https://podrocket.logrocket.com/navigating-ai-bubble-10x-ai-engineer-cloudflare-vs-perplexity-data-grab',
+    img: podRocket,
+  },
+  {
+    title: "Google's antitrust win, AI mandates, npm attacks, and robots.txt",
+    date: moment('2025-09-25').format('LL'),
+    path: 'https://podrocket.logrocket.com/googles-antitrust-win-ai-mandates-npm-attacks-robots-txt',
+    img: podRocket,
+  },
+  {
+    title: 'Remix v3, React 19.2, H-1B fees and Firefox fanboys',
+    date: moment('2025-10-30').format('LL'),
+    path: 'https://podrocket.logrocket.com/2025',
+    img: podRocket,
+  },
 ];
