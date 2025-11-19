@@ -6,7 +6,7 @@ import telerik from '../src/images/thumbnails/telerik.png';
 import seDaily from '../src/images/thumbnails/seDaily.png';
 import modernWeb from '../src/images/thumbnails/modernWeb.jpeg';
 import shesInTech from '../src/images/thumbnails/shesInTech.jpeg';
-import podRocket from '../src/images/thumbnails/podRocket.jpeg';
+import podRocket from '../src/images/thumbnails/podRocket.png';
 import js20min from '../src/images/thumbnails/20-min-js.jpeg';
 
 export default [
@@ -147,6 +147,12 @@ export default [
     title: 'Remix v3, React 19.2, H-1B fees and Firefox fanboys',
     date: moment('2025-10-30').format('LL'),
     path: 'https://podrocket.logrocket.com/2025',
+    img: podRocket,
+  },
+  {
+    title: 'GitHub’s Octoverse: TypeScript, Copilot, and Open Source Struggles',
+    date: moment('2025-11=13').format('LL'),
+    path: 'https://podrocket.logrocket.com/githubs-octoverse-copilot-typescript-open-source-struggles',
     img: podRocket,
   },
 ];
