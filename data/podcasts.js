@@ -146,7 +146,7 @@ export default [
   {
     title: 'Remix v3, React 19.2, H-1B fees and Firefox fanboys',
     date: moment('2025-10-30').format('LL'),
-    path: 'https://podrocket.logrocket.com/2025',
+    path: 'https://podrocket.logrocket.com/remix-react-h1b-fees-firefox-panel',
     img: podRocket,
   },
   {
