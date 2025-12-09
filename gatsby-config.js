@@ -248,6 +248,11 @@ module.exports = {
       },
     },
     `gatsby-plugin-mailgo`,
-    `gatsby-plugin-netlify`,
+    {
+      resolve: `gatsby-plugin-netlify`,
+      options: {
+        mergeSecurityHeaders: false, // boolean to turn off the default security headers
+      },
+    },
   ],
 };
