@@ -46,7 +46,7 @@ const config = {
       iconClassName: 'faEnvelope',
     },
   ],
-  copyright: `Copyright © 2025. Paige Niedringhaus`,
+  copyright: `Copyright © 2026. Paige Niedringhaus`,
   themeColor: '#40c9a2', // Used for setting manifest and progress theme colors.
   backgroundColor: '#eceef5', // Used for setting manifest background color.
 };
