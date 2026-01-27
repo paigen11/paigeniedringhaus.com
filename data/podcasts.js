@@ -13,20 +13,20 @@ export default [
   {
     title: 'JavaScript Jabber: Node 12 with Paige Niedringhaus',
     date: moment('2019-10-08').format('LL'),
-    path: 'https://topenddevs.com/podcasts/javascript-jabber/episodes/jsj-398-node-12-with-paige-niedringhaus',
+    path: 'https://topenddevs.com/podcasts/javascript-jabber/jsj-398-node-12-with-paige-niedringhaus',
     img: jsJabber,
   },
   {
     title: 'My JavaScript Story: Paige Niedringhaus',
     date: moment('2020-03-21').format('LL'),
-    path: 'https://topenddevs.com/podcasts/my-javascript-story/episodes/mjs-143-paige-niedringhaus',
+    path: 'https://topenddevs.com/podcasts/my-javascript-story/mjs-143-paige-niedringhaus',
     img: myJsStory,
   },
   {
     title:
       'React Round Up: React Socks for Easy Responsive Design with Paige Niedringhaus',
     date: moment('2020-04-14').format('LL'),
-    path: 'https://topenddevs.com/podcasts/react-round-up/episodes/rru-106-react-socks-for-easy-responsive-design-with-paige-niedringhaus',
+    path: 'https://topenddevs.com/podcasts/react-round-up/rru-106-react-socks-for-easy-responsive-design-with-paige-niedringhaus',
     img: reactRoundUp,
   },
   {
@@ -52,7 +52,7 @@ export default [
     title:
       'React Round Up: Modernizing Enterprise React Apps with Paige Niedringhaus',
     date: moment('2021-10-20').format('LL'),
-    path: 'https://topenddevs.com/podcasts/react-round-up/episodes/modernizing-enterprise-react-apps-with-paige-niedringhaus-rru-160',
+    path: 'https://topenddevs.com/podcasts/react-round-up/modernizing-enterprise-react-apps-with-paige-niedringhaus-rru-160',
     img: reactRoundUp,
   },
   {
@@ -79,7 +79,7 @@ export default [
   {
     title: 'React Round Up: Nailing Your Interview with Paige Niedringhaus',
     date: moment('2022-01-05').format('LL'),
-    path: 'https://topenddevs.com/podcasts/react-round-up/episodes/nailing-your-interview-with-paige-niedringhaus-react-167',
+    path: 'https://topenddevs.com/podcasts/react-round-up/nailing-your-interview-with-paige-niedringhaus-react-167',
     img: reactRoundUp,
   },
   {
@@ -153,6 +153,12 @@ export default [
     title: 'GitHub’s Octoverse: TypeScript, Copilot, and Open Source Struggles',
     date: moment('2025-11=13').format('LL'),
     path: 'https://podrocket.logrocket.com/githubs-octoverse-copilot-typescript-open-source-struggles',
+    img: podRocket,
+  },
+  {
+    title: 'Anthropic buys Bun, GitHub Friction, and AI economics',
+    date: moment('2026-01-01').format('LL'),
+    path: 'https://podrocket.logrocket.com/anthropic-buys-bun-github-friction-and-ai-economics',
     img: podRocket,
   },
 ];
