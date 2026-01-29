@@ -1,6 +1,5 @@
 import moment from 'moment';
 import angularToReact from '../content/images/angular-react.jpeg';
-import jumping from '../content/images/jumping.jpeg';
 import epcot from '../content/images/epcot.jpeg';
 import dualMonitors from '../content/images/dual-monitors.jpeg';
 import marionette from '../content/images/marionette.jpeg';
@@ -49,15 +48,6 @@ export default [
     tags: ['javascript', 'nodejs', 'programming'],
     timeToRead: 6,
     title: 'Node.js 12: The future of server-side JavaScript',
-  },
-  {
-    date: moment('2020-02-16').format('ll'),
-    img: jumping,
-    url: 'https://medium.com/itnext/javascripts-optional-chaining-proposal-bc9e6e5f2877',
-    subTitle: 'Kiss undefined errors that stop you dead in your tracks goodbye',
-    tags: ['javascript'],
-    timeToRead: 7,
-    title: "JavaScript's Optional Chaining Proposal",
   },
   {
     date: moment('2020-03-03').format('ll'),
