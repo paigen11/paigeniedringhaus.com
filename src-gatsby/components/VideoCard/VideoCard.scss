@@ -1,0 +1,50 @@
+@use '../../styles/colors.scss';
+
+.video-card {
+  width: 240px;
+  margin: 20px 10px;
+  padding: 20px;
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px;
+  border-radius: 5px;
+
+  a {
+    color: colors.$darkBlueTint;
+  }
+
+  h4 {
+    margin-bottom: 0;
+    text-align: center;
+  }
+
+  img {
+    border-radius: 4px;
+  }
+
+  .video-title {
+    margin-top: 0.5rem;
+  }
+
+  .video-card-subtitle {
+    margin: 0;
+    color: colors.$darkBlueTint;
+  }
+
+  .watch-now {
+    margin-top: 0.5rem;
+    .carot {
+      opacity: 0;
+    }
+  }
+}
+
+.video-card:hover {
+  .video-title,
+  .watch-now {
+    color: colors.$medBlue;
+  }
+
+  .carot {
+    opacity: 1;
+  }
+}

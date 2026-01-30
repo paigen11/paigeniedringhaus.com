@@ -1,0 +1,65 @@
+---
+interface Props {
+  id?: string;
+  user?: string;
+  url?: string;
+  title?: string;
+  height?: number;
+  defaultTab?: string;
+  theme?: string;
+}
+
+const {
+  id,
+  user = 'paigen11',
+  url,
+  title = 'CodePen Embed',
+  height = 400,
+  defaultTab = 'result',
+  theme = 'dark',
+} = Astro.props;
+
+// Extract pen ID and user from URL if provided
+let penId = id;
+let penUser = user;
+
+if (!penId && url) {
+  // Parse URL like: https://codepen.io/paigen11/pen/BayqMzX
+  const match = url.match(/codepen\.io\/([^\/]+)\/pen\/([^\/\?]+)/);
+  if (match) {
+    penUser = match[1];
+    penId = match[2];
+  }
+}
+
+if (!penId) {
+  throw new Error('CodePen component requires either an id or url prop');
+}
+
+const embedUrl = `https://codepen.io/${penUser}/embed/${penId}?default-tab=${defaultTab}&theme-id=${theme}`;
+---
+
+<div class="codepen-embed">
+  <iframe
+    src={embedUrl}
+    title={title}
+    loading="lazy"
+    allowtransparency="true"
+    allowfullscreen={true}
+    style={`height: ${height}px;`}
+  ></iframe>
+</div>
+
+<style>
+  .codepen-embed {
+    width: 100%;
+    margin: 2rem 0;
+    border-radius: 0.5rem;
+    overflow: hidden;
+  }
+
+  .codepen-embed iframe {
+    width: 100%;
+    border: 0;
+  }
+</style>

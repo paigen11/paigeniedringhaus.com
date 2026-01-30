@@ -1,0 +1,52 @@
+---
+interface Props {
+  id?: string;
+  url?: string;
+  title?: string;
+}
+
+const { id, url, title = 'YouTube video player' } = Astro.props;
+
+// Extract video ID from URL if provided
+let videoId = id;
+if (!videoId && url) {
+  const match = url.match(/(?:youtu\.be\/|youtube\.com\/(?:embed\/|v\/|watch\?v=|watch\?.+&v=))([^&?]+)/);
+  if (match) {
+    videoId = match[1];
+  }
+}
+
+if (!videoId) {
+  throw new Error('YouTube component requires either an id or url prop');
+}
+---
+
+<div class="youtube-embed">
+  <iframe
+    src={`https://www.youtube.com/embed/${videoId}`}
+    title={title}
+    frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+    allowfullscreen
+  ></iframe>
+</div>
+
+<style>
+  .youtube-embed {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    margin: 2rem 0;
+    overflow: hidden;
+    border-radius: 0.5rem;
+  }
+
+  .youtube-embed iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+  }
+</style>

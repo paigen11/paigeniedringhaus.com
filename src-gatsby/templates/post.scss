@@ -1,0 +1,127 @@
+@use "sass:string";
+@use '../../src/styles/colors.scss';
+.post-container {
+  display: flex;
+  justify-content: center;
+  .post-wrapper {
+    margin: 30px 20px;
+    max-width: 800px;
+    color: colors.$darkBlueTint;
+
+    h2 {
+      border-bottom: 3px solid;
+      font-size: 1.7rem;
+    }
+
+    h3 {
+      font-size: 1.5rem;
+    }
+
+    .post-title {
+      border: none;
+      font-size: 2em;
+      line-height: 1.15;
+    }
+
+    .post-subtitle {
+      border: none;
+      line-height: 1;
+    }
+
+    blockquote {
+      border-left: 3px solid colors.$lightBlueTint2;
+      background: colors.$lightBlue;
+      padding: 1px 0;
+      border-radius: 4px;
+
+      p {
+        margin-left: 10px;
+      }
+    }
+
+    p {
+      img {
+        margin-left: auto;
+        display: block;
+        margin-right: auto;
+      }
+    }
+
+    figcaption {
+      color: colors.$darkBlueTint2;
+      margin: auto;
+    }
+
+    .post-category {
+      font-weight: 600;
+      font-size: 1em;
+      text-transform: uppercase;
+      width: min-content;
+      margin: auto;
+      color: colors.$darkBlueTint2;
+    }
+
+    .post-meta {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .gatsby-highlight {
+      background-color: colors.$medBlue;
+      border-radius: 0.3em;
+      margin: 0.5em 0;
+      padding: 1em;
+      overflow: auto;
+    }
+
+    .language-text {
+      padding: 4.5px 6px;
+      background: rgba(0, 0, 0, 0.4);
+      border-radius: 3px;
+      white-space: pre-wrap;
+    }
+
+    a .language-text {
+      color: colors.$blueViolet;
+      background: rgba(0, 0, 0, 0.25);
+    }
+
+    .gatsby-code-title {
+      margin-bottom: -0.6rem;
+      padding: 0.5em 0.75em;
+      color: rgba(0, 0, 0, 0.65);
+      background: rgba(220, 220, 220, 1);
+      z-index: 0;
+      font-family: Consolas, Menlo, Monaco, 'Andale Mono WT', 'Andale Mono',
+        'Lucida Console', 'Lucida Sans Typewriter', 'DejaVu Sans Mono',
+        'Bitstream Vera Sans Mono', 'Liberation Mono', 'Nimbus Mono L',
+        'Courier New', Courier, monospace;
+      font-size: 14px;
+      border-top-left-radius: 0.3em;
+      border-top-right-radius: 0.3em;
+    }
+  }
+}
+
+@media only screen and (max-width: 850px) {
+  .post-container {
+    display: block;
+    .post-wrapper {
+      margin: 20px 20px;
+
+      .post-title {
+        font-size: clamp(1.5rem, string.unquote('1.36rem + 0.64vw'), 2rem);
+        margin-bottom: 0;
+      }
+
+      h2 {
+        font-size: clamp(1.2rem, string.unquote('0.7153rem + 1.6368vw'), 1.5rem);
+      }
+
+      h3 {
+        font-size: clamp(1rem, string.unquote('0.7153rem + 1.6368vw'), 1.2rem);
+      }
+    }
+  }
+}

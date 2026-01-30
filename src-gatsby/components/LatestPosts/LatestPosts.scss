@@ -1,0 +1,78 @@
+@use "sass:string";
+@use '../../styles/colors.scss';
+
+.latest-posts-wrapper {
+  display: flex;
+  flex-direction: column;
+
+  .post {
+    margin: 10px 20px;
+    padding: 20px 30px;
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px;
+    border-radius: 5px;
+
+    .post-link {
+      color: colors.$darkBlueTint;
+
+      .post-title {
+        font-weight: 600;
+        font-size: 1.5rem;
+        line-height: 2rem;
+      }
+
+      .post-title,
+      .post-sub-title,
+      .read-more {
+        margin: 0.25rem 0 0.25rem 0;
+      }
+
+      .read-more {
+        font-size: 1rem;
+        font-weight: 600;
+      }
+
+      .carot {
+        opacity: 0;
+      }
+    }
+
+    .post-link:hover {
+      color: colors.$medBlue;
+      display: inline-block;
+
+      .post-sub-title,
+      .post-tag-container {
+        color: colors.$darkBlueTint;
+      }
+
+      .carot {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  p {
+    font-size: clamp(1.125rem, string.unquote('0.8798rem + 0.5115vw'), 1.25rem);
+  }
+
+  .latest-posts-wrapper {
+    .post {
+      margin: 0.5rem 0;
+      padding: 0.5rem;
+
+      .post-title {
+        font-size: clamp(1.2rem, string.unquote('0.7153rem + 1.6368vw'), 1.5rem);
+        line-height: unset;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 420px) {
+  .post-tag-container {
+    display: none;
+  }
+}

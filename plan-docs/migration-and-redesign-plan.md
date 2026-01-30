@@ -1,6 +1,6 @@
 # Paigeniedringhaus.com Migration & Redesign Plan
 
-**Last Updated:** 2026-01-28
+**Last Updated:** 2026-01-30
 
 ## Overview
 
@@ -8,8 +8,18 @@ This document outlines the comprehensive plan to:
 1. **Migrate** from Gatsby to Astro.js
 2. **Redesign** the site structure and visual design
 
-**Current Status:** Gatsby v4.13.1, React 18, deployed on Netlify
+**Current Status:** 🚀 **Phase 1 Migration In Progress** - Basic Astro setup complete, building pages
 
+**Progress Summary:**
+- ✅ Astro 5.17.1 installed with all core integrations
+- ✅ Content collections configured with Git submodule working
+- ✅ YouTube & CodePen MDX components created
+- ✅ Data files migrated
+- ✅ Base layout and global CSS established
+- ✅ Dev server running successfully
+- 🚧 Building blog pages and components (current)
+
+**Original:** Gatsby v4.13.1, React 18, deployed on Netlify
 **Target:** Astro 5.x with modern design, improved content organization
 
 ---
@@ -20,33 +30,37 @@ This document outlines the comprehensive plan to:
 
 ### 1.1 Project Setup & Foundation
 
-- [ ] Initialize new Astro project using `npm create astro@latest`
-  - Start with blog template as foundation
-  - Configure TypeScript (optional but recommended)
-- [ ] Install core integrations:
+- [x] ✅ Initialize new Astro project using `npm create astro@latest`
+  - Installed Astro 5.17.1 manually
+  - Node 24.13.0 LTS configured via Volta
+  - TypeScript support enabled (Astro includes TypeScript by default)
+  - Renamed Gatsby `src/` → `src-gatsby/` for reference
+  - Created fresh `src/` directory for Astro
+- [x] ✅ Install core integrations:
   - `@astrojs/mdx` for markdown/MDX processing
   - `@astrojs/react` (for any interactive components if needed)
   - `@astrojs/sitemap` for sitemap generation
   - `@astrojs/rss` for RSS feed
-- [ ] Verify Git submodule structure remains intact
-  - Content folder at `content/` should work as-is
-  - Test that `content/posts/*.md` files are readable
+  - `rehype-autolink-headings`, `rehype-slug`, `rehype-external-links`, `remark-gfm`
+- [x] ✅ Verify Git submodule structure remains intact
+  - Created symlink: `src/content/posts` → `../../content/posts`
+  - Content folder working correctly with Astro
 
 ### 1.2 Content Collections Setup
 
-- [ ] Define content collection schema in `src/content/config.ts`
-  ```typescript
-  // Expected frontmatter fields to map:
-  // - title (string)
-  // - subTitle (string)
-  // - date (date)
-  // - category (string)
-  // - tags (array of strings)
-  // - featuredImage (image reference)
-  // - omit (boolean - for excluding from listings)
-  ```
-- [ ] Configure Astro to read from `content/posts/` directory
-- [ ] Test content collection queries work with existing markdown files
+- [x] ✅ Define content collection schema in `src/content/config.ts`
+  - Schema created with all required frontmatter fields:
+    - title (string)
+    - subTitle (string, optional)
+    - date (coerced to date)
+    - category (string, optional)
+    - tags (array of strings, optional)
+    - featuredImage (image, optional)
+    - omit (boolean, optional, default false)
+- [x] ✅ Configure Astro to read from `content/posts/` directory
+  - Symlink created successfully
+- [x] ✅ Test content collection queries work with existing markdown files
+  - Verified with dev server running
 
 ### 1.3 Markdown Plugin Migration
 
@@ -71,18 +85,18 @@ This document outlines the comprehensive plan to:
 - Both handled by Gatsby remark plugins
 
 **Migration strategy:**
-- [ ] **Create custom Astro components:**
-  - `src/components/YouTube.astro` - Accepts `id` or `url` prop
+- [x] ✅ **Create custom Astro components:**
+  - `src/components/YouTube.astro` - Accepts `id` or `url` prop, auto-extracts ID from URLs
   - `src/components/CodePen.astro` - Accepts `id` and `user` props, or `url` prop
-  - Both components render responsive iframes with proper aspect ratios
-- [ ] **Convert affected posts to MDX:**
+  - Both components render responsive iframes with proper aspect ratios and scoped CSS
+- [ ] **Convert affected posts to MDX:** (TO DO)
   - Rename 13-15 posts from `.md` to `.mdx`
   - Astro content collections support mixed `.md` and `.mdx` files seamlessly
   - Majority of posts can remain as `.md`
-- [ ] **Replace Gatsby syntax with component syntax:**
+- [ ] **Replace Gatsby syntax with component syntax:** (TO DO)
   - `youtube: https://youtu.be/BToSDJTCIDA` → `<YouTube id="BToSDJTCIDA" />`
   - `https://codepen.io/paigen11/pen/BayqMzX` → `<CodePen id="BayqMzX" user="paigen11" />`
-- [ ] **Add component imports to MDX files:**
+- [ ] **Add component imports to MDX files:** (TO DO)
   ```mdx
   ---
   title: "My Blog Post"
@@ -95,8 +109,13 @@ This document outlines the comprehensive plan to:
 
   <YouTube id="BToSDJTCIDA" />
   ```
-- [ ] Test all converted posts render embeds correctly
-- [ ] Configure rehype/remark plugins in `astro.config.mjs` for other features
+- [ ] Test all converted posts render embeds correctly (TO DO)
+- [x] ✅ Configure rehype/remark plugins in `astro.config.mjs` for other features
+  - `rehype-slug` for heading IDs
+  - `rehype-autolink-headings` for anchor links
+  - `rehype-external-links` for external link handling
+  - `remark-gfm` for GitHub Flavored Markdown
+  - Shiki for syntax highlighting (replaces Prism)
 
 ### 1.4 Data Migration
 
@@ -110,28 +129,33 @@ This document outlines the comprehensive plan to:
 - `speaking.js` - talks and presentations
 
 **Migration Strategy:**
-- [ ] Convert to TypeScript interfaces or keep as JS modules
-- [ ] Move to `src/data/` directory
-- [ ] Update imports throughout codebase
-- [ ] Consider moving some data to content collections if appropriate
+- [x] ✅ Move to `src/data/` directory
+- [x] ✅ Update image import paths:
+  - Changed `../src/images/*` to `../src-gatsby/images/*`
+  - Changed `../content/images/*` to `../../content/images/*`
+- [ ] Convert to TypeScript `.ts` files (TO DO)
+  - Add proper type definitions for data structures
+  - Replace `moment` with native Date or `date-fns` for better TS support
+- [ ] Update imports throughout codebase as pages are built (IN PROGRESS)
 
 ### 1.5 Pages & Routing
 
 **Current Gatsby pages → Astro pages:**
 
-| Gatsby Page | Astro Equivalent | Notes |
-|------------|------------------|-------|
-| `src/pages/index.js` | `src/pages/index.astro` | Homepage |
-| `src/pages/blog.js` | `src/pages/blog/index.astro` | Blog listing |
-| `src/templates/post.jsx` | `src/pages/blog/[slug].astro` | Dynamic blog posts |
-| `src/pages/about.js` | `src/pages/about.astro` | About page |
-| `src/pages/contact.js` | `src/pages/contact.astro` | Contact page |
-| `src/pages/courses.js` | `src/pages/courses.astro` | Courses page (to be moved to archive later) |
-| `src/pages/media.js` | `src/pages/media.astro` | Media page (to be restructured later) |
-| `src/pages/404.js` | `src/pages/404.astro` | 404 error page |
+| Gatsby Page | Astro Equivalent | Status | Notes |
+|------------|------------------|---------|-------|
+| `src/pages/index.js` | `src/pages/index.astro` | ✅ Done | Simple homepage with migration notice |
+| `src/pages/blog.js` | `src/pages/blog/index.astro` | 🚧 To Do | Blog listing with pagination |
+| `src/templates/post.jsx` | `src/pages/blog/[slug].astro` | 🚧 To Do | Dynamic blog posts |
+| `src/pages/about.js` | `src/pages/about.astro` | ⏳ Pending | About page |
+| `src/pages/contact.js` | `src/pages/contact.astro` | ⏳ Pending | Contact page |
+| `src/pages/courses.js` | `src/pages/courses.astro` | ⏳ Pending | Courses (→ archive later) |
+| `src/pages/media.js` | `src/pages/media.astro` | ⏳ Pending | Media (→ restructure later) |
+| `src/pages/404.js` | `src/pages/404.astro` | ⏳ Pending | 404 error page |
 
 **Implementation Tasks:**
-- [ ] Create all page files in `src/pages/`
+- [x] ✅ Create homepage in `src/pages/index.astro`
+- [ ] Create blog listing page with pagination (NEXT)
 - [ ] Implement `getStaticPaths()` for dynamic blog post routes
   ```typescript
   // src/pages/blog/[slug].astro
@@ -153,22 +177,25 @@ This document outlines the comprehensive plan to:
 **Current React components to convert:**
 
 Layout Components:
-- [ ] `Layout/Layout.jsx` → `src/layouts/Layout.astro`
-- [ ] `Header/Header.jsx` → `src/components/Header.astro`
-- [ ] `Footer/Footer.jsx` → `src/components/Footer.astro`
+- [x] ✅ `Layout/Layout.jsx` → `src/layouts/Layout.astro`
+  - Created with SEO meta tags, Open Graph, Twitter Card
+  - Google Analytics 4 integrated
+  - Links to global CSS
+- [ ] `Header/Header.jsx` → `src/components/Header.astro` (TO DO)
+- [ ] `Footer/Footer.jsx` → `src/components/Footer.astro` (TO DO)
 
 Content Components:
-- [ ] `PostCard/PostCard.jsx` → `src/components/PostCard.astro`
-- [ ] `VideoCard/VideoCard.jsx` → `src/components/VideoCard.astro`
-- [ ] `SEO/SEO.jsx` → `src/components/SEO.astro`
+- [ ] `PostCard/PostCard.jsx` → `src/components/PostCard.astro` (TO DO)
+- [ ] `VideoCard/VideoCard.jsx` → `src/components/VideoCard.astro` (TO DO)
+- [ ] `SEO/SEO.jsx` → Merged into Layout.astro ✅
 
 Interactive Components (if any):
-- [ ] Identify which components need client-side JS
+- [ ] Identify which components need client-side JS (TO DO)
 - [ ] Keep as React components with `client:*` directives if needed
 - [ ] Or convert to vanilla JS/Web Components
 
 **FontAwesome Icons:**
-- [ ] Evaluate: Keep with `@astrojs/react` or migrate to `astro-icon` package
+- [ ] Evaluate: Keep with `@astrojs/react` or migrate to `astro-icon` package (TO DO)
 - [ ] Update icon references throughout site
 
 ### 1.7 Styling Migration
@@ -178,15 +205,15 @@ Interactive Components (if any):
 **Migration strategy:** Convert to modern native CSS using Astro's recommended approaches
 
 **Astro CSS Strategy:**
-- [ ] **Scoped component styles** using `<style>` blocks in `.astro` files
+- [x] ✅ **Scoped component styles** using `<style>` blocks in `.astro` files
   - Astro automatically scopes styles to the component
   - No CSS-in-JS runtime overhead
   - Supports modern CSS features (nesting, container queries, custom properties)
-- [ ] **Global styles** in `src/styles/global.css`
-  - CSS reset/normalize
-  - CSS custom properties (design tokens)
-  - Typography base styles
-  - Utility classes (if needed)
+- [x] ✅ **Global styles** in `src/styles/global.css`
+  - CSS reset/normalize complete
+  - CSS custom properties (design tokens) defined for light/dark mode
+  - Typography base styles set
+  - Foundation ready for component styles
 
 **Modern CSS Features to Leverage:**
 - [ ] **CSS Nesting** - native browser support, no preprocessor needed
@@ -210,14 +237,14 @@ Interactive Components (if any):
 - [ ] **Logical properties** - `margin-inline`, `padding-block`, etc.
 
 **Migration Tasks:**
-- [ ] Convert SCSS variables to CSS custom properties
-- [ ] Convert SCSS nesting to native CSS nesting
-- [ ] Remove SCSS mixins, replace with CSS features or utility classes
-- [ ] Move component styles from `.scss` files to `<style>` blocks in `.astro` components
-- [ ] Create `src/styles/global.css` with design tokens and resets
-- [ ] Create `src/styles/theme.css` for light/dark mode custom properties
-- [ ] Test all styles render correctly across browsers
-- [ ] Verify no SCSS dependencies remain in `package.json`
+- [x] ✅ Convert SCSS variables to CSS custom properties (in global.css)
+- [ ] Convert SCSS nesting to native CSS nesting (as components are built)
+- [ ] Remove SCSS mixins, replace with CSS features or utility classes (as needed)
+- [ ] Move component styles from `.scss` files to `<style>` blocks in `.astro` components (IN PROGRESS)
+- [x] ✅ Create `src/styles/global.css` with design tokens and resets
+- [x] ✅ Light/dark mode custom properties defined in global.css
+- [ ] Test all styles render correctly across browsers (TO DO)
+- [ ] Verify no SCSS dependencies remain in `package.json` (keep for now during migration)
 
 **File Organization:**
 ```
@@ -269,16 +296,23 @@ src/components/
 
 ### 1.9 Build & Deployment Configuration
 
-- [ ] Update `package.json` scripts:
+- [x] ✅ Update `package.json` scripts:
   ```json
   {
     "scripts": {
       "dev": "astro dev",
-      "build": "astro build",
-      "preview": "astro preview"
+      "build": "astro check && astro build",
+      "preview": "astro preview",
+      "gatsby:develop": "gatsby develop",
+      "gatsby:build": "gatsby build"
     }
   }
   ```
+  - Gatsby scripts preserved with `gatsby:` prefix for reference
+
+- [x] ✅ Create `public/` directory and add static assets
+  - Copied favicon and logos from `static/` to `public/`
+  - Astro serves files from `public/` directory (not `static/`)
 
 - [ ] Update `netlify.toml`:
   ```toml
@@ -1211,6 +1245,7 @@ src/
 7. **Styling approach:** ✅ **DECIDED** - Modern native CSS (no preprocessor, no Tailwind)
 8. **Blog post format:** ✅ **DECIDED** - Selective conversion: keep most as `.md`, convert ~13-15 posts with embeds to `.mdx`
 9. **Node version:** ✅ **DECIDED** - Upgrade to Node 24 LTS
+10. **TypeScript:** ✅ **DECIDED** - Convert site to TypeScript during migration for better type safety
 
 ---
 
