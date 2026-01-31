@@ -1,0 +1,168 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+import PostCard from '../../components/PostCard.astro';
+
+// Get all blog posts, filter out omitted ones, and sort by date
+const allPosts = await getCollection('posts', ({ data }) => {
+  return data.omit !== true;
+});
+
+const sortedPosts = allPosts.sort((a, b) => {
+  return new Date(b.data.date).getTime() - new Date(a.data.date).getTime();
+});
+
+// Get unique tags for filtering
+const allTags = [...new Set(sortedPosts.flatMap(post => post.data.tags || []))].sort();
+---
+
+<Layout
+  title="Blog | Paige Niedringhaus"
+  description="Technical blog posts about web development, React, Node.js, and frontend engineering."
+>
+  <main class="blog-page">
+    <div class="container">
+      <header class="blog-header">
+        <h1>Blog</h1>
+        <p class="intro">
+          Writing about web development, React, TypeScript, and everything frontend.
+        </p>
+      </header>
+
+      <div class="blog-content">
+        <aside class="sidebar">
+          <h3>Filter by Tag</h3>
+          <div class="tag-list">
+            {allTags.slice(0, 15).map((tag) => (
+              <button class="tag-filter" data-tag={tag}>
+                {tag}
+              </button>
+            ))}
+          </div>
+          <p class="tag-note">
+            {allTags.length > 15 && `+${allTags.length - 15} more tags`}
+          </p>
+        </aside>
+
+        <section class="posts-grid">
+          {sortedPosts.map((post) => (
+            <PostCard post={post} />
+          ))}
+        </section>
+      </div>
+
+      {sortedPosts.length === 0 && (
+        <p class="no-posts">No blog posts found.</p>
+      )}
+    </div>
+  </main>
+</Layout>
+
+<style>
+  .blog-page {
+    padding: var(--space-8) var(--space-4);
+    min-height: 100vh;
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .blog-header {
+    margin-bottom: var(--space-12);
+    text-align: center;
+  }
+
+  .blog-header h1 {
+    font-size: 3rem;
+    margin-bottom: var(--space-4);
+    color: var(--color-text);
+  }
+
+  .intro {
+    font-size: 1.25rem;
+    color: var(--color-text-secondary);
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .blog-content {
+    display: grid;
+    grid-template-columns: 250px 1fr;
+    gap: var(--space-8);
+    align-items: start;
+  }
+
+  .sidebar {
+    position: sticky;
+    top: var(--space-8);
+  }
+
+  .sidebar h3 {
+    font-size: 1.125rem;
+    margin-bottom: var(--space-4);
+    color: var(--color-text);
+  }
+
+  .tag-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+  }
+
+  .tag-filter {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    padding: var(--space-2) var(--space-3);
+    border-radius: var(--radius);
+    text-align: left;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-size: 0.875rem;
+    color: var(--color-text);
+  }
+
+  .tag-filter:hover {
+    background: var(--color-primary);
+    color: white;
+    border-color: var(--color-primary);
+  }
+
+  .tag-note {
+    margin-top: var(--space-3);
+    font-size: 0.875rem;
+    color: var(--color-text-secondary);
+  }
+
+  .posts-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-6);
+  }
+
+  .no-posts {
+    text-align: center;
+    color: var(--color-text-secondary);
+    padding: var(--space-12);
+  }
+
+  @media (max-width: 768px) {
+    .blog-content {
+      grid-template-columns: 1fr;
+    }
+
+    .sidebar {
+      position: static;
+    }
+
+    .tag-list {
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+
+    .blog-header h1 {
+      font-size: 2rem;
+    }
+  }
+</style>

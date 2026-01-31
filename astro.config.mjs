@@ -6,6 +6,7 @@ import rehypeSlug from 'rehype-slug';
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 import rehypeExternalLinks from 'rehype-external-links';
 import remarkGfm from 'remark-gfm';
+import { remarkTransformImagePaths } from './remark-transform-image-paths.mjs';
 
 // https://astro.build/config
 export default defineConfig({
@@ -18,6 +19,7 @@ export default defineConfig({
   markdown: {
     remarkPlugins: [
       remarkGfm, // GitHub Flavored Markdown support
+      remarkTransformImagePaths, // Transform relative image paths to absolute URLs
     ],
     rehypePlugins: [
       rehypeSlug, // Add IDs to headings

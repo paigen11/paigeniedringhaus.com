@@ -46,7 +46,7 @@ const embedUrl = `https://codepen.io/${penUser}/embed/${penId}?default-tab=${def
     loading="lazy"
     allowtransparency="true"
     allowfullscreen={true}
-    style={`height: ${height}px;`}
+    style="width: 100%; height: 400px; border: 0;"
   ></iframe>
 </div>
 
@@ -56,10 +56,5 @@ const embedUrl = `https://codepen.io/${penUser}/embed/${penId}?default-tab=${def
     margin: 2rem 0;
     border-radius: 0.5rem;
     overflow: hidden;
-  }
-
-  .codepen-embed iframe {
-    width: 100%;
-    border: 0;
   }
 </style>

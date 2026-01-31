@@ -1,6 +1,6 @@
 # Paigeniedringhaus.com Migration & Redesign Plan
 
-**Last Updated:** 2026-01-30
+**Last Updated:** 2026-01-31
 
 ## Overview
 
@@ -8,16 +8,22 @@ This document outlines the comprehensive plan to:
 1. **Migrate** from Gatsby to Astro.js
 2. **Redesign** the site structure and visual design
 
-**Current Status:** 🚀 **Phase 1 Migration In Progress** - Basic Astro setup complete, building pages
+**Current Status:** 🚀 **Phase 1 Migration In Progress** - Blog functionality complete, ready for MDX conversions
 
 **Progress Summary:**
 - ✅ Astro 5.17.1 installed with all core integrations
 - ✅ Content collections configured with Git submodule working
-- ✅ YouTube & CodePen MDX components created
-- ✅ Data files migrated
+- ✅ YouTube, CodePen, & CodeSandbox MDX components created and tested
+- ✅ Custom remark plugin for image path resolution
+- ✅ Data files migrated to src/data/
 - ✅ Base layout and global CSS established
+- ✅ Blog listing and individual blog post pages working with tag filtering
 - ✅ Dev server running successfully
-- 🚧 Building blog pages and components (current)
+- ✅ MDX conversion guide created for 14 blog posts with embeds
+- 🚧 Next: Build Header/Footer components, remaining pages
+
+**Known Issues:**
+- CodeSandbox iframe auto-scrolls page on load (needs further investigation)
 
 **Original:** Gatsby v4.13.1, React 18, deployed on Netlify
 **Target:** Astro 5.x with modern design, improved content organization
@@ -43,8 +49,11 @@ This document outlines the comprehensive plan to:
   - `@astrojs/rss` for RSS feed
   - `rehype-autolink-headings`, `rehype-slug`, `rehype-external-links`, `remark-gfm`
 - [x] ✅ Verify Git submodule structure remains intact
-  - Created symlink: `src/content/posts` → `../../content/posts`
+  - Created symlinks for Git submodule integration:
+    - `src/content/posts` → `../../content/posts` (for Astro content collections)
+    - `public/images` → `../content/images` (for browser image serving)
   - Content folder working correctly with Astro
+  - Symlinks automatically update when submodule updates
 
 ### 1.2 Content Collections Setup
 
@@ -66,55 +75,51 @@ This document outlines the comprehensive plan to:
 
 **Current Gatsby Remark Plugins → Astro Equivalents:**
 
-- [ ] `gatsby-remark-prismjs` → Use Shiki (built into Astro) or `@astrojs/prism`
-- [ ] `gatsby-remark-images` → Astro's `<Image />` component with markdown-it plugin
-- [ ] `gatsby-remark-embed-video` → Custom Astro `<YouTube />` component
-- [ ] `gatsby-remark-codepen` → Custom Astro `<CodePen />` component
-- [ ] `gatsby-remark-autolink-headers` → `rehype-autolink-headings` plugin
-- [ ] `gatsby-remark-code-titles` → Custom Astro component or CSS solution
-- [ ] `gatsby-remark-external-links` → `rehype-external-links` plugin
-- [ ] `gatsby-remark-copy-linked-files` → Astro handles this natively
-- [ ] `gatsby-remark-responsive-iframe` → CSS solution or custom component
+- [x] ✅ `gatsby-remark-prismjs` → Shiki (configured in astro.config.mjs)
+- [x] ✅ `gatsby-remark-images` → Custom remark plugin `remark-transform-image-paths.mjs`
+- [x] ✅ `gatsby-remark-embed-video` → Custom Astro `<YouTube />` component
+- [x] ✅ `gatsby-remark-codepen` → Custom Astro `<CodePen />` component
+- [x] ✅ CodeSandbox embeds → Custom Astro `<CodeSandbox />` component
+- [x] ✅ `gatsby-remark-autolink-headers` → `rehype-autolink-headings` plugin
+- [ ] `gatsby-remark-code-titles` → Custom Astro component or CSS solution (deferred)
+- [x] ✅ `gatsby-remark-external-links` → `rehype-external-links` plugin
+- [x] ✅ `gatsby-remark-copy-linked-files` → Astro handles this natively
+- [ ] `gatsby-remark-responsive-iframe` → CSS solution or custom component (deferred)
 
-**Handling YouTube & CodePen Embeds:**
+**Handling YouTube, CodePen & CodeSandbox Embeds:**
 
 **Current situation:**
-- ~13-15 blog posts contain YouTube or CodePen embeds
-- YouTube syntax: `youtube: https://youtu.be/BToSDJTCIDA`
-- CodePen syntax: Plain URL like `https://codepen.io/paigen11/pen/BayqMzX`
-- Both handled by Gatsby remark plugins
+- 14 blog posts contain YouTube, CodePen, or CodeSandbox embeds
+- YouTube syntax: `` `youtube: https://youtu.be/VIDEO_ID` ``
+- CodePen syntax: Plain URL like `https://codepen.io/paigen11/pen/PEN_ID`
+- CodeSandbox: Full iframe embed tags
+- All were handled by Gatsby remark plugins
 
 **Migration strategy:**
 - [x] ✅ **Create custom Astro components:**
   - `src/components/YouTube.astro` - Accepts `id` or `url` prop, auto-extracts ID from URLs
   - `src/components/CodePen.astro` - Accepts `id` and `user` props, or `url` prop
-  - Both components render responsive iframes with proper aspect ratios and scoped CSS
-- [ ] **Convert affected posts to MDX:** (TO DO)
-  - Rename 13-15 posts from `.md` to `.mdx`
+  - `src/components/CodeSandbox.astro` - Accepts `id` or `url` prop, plus optional `file` parameter
+  - All components render responsive iframes with inline styles for proper width/height
+- [x] ✅ **Create custom remark plugin for image paths:**
+  - `remark-transform-image-paths.mjs` transforms relative paths (`../images/`) to absolute URLs (`/images/`)
+  - Prevents Astro from trying to process images from Git submodule at build time
+  - Images served from `public/images` symlink to `content/images`
+- [x] ✅ **Create MDX conversion guide:**
+  - Documented all 14 posts requiring conversion in `plan-docs/mdx-conversion-guide.md`
+  - Includes step-by-step instructions for submodule conversion
+  - Lists all embed URLs and line numbers for each post
+- [ ] **Convert affected posts to MDX in submodule:** (TO DO - User will do this)
+  - Rename 14 posts from `.md` to `.mdx`
   - Astro content collections support mixed `.md` and `.mdx` files seamlessly
   - Majority of posts can remain as `.md`
-- [ ] **Replace Gatsby syntax with component syntax:** (TO DO)
-  - `youtube: https://youtu.be/BToSDJTCIDA` → `<YouTube id="BToSDJTCIDA" />`
-  - `https://codepen.io/paigen11/pen/BayqMzX` → `<CodePen id="BayqMzX" user="paigen11" />`
-- [ ] **Add component imports to MDX files:** (TO DO)
-  ```mdx
-  ---
-  title: "My Blog Post"
-  date: 2024-01-01
-  ---
-  import YouTube from '../../components/YouTube.astro';
-  import CodePen from '../../components/CodePen.astro';
-
-  Post content here...
-
-  <YouTube id="BToSDJTCIDA" />
-  ```
-- [ ] Test all converted posts render embeds correctly (TO DO)
-- [x] ✅ Configure rehype/remark plugins in `astro.config.mjs` for other features
+- [ ] **Test all converted posts render embeds correctly** (TO DO - after submodule conversion)
+- [x] ✅ Configure rehype/remark plugins in `astro.config.mjs`
   - `rehype-slug` for heading IDs
   - `rehype-autolink-headings` for anchor links
   - `rehype-external-links` for external link handling
   - `remark-gfm` for GitHub Flavored Markdown
+  - `remark-transform-image-paths` for image path transformation
   - Shiki for syntax highlighting (replaces Prism)
 
 ### 1.4 Data Migration
@@ -144,9 +149,9 @@ This document outlines the comprehensive plan to:
 
 | Gatsby Page | Astro Equivalent | Status | Notes |
 |------------|------------------|---------|-------|
-| `src/pages/index.js` | `src/pages/index.astro` | ✅ Done | Simple homepage with migration notice |
-| `src/pages/blog.js` | `src/pages/blog/index.astro` | 🚧 To Do | Blog listing with pagination |
-| `src/templates/post.jsx` | `src/pages/blog/[slug].astro` | 🚧 To Do | Dynamic blog posts |
+| `src/pages/index.js` | `src/pages/index.astro` | ✅ Done | Homepage with latest 3 blog posts |
+| `src/pages/blog.js` | `src/pages/blog/index.astro` | ✅ Done | Blog listing with tag filtering sidebar |
+| `src/templates/post.jsx` | `src/pages/blog/[slug].astro` | ✅ Done | Dynamic blog posts with full markdown styling |
 | `src/pages/about.js` | `src/pages/about.astro` | ⏳ Pending | About page |
 | `src/pages/contact.js` | `src/pages/contact.astro` | ⏳ Pending | Contact page |
 | `src/pages/courses.js` | `src/pages/courses.astro` | ⏳ Pending | Courses (→ archive later) |
@@ -155,22 +160,23 @@ This document outlines the comprehensive plan to:
 
 **Implementation Tasks:**
 - [x] ✅ Create homepage in `src/pages/index.astro`
-- [ ] Create blog listing page with pagination (NEXT)
-- [ ] Implement `getStaticPaths()` for dynamic blog post routes
-  ```typescript
-  // src/pages/blog/[slug].astro
-  export async function getStaticPaths() {
-    const posts = await getCollection('posts', ({ data }) => {
-      return data.omit !== true;
-    });
-    return posts.map(post => ({
-      params: { slug: post.slug },
-      props: { post }
-    }));
-  }
-  ```
-- [ ] Set up pagination for blog listing page
-- [ ] Test all routes work correctly
+  - Displays latest 3 blog posts
+  - Links to full blog
+  - Shows migration notice
+- [x] ✅ Create blog listing page in `src/pages/blog/index.astro`
+  - Tag filtering sidebar (shows first 15 tags)
+  - All posts sorted by date (newest first)
+  - Filters out omitted posts
+  - Responsive grid layout
+- [x] ✅ Implement `getStaticPaths()` for dynamic blog post routes
+  - Created `src/pages/blog/[slug].astro`
+  - Uses `BlogPost.astro` layout
+  - Full markdown styling with code highlighting
+- [x] ✅ Create `PostCard.astro` component for blog listing
+  - Shows title, subtitle, date, tags, category
+  - Hover effects with transform and shadow
+- [ ] Set up pagination for blog listing page (deferred - not needed yet)
+- [x] ✅ Test all routes work correctly
 
 ### 1.6 Components Migration
 
@@ -181,13 +187,25 @@ Layout Components:
   - Created with SEO meta tags, Open Graph, Twitter Card
   - Google Analytics 4 integrated
   - Links to global CSS
-- [ ] `Header/Header.jsx` → `src/components/Header.astro` (TO DO)
-- [ ] `Footer/Footer.jsx` → `src/components/Footer.astro` (TO DO)
+- [x] ✅ `BlogPost.astro` layout created for individual blog posts
+  - Full markdown content styling (h2, h3, code, blockquotes, lists)
+  - Post header with metadata (category, title, subtitle, date, tags)
+  - Back to blog link in footer
+  - Typography optimized for reading
+- [ ] `Header/Header.jsx` → `src/components/Header.astro` (NEXT)
+- [ ] `Footer/Footer.jsx` → `src/components/Footer.astro` (NEXT)
 
 Content Components:
-- [ ] `PostCard/PostCard.jsx` → `src/components/PostCard.astro` (TO DO)
+- [x] ✅ `PostCard/PostCard.jsx` → `src/components/PostCard.astro`
+  - Displays title, subtitle, date, tags (first 3), category badge
+  - Hover effects with transform and shadow
+  - Links to individual blog posts
+- [x] ✅ MDX embed components created:
+  - `YouTube.astro` - Auto-extracts video ID from URLs
+  - `CodePen.astro` - Parses CodePen URLs
+  - `CodeSandbox.astro` - Handles CodeSandbox embeds with optional file parameter
 - [ ] `VideoCard/VideoCard.jsx` → `src/components/VideoCard.astro` (TO DO)
-- [ ] `SEO/SEO.jsx` → Merged into Layout.astro ✅
+- [x] ✅ `SEO/SEO.jsx` → Merged into Layout.astro
 
 Interactive Components (if any):
 - [ ] Identify which components need client-side JS (TO DO)
