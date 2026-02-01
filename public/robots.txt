@@ -1,0 +1,3 @@
+User-agent: *
+
+sitemap: https://www.paigeniedringhaus.com/sitemap.xml

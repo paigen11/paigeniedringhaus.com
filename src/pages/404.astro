@@ -1,0 +1,94 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const sadFaceImg = '/pleading-face.png';
+---
+
+<Layout title="404: Not Found | Paige Niedringhaus" description="Page not found">
+  <div class="not-found-container">
+    <div class="title-wrapper">
+      <h1>Oh no, you found the 404 error page.</h1>
+      <img src={sadFaceImg} alt="pleading emoji face" class="sad-face" />
+    </div>
+    <h2>Unfortunately, there's nothing at this URL.</h2>
+    <a href="/" class="home-link">
+      <h3>Best to head home</h3>
+    </a>
+  </div>
+</Layout>
+
+<style>
+  .not-found-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: var(--space-16) var(--space-4);
+    text-align: center;
+    min-height: 60vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    & .title-wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: var(--space-4);
+      flex-wrap: wrap;
+      margin-bottom: var(--space-8);
+    }
+
+    & h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+    }
+
+    & .sad-face {
+      width: 80px;
+      height: 80px;
+    }
+
+    & h2 {
+      font-size: 1.5rem;
+      font-weight: 500;
+      color: var(--color-text-secondary);
+      margin-bottom: var(--space-8);
+    }
+
+    & .home-link {
+      text-decoration: none;
+
+      & h3 {
+        font-size: 1.25rem;
+        font-weight: 600;
+        color: var(--color-primary);
+        padding: var(--space-3) var(--space-6);
+        border: 2px solid var(--color-primary);
+        border-radius: var(--radius);
+        transition: all 0.2s ease;
+      }
+
+      &:hover h3 {
+        background-color: var(--color-primary);
+        color: white;
+        transform: translateY(-2px);
+        box-shadow: var(--shadow-lg);
+      }
+    }
+
+    @media (max-width: 768px) {
+      & h1 {
+        font-size: 2rem;
+      }
+
+      & h2 {
+        font-size: 1.25rem;
+      }
+
+      & .sad-face {
+        width: 60px;
+        height: 60px;
+      }
+    }
+  }
+</style>

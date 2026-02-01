@@ -54,7 +54,7 @@ const MediaPage = () => {
             And in 2023, my friends Jack Herrington, TJ VanToll, and I created
             the&nbsp;
             <a
-              href="https://www.buzzsprout.com/2226499"
+              href="https://front-end-fire.com/"
               target="_blank"
               rel="noopener noreferrer"
             >

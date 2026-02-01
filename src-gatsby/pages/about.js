@@ -61,7 +61,7 @@ const AboutPage = () => {
             got started in web development, I shared my origin story on the
             podcast&nbsp;
             <a
-              href="https://topenddevs.com/podcasts/my-javascript-story/episodes/mjs-143-paige-niedringhaus"
+              href="https://topenddevs.com/podcasts/my-javascript-story/mjs-143-paige-niedringhaus"
               target="_blank"
               rel="noopener noreferrer"
             >
