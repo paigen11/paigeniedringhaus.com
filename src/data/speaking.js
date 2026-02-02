@@ -1,16 +1,17 @@
 import moment from 'moment';
-import connectTech from '../src-gatsby/images/thumbnails/connectTech.png';
-import digitalCrafts from '../src-gatsby/images/thumbnails/digitalCrafts.png';
-import girlDevelopIt from '../src-gatsby/images/thumbnails/girlDevelopIt.png';
-import theHomeDepot from '../src-gatsby/images/thumbnails/theHomeDepot.png';
-import breakingTheGlass from '../src-gatsby/images/thumbnails/breakingTheGlass.png';
-import react from '../../content/images/react.png';
-import techElevator from '../src-gatsby/images/thumbnails/techElevator.png';
-import blues from '../src-gatsby/images/thumbnails/blues-favicon.svg';
-import newline from '../src-gatsby/images/thumbnails/newline-logo.png';
-import thisDotMedia from '../src-gatsby/images/thumbnails/thisDotMedia.jpeg';
-import thatConf from '../src-gatsby/images/thumbnails/that-conf.png';
-import riot from '../src-gatsby/images/thumbnails/riot.jpeg';
+
+const connectTech = '/thumbnails/connectTech.png';
+const digitalCrafts = '/thumbnails/digitalCrafts.png';
+const girlDevelopIt = '/thumbnails/girlDevelopIt.png';
+const theHomeDepot = '/thumbnails/theHomeDepot.png';
+const breakingTheGlass = '/thumbnails/breakingTheGlass.png';
+const react = '/thumbnails/react.png';
+const techElevator = '/thumbnails/techElevator.png';
+const blues = '/thumbnails/blues-favicon.svg';
+const newline = '/thumbnails/newline-logo.png';
+const thisDotMedia = '/thumbnails/thisDotMedia.jpeg';
+const thatConf = '/thumbnails/that-conf.png';
+const riot = '/thumbnails/riot.jpeg';
 
 export default [
   {

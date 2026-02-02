@@ -1,13 +1,14 @@
 import moment from 'moment';
-import jsJabber from '../src-gatsby/images/thumbnails/jsJabber.jpg';
-import myJsStory from '../src-gatsby/images/thumbnails/myJsStory.jpg';
-import reactRoundUp from '../src-gatsby/images/thumbnails/reactRoundUp.png';
-import telerik from '../src-gatsby/images/thumbnails/telerik.png';
-import seDaily from '../src-gatsby/images/thumbnails/seDaily.png';
-import modernWeb from '../src-gatsby/images/thumbnails/modernWeb.jpeg';
-import shesInTech from '../src-gatsby/images/thumbnails/shesInTech.jpeg';
-import podRocket from '../src-gatsby/images/thumbnails/podRocket.png';
-import js20min from '../src-gatsby/images/thumbnails/20-min-js.jpeg';
+
+const jsJabber = '/thumbnails/jsJabber.jpg';
+const myJsStory = '/thumbnails/myJsStory.jpg';
+const reactRoundUp = '/thumbnails/reactRoundUp.png';
+const telerik = '/thumbnails/telerik.png';
+const seDaily = '/thumbnails/seDaily.png';
+const modernWeb = '/thumbnails/modernWeb.jpeg';
+const shesInTech = '/thumbnails/shesInTech.jpeg';
+const podRocket = '/thumbnails/podRocket.png';
+const js20min = '/thumbnails/20-min-js.jpeg';
 
 export default [
   {
@@ -151,7 +152,7 @@ export default [
   },
   {
     title: 'GitHub’s Octoverse: TypeScript, Copilot, and Open Source Struggles',
-    date: moment('2025-11=13').format('LL'),
+    date: moment('2025-11-13').format('LL'),
     path: 'https://podrocket.logrocket.com/githubs-octoverse-copilot-typescript-open-source-struggles',
     img: podRocket,
   },

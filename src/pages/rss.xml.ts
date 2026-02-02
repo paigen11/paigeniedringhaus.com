@@ -28,7 +28,7 @@ export async function GET(context: APIContext) {
     site: context.site || SITE_CONFIG.siteUrl,
     items: publishedPosts.map((post: CollectionEntry<'posts'>) => ({
       title: post.data.title,
-      description: post.data.description || post.data.title,
+      description: post.data.subTitle || post.data.title,
       pubDate: new Date(post.data.date),
       link: `/blog/${post.slug}/`,
       categories: post.data.tags || [],

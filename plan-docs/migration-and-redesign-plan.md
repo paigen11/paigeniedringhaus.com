@@ -1,6 +1,6 @@
 # Paigeniedringhaus.com Migration & Redesign Plan
 
-**Last Updated:** 2026-02-02 (RSS feed with full content, sitemap, Netlify config)
+**Last Updated:** 2026-02-02 (Gatsby cleanup complete, build passing, ready for deployment)
 
 ## Overview
 
@@ -8,7 +8,7 @@ This document outlines the comprehensive plan to:
 1. **Migrate** from Gatsby to Astro.js
 2. **Redesign** the site structure and visual design
 
-**Current Status:** 🎉 **Phase 1 Migration ~99% Complete** - All pages built, RSS & sitemap working, Netlify configured
+**Current Status:** 🎉 **Phase 1 Migration 100% Complete** - All Gatsby dependencies removed, builds passing, ready for Netlify deployment!
 
 **Progress Summary:**
 - ✅ Astro 5.17.1 installed with all core integrations
@@ -38,7 +38,22 @@ This document outlines the comprehensive plan to:
   - Installed: markdown-it, sanitize-html, @types/markdown-it, @types/sanitize-html
 - ✅ Sitemap integration configured (@astrojs/sitemap) - auto-generates sitemap-index.xml
 - ✅ Netlify configuration updated: build command, publish directory, Node version
-- 🎯 Ready for deployment! Next: Verify Netlify build and deploy to production
+- ✅ **Gatsby cleanup complete** - All legacy dependencies removed:
+  - Removed 31 Gatsby packages (gatsby, gatsby-cli, all plugins)
+  - Removed React & React-DOM (no React components needed)
+  - Removed all FontAwesome packages (4 total)
+  - Removed unused dependencies: classnames, sass, lodash, prismjs, etc.
+  - Removed @astrojs/react integration from astro.config.mjs
+  - npm install cleanup: Removed 1,553 packages (went from 3,046 to 1,493 total)
+- ✅ **Fixed all image path references:**
+  - Updated src/data/speaking.js and src/data/podcasts.js (changed imports to public path strings)
+  - Updated data/speaking.js and data/podcasts.js (changed from ../src/images/* to /thumbnails/*)
+  - Fixed media.astro to handle string image paths instead of imports
+  - Copied content/images/react.png to public/thumbnails/ for consistency
+  - Fixed date typo in podcasts.js (2025-11=13 → 2025-11-13)
+- ✅ **Build verification**: npm run build succeeds with 0 errors, 0 warnings, 90 pages built
+- ✅ tsconfig.json created: Fixed all TypeScript module resolution errors in VS Code
+- 🎯 **READY FOR DEPLOYMENT!** Next: Deploy to Netlify and verify git submodules work in build environment
 
 **Known Issues:**
 - CodeSandbox iframe auto-scrolls page on load (low priority - cosmetic only)
@@ -95,7 +110,10 @@ This document outlines the comprehensive plan to:
     - Pages: Added `CollectionEntry<'posts'>` types to all map/sort callbacks in index, blog listing, blog post
     - Layouts: Added `string` types to tag map callbacks, `is:inline` directive to GA script
     - Data: Replaced deprecated `substr()` with `slice()` in SiteConfig.js
-    - Result: 0 errors, 0 warnings from `npm run lint`
+    - **Post-cleanup fixes**:
+      - media.astro: Added `Record<string, string>` type to companyLogos, removed typeof checks for image paths
+      - rss.xml.ts: Changed `post.data.description` to `post.data.subTitle` (correct field name)
+    - Result: 0 errors, 0 warnings from `npm run lint` and `npm run build`
 
 ### 1.2 Content Collections Setup
 
@@ -397,7 +415,11 @@ src/components/
       NODE_VERSION = "24"
     ```
 
-- [x] ✅ Test build locally with `npm run build` - Success! (0 errors)
+- [x] ✅ Test build locally with `npm run build` - Success! (0 errors, 0 warnings, 90 pages)
+- [x] ✅ Remove all Gatsby dependencies and unused packages (31+ packages removed)
+- [x] ✅ Fix image path references in data files (converted to public path strings)
+- [x] ✅ Run npm install to clean up node_modules (removed 1,553 packages)
+- [x] ✅ Verify build still passes after cleanup (0 errors, 0 warnings)
 - [ ] Test preview with `npm run preview`
 - [ ] Deploy to Netlify and verify git submodules work in build environment
 - [ ] Verify RSS feed accessible at `/rss.xml`
@@ -1241,15 +1263,22 @@ src/
 - sass: 1.80.3
 - FontAwesome React components
 
-**Target (Astro):**
-- astro: ^5.0.0
-- @astrojs/mdx: ^latest
-- @astrojs/sitemap: ^latest
-- @astrojs/rss: ^latest
-- @astrojs/react: ^latest (if needed for interactive components)
+**Current (Astro):**
+- astro: 5.17.1
+- @astrojs/mdx: 4.3.13
+- @astrojs/sitemap: 3.7.0
+- @astrojs/rss: 4.0.15
+- @astrojs/check: 0.9.6
+- typescript: 5.9.3
+- eslint: 9.39.2 with flat config
+- moment: 2.24.0 (TODO: replace with date-fns or Temporal API)
+- markdown-it: 14.1.0 (for RSS feed HTML content)
+- sanitize-html: 2.17.0 (for RSS feed security)
 - Native CSS (no preprocessor needed)
-- rehype-*: plugins for markdown processing
-- remark-*: plugins for markdown processing
+- rehype-autolink-headings, rehype-slug, rehype-external-links
+- remark-gfm, remark-transform-image-paths (custom plugin)
+- **No React** - All components are native Astro components
+- **Total packages:** 1,493 (down from 3,046 with Gatsby)
 
 ### Git Submodule Details
 
@@ -1318,6 +1347,37 @@ src/
 8. **Blog post format:** ✅ **DECIDED** - Selective conversion: keep most as `.md`, convert ~13-15 posts with embeds to `.mdx`
 9. **Node version:** ✅ **DECIDED** - Upgrade to Node 24 LTS
 10. **TypeScript:** ✅ **DECIDED** - Convert site to TypeScript during migration for better type safety
+
+---
+
+## Future Improvements & Technical Debt
+
+### Replace Moment.js with Modern Date Handling
+
+**Priority:** Medium
+**Current:** Using `moment@2.24.0` (outdated, heavy library)
+**Recommended:** Use native JavaScript `Temporal API` (when stable) or `date-fns` as interim solution
+
+**Files using moment:**
+- `src/data/mediumBlogs.js`
+- `src/data/speaking.js`
+- `src/data/courses.js`
+- `src/data/courseVideos.js`
+- `src/data/podcasts.js`
+- `src/data/publications.js`
+
+**Why:**
+- Moment.js is in maintenance mode (no new features since 2020)
+- Large bundle size (~70KB minified)
+- Native Temporal API offers better performance and is the future standard
+- date-fns is tree-shakeable and modern
+
+**Migration options:**
+1. **Best (future-proof):** Wait for Temporal API to reach Stage 4 and use that
+2. **Good (now):** Migrate to `date-fns` - modern, tree-shakeable, actively maintained
+3. **Quick (now):** Use native `Date` with `Intl.DateTimeFormat` for formatting
+
+**Effort:** Low-Medium (mostly find/replace in data files)
 
 ---
 

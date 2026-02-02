@@ -7,8 +7,6 @@
     "module": "ESNext",
     "allowJs": true,
     "checkJs": false,
-    "jsx": "react-jsx",
-    "jsxImportSource": "react",
     "types": ["astro/client"]
   }
 }
