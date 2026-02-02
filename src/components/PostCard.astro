@@ -30,7 +30,7 @@ const formattedDate = new Date(date).toLocaleDateString('en-US', {
         <>
           <span class="separator">•</span>
           <div class="tags">
-            {tags.slice(0, 3).map((tag) => (
+            {tags.slice(0, 3).map((tag: string) => (
               <span class="tag">{tag}</span>
             ))}
           </div>

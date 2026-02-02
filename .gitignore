@@ -48,12 +48,13 @@ jspm_packages
 .yarn-integrity
 
 
-# Build Files
-public/
+# Gatsby Build Files (legacy)
 .cache/
-
-# Gatsby context
 .gatsby-context.js
+
+# Astro Build Files
+.astro/
+dist/
 
 # Bundle stats
 bundle-stats.json

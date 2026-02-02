@@ -8,7 +8,7 @@ export async function getStaticPaths() {
     return data.omit !== true;
   });
 
-  return posts.map((post) => ({
+  return posts.map((post: CollectionEntry<'posts'>) => ({
     params: { slug: post.slug },
     props: { post },
   }));

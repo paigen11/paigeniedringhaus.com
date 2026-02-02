@@ -20,7 +20,7 @@ if (!sandboxId && url) {
   // https://codesandbox.io/s/SANDBOX_ID
   // https://codesandbox.io/p/devbox/SANDBOX_NAME
   // https://codesandbox.io/p/sandbox/SANDBOX_NAME
-  const match = url.match(/codesandbox\.io\/(?:s|p\/(?:devbox|sandbox))\/([^\/\?]+)/);
+  const match = url.match(/codesandbox\.io\/(?:s|p\/(?:devbox|sandbox))\/([^/?]+)/);
   if (match) {
     sandboxId = match[1];
   }

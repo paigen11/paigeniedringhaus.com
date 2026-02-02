@@ -5,7 +5,7 @@ interface Props {
     subtitle?: string;
     date: string;
     path: string;
-    img: any;
+    img: string | { src: string };
   };
 }
 
@@ -13,7 +13,7 @@ const { course } = Astro.props;
 ---
 
 <a href={course.path} target="_blank" rel="noopener noreferrer" class="video-card">
-  <img src={course.img.src || course.img} alt={course.title} class="video-thumbnail" />
+  <img src={typeof course.img === 'string' ? course.img : course.img.src} alt={course.title} class="video-thumbnail" />
   <div class="video-info">
     <h3 class="video-title">{course.title}</h3>
     {course.subtitle && <p class="video-subtitle">{course.subtitle}</p>}

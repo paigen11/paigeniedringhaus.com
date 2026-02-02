@@ -35,7 +35,7 @@ const description = subTitle || `Blog post: ${title}`;
             <>
               <span class="separator">•</span>
               <div class="tags">
-                {tags.map((tag) => (
+                {tags.map((tag: string) => (
                   <span class="tag">{tag}</span>
                 ))}
               </div>

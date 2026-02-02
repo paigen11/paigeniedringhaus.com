@@ -1,6 +1,6 @@
 # Paigeniedringhaus.com Migration & Redesign Plan
 
-**Last Updated:** 2026-01-31
+**Last Updated:** 2026-02-02
 
 ## Overview
 
@@ -8,22 +8,33 @@ This document outlines the comprehensive plan to:
 1. **Migrate** from Gatsby to Astro.js
 2. **Redesign** the site structure and visual design
 
-**Current Status:** 🚀 **Phase 1 Migration In Progress** - Blog functionality complete, ready for MDX conversions
+**Current Status:** 🎉 **Phase 1 Migration ~98% Complete** - All pages built, linting complete, ready for RSS/deployment
 
 **Progress Summary:**
 - ✅ Astro 5.17.1 installed with all core integrations
-- ✅ Content collections configured with Git submodule working
-- ✅ YouTube, CodePen, & CodeSandbox MDX components created and tested
+- ✅ Content collections configured with Git submodule working (symlinks for posts & images)
+- ✅ All 14 blog posts with embeds converted to MDX (YouTube, CodePen, CodeSandbox working)
 - ✅ Custom remark plugin for image path resolution
-- ✅ Data files migrated to src/data/
-- ✅ Base layout and global CSS established
-- ✅ Blog listing and individual blog post pages working with tag filtering
-- ✅ Dev server running successfully
-- ✅ MDX conversion guide created for 14 blog posts with embeds
-- 🚧 Next: Build Header/Footer components, remaining pages
+- ✅ Data files migrated to src/data/ (TypeScript conversion deferred)
+- ✅ Global CSS with modern nesting - all common page styles centralized
+- ✅ Blog listing and individual blog post pages with tag filtering
+- ✅ Header component with responsive navigation (desktop/mobile hamburger menu)
+- ✅ Footer component with social links and copyright
+- ✅ All pages built: About, Contact, Courses, Media, 404
+- ✅ Subscribe button with animated gradient and shine effects
+- ✅ Static assets cleaned (removed 3000+ Gatsby artifacts, kept only source files)
+- ✅ .gitignore updated for Astro (.astro/ and dist/ excluded, build artifacts untracked)
+- ✅ Migrated from Yarn to npm (removed yarn.lock, kept package-lock.json)
+- ✅ ESLint 9.39.2 with flat config (eslint.config.mjs) and eslint-plugin-astro
+- ✅ TypeScript 5.9.3 and @astrojs/check installed for type checking
+- ✅ All linting and TypeScript errors resolved across all components and pages
+- ✅ npm scripts added: `lint`, `type-check` for comprehensive code quality checks
+- ✅ Package versions pinned: Node 24.13.0, npm 10.9.2 (via engines + Volta)
+- ✅ Package.json updated: v2.0.0, description changed to "running on Astro"
+- 🚧 Next: Setup RSS feed (src/pages/rss.xml.ts), then update Netlify config
 
 **Known Issues:**
-- CodeSandbox iframe auto-scrolls page on load (needs further investigation)
+- CodeSandbox iframe auto-scrolls page on load (low priority - cosmetic only)
 
 **Original:** Gatsby v4.13.1, React 18, deployed on Netlify
 **Target:** Astro 5.x with modern design, improved content organization
@@ -54,6 +65,30 @@ This document outlines the comprehensive plan to:
     - `public/images` → `../content/images` (for browser image serving)
   - Content folder working correctly with Astro
   - Symlinks automatically update when submodule updates
+- [x] ✅ Package Management & Linting Setup
+  - **Package Manager Migration**: Migrated from Yarn to npm
+    - Removed `yarn.lock`, kept `package-lock.json`
+    - Removed yarn from Volta config in `package.json`
+    - Added `engines` field: Node >=24.13.0, npm >=10.9.0
+    - Pinned npm 10.9.2 in Volta config
+    - Updated package.json: v2.0.0, description "running on Astro"
+  - **ESLint 9 Setup**: Modern flat config with Astro support
+    - Upgraded to ESLint 9.39.2 with `eslint.config.mjs` flat config format
+    - Installed `eslint-plugin-astro@1.5.0` and `astro-eslint-parser@1.2.2`
+    - Installed `@eslint/js@9.39.2` for base recommended rules
+    - Removed old Gatsby ESLint packages (airbnb config, react/jsx-a11y/import plugins)
+    - Configured explicit parser setup for `.astro` files with TypeScript support
+    - Set up ignores: `.astro/`, `.cache/`, `dist/`, `src-gatsby/`, `gatsby-*.js`, `data/**/*.js`
+  - **TypeScript Setup**: Full type checking enabled
+    - Installed `typescript@5.9.3` and `typescript-eslint@8.54.0`
+    - Installed `@astrojs/check@0.9.6` for Astro-specific type validation
+    - Added npm scripts: `type-check` (astro check) and `lint` (eslint + type-check)
+  - **Fixed All Linting & Type Errors**:
+    - Components: Fixed regex escapes (CodePen, CodeSandbox), removed deprecated `frameborder` (YouTube), proper img typing (VideoCard)
+    - Pages: Added `CollectionEntry<'posts'>` types to all map/sort callbacks in index, blog listing, blog post
+    - Layouts: Added `string` types to tag map callbacks, `is:inline` directive to GA script
+    - Data: Replaced deprecated `substr()` with `slice()` in SiteConfig.js
+    - Result: 0 errors, 0 warnings from `npm run lint`
 
 ### 1.2 Content Collections Setup
 
@@ -152,11 +187,11 @@ This document outlines the comprehensive plan to:
 | `src/pages/index.js` | `src/pages/index.astro` | ✅ Done | Homepage with latest 3 blog posts |
 | `src/pages/blog.js` | `src/pages/blog/index.astro` | ✅ Done | Blog listing with tag filtering sidebar |
 | `src/templates/post.jsx` | `src/pages/blog/[slug].astro` | ✅ Done | Dynamic blog posts with full markdown styling |
-| `src/pages/about.js` | `src/pages/about.astro` | ⏳ Pending | About page |
-| `src/pages/contact.js` | `src/pages/contact.astro` | ⏳ Pending | Contact page |
-| `src/pages/courses.js` | `src/pages/courses.astro` | ⏳ Pending | Courses (→ archive later) |
-| `src/pages/media.js` | `src/pages/media.astro` | ⏳ Pending | Media (→ restructure later) |
-| `src/pages/404.js` | `src/pages/404.astro` | ⏳ Pending | 404 error page |
+| `src/pages/about.js` | `src/pages/about.astro` | ✅ Done | About page with updated job/tech info |
+| `src/pages/contact.js` | `src/pages/contact.astro` | ✅ Done | Contact page with newsletter signup |
+| `src/pages/courses.js` | `src/pages/courses.astro` | ✅ Done | Courses page with video grid (→ archive later in redesign) |
+| `src/pages/media.js` | `src/pages/media.astro` | ✅ Done | Media page: talks, podcasts, articles (→ restructure later in redesign) |
+| `src/pages/404.js` | `src/pages/404.astro` | ✅ Done | 404 error page with pleading face emoji |
 
 **Implementation Tasks:**
 - [x] ✅ Create homepage in `src/pages/index.astro`
@@ -934,6 +969,14 @@ button:active {
 - Mobile: Hamburger menu with full-screen overlay
 
 ### 2.6 Content Updates
+
+#### General Content Review
+- [ ] **Review all page content for accuracy and currency**
+  - Go through About, Contact, Courses, Media, and all other pages
+  - Update job information, technologies, personal details
+  - Ensure content reflects who you are and where you're at today
+  - Remove or update outdated information
+  - Verify all external links still work
 
 #### Update About Page
 - [ ] Add new role: "Lead Software Engineer @ AllSpice (2026 - Present)"

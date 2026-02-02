@@ -1,6 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import { getCollection } from 'astro:content';
+import { getCollection, type CollectionEntry } from 'astro:content';
 
 // Get latest 3 blog posts for homepage
 const allPosts = await getCollection('posts', ({ data }) => {
@@ -8,7 +8,7 @@ const allPosts = await getCollection('posts', ({ data }) => {
 });
 
 const latestPosts = allPosts
-  .sort((a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime())
+  .sort((a: CollectionEntry<'posts'>, b: CollectionEntry<'posts'>) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime())
   .slice(0, 3);
 ---
 
@@ -31,7 +31,7 @@ const latestPosts = allPosts
         <a href="/blog" class="view-all">View All →</a>
       </div>
       <div class="posts-preview">
-        {latestPosts.map((post) => (
+        {latestPosts.map((post: CollectionEntry<'posts'>) => (
           <article class="post-preview">
             <a href={`/blog/${post.slug}`}>
               <h4>{post.data.title}</h4>

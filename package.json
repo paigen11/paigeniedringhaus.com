@@ -1,10 +1,11 @@
 {
   "name": "paigeniedringhaus.com",
-  "description": "Personal website of Paige Niedringhaus running on Gatsby and React",
-  "version": "1.1.0",
+  "description": "Personal website of Paige Niedringhaus running on Astro",
+  "version": "2.0.0",
   "author": "Paige Niedringhaus <hellopaigen@gmail.com>",
   "repository": "https://github.com/paigen11/paigeniedringhaus.com.git",
   "dependencies": {
+    "@astrojs/check": "^0.9.6",
     "@fortawesome/fontawesome-svg-core": "^6.4.2",
     "@fortawesome/free-brands-svg-icons": "^6.4.2",
     "@fortawesome/free-solid-svg-icons": "^6.4.2",
@@ -60,14 +61,12 @@
     "@astrojs/react": "^4.4.2",
     "@astrojs/rss": "^4.0.15",
     "@astrojs/sitemap": "^3.7.0",
+    "@eslint/js": "^9.39.2",
     "astro": "^5.17.1",
+    "astro-eslint-parser": "^1.2.2",
     "cli-glob": "^0.1.0",
-    "eslint": "^8.14.0",
-    "eslint-config-airbnb": "^19.0.4",
-    "eslint-config-prettier": "^8.5.0",
-    "eslint-plugin-import": "^2.20.2",
-    "eslint-plugin-jsx-a11y": "^6.2.1",
-    "eslint-plugin-react": "^7.19.0",
+    "eslint": "^9.39.2",
+    "eslint-plugin-astro": "^1.5.0",
     "gatsby-plugin-netlify": "^5.1.1",
     "gh-pages": "^3.2.3",
     "prettier": "^2.0.2",
@@ -80,19 +79,22 @@
     "stylelint": "^14.8.1",
     "stylelint-config-prettier": "^9.0.3",
     "stylelint-config-standard": "^25.0.0",
+    "typescript": "^5.9.3",
+    "typescript-eslint": "^8.54.0",
     "write-good": "^1.0.1"
   },
   "keywords": [
     "paige niedringhaus",
-    "development",
-    "dev",
+    "software engineering",
     "tech",
     "articles",
     "blog",
     "developer",
     "frontend",
     "react",
-    "gatsby",
+    "full stack",
+    "software engineer",
+    "ai",
     "web development"
   ],
   "license": "MIT",
@@ -102,11 +104,13 @@
     "build": "astro check && astro build",
     "preview": "astro preview",
     "astro": "astro",
+    "type-check": "astro check",
+    "lint": "npm run lint:js && npm run type-check",
     "gatsby:develop": "gatsby develop",
     "gatsby:build": "gatsby build",
     "gatsby:serve": "gatsby serve",
     "gatsby:clean": "rm -rf public && rm -rf .cache",
-    "lint:js": "eslint --ext .js,.jsx .",
+    "lint:js": "eslint .",
     "lint:md": "remark content/",
     "write-good": "write-good $(glob 'content/posts/**/*.md')",
     "format:js": "prettier '**/*.{js,jsx}' --write",
@@ -117,8 +121,12 @@
       "remark-preset-lint-recommended"
     ]
   },
+  "engines": {
+    "node": ">=24.13.0",
+    "npm": ">=10.9.0"
+  },
   "volta": {
     "node": "24.13.0",
-    "yarn": "1.22.17"
+    "npm": "10.9.2"
   }
 }
