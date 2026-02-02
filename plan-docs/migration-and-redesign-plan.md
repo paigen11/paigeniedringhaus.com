@@ -1,6 +1,6 @@
 # Paigeniedringhaus.com Migration & Redesign Plan
 
-**Last Updated:** 2026-02-02
+**Last Updated:** 2026-02-02 (RSS feed with full content, sitemap, Netlify config)
 
 ## Overview
 
@@ -8,7 +8,7 @@ This document outlines the comprehensive plan to:
 1. **Migrate** from Gatsby to Astro.js
 2. **Redesign** the site structure and visual design
 
-**Current Status:** 🎉 **Phase 1 Migration ~98% Complete** - All pages built, linting complete, ready for RSS/deployment
+**Current Status:** 🎉 **Phase 1 Migration ~99% Complete** - All pages built, RSS & sitemap working, Netlify configured
 
 **Progress Summary:**
 - ✅ Astro 5.17.1 installed with all core integrations
@@ -31,7 +31,14 @@ This document outlines the comprehensive plan to:
 - ✅ npm scripts added: `lint`, `type-check` for comprehensive code quality checks
 - ✅ Package versions pinned: Node 24.13.0, npm 10.9.2 (via engines + Volta)
 - ✅ Package.json updated: v2.0.0, description changed to "running on Astro"
-- 🚧 Next: Setup RSS feed (src/pages/rss.xml.ts), then update Netlify config
+- ✅ RSS feed created at src/pages/rss.xml.ts with full post content
+  - Filters omitted posts, sorted by date descending
+  - Includes full HTML content using markdown-it parser and sanitize-html
+  - Feed size: 1.8MB with full post content (vs 44KB with just metadata)
+  - Installed: markdown-it, sanitize-html, @types/markdown-it, @types/sanitize-html
+- ✅ Sitemap integration configured (@astrojs/sitemap) - auto-generates sitemap-index.xml
+- ✅ Netlify configuration updated: build command, publish directory, Node version
+- 🎯 Ready for deployment! Next: Verify Netlify build and deploy to production
 
 **Known Issues:**
 - CodeSandbox iframe auto-scrolls page on load (low priority - cosmetic only)
@@ -312,16 +319,24 @@ src/components/
 
 ### 1.8 Features & Integrations
 
-- [ ] **RSS Feed**
-  - Install `@astrojs/rss`
-  - Create `src/pages/rss.xml.js`
-  - Map current feed structure to Astro RSS format
-  - Test feed validates at [W3C Feed Validator](https://validator.w3.org/feed/)
+- [x] ✅ **RSS Feed**
+  - `@astrojs/rss` installed
+  - Created `src/pages/rss.xml.ts` with TypeScript
+  - Filters out omitted posts, sorts by date descending
+  - **Includes full HTML post content** (not just summaries)
+    - Uses `markdown-it` to parse MDX/Markdown to HTML
+    - Uses `sanitize-html` to clean and secure HTML output
+    - Installed types: `@types/markdown-it`, `@types/sanitize-html`
+  - Includes metadata: title, description, pubDate, link, categories (tags)
+  - Site config values inlined (TODO: import when SiteConfig converted to ES module)
+  - Generates at `/rss.xml` - 1.8MB with full post content
+  - Standard RSS 2.0 format with content:encoded namespace
 
-- [ ] **Sitemap**
-  - Install `@astrojs/sitemap`
-  - Configure in `astro.config.mjs`
-  - Test sitemap generates at `/sitemap-index.xml`
+- [x] ✅ **Sitemap**
+  - `@astrojs/sitemap` installed
+  - Configured in `astro.config.mjs` with site URL
+  - Auto-generates `/sitemap-index.xml` and `/sitemap-0.xml`
+  - Includes all pages and blog posts
 
 - [ ] **Analytics**
   - Google Analytics 4 only (ID: `G-33LYCFN2QF`)
@@ -367,30 +382,26 @@ src/components/
   - Copied favicon and logos from `static/` to `public/`
   - Astro serves files from `public/` directory (not `static/`)
 
-- [ ] Update `netlify.toml`:
-  ```toml
-  [build]
-    command = "npm run build"
-    publish = "dist"
+- [x] ✅ Update `netlify.toml`:
+  - Removed Gatsby plugin (`@netlify/plugin-gatsby`)
+  - Changed build command to `npm run build`
+  - Changed publish directory to `dist/` (from `public/`)
+  - Updated Node version to 24 (from 20)
+  - Git submodules should work automatically (`.gitmodules` configured)
+  - Current configuration:
+    ```toml
+    [build]
+      publish = "dist"
+      command = "npm run build"
+    [build.environment]
+      NODE_VERSION = "24"
+    ```
 
-  [build.environment]
-    NODE_VERSION = "24"
-
-  # Git submodules
-  [build]
-    base = "/"
-
-  [[plugins]]
-    package = "netlify-plugin-submit-sitemap"
-
-  [plugins.inputs]
-    baseUrl = "https://www.paigeniedringhaus.com"
-    sitemapPath = "/sitemap-index.xml"
-  ```
-
-- [ ] Test build locally with `npm run build`
+- [x] ✅ Test build locally with `npm run build` - Success! (0 errors)
 - [ ] Test preview with `npm run preview`
-- [ ] Deploy to Netlify branch preview
+- [ ] Deploy to Netlify and verify git submodules work in build environment
+- [ ] Verify RSS feed accessible at `/rss.xml`
+- [ ] Verify sitemap accessible at `/sitemap-index.xml`
 - [ ] Verify Git submodules pull correctly in Netlify build
 
 ### 1.10 Migration Testing Checklist

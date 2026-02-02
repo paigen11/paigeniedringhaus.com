@@ -1,0 +1,14 @@
+{
+  "extends": "astro/tsconfigs/strict",
+  "compilerOptions": {
+    "moduleResolution": "bundler",
+    "target": "ES2022",
+    "lib": ["ES2022", "DOM", "DOM.Iterable"],
+    "module": "ESNext",
+    "allowJs": true,
+    "checkJs": false,
+    "jsx": "react-jsx",
+    "jsxImportSource": "react",
+    "types": ["astro/client"]
+  }
+}
