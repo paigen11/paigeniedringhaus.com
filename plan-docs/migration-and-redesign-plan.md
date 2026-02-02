@@ -1,6 +1,6 @@
 # Paigeniedringhaus.com Migration & Redesign Plan
 
-**Last Updated:** 2026-02-02 (Gatsby cleanup complete, build passing, ready for deployment)
+**Last Updated:** 2026-02-02 (Phase 1 migration complete, Netlify deployment successful, blog filtering implemented)
 
 ## Overview
 
@@ -8,7 +8,7 @@ This document outlines the comprehensive plan to:
 1. **Migrate** from Gatsby to Astro.js
 2. **Redesign** the site structure and visual design
 
-**Current Status:** 🎉 **Phase 1 Migration 100% Complete** - All Gatsby dependencies removed, builds passing, ready for Netlify deployment!
+**Current Status:** 🎉 **Phase 1 Migration 100% Complete** - Successfully deployed to Netlify, blog filtering working, ready to merge and begin Phase 2 redesign!
 
 **Progress Summary:**
 - ✅ Astro 5.17.1 installed with all core integrations
@@ -53,7 +53,14 @@ This document outlines the comprehensive plan to:
   - Fixed date typo in podcasts.js (2025-11=13 → 2025-11-13)
 - ✅ **Build verification**: npm run build succeeds with 0 errors, 0 warnings, 90 pages built
 - ✅ tsconfig.json created: Fixed all TypeScript module resolution errors in VS Code
-- 🎯 **READY FOR DEPLOYMENT!** Next: Deploy to Netlify and verify git submodules work in build environment
+- ✅ **Netlify deployment successful**: Git submodules work correctly in build environment
+- ✅ **Blog filtering implemented**:
+  - Client-side tag filtering with JavaScript
+  - All 65+ tags visible in scrollable sidebar with scroll shadow indicators
+  - All tags displayed on blog post cards (no longer limited to 3)
+  - Mobile/tablet responsive with 150px height limit and scroll shadows
+  - Active state styling for selected tag filters
+- 🎯 **READY TO MERGE!** Phase 1 complete. Next: Begin Phase 2 redesign work on new branch.
 
 **Known Issues:**
 - CodeSandbox iframe auto-scrolls page on load (low priority - cosmetic only)
@@ -224,17 +231,19 @@ This document outlines the comprehensive plan to:
   - Links to full blog
   - Shows migration notice
 - [x] ✅ Create blog listing page in `src/pages/blog/index.astro`
-  - Tag filtering sidebar (shows first 15 tags)
+  - Tag filtering sidebar with all 65+ tags (scrollable with shadow indicators)
+  - Client-side JavaScript filtering by tag
   - All posts sorted by date (newest first)
   - Filters out omitted posts
-  - Responsive grid layout
+  - Responsive grid layout with mobile scrolling (150px height limit)
 - [x] ✅ Implement `getStaticPaths()` for dynamic blog post routes
   - Created `src/pages/blog/[slug].astro`
   - Uses `BlogPost.astro` layout
   - Full markdown styling with code highlighting
 - [x] ✅ Create `PostCard.astro` component for blog listing
-  - Shows title, subtitle, date, tags, category
+  - Shows title, subtitle, date, all tags (no limit), category
   - Hover effects with transform and shadow
+  - Tags wrap to multiple lines as needed
 - [ ] Set up pagination for blog listing page (deferred - not needed yet)
 - [x] ✅ Test all routes work correctly
 
@@ -420,16 +429,18 @@ src/components/
 - [x] ✅ Fix image path references in data files (converted to public path strings)
 - [x] ✅ Run npm install to clean up node_modules (removed 1,553 packages)
 - [x] ✅ Verify build still passes after cleanup (0 errors, 0 warnings)
-- [ ] Test preview with `npm run preview`
-- [ ] Deploy to Netlify and verify git submodules work in build environment
-- [ ] Verify RSS feed accessible at `/rss.xml`
-- [ ] Verify sitemap accessible at `/sitemap-index.xml`
-- [ ] Verify Git submodules pull correctly in Netlify build
+- [x] ✅ Test preview with `npm run preview`
+- [x] ✅ Deploy to Netlify and verify git submodules work in build environment
+- [x] ✅ Verify RSS feed accessible at `/rss.xml`
+- [x] ✅ Verify sitemap accessible at `/sitemap-index.xml`
+- [x] ✅ Verify Git submodules pull correctly in Netlify build
+- [x] ✅ Implement blog post tag filtering (client-side JavaScript with all tags visible)
 
 ### 1.10 Migration Testing Checklist
 
 Before merging to main:
 
+- [x] ✅ Blog tag filtering implemented and working
 - [ ] All pages render correctly
 - [ ] All blog posts render with:
   - [ ] Featured images
@@ -1378,6 +1389,88 @@ src/
 3. **Quick (now):** Use native `Date` with `Intl.DateTimeFormat` for formatting
 
 **Effort:** Low-Medium (mostly find/replace in data files)
+
+### Post-Migration Enhancements
+
+These improvements should be implemented after the initial Astro migration is merged and deployed.
+
+#### 1. Blog Post Enhancements
+
+**Priority:** High
+
+- [ ] **Add hero/featured images to individual blog post pages**
+  - Display `featuredImage` from frontmatter at the top of blog posts
+  - Use Astro's `<Image />` component for optimization
+  - Responsive image sizing across devices
+  - Fallback to default image if none specified
+
+- [ ] **Display tags on individual blog post pages**
+  - Show tags at top or bottom of blog post content
+  - Link tags to filtered blog listing (e.g., `/blog?tag=react`)
+  - Consistent styling with tag badges elsewhere on site
+
+- [ ] **Add reading time to blog posts**
+  - Calculate estimated reading time based on word count
+  - Display on both blog listing cards and individual post pages
+  - Format as "X min read" (e.g., "5 min read")
+
+- [ ] **Add sticky table of contents to blog posts**
+  - Auto-generate TOC from H2 and H3 headings in post content
+  - Display as sticky sidebar on desktop (right side or left side)
+  - Make TOC links clickable to scroll to corresponding heading
+  - Highlight current section as user scrolls
+  - Hide on mobile or show as collapsible section at top
+
+- [ ] **Improve blog post metadata display**
+  - Enhance visual hierarchy of post header
+  - Better category badge positioning
+  - Improve date formatting
+
+**Why:** These features will improve the blog reading experience, help readers discover related content through tags and featured images, and make it easier to navigate long-form articles.
+
+#### 2. CSS Consolidation
+
+**Priority:** Medium
+
+- [ ] **Audit all pages for duplicate CSS**
+  - Review scoped styles in all `.astro` components
+  - Identify repeated patterns (cards, buttons, spacing)
+  - Document common styles that should be extracted
+
+- [ ] **Extract common styles to shared files**
+  - Move duplicate component styles to `src/styles/components.css`
+  - Create utility classes for common patterns (if needed)
+  - Ensure design token usage is consistent (CSS custom properties)
+
+- [ ] **Ensure consistent spacing, colors, typography across pages**
+  - Verify all pages use spacing variables (`--space-*`)
+  - Verify all pages use color variables (`--color-*`)
+  - Check font sizes, weights, and line heights are consistent
+  - Test light/dark mode consistency across all pages
+
+**Why:** Reduces CSS duplication, improves maintainability, ensures visual consistency, and reduces bundle size.
+
+#### 3. Enhanced Search Functionality
+
+**Priority:** Low
+
+- [ ] **Evaluate search solutions**
+  - Consider Pagefind (client-side static search)
+  - Consider Algolia or similar hosted search
+  - Or implement simple title/content search with JavaScript
+
+- [ ] **Enhance existing tag filtering**
+  - Add search input box on blog listing page
+  - Filter posts by title or subtitle in real-time
+  - Combine with existing tag filtering
+  - Update URL parameters for shareable filtered views
+
+- [ ] **Test search performance**
+  - Ensure search doesn't impact page load time
+  - Test with large number of blog posts
+  - Verify mobile performance
+
+**Why:** While basic tag filtering is functional, full-text search would improve content discoverability, especially as the blog grows.
 
 ---
 
