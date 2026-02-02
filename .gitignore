@@ -47,11 +47,6 @@ jspm_packages
 # Yarn Integrity file
 .yarn-integrity
 
-
-# Gatsby Build Files (legacy)
-.cache/
-.gatsby-context.js
-
 # Astro Build Files
 .astro/
 dist/

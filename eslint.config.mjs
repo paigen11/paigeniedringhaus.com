@@ -17,8 +17,7 @@ export default [
       '*.config.js',
       '*.config.mjs',
       'gatsby-*.js', // Gatsby config files
-      'data/**/*.js', // Ignore data files (will convert to TS later)
-      'src/data/**/*.js', // Also ignore src/data JS files
+      'src/data/**/*.js', // Ignore src/data JS files (will convert to TS later)
     ],
   },
 
