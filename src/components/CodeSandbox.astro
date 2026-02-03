@@ -1,0 +1,58 @@
+---
+interface Props {
+  id?: string;
+  url?: string;
+  title?: string;
+  file?: string;
+}
+
+const {
+  id,
+  url,
+  title = 'CodeSandbox Embed',
+  file,
+} = Astro.props;
+
+// Extract sandbox ID from URL if provided
+let sandboxId = id;
+if (!sandboxId && url) {
+  // Parse URLs like:
+  // https://codesandbox.io/s/SANDBOX_ID
+  // https://codesandbox.io/p/devbox/SANDBOX_NAME
+  // https://codesandbox.io/p/sandbox/SANDBOX_NAME
+  const match = url.match(/codesandbox\.io\/(?:s|p\/(?:devbox|sandbox))\/([^/?]+)/);
+  if (match) {
+    sandboxId = match[1];
+  }
+}
+
+if (!sandboxId) {
+  throw new Error('CodeSandbox component requires either an id or url prop');
+}
+
+// Build embed URL with parameters to prevent auto-focus
+let embedUrl = `https://codesandbox.io/p/devbox/${sandboxId}?embed=1`;
+if (file) {
+  embedUrl += `&file=${encodeURIComponent(file)}`;
+}
+---
+
+<div class="codesandbox-embed">
+  <iframe
+    src={embedUrl}
+    title={title}
+    sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
+    loading="lazy"
+    tabindex="-1"
+    style="width: 100%; height: 500px; border: 0;"
+  ></iframe>
+</div>
+
+<style>
+  .codesandbox-embed {
+    width: 100%;
+    margin: 2rem 0;
+    border-radius: 0.5rem;
+    overflow: hidden;
+  }
+</style>

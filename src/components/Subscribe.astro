@@ -1,0 +1,97 @@
+---
+// Simple newsletter subscribe button component
+---
+
+<a
+  href="https://paigeniedringhaus.substack.com/subscribe"
+  target="_blank"
+  rel="noopener noreferrer"
+  class="subscribe-link"
+>
+  <button class="subscribe-button" aria-label="Join Substack Newsletter">
+    Join my newsletter
+  </button>
+</a>
+
+<style>
+  @keyframes TransitioningBackground {
+    0% {
+      background-position: 1% 0%;
+    }
+    50% {
+      background-position: 99% 100%;
+    }
+    100% {
+      background-position: 1% 0%;
+    }
+  }
+
+  .subscribe-link {
+    text-decoration: none;
+  }
+
+  .subscribe-button {
+    font-size: 1rem;
+    font-weight: 600;
+    color: white;
+    text-align: center;
+    width: 200px;
+    height: 60px;
+    border: none;
+    border-radius: 5px;
+    /* for shine & gradient effects to work */
+    position: relative;
+    overflow: hidden;
+    /* for background color shift */
+    background-image: linear-gradient(270deg, #8e9ac2, #5066b4);
+    background-size: 400% 400%;
+    animation: TransitioningBackground 10s ease infinite;
+    /* to ease the button growth on hover */
+    transition: 0.6s;
+    cursor: pointer;
+
+    /* pseudo-element shine animation left side */
+    &::before {
+      content: '';
+      display: block;
+      position: absolute;
+      background: rgba(255, 255, 255, 0.5);
+      width: 60px;
+      height: 100%;
+      top: 0;
+      filter: blur(30px);
+      transform: translateX(-100px) skewX(-15deg);
+    }
+
+    /* pseudo-element shine animation right side */
+    &::after {
+      content: '';
+      display: block;
+      position: absolute;
+      background: rgba(255, 255, 255, 0.2);
+      width: 30px;
+      height: 100%;
+      top: 0;
+      filter: blur(5px);
+      transform: translateX(-100px) skewX(-15deg);
+    }
+
+    /* grow button and change background gradient on hover */
+    &:hover {
+      background-image: linear-gradient(to left, #2d8fe5, #d155b8);
+      /* makes button grow from its center instead of growing right and down to expand */
+      transform: scale(1.2);
+
+      /* pseudo-elements for right- and left-side shine animations */
+      &::before,
+      &::after {
+        transform: translateX(300px) skewX(-15deg);
+        transition: 0.7s;
+      }
+    }
+
+    &:active {
+      transform: scale(1.15);
+    }
+  }
+</style>

@@ -1,0 +1,136 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Subscribe from '../components/Subscribe.astro';
+---
+
+<Layout title="Contact | Paige Niedringhaus" description="Get in touch with Paige Niedringhaus - email, social media, and newsletter.">
+  <div class="page-container">
+    <h1>Contact</h1>
+
+    <section class="intro">
+      <h2 class="no-underline">
+        Thanks again for visiting my site, I hope you like it.
+        <br />
+        If you'd like to get in touch...
+      </h2>
+    </section>
+
+    <section>
+      <h2>
+        <span class="icon">✉️</span> Send me an email
+      </h2>
+      <p>
+        If you'd like to say "hi" or want to talk, feel free to reach me at&nbsp;
+        <a href="mailto:hellopaigen@gmail.com">
+          hellopaigen@gmail.com
+        </a>
+        .
+      </p>
+    </section>
+
+    <section>
+      <h2>
+        <span class="icon">𝕏</span> Follow me & chat on social media
+      </h2>
+      <ul>
+        <li>
+          I'm on X at&nbsp;
+          <a href="https://twitter.com/pniedri" target="_blank" rel="noopener noreferrer">
+            @pniedri
+          </a>
+          .
+        </li>
+        <li>
+          I publish blogs on&nbsp;
+          <a href="https://paigen11.medium.com" target="_blank" rel="noopener noreferrer">
+            Medium
+          </a>
+          &nbsp;and&nbsp;
+          <a href="https://dev.to/paigen11" target="_blank" rel="noopener noreferrer">
+            DEV
+          </a>
+          &nbsp;under @paigen11, with accompanying videos on&nbsp;
+          <a href="https://www.youtube.com/c/PaigeNiedringhaus" target="_blank" rel="noopener noreferrer">
+            YouTube
+          </a>
+          .
+        </li>
+        <li>
+          And I share my IoT projects on&nbsp;
+          <a href="https://www.hackster.io/paige-niedringhaus" target="_blank" rel="noopener noreferrer">
+            Hackster.io
+          </a>
+          .
+        </li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>
+        <span class="icon">⚙</span> Check out my Github profile
+      </h2>
+      <p>
+        All of the&nbsp;
+        <a href="https://github.com/paigen11" target="_blank" rel="noopener noreferrer">
+          projects
+        </a>
+        &nbsp;I build for myself (mostly to learn new stuff) are open source, and I'm happy for people to fork them and put them to use.
+      </p>
+    </section>
+
+    <section>
+      <h2>
+        <span class="icon">📡</span> Or subscribe to my Substack newsletter
+      </h2>
+      <p>
+        I promise to never send spam, only useful emails about new articles I've written or links to talks I've given.
+      </p>
+      <div class="subscribe-wrapper">
+        <Subscribe />
+      </div>
+      <p class="closing">Thanks and have a great day!</p>
+    </section>
+  </div>
+</Layout>
+
+<style>
+  .intro {
+    margin-bottom: var(--space-8);
+  }
+
+  .page-container h2 {
+    font-size: 1.75rem;
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+
+    &.no-underline {
+      font-weight: 500;
+      font-size: 1.5rem;
+      line-height: 1.6;
+    }
+  }
+
+  .icon {
+    font-size: 1.5rem;
+  }
+
+  .subscribe-wrapper {
+    margin: var(--space-6) 0;
+  }
+
+  .closing {
+    margin-top: var(--space-8);
+    font-weight: 600;
+  }
+
+  @media (max-width: 768px) {
+    .page-container h2 {
+      font-size: 1.5rem;
+
+      &.no-underline {
+        font-size: 1.25rem;
+      }
+    }
+  }
+</style>

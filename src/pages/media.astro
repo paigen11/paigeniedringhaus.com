@@ -1,0 +1,266 @@
+---
+import Layout from '../layouts/Layout.astro';
+import speaking from '../data/speaking.js';
+import publications from '../data/publications.js';
+import podcasts from '../data/podcasts.js';
+
+// Sort by date (newest first)
+const sortedPodcasts = podcasts.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+const sortedSpeaking = speaking.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+
+// Sort publications articles by date (newest first) for each company
+const sortedPublications: Record<string, Array<{ title: string; date: string; path: string }>> = {};
+Object.entries(publications).forEach(([company, articles]) => {
+  sortedPublications[company] = articles.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+});
+
+// Company logos for publications
+const companyLogos: Record<string, string> = {
+  ButterCMS: '/thumbnails/butterCMS.png',
+  LogRocket: '/thumbnails/logRocket.jpg',
+  newline: '/thumbnails/newline-logo.png',
+  Blues: '/thumbnails/blues-favicon.svg',
+};
+---
+
+<Layout title="Media | Paige Niedringhaus" description="Paige's talks, podcast appearances, and published articles.">
+  <div class="page-container">
+    <h1>Media</h1>
+
+    <section>
+      <p class="intro">
+        In addition to my own <a href="/blog">blog posts</a>, I've been fortunate enough to share what I've learned through speaking at conferences and meetups, writing technical articles, and appearing on podcasts.
+      </p>
+      <p class="intro">
+        From 2020 to 2023, I co-hosted the&nbsp;
+        <a href="https://topenddevs.com/podcasts/react-round-up/" target="_blank" rel="noopener noreferrer">
+          React Round Up
+        </a>
+        &nbsp;podcast.
+      </p>
+      <p class="intro">
+        And in 2023, my friends Jack Herrington, TJ VanToll, and I created the&nbsp;
+        <a href="https://front-end-fire.com/" target="_blank" rel="noopener noreferrer">
+          Front-end Fire
+        </a>
+        &nbsp;podcast to bring developers the latest greatest news in the frontend world. I also joined the LogRocket podcast&nbsp;
+        <a href="https://podrocket.logrocket.com/hosts/paige-niedringhaus" target="_blank" rel="noopener noreferrer">
+          PodRocket
+        </a>
+        &nbsp;as a co-host, too.
+      </p>
+      <p class="intro">
+        In both podcasts, I get to talk to my friends and experts in the web dev community about the latest libraries, frameworks, and all things frontend and beyond.
+      </p>
+    </section>
+
+    <section>
+      <h2>Talks & Videos</h2>
+      <p class="note">(Note: Recorded talks are hyperlinked in color.)</p>
+      <ul class="media-list">
+        {sortedSpeaking.map((talk) => (
+          <li class="media-item">
+            <img
+              src={talk.img}
+              alt="organization logo"
+              class="media-logo"
+            />
+            <div class="media-content">
+              {talk.path ? (
+                <a
+                  href={talk.path}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="media-title"
+                >
+                  {talk.title}
+                </a>
+              ) : (
+                <span class="media-title-plain">{talk.title}</span>
+              )}
+              <p class="media-date">{talk.date}</p>
+            </div>
+          </li>
+        ))}
+      </ul>
+    </section>
+
+    <section>
+      <h2>Podcast Appearances</h2>
+      <ul class="media-list">
+        {sortedPodcasts.map((podcast) => (
+          <li class="media-item">
+            <img
+              src={podcast.img}
+              alt="podcast logo"
+              class="media-logo"
+            />
+            <div class="media-content">
+              <a
+                href={podcast.path}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="media-title"
+              >
+                {podcast.title}
+              </a>
+              <p class="media-date">{podcast.date}</p>
+            </div>
+          </li>
+        ))}
+      </ul>
+    </section>
+
+    <section>
+      <h2>Published Articles</h2>
+      {Object.entries(sortedPublications).map(([company, articles]) => (
+        <div class="publication-section">
+          <div class="company-header">
+            <img
+              src={companyLogos[company]}
+              alt={`${company} logo`}
+              class="company-logo"
+            />
+            <h3>{company}</h3>
+          </div>
+          <ul class="publication-list">
+            {articles.map((article) => (
+              <li class="publication-item">
+                <a
+                  href={article.path}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="publication-link"
+                >
+                  {article.title}
+                </a>
+                <p class="publication-date">{article.date}</p>
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </section>
+  </div>
+</Layout>
+
+<style>
+  .note {
+    font-size: 0.875rem;
+    color: var(--color-text-secondary);
+    font-style: italic;
+    margin-bottom: var(--space-4);
+  }
+
+  .media-list {
+    list-style: none;
+    padding: 0;
+
+    & .media-item {
+      display: flex;
+      align-items: flex-start;
+      gap: var(--space-4);
+      padding: var(--space-4);
+      border-bottom: 1px solid var(--color-border);
+
+      &:last-child {
+        border-bottom: none;
+      }
+    }
+  }
+
+  .media-logo {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+    flex-shrink: 0;
+  }
+
+  .media-content {
+    flex: 1;
+
+    & .media-title {
+      font-size: 1.125rem;
+      font-weight: 600;
+      color: var(--color-primary);
+      text-decoration: underline;
+      transition: color 0.2s;
+      display: block;
+      margin-bottom: var(--space-2);
+
+      &:hover {
+        color: var(--color-accent);
+      }
+    }
+
+    & .media-title-plain {
+      font-size: 1.125rem;
+      font-weight: 600;
+      color: var(--color-text);
+      display: block;
+      margin-bottom: var(--space-2);
+    }
+
+    & .media-date {
+      font-size: 0.875rem;
+      color: var(--color-text-secondary);
+    }
+  }
+
+  .publication-section {
+    margin-bottom: var(--space-8);
+
+    & .company-header {
+      display: flex;
+      align-items: center;
+      gap: var(--space-3);
+      margin-bottom: var(--space-4);
+    }
+
+    & .company-logo {
+      width: 40px;
+      height: 40px;
+      object-fit: contain;
+    }
+
+    & .publication-list {
+      list-style: none;
+      padding: 0;
+      padding-left: var(--space-8);
+    }
+
+    & .publication-item {
+      margin-bottom: var(--space-4);
+    }
+
+    & .publication-link {
+      font-size: 1rem;
+      font-weight: 500;
+      color: var(--color-primary);
+      text-decoration: underline;
+      transition: color 0.2s;
+      display: block;
+      margin-bottom: var(--space-1);
+
+      &:hover {
+        color: var(--color-accent);
+      }
+    }
+
+    & .publication-date {
+      font-size: 0.875rem;
+      color: var(--color-text-secondary);
+    }
+  }
+
+  @media (max-width: 768px) {
+    .media-list .media-item {
+      flex-direction: column;
+    }
+
+    .media-logo {
+      width: 50px;
+      height: 50px;
+    }
+  }
+</style>

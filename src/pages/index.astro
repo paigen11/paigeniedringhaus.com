@@ -1,0 +1,162 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { getCollection, type CollectionEntry } from 'astro:content';
+
+// Get latest 3 blog posts for homepage
+const allPosts = await getCollection('posts', ({ data }) => {
+  return data.omit !== true;
+});
+
+const latestPosts = allPosts
+  .sort((a: CollectionEntry<'posts'>, b: CollectionEntry<'posts'>) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime())
+  .slice(0, 3);
+---
+
+<Layout title="Paige Niedringhaus | Lead Software Engineer">
+  <main class="page-container">
+    <section class="hero">
+      <h1>Paige Niedringhaus</h1>
+      <h2>Lead Software Engineer</h2>
+      <p class="tagline">
+        Writing about web development, hosting podcasts, building things.
+      </p>
+      <p class="migration-notice">
+        🚧 Site migration & redesign in progress - Gatsby → Astro 🚧
+      </p>
+    </section>
+
+    <section class="recent-posts">
+      <div class="section-header">
+        <h3>Recent Blog Posts</h3>
+        <a href="/blog" class="view-all">View All →</a>
+      </div>
+      <div class="posts-preview">
+        {latestPosts.map((post: CollectionEntry<'posts'>) => (
+          <article class="post-preview">
+            <a href={`/blog/${post.slug}`}>
+              <h4>{post.data.title}</h4>
+              {post.data.subTitle && <p>{post.data.subTitle}</p>}
+            </a>
+          </article>
+        ))}
+      </div>
+    </section>
+  </main>
+</Layout>
+
+<style>
+  .hero {
+    text-align: center;
+    padding: var(--space-16) 0;
+    border-bottom: 1px solid var(--color-border);
+    margin-bottom: var(--space-12);
+  }
+
+  .hero h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: var(--space-4);
+    color: var(--color-text);
+  }
+
+  .hero h2 {
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: var(--color-text-secondary);
+    margin-bottom: var(--space-6);
+  }
+
+  .tagline {
+    font-size: 1.25rem;
+    color: var(--color-text-secondary);
+    margin-bottom: var(--space-4);
+  }
+
+  .migration-notice {
+    color: var(--color-accent);
+    font-weight: 500;
+    margin-top: var(--space-6);
+  }
+
+  .recent-posts {
+    margin-bottom: var(--space-12);
+  }
+
+  .section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--space-6);
+  }
+
+  .section-header h3 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--color-text);
+  }
+
+  .view-all {
+    color: var(--color-primary);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s ease;
+  }
+
+  .view-all:hover {
+    color: var(--color-accent);
+  }
+
+  .posts-preview {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--space-6);
+  }
+
+  .post-preview {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: var(--space-6);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .post-preview:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+  }
+
+  .post-preview a {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .post-preview h4 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: var(--space-2);
+    color: var(--color-text);
+  }
+
+  .post-preview a:hover h4 {
+    color: var(--color-primary);
+  }
+
+  .post-preview p {
+    color: var(--color-text-secondary);
+    line-height: 1.5;
+  }
+
+  @media (max-width: 768px) {
+    .hero h1 {
+      font-size: 2.5rem;
+    }
+
+    .hero h2 {
+      font-size: 1.25rem;
+    }
+
+    .posts-preview {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

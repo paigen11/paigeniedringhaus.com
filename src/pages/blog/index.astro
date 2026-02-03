@@ -1,0 +1,241 @@
+---
+import { getCollection, type CollectionEntry } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+import PostCard from '../../components/PostCard.astro';
+
+// Get all blog posts, filter out omitted ones, and sort by date
+const allPosts = await getCollection('posts', ({ data }) => {
+  return data.omit !== true;
+});
+
+const sortedPosts = allPosts.sort((a: CollectionEntry<'posts'>, b: CollectionEntry<'posts'>) => {
+  return new Date(b.data.date).getTime() - new Date(a.data.date).getTime();
+});
+
+// Get unique tags for filtering
+const allTags = [...new Set(sortedPosts.flatMap((post: CollectionEntry<'posts'>) => post.data.tags || []))].sort();
+---
+
+<Layout
+  title="Blog | Paige Niedringhaus"
+  description="Technical blog posts about web development, React, Node.js, and frontend engineering."
+>
+  <main class="page-container">
+      <header class="blog-header">
+        <h1>Blog</h1>
+        <p class="intro">
+          Writing about web development, React, TypeScript, and everything frontend.
+        </p>
+      </header>
+
+      <div class="blog-content">
+        <aside class="sidebar">
+          <h3>Filter by Tag</h3>
+          <div class="tag-list">
+            <button class="tag-filter" data-tag="all">
+              All Posts
+            </button>
+            {allTags.map((tag: string) => (
+              <button class="tag-filter" data-tag={tag}>
+                {tag}
+              </button>
+            ))}
+          </div>
+        </aside>
+
+        <section class="posts-grid">
+          {sortedPosts.map((post: CollectionEntry<'posts'>) => (
+            <div class="post-item" data-tags={JSON.stringify(post.data.tags || [])}>
+              <PostCard post={post} />
+            </div>
+          ))}
+        </section>
+      </div>
+
+      {sortedPosts.length === 0 && (
+        <p class="no-posts">No blog posts found.</p>
+      )}
+  </main>
+</Layout>
+
+<style>
+  .blog-header {
+    margin-bottom: var(--space-12);
+    text-align: center;
+  }
+
+  .blog-header h1 {
+    font-size: 3rem;
+    margin-bottom: var(--space-4);
+    color: var(--color-text);
+  }
+
+  .intro {
+    font-size: 1.25rem;
+    color: var(--color-text-secondary);
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .blog-content {
+    display: grid;
+    grid-template-columns: 250px 1fr;
+    gap: var(--space-8);
+    align-items: start;
+  }
+
+  .sidebar {
+    position: sticky;
+    top: var(--space-8);
+  }
+
+  .sidebar h3 {
+    font-size: 1.125rem;
+    margin-bottom: var(--space-4);
+    color: var(--color-text);
+  }
+
+  .tag-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+    max-height: 500px;
+    overflow-y: auto;
+    padding-right: var(--space-2);
+    background:
+      linear-gradient(var(--color-bg) 30%, transparent),
+      linear-gradient(transparent, var(--color-bg) 70%) 0 100%,
+      radial-gradient(farthest-side at 50% 0, rgba(0,0,0,.15), transparent),
+      radial-gradient(farthest-side at 50% 100%, rgba(0,0,0,.15), transparent) 0 100%;
+    background-repeat: no-repeat;
+    background-size: 100% 40px, 100% 40px, 100% 14px, 100% 14px;
+    background-attachment: local, local, scroll, scroll;
+  }
+
+  .tag-filter {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    padding: var(--space-2) var(--space-3);
+    border-radius: var(--radius);
+    text-align: left;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-size: 0.875rem;
+    color: var(--color-text);
+  }
+
+  .tag-filter:hover {
+    background: var(--color-primary);
+    color: white;
+    border-color: var(--color-primary);
+  }
+
+  .tag-filter.active {
+    background: var(--color-primary);
+    color: white;
+    border-color: var(--color-primary);
+    font-weight: 600;
+  }
+
+  .post-item {
+    transition: opacity 0.2s ease;
+  }
+
+  .post-item.hidden {
+    display: none;
+  }
+
+  .posts-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-6);
+  }
+
+  .no-posts {
+    text-align: center;
+    color: var(--color-text-secondary);
+    padding: var(--space-12);
+  }
+
+  @media (max-width: 768px) {
+    .blog-content {
+      grid-template-columns: 1fr;
+    }
+
+    .sidebar {
+      position: static;
+    }
+
+    .tag-list {
+      flex-direction: row;
+      flex-wrap: wrap;
+      max-height: 150px;
+      overflow-y: auto;
+      padding-bottom: var(--space-2);
+      background:
+        linear-gradient(var(--color-bg) 30%, transparent),
+        linear-gradient(transparent, var(--color-bg) 70%) 0 100%,
+        radial-gradient(farthest-side at 50% 0, rgba(0,0,0,.15), transparent),
+        radial-gradient(farthest-side at 50% 100%, rgba(0,0,0,.15), transparent) 0 100%;
+      background-repeat: no-repeat;
+      background-size: 100% 40px, 100% 40px, 100% 14px, 100% 14px;
+      background-attachment: local, local, scroll, scroll;
+    }
+
+    .blog-header h1 {
+      font-size: 2rem;
+    }
+  }
+</style>
+
+<script>
+  // Tag filtering functionality
+  document.addEventListener('DOMContentLoaded', () => {
+    const tagButtons = document.querySelectorAll('.tag-filter');
+    const postItems = document.querySelectorAll('.post-item');
+
+    // Set "All Posts" as active by default
+    const allButton = document.querySelector('[data-tag="all"]');
+    if (allButton) {
+      allButton.classList.add('active');
+    }
+
+    tagButtons.forEach((button) => {
+      button.addEventListener('click', () => {
+        const selectedTag = button.getAttribute('data-tag');
+
+        // Update active state on buttons
+        tagButtons.forEach((btn) => btn.classList.remove('active'));
+        button.classList.add('active');
+
+        // Filter posts
+        if (selectedTag === 'all') {
+          // Show all posts
+          postItems.forEach((post) => {
+            post.classList.remove('hidden');
+          });
+        } else {
+          // Show only posts with the selected tag
+          postItems.forEach((post) => {
+            const postTagsAttr = post.getAttribute('data-tags');
+            if (!postTagsAttr) {
+              post.classList.add('hidden');
+              return;
+            }
+
+            try {
+              const postTags = JSON.parse(postTagsAttr);
+              if (postTags.includes(selectedTag)) {
+                post.classList.remove('hidden');
+              } else {
+                post.classList.add('hidden');
+              }
+            } catch (e) {
+              post.classList.add('hidden');
+            }
+          });
+        }
+      });
+    });
+  });
+</script>
