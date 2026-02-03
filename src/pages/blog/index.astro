@@ -20,8 +20,7 @@ const allTags = [...new Set(sortedPosts.flatMap((post: CollectionEntry<'posts'>)
   title="Blog | Paige Niedringhaus"
   description="Technical blog posts about web development, React, Node.js, and frontend engineering."
 >
-  <main class="blog-page">
-    <div class="container">
+  <main class="page-container">
       <header class="blog-header">
         <h1>Blog</h1>
         <p class="intro">
@@ -56,21 +55,10 @@ const allTags = [...new Set(sortedPosts.flatMap((post: CollectionEntry<'posts'>)
       {sortedPosts.length === 0 && (
         <p class="no-posts">No blog posts found.</p>
       )}
-    </div>
   </main>
 </Layout>
 
 <style>
-  .blog-page {
-    padding: var(--space-8) var(--space-4);
-    min-height: 100vh;
-  }
-
-  .container {
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-
   .blog-header {
     margin-bottom: var(--space-12);
     text-align: center;

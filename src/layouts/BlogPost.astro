@@ -211,6 +211,22 @@ const description = subTitle || `Blog post: ${title}`;
     color: var(--color-text-secondary);
   }
 
+  .post-content :global(figure) {
+    margin: 2rem 0;
+  }
+
+  .post-content :global(figure img) {
+    margin: 0;
+  }
+
+  .post-content :global(figcaption) {
+    margin-top: var(--space-3);
+    font-size: 0.875rem;
+    font-style: italic;
+    color: var(--color-text-secondary);
+    text-align: center;
+  }
+
   .post-content :global(img) {
     max-width: 100%;
     height: auto;

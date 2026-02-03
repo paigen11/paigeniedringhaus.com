@@ -10,14 +10,11 @@ export default [
     ignores: [
       'dist/',
       '.astro/',
-      '.cache/', // Gatsby cache
       'node_modules/',
-      'src-gatsby/**/*', // Ignore legacy Gatsby code
       'public/',
       '*.config.js',
       '*.config.mjs',
-      'gatsby-*.js', // Gatsby config files
-      'src/data/**/*.js', // Ignore src/data JS files (will convert to TS later)
+      'src/data/**/*.js',
     ],
   },
 
@@ -49,7 +46,6 @@ export default [
   // Custom rules for all files
   {
     rules: {
-      // Turn off rules that are too strict for migration
       '@typescript-eslint/no-explicit-any': 'warn',
       '@typescript-eslint/no-unused-vars': 'warn',
       'no-unused-vars': 'warn',
