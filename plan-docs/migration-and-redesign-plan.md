@@ -1,6 +1,6 @@
 # Paigeniedringhaus.com Migration & Redesign Plan
 
-**Last Updated:** 2026-02-02 (Phase 1 migration complete, Netlify deployment successful, blog filtering implemented)
+**Last Updated:** 2026-02-06 (Phase 2 redesign in progress - light/dark mode complete)
 
 ## Overview
 
@@ -8,7 +8,35 @@ This document outlines the comprehensive plan to:
 1. **Migrate** from Gatsby to Astro.js
 2. **Redesign** the site structure and visual design
 
-**Current Status:** 🎉 **Phase 1 Migration 100% Complete** - Successfully deployed to Netlify, blog filtering working, ready to merge and begin Phase 2 redesign!
+**Current Status:** 🎨 **Phase 2 Redesign In Progress** - Design system and theming complete, navigation update next.
+
+**Phase 2 Progress:**
+- ✅ Design system CSS tokens complete in global.css:
+  - Typography scale (`--text-xs` through `--text-5xl`)
+  - Full spacing system (`--space-1` through `--space-24`)
+  - Layout constants (`--content-width`, `--content-width-narrow`, `--header-height`)
+  - Border radius scale (`--radius-sm` through `--radius-xl`)
+  - Shadow scale (`--shadow-sm` through `--shadow-xl`)
+- ✅ `.page-container` updated to use design tokens
+- ✅ Figcaption styling added to BlogPost.astro
+- ✅ CSS consolidation: homepage and blog pages now use `.page-container`
+- ✅ Cleanup: Removed unused SiteConfig.js, cleaned Gatsby refs from eslint.config.mjs
+- ✅ CLAUDE.md created for project documentation
+- ✅ Light/dark mode toggle complete:
+  - Theme toggle button in header with sun/moon icons
+  - Early-loading script prevents flash of wrong theme
+  - localStorage persistence for user preference
+  - Falls back to system preference (prefers-color-scheme)
+  - Smooth 200ms transitions for theme switching
+  - Logo visibility fixed in dark mode (filter invert)
+  - Dark mode colors adjusted for better accessibility (#818cf8 primary, #c4b5fd secondary)
+- ✅ Blog post URL slugs fixed:
+  - URLs now generate from post title (matching old Gatsby structure)
+  - Explicit frontmatter slugs are respected when present
+  - Created shared `src/utils/slug.ts` utility
+- ✅ Netlify prerender extension disabled (was causing unnecessary function invocations)
+- ✅ Added `output: 'static'` to astro.config.mjs for explicit static generation
+- 🔄 Next: Navigation structure update (Blog, Podcasts, About, Contact, Archive)
 
 **Progress Summary:**
 - ✅ Astro 5.17.1 installed with all core integrations
@@ -60,7 +88,7 @@ This document outlines the comprehensive plan to:
   - All tags displayed on blog post cards (no longer limited to 3)
   - Mobile/tablet responsive with 150px height limit and scroll shadows
   - Active state styling for selected tag filters
-- 🎯 **READY TO MERGE!** Phase 1 complete. Next: Begin Phase 2 redesign work on new branch.
+- ✅ **Phase 1 MERGED to master** on 2026-02-03. Phase 2 redesign now in progress on new branch.
 
 **Known Issues:**
 - CodeSandbox iframe auto-scrolls page on load (low priority - cosmetic only)
@@ -622,6 +650,8 @@ Organized into collapsible/accordion sections:
 - "Copy link" button
 
 ### 2.2 Design System
+
+**Status:** ✅ CSS custom properties complete in `src/styles/global.css`
 
 #### Color Palette
 
