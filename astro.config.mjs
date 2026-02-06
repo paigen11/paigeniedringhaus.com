@@ -10,6 +10,7 @@ import { remarkTransformImagePaths } from './remark-transform-image-paths.mjs';
 // https://astro.build/config
 export default defineConfig({
   site: 'https://www.paigeniedringhaus.com',
+  output: 'static',
   integrations: [
     mdx(),
     sitemap(),
