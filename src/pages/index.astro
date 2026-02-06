@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import { getCollection, type CollectionEntry } from 'astro:content';
+import { getPostSlug } from '../utils/slug';
 
 // Get latest 3 blog posts for homepage
 const allPosts = await getCollection('posts', ({ data }) => {
@@ -33,7 +34,7 @@ const latestPosts = allPosts
       <div class="posts-preview">
         {latestPosts.map((post: CollectionEntry<'posts'>) => (
           <article class="post-preview">
-            <a href={`/blog/${post.slug}`}>
+            <a href={`/blog/${getPostSlug(post.data.title, post.slug)}`}>
               <h4>{post.data.title}</h4>
               {post.data.subTitle && <p>{post.data.subTitle}</p>}
             </a>

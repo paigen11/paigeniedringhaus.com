@@ -1,5 +1,6 @@
 ---
 import type { CollectionEntry } from 'astro:content';
+import { getPostSlug } from '../utils/slug';
 
 interface Props {
   post: CollectionEntry<'posts'>;
@@ -7,6 +8,7 @@ interface Props {
 
 const { post } = Astro.props;
 const { title, subTitle, date, tags, category } = post.data;
+const slug = getPostSlug(title, post.slug);
 
 // Format date
 const formattedDate = new Date(date).toLocaleDateString('en-US', {
@@ -17,7 +19,7 @@ const formattedDate = new Date(date).toLocaleDateString('en-US', {
 ---
 
 <article class="post-card">
-  <a href={`/blog/${post.slug}`} class="post-link">
+  <a href={`/blog/${slug}`} class="post-link">
     {category && <span class="category-badge">{category}</span>}
 
     <h2 class="post-title">{title}</h2>

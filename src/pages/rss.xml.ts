@@ -3,10 +3,10 @@ import { getCollection, type CollectionEntry } from 'astro:content';
 import type { APIContext } from 'astro';
 import sanitizeHtml from 'sanitize-html';
 import MarkdownIt from 'markdown-it';
+import { getPostSlug } from '../utils/slug';
 
 const parser = new MarkdownIt();
 
-// Site config values - TODO: import from SiteConfig when converted to ES module
 const SITE_CONFIG = {
   siteRssTitle: 'Paige Niedringhaus RSS feed',
   siteDescription: 'Paige Niedringhaus is a full stack software engineer with a focus on frontend development.',
@@ -30,7 +30,7 @@ export async function GET(context: APIContext) {
       title: post.data.title,
       description: post.data.subTitle || post.data.title,
       pubDate: new Date(post.data.date),
-      link: `/blog/${post.slug}/`,
+      link: `/blog/${getPostSlug(post.data.title, post.slug)}/`,
       categories: post.data.tags || [],
       content: sanitizeHtml(parser.render(post.body), {
         allowedTags: sanitizeHtml.defaults.allowedTags.concat(['img'])
