@@ -1,0 +1,202 @@
+---
+import Layout from '../layouts/Layout.astro';
+import podcasts from '../data/podcasts.js';
+
+const cohostEpisodes = podcasts
+  .filter((p) => p.type === 'cohost')
+  .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+---
+
+<Layout title="Podcasts | Paige Niedringhaus" description="Paige's podcasts: Front-end Fire, PodRocket co-host, and React Round Up.">
+  <div class="page-container">
+    <h1>Podcasts</h1>
+
+    <section>
+      <p>
+        I love talking shop with other developers. Over the years I've had the chance to co-host several podcasts about frontend development, JavaScript, and the web ecosystem.
+      </p>
+    </section>
+
+    <section>
+      <h2>Front-end Fire</h2>
+      <div class="podcast-feature">
+        <img src="/thumbnails/front-end-fire.png" alt="Front-end Fire logo" class="podcast-logo" />
+        <div class="podcast-description">
+          <p>
+            In 2023, my friends
+            <a href="https://twitter.com/jherr" target="_blank" rel="noopener noreferrer">Jack Herrington</a>,
+            <a href="https://twitter.com/tjvantoll" target="_blank" rel="noopener noreferrer">TJ VanToll</a>,
+            and I created
+            <a href="https://front-end-fire.com/" target="_blank" rel="noopener noreferrer">Front-end Fire</a>
+            to bring developers the latest and greatest news in the frontend world.
+          </p>
+          <p>
+            We cover new frameworks, libraries, browser updates, and everything else happening in web development. New episodes drop every Monday.
+          </p>
+          <a href="https://front-end-fire.com/" target="_blank" rel="noopener noreferrer" class="podcast-cta">
+            Listen to Front-end Fire &rarr;
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>PodRocket</h2>
+      <div class="podcast-feature">
+        <img src="/thumbnails/podRocket.png" alt="PodRocket logo" class="podcast-logo" />
+        <div class="podcast-description">
+          <p>
+            In 2023 I joined LogRocket's
+            <a href="https://podrocket.logrocket.com/hosts/paige-niedringhaus" target="_blank" rel="noopener noreferrer">PodRocket</a>
+            as a co-host. We talk to experts in the web dev community about the latest tools, frameworks, and trends.
+          </p>
+          <a href="https://podrocket.logrocket.com/hosts/paige-niedringhaus" target="_blank" rel="noopener noreferrer" class="podcast-cta">
+            See all PodRocket episodes &rarr;
+          </a>
+        </div>
+      </div>
+
+      <h3>Recent Episodes</h3>
+      <ul class="episode-list">
+        {cohostEpisodes.map((episode) => (
+          <li class="episode-item">
+            <img src={episode.img} alt="PodRocket logo" class="episode-logo" />
+            <div class="episode-content">
+              <a href={episode.path} target="_blank" rel="noopener noreferrer" class="episode-title">
+                {episode.title}
+              </a>
+              <p class="episode-date">{episode.date}</p>
+            </div>
+          </li>
+        ))}
+      </ul>
+    </section>
+
+    <section>
+      <h2>React Round Up</h2>
+      <div class="podcast-feature">
+        <img src="/thumbnails/reactRoundUp.png" alt="React Round Up logo" class="podcast-logo" />
+        <div class="podcast-description">
+          <p>
+            From 2020 to 2023, I co-hosted
+            <a href="https://topenddevs.com/podcasts/react-round-up/" target="_blank" rel="noopener noreferrer">React Round Up</a>
+            where we discussed all things React with guests from across the community.
+          </p>
+          <a href="https://topenddevs.com/podcasts/react-round-up/" target="_blank" rel="noopener noreferrer" class="podcast-cta">
+            Browse React Round Up episodes &rarr;
+          </a>
+        </div>
+      </div>
+    </section>
+  </div>
+</Layout>
+
+<style>
+  .podcast-feature {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-6);
+    margin-bottom: var(--space-6);
+  }
+
+  .podcast-logo {
+    width: 120px;
+    height: 120px;
+    object-fit: contain;
+    flex-shrink: 0;
+    border-radius: var(--radius-lg);
+  }
+
+  .podcast-description {
+    flex: 1;
+
+    & p {
+      font-size: var(--text-lg);
+      line-height: 1.8;
+      margin-bottom: var(--space-4);
+      color: var(--color-text);
+    }
+  }
+
+  .podcast-cta {
+    display: inline-block;
+    font-weight: 600;
+    font-size: var(--text-base);
+    color: var(--color-primary);
+    text-decoration: none;
+    transition: color 0.2s;
+
+    &:hover {
+      color: var(--color-accent);
+    }
+  }
+
+  .episode-list {
+    list-style: none;
+    padding: 0;
+  }
+
+  .episode-item {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-4);
+    padding: var(--space-4);
+    border-bottom: 1px solid var(--color-border);
+
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+
+  .episode-logo {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+    flex-shrink: 0;
+  }
+
+  .episode-content {
+    flex: 1;
+  }
+
+  .episode-title {
+    font-size: var(--text-lg);
+    font-weight: 600;
+    color: var(--color-primary);
+    text-decoration: underline;
+    display: block;
+    margin-bottom: var(--space-2);
+    transition: color 0.2s;
+
+    &:hover {
+      color: var(--color-accent);
+    }
+  }
+
+  .episode-date {
+    font-size: var(--text-sm);
+    color: var(--color-text-secondary);
+  }
+
+  @media (max-width: 768px) {
+    .podcast-feature {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .podcast-logo {
+      width: 100px;
+      height: 100px;
+    }
+
+    .episode-item {
+      flex-direction: column;
+    }
+
+    .episode-logo {
+      width: 50px;
+      height: 50px;
+    }
+  }
+</style>

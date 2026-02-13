@@ -1,6 +1,6 @@
 # Paigeniedringhaus.com Migration & Redesign Plan
 
-**Last Updated:** 2026-02-06 (Phase 2 redesign in progress - light/dark mode complete)
+**Last Updated:** 2026-02-13 (Phase 2 redesign in progress - navigation restructure complete)
 
 ## Overview
 
@@ -8,7 +8,7 @@ This document outlines the comprehensive plan to:
 1. **Migrate** from Gatsby to Astro.js
 2. **Redesign** the site structure and visual design
 
-**Current Status:** 🎨 **Phase 2 Redesign In Progress** - Design system and theming complete, navigation update next.
+**Current Status:** 🎨 **Phase 2 Redesign In Progress** - Design system, theming, and navigation complete. Next: Homepage redesign + content updates.
 
 **Phase 2 Progress:**
 - ✅ Design system CSS tokens complete in global.css:
@@ -36,7 +36,18 @@ This document outlines the comprehensive plan to:
   - Created shared `src/utils/slug.ts` utility
 - ✅ Netlify prerender extension disabled (was causing unnecessary function invocations)
 - ✅ Added `output: 'static'` to astro.config.mjs for explicit static generation
-- 🔄 Next: Navigation structure update (Blog, Podcasts, About, Contact, Archive)
+- ✅ Navigation restructure complete:
+  - Nav updated to [Blog, Podcasts, About, Contact, Archive]
+  - Added `type` field (cohost/guest) to `src/data/podcasts.js` for filtering
+  - Created `src/pages/podcasts.astro` (Front-end Fire, PodRocket co-host episodes, React Round Up)
+  - Created `src/pages/archive.astro` (collapsible sections: Courses, Talks & Videos, Guest Podcast Appearances, Published Articles)
+  - Deleted `courses.astro` and `media.astro`
+  - Added 301 redirects in netlify.toml: `/courses` → `/archive`, `/media` → `/archive`
+  - Updated internal link in `about.astro`: `/media` → `/archive`
+  - ButterCMS logo dark mode fix (filter invert)
+  - Course videos deduplicated (only in Courses section, not Talks)
+  - Published articles ordered newest-to-oldest by company (Blues, newline, LogRocket, ButterCMS)
+- 🔄 Next: Homepage redesign + About page content updates
 
 **Progress Summary:**
 - ✅ Astro 5.17.1 installed with all core integrations
@@ -651,7 +662,7 @@ Organized into collapsible/accordion sections:
 
 ### 2.2 Design System
 
-**Status:** ✅ CSS custom properties complete in `src/styles/global.css`
+**Status:** ✅ Complete — CSS custom properties, dark mode colors, and design tokens all in `src/styles/global.css`
 
 #### Color Palette
 
@@ -668,9 +679,9 @@ Organized into collapsible/accordion sections:
 - **Border:** Light gray `#e5e7eb`
 
 **Dark Mode:**
-- **Primary:** Lighter indigo `#6366f1`
+- **Primary:** Lighter indigo `#818cf8` (brightened from #6366f1 for WCAG contrast)
 - **Accent:** Bright pink `#f472b6`
-- **Secondary:** Light purple `#a78bfa`
+- **Secondary:** Light purple `#c4b5fd` (brightened from #a78bfa for WCAG contrast)
 - **Background:** Rich navy `#0f172a`
 - **Surface:** Dark slate `#1e293b`
 - **Text Primary:** Off-white `#f1f5f9`
@@ -692,9 +703,9 @@ Organized into collapsible/accordion sections:
 }
 
 [data-theme="dark"] {
-  --color-primary: #6366f1;
+  --color-primary: #818cf8;
   --color-accent: #f472b6;
-  --color-secondary: #a78bfa;
+  --color-secondary: #c4b5fd;
   --color-bg: #0f172a;
   --color-surface: #1e293b;
   --color-text: #f1f5f9;
@@ -835,11 +846,11 @@ States:
 #### Light/Dark Mode Toggle
 
 **Implementation:**
-- [ ] Add theme toggle button to header (sun/moon icon)
-- [ ] Use `localStorage` to persist theme preference
-- [ ] Respect `prefers-color-scheme` media query on first visit
-- [ ] Smooth transition between themes (200ms)
-- [ ] Update all colors using CSS custom properties
+- [x] ✅ Add theme toggle button to header (sun/moon icon)
+- [x] ✅ Use `localStorage` to persist theme preference
+- [x] ✅ Respect `prefers-color-scheme` media query on first visit
+- [x] ✅ Smooth transition between themes (200ms)
+- [x] ✅ Update all colors using CSS custom properties
 
 **Code snippet:**
 ```javascript
@@ -1065,20 +1076,16 @@ button:active {
 - [ ] Update intro text to emphasize podcasting + blogging
 
 #### Create Podcasts Page
-- [ ] Add Front-end Fire section with:
-  - Podcast description and branding
-  - Links to https://front-end-fire.com/
-  - Latest 5 episodes (manually curated or fetched from RSS?)
-  - Embedded player for latest episode
-- [ ] Add PodRocket section with episodes from `data/podcasts.js` (filter for PodRocket)
-- [ ] Add React Round Up historical section (collapsed by default)
+- [x] ✅ Add Front-end Fire section with podcast description and link to https://front-end-fire.com/
+- [x] ✅ Add PodRocket section with co-hosted episodes filtered from `data/podcasts.js` (type: 'cohost')
+- [x] ✅ Add React Round Up historical section with external link
 
 #### Create Archive Page
-- [ ] Move course content from `/courses` page
-- [ ] Move talks/videos from `/media` page
-- [ ] Move guest podcast appearances (excluding PodRocket co-host episodes)
-- [ ] Move company articles from `/media` page
-- [ ] Add contextual notes (e.g., "Course from 2021, some content may be outdated")
+- [x] ✅ Courses section with newline course card + YouTube video grid (collapsible)
+- [x] ✅ Talks & Videos section from `speaking.js`, excluding course videos (collapsible)
+- [x] ✅ Guest Podcast Appearances section filtered from `podcasts.js` (type: 'guest', collapsible)
+- [x] ✅ Published Articles section grouped by company (Blues, newline, LogRocket, ButterCMS), newest-first (collapsible)
+- [x] ✅ 301 redirects added: `/courses` → `/archive`, `/media` → `/archive`
 
 ### 2.7 Design Inspiration Reference
 
