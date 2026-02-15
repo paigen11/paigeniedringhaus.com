@@ -1,6 +1,6 @@
 # Paigeniedringhaus.com Migration & Redesign Plan
 
-**Last Updated:** 2026-02-15 (Phase 2 redesign in progress - homepage redesign complete)
+**Last Updated:** 2026-02-15 (Phase 2 redesign in progress - homepage + about page complete)
 
 ## Overview
 
@@ -8,7 +8,7 @@ This document outlines the comprehensive plan to:
 1. **Migrate** from Gatsby to Astro.js
 2. **Redesign** the site structure and visual design
 
-**Current Status:** 🎨 **Phase 2 Redesign In Progress** - Design system, theming, navigation, and homepage complete. Next: About page content updates + blog post enhancements.
+**Current Status:** 🎨 **Phase 2 Redesign In Progress** - Design system, theming, navigation, homepage, and about page complete. Next: Blog post enhancements (featured images, tags, reading time, table of contents).
 
 **Phase 2 Progress:**
 - ✅ Design system CSS tokens complete in global.css:
@@ -55,7 +55,10 @@ This document outlines the comprehensive plan to:
   - Removed migration notice banner
   - `--color-tag-bg` CSS variable added to design system (light: `#8b5cf6`, dark: `#5b21b6`) for readable tag badges
   - Removed `min-height: 100vh` from `.page-container` (was causing excess spacing)
-- 🔄 Next: About page content updates + blog post enhancements
+- ✅ About page updated:
+  - Front-end Fire and PodRocket co-hosting added to bio
+  - AllSpice (current) and Blues (previous) roles already present
+- 🔄 Next: Blog post enhancements (featured images, tags, reading time, table of contents)
 
 **Progress Summary:**
 - ✅ Astro 5.17.1 installed with all core integrations
@@ -1072,11 +1075,9 @@ button:active {
   - Verify all external links still work
 
 #### Update About Page
-- [ ] Add new role: "Lead Software Engineer @ AllSpice (2026 - Present)"
-- [ ] Update Blues role: "Staff Software Engineer @ Blues (2021 - 2026, 4.5 years)"
-- [ ] Highlight Front-end Fire podcast (3rd year)
-- [ ] Mention PodRocket co-host role
-- [ ] Update bio to reflect current focus
+- [x] ✅ AllSpice current role present
+- [x] ✅ Blues previous role present
+- [x] ✅ Added Front-end Fire and PodRocket co-hosting paragraph
 
 #### Update Homepage
 - [x] ✅ Hero section: "Full-Stack Software Engineer" title (no company), photo, tagline, social links
