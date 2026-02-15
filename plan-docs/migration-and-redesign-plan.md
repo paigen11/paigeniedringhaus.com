@@ -1,6 +1,6 @@
 # Paigeniedringhaus.com Migration & Redesign Plan
 
-**Last Updated:** 2026-02-13 (Phase 2 redesign in progress - navigation restructure complete)
+**Last Updated:** 2026-02-15 (Phase 2 redesign in progress - homepage redesign complete)
 
 ## Overview
 
@@ -8,7 +8,7 @@ This document outlines the comprehensive plan to:
 1. **Migrate** from Gatsby to Astro.js
 2. **Redesign** the site structure and visual design
 
-**Current Status:** 🎨 **Phase 2 Redesign In Progress** - Design system, theming, and navigation complete. Next: Homepage redesign + content updates.
+**Current Status:** 🎨 **Phase 2 Redesign In Progress** - Design system, theming, navigation, and homepage complete. Next: About page content updates + blog post enhancements.
 
 **Phase 2 Progress:**
 - ✅ Design system CSS tokens complete in global.css:
@@ -47,7 +47,15 @@ This document outlines the comprehensive plan to:
   - ButterCMS logo dark mode fix (filter invert)
   - Course videos deduplicated (only in Courses section, not Talks)
   - Published articles ordered newest-to-oldest by company (Blues, newline, LogRocket, ButterCMS)
-- 🔄 Next: Homepage redesign + About page content updates
+- ✅ Homepage redesign complete:
+  - Hero section with photo, title ("Full-Stack Software Engineer"), tagline, social icon links
+  - Featured cards: latest blog post (with hero image thumbnail) + Front-end Fire (horizontal logo)
+  - 6 recent posts grid using PostCard component
+  - Newsletter signup section (Subscribe component)
+  - Removed migration notice banner
+  - `--color-tag-bg` CSS variable added to design system (light: `#8b5cf6`, dark: `#5b21b6`) for readable tag badges
+  - Removed `min-height: 100vh` from `.page-container` (was causing excess spacing)
+- 🔄 Next: About page content updates + blog post enhancements
 
 **Progress Summary:**
 - ✅ Astro 5.17.1 installed with all core integrations
@@ -1071,9 +1079,10 @@ button:active {
 - [ ] Update bio to reflect current focus
 
 #### Update Homepage
-- [ ] Hero section: New job title and company
-- [ ] Featured content: Latest blog + Front-end Fire episode
-- [ ] Update intro text to emphasize podcasting + blogging
+- [x] ✅ Hero section: "Full-Stack Software Engineer" title (no company), photo, tagline, social links
+- [x] ✅ Featured content: Latest blog post (with thumbnail) + Front-end Fire (horizontal logo card)
+- [x] ✅ Recent posts grid: 6 posts using PostCard component
+- [x] ✅ Newsletter signup at bottom
 
 #### Create Podcasts Page
 - [x] ✅ Add Front-end Fire section with podcast description and link to https://front-end-fire.com/
@@ -1399,6 +1408,18 @@ src/
 ---
 
 ## Future Improvements & Technical Debt
+
+### Improve Homepage Social Icons
+
+**Priority:** Medium
+**Current:** Social links in hero use emoji/Unicode symbols (⚙, 𝕏, M, ⌨, ✉, 📡) which look disjointed and inconsistent.
+**Recommended:** Replace with a consistent inline SVG icon set. Options:
+- Hand-rolled inline SVGs for each platform (GitHub, X, Medium, DEV, Email, RSS)
+- Use a small icon library that supports tree-shaking (e.g., Iconoir, Heroicons, or Lucide — no FontAwesome per CLAUDE.md)
+
+**Files affected:** `src/pages/index.astro` (socialLinks array + icon rendering)
+
+---
 
 ### Replace Moment.js with Modern Date Handling
 
