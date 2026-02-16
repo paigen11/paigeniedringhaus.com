@@ -64,14 +64,14 @@ import Icon from '../components/Icon.astro';
   }
 
   .page-container h2 {
-    font-size: 1.75rem;
+    font-size: var(--text-3xl);
     display: flex;
     align-items: center;
     gap: var(--space-3);
 
     &.no-underline {
       font-weight: 500;
-      font-size: 1.5rem;
+      font-size: var(--text-2xl);
       line-height: 1.6;
     }
   }
@@ -88,10 +88,10 @@ import Icon from '../components/Icon.astro';
 
   @media (max-width: 768px) {
     .page-container h2 {
-      font-size: 1.5rem;
+      font-size: var(--text-2xl);
 
       &.no-underline {
-        font-size: 1.25rem;
+        font-size: var(--text-xl);
       }
     }
   }

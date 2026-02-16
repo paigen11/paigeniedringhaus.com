@@ -1,6 +1,6 @@
 # Paigeniedringhaus.com Migration & Redesign Plan
 
-**Last Updated:** 2026-02-16 (Phase 2 redesign in progress - blog listing, post cards, and copy updates complete)
+**Last Updated:** 2026-02-16 (Phase 2 redesign in progress - social icon refresh, CSS audit, and consolidation complete)
 
 ## Overview
 
@@ -8,7 +8,7 @@ This document outlines the comprehensive plan to:
 1. **Migrate** from Gatsby to Astro.js
 2. **Redesign** the site structure and visual design
 
-**Current Status:** 🎨 **Phase 2 Redesign In Progress** - Design system, theming, navigation, homepage, about page, blog post enhancements, blog listing overhaul, and sitewide copy updates complete. Next: social icon refresh + CSS consolidation audit.
+**Current Status:** 🎨 **Phase 2 Redesign In Progress** - Design system, theming, navigation, homepage, about page, blog post enhancements, blog listing overhaul, sitewide copy updates, social icon refresh, and CSS consolidation audit all complete. Next: Replace Moment.js with native date handling.
 
 **Phase 2 Progress:**
 - ✅ Design system CSS tokens complete in global.css:
@@ -89,7 +89,23 @@ This document outlines the comprehensive plan to:
   - Sticky ToC sidebar (H2/H3, desktop only, IntersectionObserver scroll highlight)
   - `scroll-margin-top` on headings to clear sticky header
   - Featured image removed from layout (renders naturally from post content, no duplicate)
-- 🔄 Next: Social icon refresh + CSS consolidation audit
+- ✅ Social icon refresh complete:
+  - Replaced all emoji/Unicode symbols (⚙, 𝕏, M, ⌨, ✉, 📡) with inline SVGs
+  - Created `src/components/Icon.astro` — single source of truth for all 6 icon paths (github, x, medium, dev, email, rss)
+  - Created `src/components/SocialIcons.astro` — renders icon row with optional labels; accepts `showLabels` prop
+  - `index.astro` hero uses `<SocialIcons />` (icons only)
+  - `Footer.astro` uses `<SocialIcons showLabels />` (icons + labels)
+  - `contact.astro` section headings use `<Icon name="..." size="1.4em" />` directly
+- ✅ CSS consolidation audit complete:
+  - Audited all 14 .astro files for unused rules, hardcoded values, and inconsistencies
+  - Removed `.featured-podcast-logo` (only unused rule found — leftover from earlier podcast card design)
+  - `Header.astro`: stripped 11 stale fallback hex values from `var()` calls; replaced hardcoded `1rem 2rem`, `0.75rem`, `2rem` gap, `0.5rem`, `4px`, `1.125rem`, `1rem` font-size, `0 2px 8px rgba...` with design tokens
+  - `Footer.astro`: replaced hardcoded `4rem`, `2rem 0`, `0 2rem`, `1.5rem` gap, `0.875rem` with `var(--space-*)` and `var(--text-sm)`
+  - `PostCard.astro`: standardized category badge to match `BlogPost.astro` (padding `var(--space-1) var(--space-3)`, font `var(--text-xs)`); post-title `1.125rem` → `var(--text-lg)`
+  - `BlogPost.astro`: replaced 15+ hardcoded px/rem values in post content styles with tokens (margins for h2/h3/h4/p/li/pre/blockquote/figure/img, font sizes for subtitle/meta/content/figcaption/pre code, responsive block)
+  - `about.astro` + `contact.astro`: h2 override `1.75rem` → `var(--text-3xl)`; responsive sizes → tokens
+  - `--space-5` confirmed present in global.css (audit false positive)
+- 🔄 Next: Replace Moment.js with native date handling
 
 **Progress Summary:**
 - ✅ Astro 5.17.1 installed with all core integrations
@@ -1441,15 +1457,12 @@ src/
 
 ## Future Improvements & Technical Debt
 
-### Improve Homepage Social Icons
+### ✅ Improve Homepage Social Icons
 
-**Priority:** Medium
-**Current:** Social links in hero use emoji/Unicode symbols (⚙, 𝕏, M, ⌨, ✉, 📡) which look disjointed and inconsistent.
-**Recommended:** Replace with a consistent inline SVG icon set. Options:
-- Hand-rolled inline SVGs for each platform (GitHub, X, Medium, DEV, Email, RSS)
-- Use a small icon library that supports tree-shaking (e.g., Iconoir, Heroicons, or Lucide — no FontAwesome per CLAUDE.md)
-
-**Files affected:** `src/pages/index.astro` (socialLinks array + icon rendering)
+**Completed 2026-02-16**
+- `src/components/Icon.astro` — SVG paths for all 6 icons, `name` + `size` props
+- `src/components/SocialIcons.astro` — renders full icon row, `showLabels` prop
+- Used in `index.astro` (hero), `Footer.astro` (with labels), `contact.astro` (heading icons)
 
 ---
 
@@ -1520,25 +1533,14 @@ These improvements should be implemented after the initial Astro migration is me
 
 #### 2. CSS Consolidation
 
-**Priority:** Medium
+**Priority:** Medium — ✅ **Completed 2026-02-16**
 
-- [ ] **Audit all pages for duplicate CSS**
-  - Review scoped styles in all `.astro` components
-  - Identify repeated patterns (cards, buttons, spacing)
-  - Document common styles that should be extracted
-
-- [ ] **Extract common styles to shared files**
-  - Move duplicate component styles to `src/styles/components.css`
-  - Create utility classes for common patterns (if needed)
-  - Ensure design token usage is consistent (CSS custom properties)
-
-- [ ] **Ensure consistent spacing, colors, typography across pages**
-  - Verify all pages use spacing variables (`--space-*`)
-  - Verify all pages use color variables (`--color-*`)
-  - Check font sizes, weights, and line heights are consistent
-  - Test light/dark mode consistency across all pages
-
-**Why:** Reduces CSS duplication, improves maintainability, ensures visual consistency, and reduces bundle size.
+- [x] ✅ Audited all 14 .astro files for unused rules, hardcoded values, and token inconsistencies
+- [x] ✅ Removed only unused rule found (`.featured-podcast-logo` in index.astro)
+- [x] ✅ Replaced 30+ hardcoded px/rem values with design tokens across Header, Footer, PostCard, BlogPost, about, contact
+- [x] ✅ Standardized category badge styling (was subtly inconsistent between BlogPost and PostCard)
+- [x] ✅ Stripped 11 stale fallback hex colors from Header.astro `var()` calls
+- [x] ✅ Decision: did NOT extract utility classes (premature abstraction for a personal site per project principles)
 
 #### 3. Enhanced Search Functionality
 

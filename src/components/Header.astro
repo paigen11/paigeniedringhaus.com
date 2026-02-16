@@ -125,14 +125,14 @@ const navLinks = [
     position: sticky;
     top: 0;
     z-index: 1000;
-    background-color: var(--color-surface, #ffffff);
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    background-color: var(--color-surface);
+    box-shadow: var(--shadow);
   }
 
   .header-content {
-    max-width: 1200px;
+    max-width: var(--content-width);
     margin: 0 auto;
-    padding: 1rem 2rem;
+    padding: var(--space-4) var(--space-8);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -146,16 +146,16 @@ const navLinks = [
   .logo-link {
     display: flex;
     align-items: center;
-    gap: 0.75rem;
+    gap: var(--space-3);
     text-decoration: none;
-    color: var(--color-text, #2d3748);
+    color: var(--color-text);
     font-weight: 600;
-    font-size: 1.125rem;
+    font-size: var(--text-lg);
     transition: color 0.2s;
   }
 
   .logo-link:hover {
-    color: var(--color-primary, #3730a3);
+    color: var(--color-primary);
   }
 
   .logo-img {
@@ -181,7 +181,7 @@ const navLinks = [
   /* Desktop Navigation */
   .nav-desktop {
     display: none;
-    gap: 2rem;
+    gap: var(--space-8);
   }
 
   @media (min-width: 768px) {
@@ -192,10 +192,10 @@ const navLinks = [
 
   .nav-link {
     text-decoration: none;
-    color: var(--color-text, #2d3748);
+    color: var(--color-text);
     font-weight: 500;
-    font-size: 1rem;
-    padding: 0.5rem 0;
+    font-size: var(--text-base);
+    padding: var(--space-2) 0;
     position: relative;
     transition: color 0.2s;
   }
@@ -207,13 +207,13 @@ const navLinks = [
     left: 0;
     width: 0;
     height: 2px;
-    background-color: var(--color-primary, #3730a3);
+    background-color: var(--color-primary);
     transition: width 0.3s ease;
   }
 
   .nav-link:hover,
   .nav-link.active {
-    color: var(--color-primary, #3730a3);
+    color: var(--color-primary);
   }
 
   .nav-link:hover::after,
@@ -225,11 +225,11 @@ const navLinks = [
   .mobile-menu-button {
     display: flex;
     flex-direction: column;
-    gap: 4px;
+    gap: var(--space-1);
     background: none;
     border: none;
     cursor: pointer;
-    padding: 0.5rem;
+    padding: var(--space-2);
     z-index: 1001;
   }
 
@@ -243,7 +243,7 @@ const navLinks = [
     display: block;
     width: 24px;
     height: 3px;
-    background-color: var(--color-text, #2d3748);
+    background-color: var(--color-text);
     transition: all 0.3s ease;
     border-radius: 2px;
   }
@@ -266,8 +266,8 @@ const navLinks = [
     top: 80px;
     left: 0;
     right: 0;
-    background-color: var(--color-surface, #ffffff);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    background-color: var(--color-surface);
+    box-shadow: var(--shadow-lg);
     display: flex;
     flex-direction: column;
     max-height: 0;
@@ -287,12 +287,12 @@ const navLinks = [
 
   .mobile-nav-link {
     text-decoration: none;
-    color: var(--color-text, #2d3748);
+    color: var(--color-text);
     font-weight: 500;
-    font-size: 1.125rem;
-    padding: 1rem 2rem;
+    font-size: var(--text-lg);
+    padding: var(--space-4) var(--space-8);
     transition: background-color 0.2s, color 0.2s;
-    border-bottom: 1px solid var(--color-border, #e2e8f0);
+    border-bottom: 1px solid var(--color-border);
   }
 
   .mobile-nav-link:last-child {
@@ -301,8 +301,8 @@ const navLinks = [
 
   .mobile-nav-link:hover,
   .mobile-nav-link.active {
-    background-color: var(--color-bg, #f7fafc);
-    color: var(--color-primary, #3730a3);
+    background-color: var(--color-bg);
+    color: var(--color-primary);
   }
 
   /* Header actions (theme toggle + mobile menu) */
