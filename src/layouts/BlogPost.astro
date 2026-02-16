@@ -8,7 +8,7 @@ interface Props {
 
 const { post } = Astro.props;
 const { title, subTitle, date, tags, category } = post.data;
-const { Content } = await post.render();
+const { Content, headings } = await post.render();
 
 const formattedDate = new Date(date).toLocaleDateString('en-US', {
   year: 'numeric',
@@ -17,55 +17,136 @@ const formattedDate = new Date(date).toLocaleDateString('en-US', {
 });
 
 const description = subTitle || `Blog post: ${title}`;
+
+// Reading time
+const wordCount = post.body
+  .replace(/```[\s\S]*?```/g, '')
+  .replace(/`[^`]*`/g, '')
+  .replace(/<[^>]*>/g, '')
+  .replace(/[#*_[\]()]/g, '')
+  .split(/\s+/)
+  .filter(Boolean).length;
+const readingTime = Math.max(1, Math.ceil(wordCount / 200));
+
+// ToC: H2 and H3 only
+const tocHeadings = headings.filter((h) => h.depth === 2 || h.depth === 3);
 ---
 
 <Layout title={`${title} | Paige Niedringhaus`} description={description}>
   <article class="blog-post">
-    <div class="container">
-      <header class="post-header">
-        {category && <span class="category-badge">{category}</span>}
 
-        <h1 class="post-title">{title}</h1>
+    <div class="post-layout">
 
-        {subTitle && <p class="post-subtitle">{subTitle}</p>}
+      <div class="container">
+        <header class="post-header">
+          {category && <span class="category-badge">{category}</span>}
 
-        <div class="post-meta">
-          <time datetime={date.toISOString()}>{formattedDate}</time>
-          {tags && tags.length > 0 && (
-            <>
-              <span class="separator">•</span>
-              <div class="tags">
-                {tags.map((tag: string) => (
-                  <span class="tag">{tag}</span>
-                ))}
-              </div>
-            </>
-          )}
+          <h1 class="post-title">{title}</h1>
+
+          {subTitle && <p class="post-subtitle">{subTitle}</p>}
+
+          <div class="post-meta">
+            <time datetime={date.toISOString()}>{formattedDate}</time>
+            <span class="separator">•</span>
+            <span>{readingTime} min read</span>
+            {tags && tags.length > 0 && (
+              <>
+                <span class="separator">•</span>
+                <div class="tags">
+                  {tags.map((tag: string) => (
+                    <a href={`/blog?tag=${encodeURIComponent(tag)}`} class="tag">{tag}</a>
+                  ))}
+                </div>
+              </>
+            )}
+          </div>
+        </header>
+
+        <div class="post-content">
+          <Content />
         </div>
-      </header>
 
-      <div class="post-content">
-        <Content />
+        <footer class="post-footer">
+          <a href="/blog" class="back-link">← Back to all posts</a>
+        </footer>
       </div>
 
-      <footer class="post-footer">
-        <a href="/blog" class="back-link">← Back to all posts</a>
-      </footer>
+      {tocHeadings.length > 0 && (
+        <aside class="toc-sidebar">
+          <nav class="toc" id="toc">
+            <p class="toc-title">On this page</p>
+            <ul class="toc-list">
+              {tocHeadings.map((h) => (
+                <li class={`toc-item toc-depth-${h.depth}`}>
+                  <a href={`#${h.slug}`} class="toc-link" data-heading={h.slug}>
+                    {h.text}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </nav>
+        </aside>
+      )}
+
     </div>
   </article>
 </Layout>
 
+<script>
+  // Highlight active ToC link on scroll
+  const links = document.querySelectorAll<HTMLAnchorElement>('.toc-link');
+  if (links.length > 0) {
+    const headingEls = Array.from(links)
+      .map((l) => document.getElementById(l.dataset.heading ?? ''))
+      .filter(Boolean) as HTMLElement[];
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          if (entry.isIntersecting) {
+            links.forEach((l) => l.classList.remove('active'));
+            const active = document.querySelector<HTMLAnchorElement>(
+              `.toc-link[data-heading="${entry.target.id}"]`
+            );
+            active?.classList.add('active');
+          }
+        }
+      },
+      { rootMargin: '0px 0px -70% 0px' }
+    );
+
+    headingEls.forEach((el) => observer.observe(el));
+  }
+</script>
+
 <style>
   .blog-post {
-    padding: var(--space-8) var(--space-4);
-    min-height: 100vh;
+    padding-bottom: var(--space-16);
   }
 
-  .container {
-    max-width: 720px;
+  /* ── Two-column layout ────────────────── */
+  .post-layout {
+    max-width: 1080px;
     margin: 0 auto;
+    padding: var(--space-8) var(--space-4) 0;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-10);
+    align-items: start;
   }
 
+  @media (min-width: 1080px) {
+    .post-layout {
+      grid-template-columns: minmax(0, 720px) 240px;
+    }
+  }
+
+  /* ── Post container ───────────────────── */
+  .container {
+    min-width: 0;
+  }
+
+  /* ── Header ───────────────────────────── */
   .post-header {
     margin-bottom: var(--space-12);
     padding-bottom: var(--space-8);
@@ -126,15 +207,27 @@ const description = subTitle || `Blog post: ${title}`;
     border-radius: var(--radius-sm);
     font-size: 0.75rem;
     font-weight: 500;
+    text-decoration: none;
+    transition: opacity 0.15s;
   }
 
+  .tag:hover {
+    opacity: 0.8;
+  }
+
+  /* ── Post content ─────────────────────── */
   .post-content {
     font-size: 1.125rem;
     line-height: 1.8;
     color: var(--color-text);
   }
 
-  /* Markdown content styles */
+  .post-content :global(h2),
+  .post-content :global(h3),
+  .post-content :global(h4) {
+    scroll-margin-top: calc(var(--header-height) + var(--space-6));
+  }
+
   .post-content :global(h2) {
     font-size: 2rem;
     font-weight: 700;
@@ -234,6 +327,7 @@ const description = subTitle || `Blog post: ${title}`;
     margin: 2rem 0;
   }
 
+  /* ── Footer ───────────────────────────── */
   .post-footer {
     margin-top: var(--space-12);
     padding-top: var(--space-8);
@@ -251,6 +345,69 @@ const description = subTitle || `Blog post: ${title}`;
     color: var(--color-accent);
   }
 
+  /* ── Table of contents ────────────────── */
+  .toc-sidebar {
+    display: none;
+  }
+
+  @media (min-width: 1080px) {
+    .toc-sidebar {
+      display: block;
+      position: sticky;
+      top: calc(var(--header-height) + var(--space-8));
+      max-height: calc(100vh - var(--header-height) - var(--space-16));
+      overflow-y: auto;
+    }
+  }
+
+  .toc {
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: var(--space-4);
+  }
+
+  .toc-title {
+    font-size: var(--text-xs);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--color-text-secondary);
+    margin-bottom: var(--space-3);
+  }
+
+  .toc-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .toc-item {
+    margin-bottom: var(--space-2);
+  }
+
+  .toc-depth-3 {
+    padding-left: var(--space-3);
+  }
+
+  .toc-link {
+    font-size: var(--text-sm);
+    color: var(--color-text-secondary);
+    text-decoration: none;
+    line-height: 1.4;
+    display: block;
+    transition: color 0.15s;
+  }
+
+  .toc-link:hover,
+  .toc-link.active {
+    color: var(--color-primary);
+  }
+
+  .toc-link.active {
+    font-weight: 600;
+  }
+
+  /* ── Responsive ───────────────────────── */
   @media (max-width: 768px) {
     .post-title {
       font-size: 2rem;

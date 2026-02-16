@@ -1,19 +1,14 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import podcasts from '../data/podcasts.js';
-
-const cohostEpisodes = podcasts
-  .filter((p) => p.type === 'cohost')
-  .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 ---
 
-<Layout title="Podcasts | Paige Niedringhaus" description="Paige's podcasts: Front-end Fire, PodRocket co-host, and React Round Up.">
+<Layout title="Podcasts | Paige Niedringhaus" description="Talking about code is almost as fun as writing it. I've co-hosted three podcasts over the past few years — here's where to find them.">
   <div class="page-container">
     <h1>Podcasts</h1>
 
     <section>
       <p>
-        I love talking shop with other developers. Over the years I've had the chance to co-host several podcasts about frontend development, JavaScript, and the web ecosystem.
+        Talking about code is almost as fun as writing it. I've co-hosted three podcasts over the past few years — here's where to find them.
       </p>
     </section>
 
@@ -23,15 +18,10 @@ const cohostEpisodes = podcasts
         <img src="/thumbnails/front-end-fire.png" alt="Front-end Fire logo" class="podcast-logo" />
         <div class="podcast-description">
           <p>
-            In 2023, my friends
             <a href="https://twitter.com/jherr" target="_blank" rel="noopener noreferrer">Jack Herrington</a>,
             <a href="https://twitter.com/tjvantoll" target="_blank" rel="noopener noreferrer">TJ VanToll</a>,
-            and I created
-            <a href="https://front-end-fire.com/" target="_blank" rel="noopener noreferrer">Front-end Fire</a>
-            to bring developers the latest and greatest news in the frontend world.
-          </p>
-          <p>
-            We cover new frameworks, libraries, browser updates, and everything else happening in web development. New episodes drop every Monday.
+            and I started <a href="https://front-end-fire.com/" target="_blank" rel="noopener noreferrer">Front-end Fire</a>
+            in 2023 to keep developers up to speed on what's happening in the frontend world — new frameworks, browser updates, the drama, all of it. New episodes every Monday.
           </p>
           <a href="https://front-end-fire.com/" target="_blank" rel="noopener noreferrer" class="podcast-cta">
             Listen to Front-end Fire &rarr;
@@ -46,30 +36,14 @@ const cohostEpisodes = podcasts
         <img src="/thumbnails/podRocket.png" alt="PodRocket logo" class="podcast-logo" />
         <div class="podcast-description">
           <p>
-            In 2023 I joined LogRocket's
-            <a href="https://podrocket.logrocket.com/hosts/paige-niedringhaus" target="_blank" rel="noopener noreferrer">PodRocket</a>
-            as a co-host. We talk to experts in the web dev community about the latest tools, frameworks, and trends.
+            I joined LogRocket's <a href="https://podrocket.logrocket.com/hosts/paige-niedringhaus" target="_blank" rel="noopener noreferrer">PodRocket</a>
+            as a co-host in 2023. Each episode I sit down with someone doing interesting work in web development and we get into it.
           </p>
           <a href="https://podrocket.logrocket.com/hosts/paige-niedringhaus" target="_blank" rel="noopener noreferrer" class="podcast-cta">
             See all PodRocket episodes &rarr;
           </a>
         </div>
       </div>
-
-      <h3>Recent Episodes</h3>
-      <ul class="episode-list">
-        {cohostEpisodes.map((episode) => (
-          <li class="episode-item">
-            <img src={episode.img} alt="PodRocket logo" class="episode-logo" />
-            <div class="episode-content">
-              <a href={episode.path} target="_blank" rel="noopener noreferrer" class="episode-title">
-                {episode.title}
-              </a>
-              <p class="episode-date">{episode.date}</p>
-            </div>
-          </li>
-        ))}
-      </ul>
     </section>
 
     <section>
@@ -78,9 +52,8 @@ const cohostEpisodes = podcasts
         <img src="/thumbnails/reactRoundUp.png" alt="React Round Up logo" class="podcast-logo" />
         <div class="podcast-description">
           <p>
-            From 2020 to 2023, I co-hosted
-            <a href="https://topenddevs.com/podcasts/react-round-up/" target="_blank" rel="noopener noreferrer">React Round Up</a>
-            where we discussed all things React with guests from across the community.
+            From 2020 to 2023 I co-hosted <a href="https://topenddevs.com/podcasts/react-round-up/" target="_blank" rel="noopener noreferrer">React Round Up</a>
+            — deep dives into the React ecosystem with guests from across the community. The archive is still worth a listen.
           </p>
           <a href="https://topenddevs.com/podcasts/react-round-up/" target="_blank" rel="noopener noreferrer" class="podcast-cta">
             Browse React Round Up episodes &rarr;
@@ -131,53 +104,6 @@ const cohostEpisodes = podcasts
     }
   }
 
-  .episode-list {
-    list-style: none;
-    padding: 0;
-  }
-
-  .episode-item {
-    display: flex;
-    align-items: flex-start;
-    gap: var(--space-4);
-    padding: var(--space-4);
-    border-bottom: 1px solid var(--color-border);
-
-    &:last-child {
-      border-bottom: none;
-    }
-  }
-
-  .episode-logo {
-    width: 60px;
-    height: 60px;
-    object-fit: contain;
-    flex-shrink: 0;
-  }
-
-  .episode-content {
-    flex: 1;
-  }
-
-  .episode-title {
-    font-size: var(--text-lg);
-    font-weight: 600;
-    color: var(--color-primary);
-    text-decoration: underline;
-    display: block;
-    margin-bottom: var(--space-2);
-    transition: color 0.2s;
-
-    &:hover {
-      color: var(--color-accent);
-    }
-  }
-
-  .episode-date {
-    font-size: var(--text-sm);
-    color: var(--color-text-secondary);
-  }
-
   @media (max-width: 768px) {
     .podcast-feature {
       flex-direction: column;
@@ -188,15 +114,6 @@ const cohostEpisodes = podcasts
     .podcast-logo {
       width: 100px;
       height: 100px;
-    }
-
-    .episode-item {
-      flex-direction: column;
-    }
-
-    .episode-logo {
-      width: 50px;
-      height: 50px;
     }
   }
 </style>

@@ -1,6 +1,6 @@
 # Paigeniedringhaus.com Migration & Redesign Plan
 
-**Last Updated:** 2026-02-15 (Phase 2 redesign in progress - homepage + about page complete)
+**Last Updated:** 2026-02-16 (Phase 2 redesign in progress - blog listing, post cards, and copy updates complete)
 
 ## Overview
 
@@ -8,7 +8,7 @@ This document outlines the comprehensive plan to:
 1. **Migrate** from Gatsby to Astro.js
 2. **Redesign** the site structure and visual design
 
-**Current Status:** 🎨 **Phase 2 Redesign In Progress** - Design system, theming, navigation, homepage, and about page complete. Next: Blog post enhancements (featured images, tags, reading time, table of contents).
+**Current Status:** 🎨 **Phase 2 Redesign In Progress** - Design system, theming, navigation, homepage, about page, blog post enhancements, blog listing overhaul, and sitewide copy updates complete. Next: social icon refresh + CSS consolidation audit.
 
 **Phase 2 Progress:**
 - ✅ Design system CSS tokens complete in global.css:
@@ -58,7 +58,38 @@ This document outlines the comprehensive plan to:
 - ✅ About page updated:
   - Front-end Fire and PodRocket co-hosting added to bio
   - AllSpice (current) and Blues (previous) roles already present
-- 🔄 Next: Blog post enhancements (featured images, tags, reading time, table of contents)
+- ✅ Blog post enhancements complete:
+  - Tags are linked to `/blog?tag=x` from both post cards and individual posts
+  - Reading time calculated from word count, displayed in post meta
+  - Sticky table of contents sidebar (H2/H3, desktop only, scroll-highlights active section)
+  - `scroll-margin-top` added to headings so sticky header doesn't obscure anchor targets
+  - Blog listing reads `?tag=` from URL on load (links from post tags now work correctly)
+  - "Filtered by / Clear" chip added above posts grid on blog listing
+- ✅ Blog listing page overhauled:
+  - `mediumBlogs.js` (30 external posts) merged with content collection (82 posts) → 112 total
+  - External posts normalized: `category: 'IoT'` (blues.io/hackster.io) or `'Article'` (Medium)
+  - External posts open in new tab with ↗ indicator
+  - PostCard refactored to flat props interface (title, subTitle, date, tags, image, href, isExternal, category)
+  - Horizontal card layout: 200px thumbnail left, text right; stacks on mobile
+  - Infinite scroll: IntersectionObserver sentinel, 12 posts per batch
+  - Post count display: "112 posts" / "X posts tagged 'react'" — dynamically updates
+  - Tag filtering reads from `?tag=` URL param on load (links from blog posts now work)
+  - "Filtered by / Clear" chip above posts grid
+  - Blog page intro copy rewritten with personality
+- ✅ Sitewide copy updates:
+  - Homepage: tagline + newsletter copy rewritten
+  - About page: all sections rewritten (succinct, personality-forward)
+  - Contact page: all sections rewritten, "Thanks and have a great day!" removed
+  - Blog listing: intro rewritten
+  - Podcasts page: all copy rewritten, PodRocket episode list removed (link to LogRocket page instead)
+  - Archive page: intro, courses description, YouTube videos blurb rewritten
+- ✅ Blog post layout (BlogPost.astro):
+  - Reading time calculated from word count (displayed in post meta)
+  - Tags linked to `/blog?tag=x`
+  - Sticky ToC sidebar (H2/H3, desktop only, IntersectionObserver scroll highlight)
+  - `scroll-margin-top` on headings to clear sticky header
+  - Featured image removed from layout (renders naturally from post content, no duplicate)
+- 🔄 Next: Social icon refresh + CSS consolidation audit
 
 **Progress Summary:**
 - ✅ Astro 5.17.1 installed with all core integrations

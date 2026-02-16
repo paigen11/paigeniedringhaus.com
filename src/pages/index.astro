@@ -73,7 +73,7 @@ const socialLinks = [
         />
         <h1>Paige Niedringhaus</h1>
         <p class="hero-title">Full-Stack Software Engineer</p>
-        <p class="hero-tagline">Writing about web development, hosting podcasts, building things.</p>
+        <p class="hero-tagline">Engineer. Podcast co-host. Compulsive note-taker. Building things on the web since 2016.</p>
         <div class="social-links">
           {socialLinks.map((link) => (
             <a
@@ -129,7 +129,15 @@ const socialLinks = [
       </div>
       <div class="posts-grid">
         {recentPosts.map((post: CollectionEntry<'posts'>) => (
-          <PostCard post={post} />
+          <PostCard
+            title={post.data.title}
+            subTitle={post.data.subTitle}
+            date={post.data.date}
+            tags={post.data.tags}
+            image={post.data.featuredImage?.replace(/^\.\.\/images\//, '/images/') ?? null}
+            href={`/blog/${getPostSlug(post.data.title, post.slug)}`}
+            category={post.data.category}
+          />
         ))}
       </div>
     </section>
@@ -137,7 +145,7 @@ const socialLinks = [
     <!-- Newsletter -->
     <section class="newsletter-section">
       <div class="newsletter-inner">
-        <p class="newsletter-copy">Enjoyed reading? Never miss a new post.</p>
+        <p class="newsletter-copy">Worth reading? Get new posts straight to your inbox.</p>
         <Subscribe />
       </div>
     </section>
