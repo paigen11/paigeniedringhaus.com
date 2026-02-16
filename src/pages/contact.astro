@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Subscribe from '../components/Subscribe.astro';
+import Icon from '../components/Icon.astro';
 ---
 
 <Layout title="Contact | Paige Niedringhaus" description="Whether you want to say hi, talk shop, or pitch a collaboration — I'd love to hear from you.">
@@ -15,7 +16,7 @@ import Subscribe from '../components/Subscribe.astro';
 
     <section>
       <h2>
-        <span class="icon">✉️</span> Send me an email
+        <span class="icon"><Icon name="email" size="1.4em" /></span> Send me an email
       </h2>
       <p>
         The fastest way to reach me. I actually read everything —&nbsp;
@@ -25,7 +26,7 @@ import Subscribe from '../components/Subscribe.astro';
 
     <section>
       <h2>
-        <span class="icon">𝕏</span> Find me on social
+        <span class="icon"><Icon name="x" size="1.4em" /></span> Find me on social
       </h2>
       <p>
         I'm on <a href="https://twitter.com/pniedri" target="_blank" rel="noopener noreferrer">X</a> at @pniedri,
@@ -38,7 +39,7 @@ import Subscribe from '../components/Subscribe.astro';
 
     <section>
       <h2>
-        <span class="icon">⚙</span> Check out my GitHub
+        <span class="icon"><Icon name="github" size="1.4em" /></span> Check out my GitHub
       </h2>
       <p>
         Most of what I <a href="https://github.com/paigen11" target="_blank" rel="noopener noreferrer">build</a> is open source — take a look, fork what's useful.
@@ -47,7 +48,7 @@ import Subscribe from '../components/Subscribe.astro';
 
     <section>
       <h2>
-        <span class="icon">📡</span> Subscribe to my newsletter
+        <span class="icon"><Icon name="rss" size="1.4em" /></span> Subscribe to my newsletter
       </h2>
       <p>New posts when I publish them, nothing else.</p>
       <div class="subscribe-wrapper">
@@ -76,7 +77,9 @@ import Subscribe from '../components/Subscribe.astro';
   }
 
   .icon {
-    font-size: 1.5rem;
+    display: inline-flex;
+    align-items: center;
+    vertical-align: middle;
   }
 
   .subscribe-wrapper {

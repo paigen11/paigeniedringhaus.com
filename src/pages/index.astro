@@ -2,6 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import PostCard from '../components/PostCard.astro';
 import Subscribe from '../components/Subscribe.astro';
+import SocialIcons from '../components/SocialIcons.astro';
 import { getCollection, type CollectionEntry } from 'astro:content';
 import { getPostSlug } from '../utils/slug';
 
@@ -26,41 +27,9 @@ const featuredPostDate = new Date(featuredPost.data.date).toLocaleDateString('en
 // Transform relative image paths (../images/...) to absolute (/images/...)
 const featuredPostImage = featuredPost.data.featuredImage?.replace(/^\.\.\/images\//, '/images/') ?? null;
 
-const socialLinks = [
-  {
-    label: 'GitHub',
-    href: 'https://github.com/paigen11',
-    symbol: '⚙',
-  },
-  {
-    label: 'X',
-    href: 'https://twitter.com/pniedri',
-    symbol: '𝕏',
-  },
-  {
-    label: 'Medium',
-    href: 'https://paigen11.medium.com',
-    symbol: 'M',
-  },
-  {
-    label: 'DEV',
-    href: 'https://dev.to/paigen11',
-    symbol: '⌨',
-  },
-  {
-    label: 'Email',
-    href: 'mailto:hellopaigen@gmail.com',
-    symbol: '✉',
-  },
-  {
-    label: 'RSS',
-    href: '/rss.xml',
-    symbol: '📡',
-  },
-];
 ---
 
-<Layout title="Paige Niedringhaus | Lead Software Engineer" description="Lead Software Engineer, technical writer, and podcast co-host. Writing about web development, hosting podcasts, building things.">
+<Layout title="Paige Niedringhaus | Lead Software Engineer" description="Engineer. Podcast co-host. Compulsive note-taker. Building things on the web since 2016.">
   <main>
 
     <!-- Hero -->
@@ -75,17 +44,7 @@ const socialLinks = [
         <p class="hero-title">Full-Stack Software Engineer</p>
         <p class="hero-tagline">Engineer. Podcast co-host. Compulsive note-taker. Building things on the web since 2016.</p>
         <div class="social-links">
-          {socialLinks.map((link) => (
-            <a
-              href={link.href}
-              class="social-link"
-              aria-label={link.label}
-              target={link.href.startsWith('http') ? '_blank' : undefined}
-              rel={link.href.startsWith('http') ? 'noopener noreferrer' : undefined}
-            >
-              <span class="social-symbol" aria-hidden="true">{link.symbol}</span>
-            </a>
-          ))}
+          <SocialIcons />
         </div>
       </div>
     </section>
@@ -208,26 +167,6 @@ const socialLinks = [
     flex-wrap: wrap;
     justify-content: center;
     margin-top: var(--space-2);
-  }
-
-  .social-link {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: var(--space-1);
-    text-decoration: none;
-    color: var(--color-text-secondary);
-    transition: color 0.2s, transform 0.2s;
-  }
-
-  .social-link:hover {
-    color: var(--color-primary);
-    transform: translateY(-2px);
-  }
-
-  .social-symbol {
-    font-size: 1.5rem;
-    line-height: 1;
   }
 
   /* ── Section shared ───────────────────────────────── */
