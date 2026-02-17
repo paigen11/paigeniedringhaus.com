@@ -2,24 +2,19 @@
 interface Props {
   title: string;
   subTitle?: string;
-  date: Date;
+  date: string;
   tags?: string[];
   image?: string | null;
   href: string;
   isExternal?: boolean;
   category?: string;
+  layout?: 'horizontal' | 'vertical';
 }
 
-const { title, subTitle, date, tags, image, href, isExternal = false, category } = Astro.props;
-
-const formattedDate = new Date(date).toLocaleDateString('en-US', {
-  year: 'numeric',
-  month: 'long',
-  day: 'numeric',
-});
+const { title, subTitle, date, tags, image, href, isExternal = false, category, layout = 'horizontal' } = Astro.props;
 ---
 
-<article class="post-card">
+<article class="post-card" data-layout={layout}>
   <a
     href={href}
     class="post-link"
@@ -39,7 +34,7 @@ const formattedDate = new Date(date).toLocaleDateString('en-US', {
         {subTitle && <p class="post-subtitle">{subTitle}</p>}
       </div>
       <div class="post-meta">
-        <time datetime={new Date(date).toISOString()}>{formattedDate}</time>
+        <time>{date}</time>
         {tags && tags.length > 0 && (
           <>
             <span class="separator">•</span>
@@ -165,6 +160,16 @@ const formattedDate = new Date(date).toLocaleDateString('en-US', {
     border-radius: var(--radius-sm);
     font-size: 0.7rem;
     font-weight: 500;
+  }
+
+  /* Vertical layout — image on top, used in grid contexts (e.g. homepage) */
+  .post-card[data-layout='vertical'] .post-link {
+    flex-direction: column;
+  }
+
+  .post-card[data-layout='vertical'] .post-image {
+    width: 100%;
+    height: 180px;
   }
 
   @media (max-width: 600px) {

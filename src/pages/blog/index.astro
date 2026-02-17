@@ -4,28 +4,44 @@ import Layout from '../../layouts/Layout.astro';
 import PostCard from '../../components/PostCard.astro';
 import mediumBlogs from '../../data/mediumBlogs.js';
 import { getPostSlug } from '../../utils/slug';
+import { formatDate } from '../../utils/date';
+
+interface MediumPost {
+  date: string;
+  img: string | { src: string };
+  url: string;
+  subTitle?: string;
+  tags?: string[];
+  title: string;
+}
 
 const collectionPosts = await getCollection('posts', ({ data }) => data.omit !== true);
 
 // Normalize collection posts
-const internalPosts = collectionPosts.map((post: CollectionEntry<'posts'>) => ({
-  title: post.data.title,
-  subTitle: post.data.subTitle,
-  date: new Date(post.data.date),
-  tags: post.data.tags || [],
-  image: post.data.featuredImage?.replace(/^\.\.\/images\//, '/images/') ?? null,
-  href: `/blog/${getPostSlug(post.data.title, post.slug)}`,
-  isExternal: false,
-  category: post.data.category,
-}));
+const internalPosts = collectionPosts.map((post: CollectionEntry<'posts'>) => {
+  const d = new Date(post.data.date);
+  return {
+    title: post.data.title,
+    subTitle: post.data.subTitle,
+    date: formatDate(d),
+    _ts: d.getTime(),
+    tags: post.data.tags || [],
+    image: post.data.featuredImage?.replace(/^\.\.\/images\//, '/images/') ?? null,
+    href: `/blog/${getPostSlug(post.data.title, post.slug)}`,
+    isExternal: false,
+    category: post.data.category,
+  };
+});
 
 // Normalize external/Medium posts
-const externalPosts = mediumBlogs.map((post: any) => {
+const externalPosts = mediumBlogs.map((post: MediumPost) => {
+  const d = new Date(post.date);
   const isIoT = post.url.includes('blues.io') || post.url.includes('hackster.io');
   return {
     title: post.title,
     subTitle: post.subTitle,
-    date: new Date(post.date),
+    date: formatDate(d),
+    _ts: d.getTime(),
     tags: post.tags || [],
     image: typeof post.img === 'string' ? post.img : (post.img?.src ?? null),
     href: post.url,
@@ -36,7 +52,7 @@ const externalPosts = mediumBlogs.map((post: any) => {
 
 // Merge and sort newest-first
 const allNormalizedPosts = [...internalPosts, ...externalPosts]
-  .sort((a, b) => b.date.getTime() - a.date.getTime());
+  .sort((a, b) => b._ts - a._ts);
 
 const allTags = [...new Set(allNormalizedPosts.flatMap((p) => p.tags))].sort();
 const totalPosts = allNormalizedPosts.length;
@@ -288,7 +304,7 @@ const totalPosts = allNormalizedPosts.length;
   }
 </style>
 
-<script define:vars={{ totalPosts }}>
+<script define:vars={{ totalPosts }} is:inline>
   const BATCH = 12;
   let activeTag = 'all';
   let visibleCount = BATCH;

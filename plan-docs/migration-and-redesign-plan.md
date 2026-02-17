@@ -1,6 +1,6 @@
 # Paigeniedringhaus.com Migration & Redesign Plan
 
-**Last Updated:** 2026-02-16 (Phase 2 redesign in progress - social icon refresh, CSS audit, and consolidation complete)
+**Last Updated:** 2026-02-17 (Phase 2 redesign in progress - Moment.js replaced, date formatting standardized, blog post prev/next navigation and newsletter subscribe section added)
 
 ## Overview
 
@@ -8,7 +8,7 @@ This document outlines the comprehensive plan to:
 1. **Migrate** from Gatsby to Astro.js
 2. **Redesign** the site structure and visual design
 
-**Current Status:** 🎨 **Phase 2 Redesign In Progress** - Design system, theming, navigation, homepage, about page, blog post enhancements, blog listing overhaul, sitewide copy updates, social icon refresh, and CSS consolidation audit all complete. Next: Replace Moment.js with native date handling.
+**Current Status:** 🎨 **Phase 2 Redesign In Progress** - Design system, theming, navigation, homepage, about page, blog post enhancements, blog listing overhaul, sitewide copy updates, social icon refresh, CSS consolidation audit, Moment.js removal, date standardization, and individual blog post subscribe + prev/next navigation all complete.
 
 **Phase 2 Progress:**
 - ✅ Design system CSS tokens complete in global.css:
@@ -105,7 +105,24 @@ This document outlines the comprehensive plan to:
   - `BlogPost.astro`: replaced 15+ hardcoded px/rem values in post content styles with tokens (margins for h2/h3/h4/p/li/pre/blockquote/figure/img, font sizes for subtitle/meta/content/figcaption/pre code, responsive block)
   - `about.astro` + `contact.astro`: h2 override `1.75rem` → `var(--text-3xl)`; responsive sizes → tokens
   - `--space-5` confirmed present in global.css (audit false positive)
-- 🔄 Next: Replace Moment.js with native date handling
+- ✅ Moment.js replaced with native date handling (completed 2026-02-17):
+  - Uninstalled `moment` package
+  - Created `src/utils/date.ts` with `formatDate(date: Date | string, month?: 'long' | 'short')` utility
+  - Updated all 5 data files (`speaking.js`, `courses.js`, `courseVideos.js`, `publications.js`, `podcasts.js`) to use `formatDate`
+  - `mediumBlogs.js` kept as raw ISO strings (dates formatted at render time)
+- ✅ Date formatting standardized across all display contexts (completed 2026-02-17):
+  - `formatDate()` utility updated to accept `Date | string` (ISO strings use local-time construction to avoid UTC off-by-one)
+  - All inline `toLocaleDateString` calls in `BlogPost.astro`, `blog/index.astro`, and `index.astro` replaced with `formatDate()`
+  - All display dates now use long format ("February 17, 2026") consistently
+- ✅ PostCard `layout` prop added (`'horizontal'` | `'vertical'`):
+  - Horizontal (default): 200px image left, text right — used on blog listing
+  - Vertical: image on top — used on homepage recent posts grid
+- ✅ Archive page font sizes standardized: `.publication-link` now matches Talks & Podcasts section sizing
+- ✅ Individual blog post enhancements (completed 2026-02-17):
+  - Newsletter subscribe section added above footer with copy: "Enjoyed this? New posts land in your inbox — no noise, just the good stuff."
+  - Previous/Next post navigation added: next post (newer) on left, previous post (older) on right
+  - "Back to all posts" link removed (redundant with site nav and prev/next buttons)
+  - `[slug].astro` computes `prevPost`/`nextPost` by sorting all posts by date and finding adjacent entries
 
 **Progress Summary:**
 - ✅ Astro 5.17.1 installed with all core integrations
@@ -937,7 +954,7 @@ function toggleTheme() {
   - Button in post header to copy permalink
   - Toast notification on copy success
 
-- [ ] **Table of Contents**
+- [x] ✅ **Table of Contents** — Complete
   - Auto-generated from H2/H3 headings
   - Sticky sidebar on desktop
   - Highlights current section on scroll
@@ -949,6 +966,15 @@ function toggleTheme() {
 - [ ] **Related Posts**
   - 3 related posts at bottom based on tags/category
   - Exclude current post
+
+- [x] ✅ **Newsletter Subscribe Section** — Complete (2026-02-17)
+  - Added above post footer with animated gradient Subscribe button
+  - Copy: "Enjoyed this? New posts land in your inbox — no noise, just the good stuff."
+
+- [x] ✅ **Previous/Next Post Navigation** — Complete (2026-02-17)
+  - Next post (newer) on left, Previous post (older) on right
+  - Computed in `[slug].astro` by sorting all posts by date
+  - Card-style links with truncated title and directional label
 
 #### Blog Listing Features
 
@@ -1376,7 +1402,7 @@ src/
 - @astrojs/check: 0.9.6
 - typescript: 5.9.3
 - eslint: 9.39.2 with flat config
-- moment: 2.24.0 (TODO: replace with date-fns or Temporal API)
+- Native date formatting via `src/utils/date.ts` (moment removed 2026-02-17)
 - markdown-it: 14.1.0 (for RSS feed HTML content)
 - sanitize-html: 2.17.0 (for RSS feed security)
 - Native CSS (no preprocessor needed)
@@ -1466,32 +1492,15 @@ src/
 
 ---
 
-### Replace Moment.js with Modern Date Handling
+### ✅ Replace Moment.js with Modern Date Handling
 
-**Priority:** Medium
-**Current:** Using `moment@2.24.0` (outdated, heavy library)
-**Recommended:** Use native JavaScript `Temporal API` (when stable) or `date-fns` as interim solution
+**Completed:** 2026-02-17
+**Solution:** Native `Date` + `Intl.DateTimeFormat` via shared `src/utils/date.ts` utility
 
-**Files using moment:**
-- `src/data/mediumBlogs.js`
-- `src/data/speaking.js`
-- `src/data/courses.js`
-- `src/data/courseVideos.js`
-- `src/data/podcasts.js`
-- `src/data/publications.js`
-
-**Why:**
-- Moment.js is in maintenance mode (no new features since 2020)
-- Large bundle size (~70KB minified)
-- Native Temporal API offers better performance and is the future standard
-- date-fns is tree-shakeable and modern
-
-**Migration options:**
-1. **Best (future-proof):** Wait for Temporal API to reach Stage 4 and use that
-2. **Good (now):** Migrate to `date-fns` - modern, tree-shakeable, actively maintained
-3. **Quick (now):** Use native `Date` with `Intl.DateTimeFormat` for formatting
-
-**Effort:** Low-Medium (mostly find/replace in data files)
+- `formatDate(date: Date | string, month?: 'long' | 'short'): string`
+- ISO strings parsed with local-time construction to avoid UTC midnight off-by-one
+- All 5 data files updated; `moment` uninstalled
+- All display date formatting across the site now goes through this single function
 
 ### Post-Migration Enhancements
 
@@ -1512,22 +1521,20 @@ These improvements should be implemented after the initial Astro migration is me
   - Link tags to filtered blog listing (e.g., `/blog?tag=react`)
   - Consistent styling with tag badges elsewhere on site
 
-- [ ] **Add reading time to blog posts**
-  - Calculate estimated reading time based on word count
-  - Display on both blog listing cards and individual post pages
-  - Format as "X min read" (e.g., "5 min read")
+- [x] ✅ **Add reading time to blog posts** — Complete
+  - Calculated from word count (strips code blocks, markdown syntax)
+  - Displayed in post header meta: "X min read"
 
-- [ ] **Add sticky table of contents to blog posts**
-  - Auto-generate TOC from H2 and H3 headings in post content
-  - Display as sticky sidebar on desktop (right side or left side)
-  - Make TOC links clickable to scroll to corresponding heading
-  - Highlight current section as user scrolls
-  - Hide on mobile or show as collapsible section at top
+- [x] ✅ **Add sticky table of contents to blog posts** — Complete
+  - Auto-generated from H2/H3 headings
+  - Sticky sidebar on desktop (≥1080px), hidden on mobile
+  - IntersectionObserver highlights active section on scroll
+  - `scroll-margin-top` on headings to clear sticky header
 
-- [ ] **Improve blog post metadata display**
-  - Enhance visual hierarchy of post header
-  - Better category badge positioning
-  - Improve date formatting
+- [x] ✅ **Improve blog post metadata display** — Complete
+  - Date, reading time, tags in post header
+  - Tags linked to `/blog?tag=x`
+  - Category badge above title
 
 **Why:** These features will improve the blog reading experience, help readers discover related content through tags and featured images, and make it easier to navigate long-form articles.
 

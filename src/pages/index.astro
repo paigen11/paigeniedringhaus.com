@@ -5,6 +5,7 @@ import Subscribe from '../components/Subscribe.astro';
 import SocialIcons from '../components/SocialIcons.astro';
 import { getCollection, type CollectionEntry } from 'astro:content';
 import { getPostSlug } from '../utils/slug';
+import { formatDate } from '../utils/date';
 
 const allPosts = await getCollection('posts', ({ data }) => {
   return data.omit !== true;
@@ -18,11 +19,7 @@ const featuredPost = latestPosts[0];
 const recentPosts = latestPosts.slice(1);
 
 const featuredPostSlug = getPostSlug(featuredPost.data.title, featuredPost.slug);
-const featuredPostDate = new Date(featuredPost.data.date).toLocaleDateString('en-US', {
-  year: 'numeric',
-  month: 'long',
-  day: 'numeric',
-});
+const featuredPostDate = formatDate(featuredPost.data.date);
 
 // Transform relative image paths (../images/...) to absolute (/images/...)
 const featuredPostImage = featuredPost.data.featuredImage?.replace(/^\.\.\/images\//, '/images/') ?? null;
@@ -91,11 +88,12 @@ const featuredPostImage = featuredPost.data.featuredImage?.replace(/^\.\.\/image
           <PostCard
             title={post.data.title}
             subTitle={post.data.subTitle}
-            date={post.data.date}
+            date={formatDate(post.data.date)}
             tags={post.data.tags}
             image={post.data.featuredImage?.replace(/^\.\.\/images\//, '/images/') ?? null}
             href={`/blog/${getPostSlug(post.data.title, post.slug)}`}
             category={post.data.category}
+            layout="vertical"
           />
         ))}
       </div>
