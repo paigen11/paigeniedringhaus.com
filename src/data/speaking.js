@@ -218,7 +218,7 @@ export default [
   {
     title: 'Why IoT Development Needs its own Create React App',
     date: formatDate('2023-01-18'),
-    path: 'https://that.us/activities/alCWEaBSKnmG71HOFtqi',
+    path: null, // 403/removed as of 2026
     img: thatConf,
   },
   {

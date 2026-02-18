@@ -83,7 +83,7 @@ export default [
     title:
       "She's in Tech: Escaping the Application Blackhole with Paige Niedringhaus",
     date: formatDate('2021-12-21'),
-    path: 'https://shesintechpodcast.com/escaping-application-blackhole-paige-niedringhaus-shes-in-tech24-',
+    path: null, // site defunct as of 2026
     img: shesInTech,
     type: 'guest',
   },
@@ -104,7 +104,7 @@ export default [
   {
     title: '20minJS: State Management in React with Paige Niedringhaus',
     date: formatDate('2022-03-29'),
-    path: 'https://podcast.20minjs.com/1952066/10330403-episode-4-state-management-in-react-with-paige-niedringhaus',
+    path: null, // 404 as of 2026
     img: js20min,
     type: 'guest',
   },
