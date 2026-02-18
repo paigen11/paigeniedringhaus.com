@@ -1,16 +1,18 @@
 # Paigeniedringhaus.com Migration & Redesign Plan
 
-**Last Updated:** 2026-02-17 (Phase 2 redesign in progress - Moment.js replaced, date formatting standardized, blog post prev/next navigation and newsletter subscribe section added)
+**Last Updated:** 2026-02-18 (Phase 2 complete - OG images, favicon redesign, LinkedIn assets, design/ folder added)
 
 ## Overview
 
 This document outlines the comprehensive plan to:
+
 1. **Migrate** from Gatsby to Astro.js
 2. **Redesign** the site structure and visual design
 
-**Current Status:** 🎨 **Phase 2 Redesign In Progress** - Design system, theming, navigation, homepage, about page, blog post enhancements, blog listing overhaul, sitewide copy updates, social icon refresh, CSS consolidation audit, Moment.js removal, date standardization, and individual blog post subscribe + prev/next navigation all complete.
+**Current Status:** ✅ **Phase 2 Redesign Complete** - All major redesign work done. Ready to merge.
 
 **Phase 2 Progress:**
+
 - ✅ Design system CSS tokens complete in global.css:
   - Typography scale (`--text-xs` through `--text-5xl`)
   - Full spacing system (`--space-1` through `--space-24`)
@@ -123,8 +125,22 @@ This document outlines the comprehensive plan to:
   - Previous/Next post navigation added: next post (newer) on left, previous post (older) on right
   - "Back to all posts" link removed (redundant with site nav and prev/next buttons)
   - `[slug].astro` computes `prevPost`/`nextPost` by sorting all posts by date and finding adjacent entries
+- ✅ OpenGraph & social sharing images (completed 2026-02-18):
+  - `Layout.astro` updated with `og:image`, `og:image:alt`, `twitter:image`, `twitter:image:alt` tags
+  - Blog posts use `featuredImage` frontmatter as absolute OG URL; falls back to `og-default.png`
+  - `public/og-default.png` — 1200×630px branded default OG image (dark navy, indigo/pink gradient)
+  - `design/og-preview.html` — source HTML used to generate `og-default.png` via browser screenshot
+- ✅ Favicon redesign (completed 2026-02-18):
+  - `public/favicon.svg` — new SVG favicon: dark navy rounded square, "PN" with indigo→pink gradient
+  - `public/favicon.png` — regenerated from SVG via `sips` to match exactly (PNG fallback for older browsers)
+  - `public/logos/` directory deleted (all `pn-logo-*.png` files were unused)
+  - `Layout.astro` now serves SVG first, PNG as fallback
+  - `Header.astro` updated to use `favicon.svg` as logo; dark mode `filter: invert()` hack removed
+- ✅ LinkedIn assets (completed 2026-02-18):
+  - `design/li-background-preview.html` — 1584×396px LinkedIn banner: tagline as hero text, website URL + stack chips, faint code watermark, brand colors; content offset 380px from left to clear LI profile photo
 
 **Progress Summary:**
+
 - ✅ Astro 5.17.1 installed with all core integrations
 - ✅ Content collections configured with Git submodule working (symlinks for posts & images)
 - ✅ All 14 blog posts with embeds converted to MDX (YouTube, CodePen, CodeSandbox working)
@@ -161,7 +177,7 @@ This document outlines the comprehensive plan to:
   - npm install cleanup: Removed 1,553 packages (went from 3,046 to 1,493 total)
 - ✅ **Fixed all image path references:**
   - Updated src/data/speaking.js and src/data/podcasts.js (changed imports to public path strings)
-  - Updated data/speaking.js and data/podcasts.js (changed from ../src/images/* to /thumbnails/*)
+  - Updated data/speaking.js and data/podcasts.js (changed from ../src/images/_ to /thumbnails/_)
   - Fixed media.astro to handle string image paths instead of imports
   - Copied content/images/react.png to public/thumbnails/ for consistency
   - Fixed date typo in podcasts.js (2025-11=13 → 2025-11-13)
@@ -177,6 +193,7 @@ This document outlines the comprehensive plan to:
 - ✅ **Phase 1 MERGED to master** on 2026-02-03. Phase 2 redesign now in progress on new branch.
 
 **Known Issues:**
+
 - CodeSandbox iframe auto-scrolls page on load (low priority - cosmetic only)
 
 **Original:** Gatsby v4.13.1, React 18, deployed on Netlify
@@ -270,6 +287,7 @@ This document outlines the comprehensive plan to:
 **Handling YouTube, CodePen & CodeSandbox Embeds:**
 
 **Current situation:**
+
 - 14 blog posts contain YouTube, CodePen, or CodeSandbox embeds
 - YouTube syntax: `` `youtube: https://youtu.be/VIDEO_ID` ``
 - CodePen syntax: Plain URL like `https://codepen.io/paigen11/pen/PEN_ID`
@@ -277,6 +295,7 @@ This document outlines the comprehensive plan to:
 - All were handled by Gatsby remark plugins
 
 **Migration strategy:**
+
 - [x] ✅ **Create custom Astro components:**
   - `src/components/YouTube.astro` - Accepts `id` or `url` prop, auto-extracts ID from URLs
   - `src/components/CodePen.astro` - Accepts `id` and `user` props, or `url` prop
@@ -306,6 +325,7 @@ This document outlines the comprehensive plan to:
 ### 1.4 Data Migration
 
 **Current data files in `data/` directory:**
+
 - `SiteConfig.js` - site metadata
 - `courses.js` - course information
 - `courseVideos.js` - YouTube videos
@@ -315,6 +335,7 @@ This document outlines the comprehensive plan to:
 - `speaking.js` - talks and presentations
 
 **Migration Strategy:**
+
 - [x] ✅ Move to `src/data/` directory
 - [x] ✅ Update image import paths:
   - Changed `../src/images/*` to `../src-gatsby/images/*`
@@ -328,18 +349,19 @@ This document outlines the comprehensive plan to:
 
 **Current Gatsby pages → Astro pages:**
 
-| Gatsby Page | Astro Equivalent | Status | Notes |
-|------------|------------------|---------|-------|
-| `src/pages/index.js` | `src/pages/index.astro` | ✅ Done | Homepage with latest 3 blog posts |
-| `src/pages/blog.js` | `src/pages/blog/index.astro` | ✅ Done | Blog listing with tag filtering sidebar |
-| `src/templates/post.jsx` | `src/pages/blog/[slug].astro` | ✅ Done | Dynamic blog posts with full markdown styling |
-| `src/pages/about.js` | `src/pages/about.astro` | ✅ Done | About page with updated job/tech info |
-| `src/pages/contact.js` | `src/pages/contact.astro` | ✅ Done | Contact page with newsletter signup |
-| `src/pages/courses.js` | `src/pages/courses.astro` | ✅ Done | Courses page with video grid (→ archive later in redesign) |
-| `src/pages/media.js` | `src/pages/media.astro` | ✅ Done | Media page: talks, podcasts, articles (→ restructure later in redesign) |
-| `src/pages/404.js` | `src/pages/404.astro` | ✅ Done | 404 error page with pleading face emoji |
+| Gatsby Page              | Astro Equivalent              | Status  | Notes                                                                   |
+| ------------------------ | ----------------------------- | ------- | ----------------------------------------------------------------------- |
+| `src/pages/index.js`     | `src/pages/index.astro`       | ✅ Done | Homepage with latest 3 blog posts                                       |
+| `src/pages/blog.js`      | `src/pages/blog/index.astro`  | ✅ Done | Blog listing with tag filtering sidebar                                 |
+| `src/templates/post.jsx` | `src/pages/blog/[slug].astro` | ✅ Done | Dynamic blog posts with full markdown styling                           |
+| `src/pages/about.js`     | `src/pages/about.astro`       | ✅ Done | About page with updated job/tech info                                   |
+| `src/pages/contact.js`   | `src/pages/contact.astro`     | ✅ Done | Contact page with newsletter signup                                     |
+| `src/pages/courses.js`   | `src/pages/courses.astro`     | ✅ Done | Courses page with video grid (→ archive later in redesign)              |
+| `src/pages/media.js`     | `src/pages/media.astro`       | ✅ Done | Media page: talks, podcasts, articles (→ restructure later in redesign) |
+| `src/pages/404.js`       | `src/pages/404.astro`         | ✅ Done | 404 error page with pleading face emoji                                 |
 
 **Implementation Tasks:**
+
 - [x] ✅ Create homepage in `src/pages/index.astro`
   - Displays latest 3 blog posts
   - Links to full blog
@@ -366,6 +388,7 @@ This document outlines the comprehensive plan to:
 **Current React components to convert:**
 
 Layout Components:
+
 - [x] ✅ `Layout/Layout.jsx` → `src/layouts/Layout.astro`
   - Created with SEO meta tags, Open Graph, Twitter Card
   - Google Analytics 4 integrated
@@ -379,6 +402,7 @@ Layout Components:
 - [ ] `Footer/Footer.jsx` → `src/components/Footer.astro` (NEXT)
 
 Content Components:
+
 - [x] ✅ `PostCard/PostCard.jsx` → `src/components/PostCard.astro`
   - Displays title, subtitle, date, tags (first 3), category badge
   - Hover effects with transform and shadow
@@ -391,11 +415,13 @@ Content Components:
 - [x] ✅ `SEO/SEO.jsx` → Merged into Layout.astro
 
 Interactive Components (if any):
+
 - [ ] Identify which components need client-side JS (TO DO)
 - [ ] Keep as React components with `client:*` directives if needed
 - [ ] Or convert to vanilla JS/Web Components
 
 **FontAwesome Icons:**
+
 - [ ] Evaluate: Keep with `@astrojs/react` or migrate to `astro-icon` package (TO DO)
 - [ ] Update icon references throughout site
 
@@ -406,6 +432,7 @@ Interactive Components (if any):
 **Migration strategy:** Convert to modern native CSS using Astro's recommended approaches
 
 **Astro CSS Strategy:**
+
 - [x] ✅ **Scoped component styles** using `<style>` blocks in `.astro` files
   - Astro automatically scopes styles to the component
   - No CSS-in-JS runtime overhead
@@ -417,7 +444,9 @@ Interactive Components (if any):
   - Foundation ready for component styles
 
 **Modern CSS Features to Leverage:**
+
 - [ ] **CSS Nesting** - native browser support, no preprocessor needed
+
   ```css
   .card {
     padding: 1rem;
@@ -431,6 +460,7 @@ Interactive Components (if any):
     }
   }
   ```
+
 - [ ] **CSS Custom Properties** - for theming and design tokens
 - [ ] **Container Queries** - for responsive components
 - [ ] **CSS Grid & Flexbox** - for layouts
@@ -438,6 +468,7 @@ Interactive Components (if any):
 - [ ] **Logical properties** - `margin-inline`, `padding-block`, etc.
 
 **Migration Tasks:**
+
 - [x] ✅ Convert SCSS variables to CSS custom properties (in global.css)
 - [ ] Convert SCSS nesting to native CSS nesting (as components are built)
 - [ ] Remove SCSS mixins, replace with CSS features or utility classes (as needed)
@@ -448,6 +479,7 @@ Interactive Components (if any):
 - [ ] Verify no SCSS dependencies remain in `package.json` (keep for now during migration)
 
 **File Organization:**
+
 ```
 src/styles/
 ├── global.css       (resets, base styles)
@@ -461,6 +493,7 @@ src/components/
 ### 1.8 Features & Integrations
 
 - [x] ✅ **RSS Feed**
+
   - `@astrojs/rss` installed
   - Created `src/pages/rss.xml.ts` with TypeScript
   - Filters out omitted posts, sorts by date descending
@@ -474,28 +507,33 @@ src/components/
   - Standard RSS 2.0 format with content:encoded namespace
 
 - [x] ✅ **Sitemap**
+
   - `@astrojs/sitemap` installed
   - Configured in `astro.config.mjs` with site URL
   - Auto-generates `/sitemap-index.xml` and `/sitemap-0.xml`
   - Includes all pages and blog posts
 
 - [ ] **Analytics**
+
   - Google Analytics 4 only (ID: `G-33LYCFN2QF`)
   - Add script to `<head>` in base layout
   - Remove legacy Google Analytics (UA-85613962-11)
 
 - [ ] **SEO & Meta Tags**
+
   - Create reusable SEO component
   - Add Open Graph tags
   - Add Twitter Card tags
   - Test with [Twitter Card Validator](https://cards-dev.twitter.com/validator) and [Facebook Sharing Debugger](https://developers.facebook.com/tools/debug/)
 
 - [ ] **Image Optimization**
+
   - Use Astro's `<Image />` component for static images
   - Configure for featured images in blog posts
   - Optimize existing images in `static/` directory
 
 - [ ] **Canonical URLs**
+
   - Add canonical links to all pages
   - Base URL: `https://www.paigeniedringhaus.com`
 
@@ -506,6 +544,7 @@ src/components/
 ### 1.9 Build & Deployment Configuration
 
 - [x] ✅ Update `package.json` scripts:
+
   ```json
   {
     "scripts": {
@@ -517,13 +556,16 @@ src/components/
     }
   }
   ```
+
   - Gatsby scripts preserved with `gatsby:` prefix for reference
 
 - [x] ✅ Create `public/` directory and add static assets
+
   - Copied favicon and logos from `static/` to `public/`
   - Astro serves files from `public/` directory (not `static/`)
 
 - [x] ✅ Update `netlify.toml`:
+
   - Removed Gatsby plugin (`@netlify/plugin-gatsby`)
   - Changed build command to `npm run build`
   - Changed publish directory to `dist/` (from `public/`)
@@ -584,6 +626,7 @@ Before merging to main:
 #### Navigation Structure
 
 **Primary Navigation (Desktop & Mobile):**
+
 1. **Blog** - Main content hub
 2. **Podcasts** - Dedicated podcasting section
 3. **About** - Personal/professional info
@@ -591,6 +634,7 @@ Before merging to main:
 5. **Archive** - Historical content (talks, course, old media)
 
 **Changes from current site:**
+
 - **NEW:** Podcasts page (dedicated section)
 - **NEW:** Archive page (consolidates older content)
 - **REMOVED from main nav:** Courses (moved to Archive)
@@ -599,6 +643,7 @@ Before merging to main:
 #### Page Structure Details
 
 **Homepage (`/`):**
+
 ```
 ┌─────────────────────────────────────────────┐
 │ Hero Section                                │
@@ -641,6 +686,7 @@ Before merging to main:
 ```
 
 **Blog Page (`/blog`):**
+
 - Hero: Page title, description
 - Tag filter bar (all tags from posts)
 - Post grid (3 columns desktop, 1 column mobile)
@@ -685,6 +731,7 @@ Before merging to main:
 ```
 
 **About Page (`/about`):**
+
 - Current role: Lead Software Engineer @ AllSpice (starting 2026)
 - Previous role: Staff Software Engineer @ Blues (4.5 years)
 - Side projects: Front-end Fire podcast (3 years), blog
@@ -694,6 +741,7 @@ Before merging to main:
 - CTA: Link to blog, podcasts, contact
 
 **Contact Page (`/contact`):**
+
 - Keep current contact form
 - Email: hellopaigen@gmail.com
 - Social links
@@ -704,17 +752,20 @@ Before merging to main:
 Organized into collapsible/accordion sections:
 
 1. **Course (2021)**
+
    - "The newline Guide to Modernizing an Enterprise React App"
    - Note: "Written in 2021, some content may be outdated, but I'm still proud of this work!"
    - Link to course page
    - Preview videos
 
 2. **Talks & Videos**
+
    - List of conference/meetup talks
    - Recorded videos hyperlinked
    - Sorted by date (newest first)
 
 3. **Guest Podcast Appearances**
+
    - Podcast episodes where Paige was interviewed
    - Exclude PodRocket episodes (those are on Podcasts page)
    - JavaScript Jabber, My JavaScript Story, React Round Up, etc.
@@ -725,6 +776,7 @@ Organized into collapsible/accordion sections:
    - Links to external articles
 
 **Individual Blog Post Page (`/blog/[slug]`):**
+
 - Full-width hero with featured image
 - Article metadata (date, reading time, tags, category)
 - Table of contents (generated from headings)
@@ -744,6 +796,7 @@ Organized into collapsible/accordion sections:
 **Selected: Option A - Modern Minimal**
 
 **Light Mode:**
+
 - **Primary:** Deep indigo `#3730a3`
 - **Accent:** Vibrant pink `#ec4899`
 - **Secondary:** Soft purple `#8b5cf6`
@@ -754,6 +807,7 @@ Organized into collapsible/accordion sections:
 - **Border:** Light gray `#e5e7eb`
 
 **Dark Mode:**
+
 - **Primary:** Lighter indigo `#818cf8` (brightened from #6366f1 for WCAG contrast)
 - **Accent:** Bright pink `#f472b6`
 - **Secondary:** Light purple `#c4b5fd` (brightened from #a78bfa for WCAG contrast)
@@ -764,6 +818,7 @@ Organized into collapsible/accordion sections:
 - **Border:** Dark gray `#334155`
 
 **Theme Variables (CSS Custom Properties):**
+
 ```css
 /* src/styles/theme.css */
 :root {
@@ -777,7 +832,7 @@ Organized into collapsible/accordion sections:
   --color-border: #e5e7eb;
 }
 
-[data-theme="dark"] {
+[data-theme='dark'] {
   --color-primary: #818cf8;
   --color-accent: #f472b6;
   --color-secondary: #c4b5fd;
@@ -792,29 +847,33 @@ Organized into collapsible/accordion sections:
 #### Typography
 
 **Font Stack:**
+
 - **Headings:** `'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif`
 - **Body:** `'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif`
 - **Code:** `'JetBrains Mono', 'Fira Code', 'Courier New', monospace`
 
 **Font Sizes (Tailwind-inspired scale):**
+
 ```css
---text-xs: 0.75rem;    /* 12px */
---text-sm: 0.875rem;   /* 14px */
---text-base: 1rem;     /* 16px */
---text-lg: 1.125rem;   /* 18px */
---text-xl: 1.25rem;    /* 20px */
---text-2xl: 1.5rem;    /* 24px */
---text-3xl: 1.875rem;  /* 30px */
---text-4xl: 2.25rem;   /* 36px */
---text-5xl: 3rem;      /* 48px */
+--text-xs: 0.75rem; /* 12px */
+--text-sm: 0.875rem; /* 14px */
+--text-base: 1rem; /* 16px */
+--text-lg: 1.125rem; /* 18px */
+--text-xl: 1.25rem; /* 20px */
+--text-2xl: 1.5rem; /* 24px */
+--text-3xl: 1.875rem; /* 30px */
+--text-4xl: 2.25rem; /* 36px */
+--text-5xl: 3rem; /* 48px */
 ```
 
 **Line Heights:**
+
 - Body text: 1.6
 - Headings: 1.2
 - Code: 1.5
 
 **Font Weights:**
+
 - Normal: 400
 - Medium: 500
 - Semibold: 600
@@ -823,19 +882,20 @@ Organized into collapsible/accordion sections:
 #### Spacing System
 
 **Based on 4px base unit:**
+
 ```css
---space-1: 0.25rem;  /* 4px */
---space-2: 0.5rem;   /* 8px */
---space-3: 0.75rem;  /* 12px */
---space-4: 1rem;     /* 16px */
---space-5: 1.25rem;  /* 20px */
---space-6: 1.5rem;   /* 24px */
---space-8: 2rem;     /* 32px */
---space-10: 2.5rem;  /* 40px */
---space-12: 3rem;    /* 48px */
---space-16: 4rem;    /* 64px */
---space-20: 5rem;    /* 80px */
---space-24: 6rem;    /* 96px */
+--space-1: 0.25rem; /* 4px */
+--space-2: 0.5rem; /* 8px */
+--space-3: 0.75rem; /* 12px */
+--space-4: 1rem; /* 16px */
+--space-5: 1.25rem; /* 20px */
+--space-6: 1.5rem; /* 24px */
+--space-8: 2rem; /* 32px */
+--space-10: 2.5rem; /* 40px */
+--space-12: 3rem; /* 48px */
+--space-16: 4rem; /* 64px */
+--space-20: 5rem; /* 80px */
+--space-24: 6rem; /* 96px */
 ```
 
 #### Layout Constants
@@ -845,10 +905,10 @@ Organized into collapsible/accordion sections:
 --content-width-narrow: 720px;
 --content-width-wide: 1400px;
 --header-height: 64px;
---border-radius-sm: 0.375rem;  /* 6px */
---border-radius: 0.5rem;       /* 8px */
---border-radius-lg: 0.75rem;   /* 12px */
---border-radius-xl: 1rem;      /* 16px */
+--border-radius-sm: 0.375rem; /* 6px */
+--border-radius: 0.5rem; /* 8px */
+--border-radius-lg: 0.75rem; /* 12px */
+--border-radius-xl: 1rem; /* 16px */
 --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
 --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
@@ -858,6 +918,7 @@ Organized into collapsible/accordion sections:
 #### Component Patterns
 
 **Blog Post Card:**
+
 ```
 ┌─────────────────────────────────┐
 │  [Featured Image]               │ (aspect-ratio: 16/9)
@@ -877,6 +938,7 @@ States:
 ```
 
 **Podcast Episode Card:**
+
 ```
 ┌──────────────────────────────────┐
 │ [🎙️ Podcast Logo] Episode #123  │
@@ -891,6 +953,7 @@ States:
 ```
 
 **Tag Badge:**
+
 ```css
 .tag {
   background: var(--color-secondary);
@@ -903,6 +966,7 @@ States:
 ```
 
 **Category Badge:**
+
 ```css
 .category {
   background: var(--color-accent);
@@ -921,6 +985,7 @@ States:
 #### Light/Dark Mode Toggle
 
 **Implementation:**
+
 - [x] ✅ Add theme toggle button to header (sun/moon icon)
 - [x] ✅ Use `localStorage` to persist theme preference
 - [x] ✅ Respect `prefers-color-scheme` media query on first visit
@@ -928,10 +993,14 @@ States:
 - [x] ✅ Update all colors using CSS custom properties
 
 **Code snippet:**
+
 ```javascript
 // src/scripts/theme.js
-const theme = localStorage.getItem('theme') ||
-  (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+const theme =
+  localStorage.getItem('theme') ||
+  (window.matchMedia('(prefers-color-scheme: dark)').matches
+    ? 'dark'
+    : 'light');
 
 document.documentElement.setAttribute('data-theme', theme);
 
@@ -946,28 +1015,34 @@ function toggleTheme() {
 #### Blog Post Features
 
 - [ ] **Reading Progress Indicator**
+
   - Sticky header with progress bar
   - Updates as user scrolls
   - Inspired by Josh Comeau's implementation
 
 - [ ] **Copy Link Button**
+
   - Button in post header to copy permalink
   - Toast notification on copy success
 
 - [x] ✅ **Table of Contents** — Complete
+
   - Auto-generated from H2/H3 headings
   - Sticky sidebar on desktop
   - Highlights current section on scroll
 
 - [ ] **Social Share Buttons**
+
   - Twitter, LinkedIn, Facebook, Copy Link
   - Sticky or at top/bottom of post
 
 - [ ] **Related Posts**
+
   - 3 related posts at bottom based on tags/category
   - Exclude current post
 
 - [x] ✅ **Newsletter Subscribe Section** — Complete (2026-02-17)
+
   - Added above post footer with animated gradient Subscribe button
   - Copy: "Enjoyed this? New posts land in your inbox — no noise, just the good stuff."
 
@@ -979,12 +1054,14 @@ function toggleTheme() {
 #### Blog Listing Features
 
 - [ ] **Tag Filter**
+
   - Horizontal scrollable tag bar
   - Active tag highlights
   - "Clear filters" button
   - URL updates with selected tag (e.g., `/blog?tag=react`)
 
 - [ ] **Search** _(Skipped for v1 - using tag filtering instead)_
+
   - No client-side search tool implementation
   - Simple tag filtering provides adequate discovery
   - Can add full-text search in future version if needed
@@ -1035,6 +1112,7 @@ button:active {
 ### 2.4 Navigation Design
 
 #### Desktop Header
+
 ```
 ┌─────────────────────────────────────────────────────┐
 │ [Logo/Name]    Blog Podcasts About Contact Archive │
@@ -1043,6 +1121,7 @@ button:active {
 ```
 
 **Specifications:**
+
 - Height: 64px
 - Sticky on scroll
 - Background: `var(--color-surface)` with backdrop blur
@@ -1053,6 +1132,7 @@ button:active {
 - Active page underline (accent color)
 
 #### Mobile Header & Menu
+
 ```
 ┌─────────────────────────────────────┐
 │ [Logo/Name]              [☰]       │
@@ -1073,6 +1153,7 @@ button:active {
 ```
 
 **Specifications:**
+
 - Hamburger menu (☰) on mobile (<768px)
 - Full-screen overlay with fade-in animation
 - Large, touch-friendly nav links
@@ -1082,6 +1163,7 @@ button:active {
 - Body scroll lock when menu open
 
 #### Footer
+
 ```
 ┌─────────────────────────────────────────────────────┐
 │                                                     │
@@ -1101,6 +1183,7 @@ button:active {
 ```
 
 **Specifications:**
+
 - Background: `var(--color-surface)`
 - Border top: 1px solid `var(--color-border)`
 - Padding: 3rem vertical
@@ -1121,25 +1204,28 @@ button:active {
 
 **Grid Layouts:**
 
-| Element | Mobile (<768px) | Tablet (768-1024px) | Desktop (>1024px) |
-|---------|----------------|---------------------|-------------------|
-| Blog post cards | 1 column | 2 columns | 3 columns |
-| Featured content | 1 column | 2 columns | 3 columns |
-| Podcast episodes | 1 column | 1 column | 2 columns |
-| Archive sections | 1 column | 1 column | 2 columns |
+| Element          | Mobile (<768px) | Tablet (768-1024px) | Desktop (>1024px) |
+| ---------------- | --------------- | ------------------- | ----------------- |
+| Blog post cards  | 1 column        | 2 columns           | 3 columns         |
+| Featured content | 1 column        | 2 columns           | 3 columns         |
+| Podcast episodes | 1 column        | 1 column            | 2 columns         |
+| Archive sections | 1 column        | 1 column            | 2 columns         |
 
 **Font Size Adjustments:**
+
 - Mobile: Reduce headings by 20-30%
 - Increase line height for readability
 - Ensure minimum 44x44px touch targets
 
 **Navigation:**
+
 - Desktop: Horizontal nav bar
 - Mobile: Hamburger menu with full-screen overlay
 
 ### 2.6 Content Updates
 
 #### General Content Review
+
 - [ ] **Review all page content for accuracy and currency**
   - Go through About, Contact, Courses, Media, and all other pages
   - Update job information, technologies, personal details
@@ -1148,22 +1234,26 @@ button:active {
   - Verify all external links still work
 
 #### Update About Page
+
 - [x] ✅ AllSpice current role present
 - [x] ✅ Blues previous role present
 - [x] ✅ Added Front-end Fire and PodRocket co-hosting paragraph
 
 #### Update Homepage
+
 - [x] ✅ Hero section: "Full-Stack Software Engineer" title (no company), photo, tagline, social links
 - [x] ✅ Featured content: Latest blog post (with thumbnail) + Front-end Fire (horizontal logo card)
 - [x] ✅ Recent posts grid: 6 posts using PostCard component
 - [x] ✅ Newsletter signup at bottom
 
 #### Create Podcasts Page
+
 - [x] ✅ Add Front-end Fire section with podcast description and link to https://front-end-fire.com/
 - [x] ✅ Add PodRocket section with co-hosted episodes filtered from `data/podcasts.js` (type: 'cohost')
 - [x] ✅ Add React Round Up historical section with external link
 
 #### Create Archive Page
+
 - [x] ✅ Courses section with newline course card + YouTube video grid (collapsible)
 - [x] ✅ Talks & Videos section from `speaking.js`, excluding course videos (collapsible)
 - [x] ✅ Guest Podcast Appearances section filtered from `podcasts.js` (type: 'guest', collapsible)
@@ -1173,6 +1263,7 @@ button:active {
 ### 2.7 Design Inspiration Reference
 
 **From Josh Comeau (https://www.joshwcomeau.com/):**
+
 - Dark mode with sophisticated color mapping
 - Playful SVG illustrations
 - Reading progress indicator
@@ -1181,6 +1272,7 @@ button:active {
 - Clear content hierarchy
 
 **From Adam Argyle (https://nerdy.dev/):**
+
 - Dark/night mode as primary
 - Topic filtering with live interactions
 - Personality-driven design
@@ -1189,6 +1281,7 @@ button:active {
 - Playful coding conventions
 
 **From Una Kravets (https://una.im/):**
+
 - Light/dark theme toggle
 - Personalized imagery
 - Playful audio interactions
@@ -1197,6 +1290,7 @@ button:active {
 - Unicorn branding/personality
 
 **From Tania Rascia (https://www.taniarascia.com/):**
+
 - Clean, minimal design
 - Muted, calming color palette
 - Excellent readability
@@ -1205,6 +1299,7 @@ button:active {
 - Responsive, accessible design
 
 **From Front-end Fire (https://front-end-fire.com/):**
+
 - Simple, podcast-focused design
 - Episode cards with clear metadata
 - Multiple platform links (Apple, Spotify, YouTube, RSS)
@@ -1229,17 +1324,20 @@ button:active {
 ### 2.9 Performance Targets
 
 **Lighthouse Scores (Mobile):**
+
 - Performance: > 95
 - Accessibility: 100
 - Best Practices: 100
 - SEO: 100
 
 **Core Web Vitals:**
+
 - LCP (Largest Contentful Paint): < 2.5s
 - FID (First Input Delay): < 100ms
 - CLS (Cumulative Layout Shift): < 0.1
 
 **Optimization Strategies:**
+
 - Use Astro's `<Image />` for automatic optimization
 - Lazy load images below the fold
 - Minimize JavaScript (leverage Astro's zero-JS by default)
@@ -1254,6 +1352,7 @@ button:active {
 Before deploying redesign:
 
 **Visual Testing:**
+
 - [ ] All pages render correctly in light mode
 - [ ] All pages render correctly in dark mode
 - [ ] Theme toggle works on all pages
@@ -1264,6 +1363,7 @@ Before deploying redesign:
 - [ ] Colors consistent across site
 
 **Responsive Testing:**
+
 - [ ] Test on mobile (375px, 414px widths)
 - [ ] Test on tablet (768px, 1024px widths)
 - [ ] Test on desktop (1280px, 1920px widths)
@@ -1273,6 +1373,7 @@ Before deploying redesign:
 - [ ] Text readable at all sizes
 
 **Functional Testing:**
+
 - [ ] All navigation links work
 - [ ] Tag filtering works on blog
 - [ ] Pagination works on blog
@@ -1285,6 +1386,7 @@ Before deploying redesign:
 - [ ] External links open in new tab
 
 **Cross-Browser Testing:**
+
 - [ ] Chrome
 - [ ] Firefox
 - [ ] Safari
@@ -1293,6 +1395,7 @@ Before deploying redesign:
 - [ ] Mobile Chrome (Android)
 
 **Performance Testing:**
+
 - [ ] Run Lighthouse on all major pages
 - [ ] Check bundle size (should be minimal with Astro)
 - [ ] Test on slow 3G connection
@@ -1387,14 +1490,16 @@ src/
 ### Key Dependencies
 
 **Current (Gatsby):**
+
 - gatsby: 4.13.1
 - react: 18.1.0
 - gatsby-transformer-remark: 5.13.0
-- Various gatsby-remark-* plugins
+- Various gatsby-remark-\* plugins
 - sass: 1.80.3
 - FontAwesome React components
 
 **Current (Astro):**
+
 - astro: 5.17.1
 - @astrojs/mdx: 4.3.13
 - @astrojs/sitemap: 3.7.0
@@ -1414,6 +1519,7 @@ src/
 ### Git Submodule Details
 
 **Current setup:**
+
 - Submodule path: `content/`
 - Repository: `git@github.com:paigen11/pn-blog-posts.git`
 - Branch: `main`
@@ -1423,6 +1529,7 @@ src/
 ### Deployment Configuration
 
 **Netlify:**
+
 - Current branch: `master`
 - Build command: `gatsby build` → Change to `npm run build` (Astro)
 - Publish directory: `public` → Change to `dist`
@@ -1432,6 +1539,7 @@ src/
 ### Front-end Fire Integration
 
 **Strategy for promoting Front-end Fire:**
+
 - Dedicated hero section on `/podcasts` page
 - Link to https://front-end-fire.com/ (Astro site)
 - Could fetch latest episodes from RSS feed (optional)
@@ -1439,6 +1547,7 @@ src/
 - Emphasize that it's entering 3rd year of weekly episodes
 
 **Consider:**
+
 - Embedding audio player on site (iframe from Buzzsprout?)
 - Or just link out to external podcast platforms
 - Consistency with Front-end Fire's orange branding
@@ -1448,6 +1557,7 @@ src/
 ## Timeline Estimates
 
 ### Phase 1: Gatsby → Astro Migration
+
 - **Week 1:** Setup, content collections, markdown plugins
 - **Week 2:** Pages, routing, blog post generation
 - **Week 3:** Components, styling, features (RSS, sitemap)
@@ -1455,6 +1565,7 @@ src/
 - **Total:** ~4 weeks
 
 ### Phase 2: Redesign
+
 - **Week 1:** Design system implementation (colors, typography, spacing)
 - **Week 2:** Homepage, navigation, footer redesign
 - **Week 3:** Blog page redesign, tag filtering, new Podcasts page
@@ -1486,6 +1597,7 @@ src/
 ### ✅ Improve Homepage Social Icons
 
 **Completed 2026-02-16**
+
 - `src/components/Icon.astro` — SVG paths for all 6 icons, `name` + `size` props
 - `src/components/SocialIcons.astro` — renders full icon row, `showLabels` prop
 - Used in `index.astro` (hero), `Footer.astro` (with labels), `contact.astro` (heading icons)
@@ -1511,21 +1623,25 @@ These improvements should be implemented after the initial Astro migration is me
 **Priority:** High
 
 - [ ] **Add hero/featured images to individual blog post pages**
+
   - Display `featuredImage` from frontmatter at the top of blog posts
   - Use Astro's `<Image />` component for optimization
   - Responsive image sizing across devices
   - Fallback to default image if none specified
 
 - [ ] **Display tags on individual blog post pages**
+
   - Show tags at top or bottom of blog post content
   - Link tags to filtered blog listing (e.g., `/blog?tag=react`)
   - Consistent styling with tag badges elsewhere on site
 
 - [x] ✅ **Add reading time to blog posts** — Complete
+
   - Calculated from word count (strips code blocks, markdown syntax)
   - Displayed in post header meta: "X min read"
 
 - [x] ✅ **Add sticky table of contents to blog posts** — Complete
+
   - Auto-generated from H2/H3 headings
   - Sticky sidebar on desktop (≥1080px), hidden on mobile
   - IntersectionObserver highlights active section on scroll
@@ -1554,11 +1670,13 @@ These improvements should be implemented after the initial Astro migration is me
 **Priority:** Low
 
 - [ ] **Evaluate search solutions**
+
   - Consider Pagefind (client-side static search)
   - Consider Algolia or similar hosted search
   - Or implement simple title/content search with JavaScript
 
 - [ ] **Enhance existing tag filtering**
+
   - Add search input box on blog listing page
   - Filter posts by title or subtitle in real-time
   - Combine with existing tag filtering
@@ -1577,4 +1695,10 @@ These improvements should be implemented after the initial Astro migration is me
 
 ---
 
-*This plan will be updated as we make progress. Check back regularly for status updates and adjustments.*
+_This plan will be updated as we make progress. Check back regularly for status updates and adjustments._
+Still to do:
+
+- [x] fix opengraph tags for blog posts on socials
+- [x] rewrite my about for LI and redo favicon and redo the hero image I have on LI for my site so it matches the new site look
+- [x] favicon.svg + matching favicon.png fallback — brand-consistent across browser tab and header
+- [x] design/ folder created for og-preview.html and li-background-preview.html source files

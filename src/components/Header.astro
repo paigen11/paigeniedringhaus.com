@@ -1,6 +1,6 @@
 ---
 const currentPath = Astro.url.pathname;
-const logo = '/logos/pn-logo-48.png';
+const logo = '/favicon.svg';
 
 const navLinks = [
   { href: '/blog', label: 'Blog' },
@@ -159,13 +159,8 @@ const navLinks = [
   }
 
   .logo-img {
-    width: 48px;
-    height: 48px;
-    transition: filter 0.2s ease;
-  }
-
-  :global([data-theme='dark']) .logo-img {
-    filter: invert(1) brightness(1.2);
+    width: 36px;
+    height: 36px;
   }
 
   .site-name {

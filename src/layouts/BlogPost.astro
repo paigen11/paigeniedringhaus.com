@@ -18,6 +18,11 @@ const formattedDate = formatDate(date);
 
 const description = subTitle || `Blog post: ${title}`;
 
+const siteUrl = 'https://www.paigeniedringhaus.com';
+const ogImage = post.data.featuredImage
+  ? siteUrl + post.data.featuredImage.replace(/^\.\.\/images\//, '/images/')
+  : undefined; // Layout will fall back to paige-hero.jpg
+
 // Reading time
 const wordCount = post.body
   .replace(/```[\s\S]*?```/g, '')
@@ -32,7 +37,7 @@ const readingTime = Math.max(1, Math.ceil(wordCount / 200));
 const tocHeadings = headings.filter((h) => h.depth === 2 || h.depth === 3);
 ---
 
-<Layout title={`${title} | Paige Niedringhaus`} description={description}>
+<Layout title={`${title} | Paige Niedringhaus`} description={description} image={ogImage} type="article">
   <article class="blog-post">
 
     <div class="post-layout">

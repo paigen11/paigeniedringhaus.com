@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=1584" />
+  <title>LinkedIn Background Preview — Paige Niedringhaus</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      width: 1584px;
+      height: 396px;
+      overflow: hidden;
+      background: #0f172a;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+
+    .card {
+      width: 1584px;
+      height: 396px;
+      background: #0f172a;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      /* 380px left padding clears the LI profile photo (~320px wide) */
+      padding: 0 80px 0 380px;
+    }
+
+    /* ── Background decoration ── */
+
+    /* Large indigo blob top-left */
+    .card::before {
+      content: '';
+      position: absolute;
+      top: -180px;
+      left: -80px;
+      width: 540px;
+      height: 540px;
+      background: radial-gradient(circle, rgba(55, 48, 163, 0.45) 0%, transparent 65%);
+      pointer-events: none;
+    }
+
+    /* Pink blob bottom-right */
+    .card::after {
+      content: '';
+      position: absolute;
+      bottom: -160px;
+      right: 80px;
+      width: 460px;
+      height: 460px;
+      background: radial-gradient(circle, rgba(236, 72, 153, 0.25) 0%, transparent 65%);
+      pointer-events: none;
+    }
+
+    /* Faint grid pattern */
+    .grid-overlay {
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(129, 140, 248, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(129, 140, 248, 0.05) 1px, transparent 1px);
+      background-size: 48px 48px;
+      pointer-events: none;
+    }
+
+    /* ── Code snippet decoration (right side) ── */
+    .code-block {
+      position: absolute;
+      right: 72px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-family: 'JetBrains Mono', 'Fira Code', monospace;
+      font-size: 17px;
+      line-height: 1.85;
+      opacity: 0.30;
+      pointer-events: none;
+      text-align: left;
+      white-space: pre;
+    }
+
+    .code-block .kw  { color: #818cf8; }
+    .code-block .fn  { color: #f472b6; }
+    .code-block .str { color: #34d399; }
+    .code-block .cm  { color: #64748b; }
+    .code-block .def { color: #f1f5f9; }
+
+    /* ── Main content ── */
+    .content {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 22px;
+    }
+
+    /* Two-line tagline — setup line above, punchline below */
+    .tagline-setup {
+      font-size: 34px;
+      font-weight: 500;
+      color: #94a3b8;
+      letter-spacing: -0.01em;
+      line-height: 1.2;
+    }
+
+    .tagline-punch {
+      font-size: 52px;
+      font-weight: 800;
+      color: #f1f5f9;
+      letter-spacing: -0.025em;
+      line-height: 1.1;
+    }
+
+    .tagline-punch span {
+      color: #ec4899;
+    }
+
+    /* URL + chips row */
+    .details {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+    }
+
+    .url {
+      font-size: 22px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: #818cf8;
+    }
+
+    .divider {
+      width: 1px;
+      height: 24px;
+      background: #334155;
+    }
+
+    .stack {
+      display: flex;
+      gap: 10px;
+    }
+
+    .chip {
+      font-size: 18px;
+      font-weight: 500;
+      color: #94a3b8;
+      background: rgba(30, 41, 59, 0.9);
+      border: 1px solid #334155;
+      padding: 8px 18px;
+      border-radius: 100px;
+      letter-spacing: 0.01em;
+    }
+
+    /* ── Bottom gradient bar ── */
+    .bottom-bar {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, #3730a3 0%, #8b5cf6 50%, #ec4899 100%);
+    }
+
+    /* ── Top accent line ── */
+    .top-bar {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, transparent 0%, rgba(55, 48, 163, 0.6) 30%, rgba(139, 92, 246, 0.6) 60%, transparent 100%);
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="grid-overlay"></div>
+
+    <div class="content">
+      <div>
+        <div class="tagline-setup">If I spent hours figuring it out,</div>
+        <div class="tagline-punch">I wrote it down <span>so you don't have to.</span></div>
+      </div>
+      <div class="details">
+        <span class="url">paigeniedringhaus.com</span>
+        <div class="divider"></div>
+        <div class="stack">
+          <span class="chip">JavaScript</span>
+          <span class="chip">TypeScript</span>
+          <span class="chip">React</span>
+          <span class="chip">Node.js</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Decorative code snippet, right side -->
+    <div class="code-block"><span class="cm">// if I figured it out, I wrote it down</span>
+<span class="kw">const</span> <span class="def">share</span> = <span class="kw">async</span> (<span class="def">knowledge</span>) <span class="kw">=></span> &#123;
+  <span class="kw">const</span> <span class="def">post</span> = <span class="kw">await</span> <span class="fn">writeItDown</span>(<span class="def">knowledge</span>);
+  <span class="kw">return</span> <span class="fn">publish</span>(<span class="def">post</span>, &#123;
+    <span class="def">audience</span>: <span class="str">'everyone'</span>,
+    <span class="def">paywall</span>: <span class="str">false</span>,
+  &#125;);
+&#125;;</div>
+
+    <div class="top-bar"></div>
+    <div class="bottom-bar"></div>
+  </div>
+</body>
+</html>
