@@ -74,7 +74,7 @@ export default [
     title:
       "She's in Tech: Escaping the Application Blackhole with Paige Niedringhaus",
     date: formatDate('2021-12-21'),
-    path: null, // site defunct as of 2026
+    path: null,
     img: shesInTech,
   },
   {
@@ -92,7 +92,7 @@ export default [
   {
     title: '20minJS: State Management in React with Paige Niedringhaus',
     date: formatDate('2022-03-29'),
-    path: null, // 404 as of 2026
+    path: null,
     img: js20min,
   },
 ];
