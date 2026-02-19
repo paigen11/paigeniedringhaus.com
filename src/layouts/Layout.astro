@@ -38,6 +38,15 @@ const ogImage = image ?? `${siteUrl}/og-default.png`;
         document.documentElement.setAttribute('data-theme', theme);
       })();
     </script>
+
+    <!-- Unregister old Gatsby service workers -->
+    <script is:inline>
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.getRegistrations().then(registrations => {
+          registrations.forEach(registration => registration.unregister());
+        });
+      }
+    </script>
     <meta name="generator" content={Astro.generator} />
 
     <!-- Primary Meta Tags -->
