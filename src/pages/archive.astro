@@ -1,0 +1,469 @@
+---
+import Layout from '../layouts/Layout.astro';
+import VideoCard from '../components/VideoCard.astro';
+import courses from '../data/courses.js';
+import courseVideos from '../data/courseVideos.js';
+import speaking from '../data/speaking.js';
+import podcasts from '../data/podcasts.js';
+import publications from '../data/publications.js';
+
+const sortedSpeaking = speaking
+  .sort((a: { date: string }, b: { date: string }) => new Date(b.date).getTime() - new Date(a.date).getTime());
+
+const sortedPodcasts = podcasts
+  .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+
+// Order companies newest-first by their most recent article
+const companyOrder: Array<keyof typeof publications> = ['Blues', 'newline', 'LogRocket', 'ButterCMS'];
+
+const sortedPublications: Record<string, Array<{ title: string; date: string; path: string }>> = {};
+companyOrder.forEach((company) => {
+  const articles = publications[company];
+  if (articles) {
+    sortedPublications[company] = [...articles].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+  }
+});
+
+const companyLogos: Record<string, string> = {
+  Blues: '/thumbnails/blues-favicon.svg',
+  newline: '/thumbnails/newline-logo.png',
+  LogRocket: '/thumbnails/logRocket.jpg',
+  ButterCMS: '/thumbnails/butterCMS.png',
+};
+
+const totalArticles = Object.values(sortedPublications).reduce((sum, articles) => sum + articles.length, 0);
+---
+
+<Layout title="Archive | Paige Niedringhaus" description="The full catalog — courses, conference talks, guest podcast appearances, and articles written across the web. Some of it's old, all of it happened.">
+  <div class="page-container">
+    <h1>Archive</h1>
+
+    <section>
+      <p>
+        The full catalog — courses, conference talks, guest podcast appearances, and articles written across the web. Some of it's old, all of it happened.
+      </p>
+    </section>
+
+    <details>
+      <summary>
+        <h2>Courses <span class="count">({courses.length} course, {courseVideos.length} videos)</span></h2>
+      </summary>
+      <div class="details-content">
+        <p>
+          I wrote the React course I wish had existed when I was learning — built from years of working on real enterprise codebases, not toy examples.
+        </p>
+        <ul class="course-list">
+          {courses.map((course) => (
+            <li class="course-item">
+              <a href={course.path} target="_blank" rel="noopener noreferrer" class="course-link">
+                <img
+                  src={typeof course.img === 'string' ? course.img : course.img.src}
+                  alt="Cover image for The newline Guide to Modernizing an Enterprise React App"
+                  class="course-image"
+                />
+                <h4 class="course-title">{course.title}</h4>
+                <p class="course-hook">{course.hook}</p>
+                <h4 class="learn-more">
+                  Learn more <span class="caret">&gt;</span>
+                </h4>
+              </a>
+            </li>
+          ))}
+        </ul>
+
+        <h3>Free YouTube Videos</h3>
+        <p>
+          Want a taste first? These&nbsp;
+          <a
+            href="https://www.youtube.com/playlist?list=PLqcl38GHd4J9aJ1cAngJ3CoGyTnjL1x7i"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            free YouTube videos
+          </a>
+          &nbsp;cover the same ground.
+        </p>
+        <div class="videos-grid">
+          {courseVideos.map((video) => (
+            <VideoCard course={video} />
+          ))}
+        </div>
+      </div>
+    </details>
+
+    <details>
+      <summary>
+        <h2>Talks & Videos <span class="count">({sortedSpeaking.length})</span></h2>
+      </summary>
+      <div class="details-content">
+        <p class="note">(Note: Recorded talks are hyperlinked in color.)</p>
+        <ul class="media-list">
+          {sortedSpeaking.map((talk) => (
+            <li class="media-item">
+              <img src={talk.img} alt="organization logo" class="media-logo" />
+              <div class="media-content">
+                {talk.path ? (
+                  <a href={talk.path} target="_blank" rel="noopener noreferrer" class="media-title">
+                    {talk.title}
+                  </a>
+                ) : (
+                  <span class="media-title-plain">{talk.title}</span>
+                )}
+                <p class="media-date">{talk.date}</p>
+              </div>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </details>
+
+    <details>
+      <summary>
+        <h2>Guest Podcast Appearances <span class="count">({sortedPodcasts.length})</span></h2>
+      </summary>
+      <div class="details-content">
+        <ul class="media-list">
+          {sortedPodcasts.map((podcast) => (
+            <li class="media-item">
+              <img src={podcast.img} alt="podcast logo" class="media-logo" />
+              <div class="media-content">
+                <a href={podcast.path} target="_blank" rel="noopener noreferrer" class="media-title">
+                  {podcast.title}
+                </a>
+                <p class="media-date">{podcast.date}</p>
+              </div>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </details>
+
+    <details>
+      <summary>
+        <h2>Published Articles <span class="count">({totalArticles})</span></h2>
+      </summary>
+      <div class="details-content">
+        {Object.entries(sortedPublications).map(([company, articles]) => (
+          <div class="publication-section">
+            <div class="company-header">
+              <img src={companyLogos[company]} alt={`${company} logo`} class="company-logo" />
+              <h3>{company}</h3>
+            </div>
+            <ul class="publication-list">
+              {articles.map((article) => (
+                <li class="publication-item">
+                  <a href={article.path} target="_blank" rel="noopener noreferrer" class="publication-link">
+                    {article.title}
+                  </a>
+                  <p class="publication-date">{article.date}</p>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+    </details>
+  </div>
+</Layout>
+
+<style>
+  /* Details/Summary Accordion */
+  details {
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    margin-bottom: var(--space-4);
+    overflow: hidden;
+  }
+
+  summary {
+    cursor: pointer;
+    padding: var(--space-4) var(--space-6);
+    list-style: none;
+    display: flex;
+    align-items: center;
+
+    &::before {
+      content: '\25B6';
+      font-size: var(--text-sm);
+      margin-right: var(--space-3);
+      transition: transform 0.2s;
+      flex-shrink: 0;
+    }
+
+    &::-webkit-details-marker {
+      display: none;
+    }
+
+    &:hover {
+      background-color: var(--color-bg);
+    }
+
+    & h2 {
+      font-size: var(--text-2xl);
+      font-weight: 600;
+      margin: 0;
+      display: inline;
+    }
+  }
+
+  details[open] > summary::before {
+    transform: rotate(90deg);
+  }
+
+  .count {
+    font-size: var(--text-base);
+    font-weight: 400;
+    color: var(--color-text-secondary);
+    margin-left: var(--space-2);
+  }
+
+  .details-content {
+    padding: 0 var(--space-6) var(--space-6);
+
+    & p {
+      font-size: var(--text-lg);
+      line-height: 1.8;
+      margin-bottom: var(--space-4);
+      color: var(--color-text);
+    }
+
+    & h3 {
+      font-size: var(--text-xl);
+      font-weight: 600;
+      margin-top: var(--space-6);
+      margin-bottom: var(--space-4);
+      color: var(--color-text);
+    }
+
+    & a {
+      color: var(--color-primary);
+      text-decoration: underline;
+      transition: color 0.2s;
+
+      &:hover {
+        color: var(--color-accent);
+      }
+    }
+  }
+
+  .note {
+    font-size: var(--text-sm) !important;
+    color: var(--color-text-secondary) !important;
+    font-style: italic;
+  }
+
+  /* Course styles */
+  .course-list {
+    list-style: none;
+    padding: 0;
+  }
+
+  .course-item {
+    margin-bottom: var(--space-6);
+  }
+
+  .course-link {
+    display: block;
+    text-decoration: none !important;
+    background: var(--color-surface);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: all 0.2s ease;
+
+    &:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-lg);
+
+      & .learn-more {
+        color: var(--color-accent);
+      }
+
+      & .caret {
+        transform: translateX(4px);
+      }
+    }
+  }
+
+  .course-image {
+    width: 100%;
+    max-height: 400px;
+    object-fit: cover;
+  }
+
+  .course-title,
+  .course-hook,
+  .learn-more {
+    padding: 0 var(--space-6);
+  }
+
+  .course-title {
+    font-size: var(--text-2xl);
+    font-weight: 600;
+    color: var(--color-text);
+    margin-top: var(--space-4);
+    margin-bottom: var(--space-3);
+  }
+
+  .course-hook {
+    font-size: var(--text-base);
+    line-height: 1.6;
+    color: var(--color-text-secondary);
+    margin-bottom: var(--space-4);
+  }
+
+  .learn-more {
+    font-size: var(--text-lg);
+    font-weight: 600;
+    color: var(--color-primary);
+    margin-bottom: var(--space-4);
+    transition: color 0.2s;
+  }
+
+  .caret {
+    display: inline-block;
+    transition: transform 0.2s;
+  }
+
+  .videos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: var(--space-6);
+    margin-top: var(--space-6);
+  }
+
+  /* Media list styles (talks, podcasts) */
+  .media-list {
+    list-style: none;
+    padding: 0;
+  }
+
+  .media-item {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-4);
+    padding: var(--space-4);
+    border-bottom: 1px solid var(--color-border);
+
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+
+  .media-logo {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+    flex-shrink: 0;
+    border-radius: var(--radius);
+  }
+
+  .media-content {
+    flex: 1;
+  }
+
+  .media-title {
+    font-size: var(--text-lg);
+    font-weight: 600;
+    color: var(--color-primary);
+    text-decoration: underline;
+    display: block;
+    margin-bottom: var(--space-2);
+    transition: color 0.2s;
+
+    &:hover {
+      color: var(--color-accent);
+    }
+  }
+
+  .media-title-plain {
+    font-size: var(--text-lg);
+    font-weight: 600;
+    color: var(--color-text);
+    display: block;
+    margin-bottom: var(--space-2);
+  }
+
+  .media-date {
+    font-size: var(--text-sm);
+    color: var(--color-text-secondary);
+  }
+
+  /* Publication styles */
+  .publication-section {
+    margin-bottom: var(--space-8);
+  }
+
+  .company-header {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    margin-bottom: var(--space-4);
+  }
+
+  .company-logo {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+  }
+
+  :global([data-theme='dark']) .company-logo[src*="butterCMS"] {
+    filter: invert(1) brightness(1.2);
+  }
+
+  .publication-list {
+    list-style: none;
+    padding: 0;
+    padding-left: var(--space-8);
+  }
+
+  .publication-item {
+    margin-bottom: var(--space-4);
+  }
+
+  .publication-link {
+    font-size: var(--text-lg);
+    font-weight: 600;
+    color: var(--color-primary);
+    text-decoration: underline;
+    display: block;
+    margin-bottom: var(--space-1);
+    transition: color 0.2s;
+
+    &:hover {
+      color: var(--color-accent);
+    }
+  }
+
+  .publication-date {
+    font-size: var(--text-sm);
+    color: var(--color-text-secondary);
+  }
+
+  @media (max-width: 768px) {
+    summary {
+      padding: var(--space-3) var(--space-4);
+
+      & h2 {
+        font-size: var(--text-xl);
+      }
+    }
+
+    .details-content {
+      padding: 0 var(--space-4) var(--space-4);
+    }
+
+    .videos-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .media-item {
+      flex-direction: column;
+    }
+
+    .media-logo {
+      width: 50px;
+      height: 50px;
+    }
+  }
+</style>

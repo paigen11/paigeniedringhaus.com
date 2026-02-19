@@ -6,14 +6,19 @@ import Footer from '../components/Footer.astro';
 interface Props {
   title: string;
   description?: string;
+  image?: string;
+  type?: 'website' | 'article';
 }
 
 const {
   title,
   description = 'Paige Niedringhaus is a Lead Software Engineer with a focus on frontend development.',
+  image,
+  type = 'website',
 } = Astro.props;
 
 const siteUrl = 'https://www.paigeniedringhaus.com';
+const ogImage = image ?? `${siteUrl}/og-default.png`;
 ---
 
 <!doctype html>
@@ -21,7 +26,18 @@ const siteUrl = 'https://www.paigeniedringhaus.com';
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="icon" type="image/png" href="/favicon.png" />
+
+    <!-- Theme initialization (must run before page renders to prevent flash) -->
+    <script is:inline>
+      (function() {
+        const savedTheme = localStorage.getItem('theme');
+        const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        const theme = savedTheme || (systemPrefersDark ? 'dark' : 'light');
+        document.documentElement.setAttribute('data-theme', theme);
+      })();
+    </script>
     <meta name="generator" content={Astro.generator} />
 
     <!-- Primary Meta Tags -->
@@ -33,16 +49,20 @@ const siteUrl = 'https://www.paigeniedringhaus.com';
     <link rel="canonical" href={siteUrl + Astro.url.pathname} />
 
     <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website" />
+    <meta property="og:type" content={type} />
     <meta property="og:url" content={siteUrl + Astro.url.pathname} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:image:alt" content={title} />
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image" />
     <meta property="twitter:url" content={siteUrl + Astro.url.pathname} />
     <meta property="twitter:title" content={title} />
     <meta property="twitter:description" content={description} />
+    <meta property="twitter:image" content={ogImage} />
+    <meta property="twitter:image:alt" content={title} />
 
     <!-- Google Analytics 4 -->
     <script is:inline async src="https://www.googletagmanager.com/gtag/js?id=G-33LYCFN2QF"></script>

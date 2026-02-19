@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=1200" />
+  <title>OG Image Preview — Paige Niedringhaus</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      width: 1200px;
+      height: 630px;
+      overflow: hidden;
+      background: #0f172a;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .card {
+      width: 1200px;
+      height: 630px;
+      background: #0f172a;
+      display: flex;
+      align-items: center;
+      padding: 56px 72px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Decorative background blobs */
+    .card::before {
+      content: '';
+      position: absolute;
+      top: -120px;
+      right: 280px;
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, rgba(55, 48, 163, 0.35) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .card::after {
+      content: '';
+      position: absolute;
+      bottom: -100px;
+      left: -80px;
+      width: 360px;
+      height: 360px;
+      background: radial-gradient(circle, rgba(236, 72, 153, 0.2) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    /* Left column */
+    .left {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+      z-index: 1;
+      padding-right: 48px;
+    }
+
+    .url {
+      font-size: 24px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #818cf8;
+    }
+
+    .name {
+      font-size: 96px;
+      font-weight: 800;
+      color: #f1f5f9;
+      line-height: 1.05;
+      letter-spacing: -0.02em;
+    }
+
+    .name span {
+      color: #ec4899;
+    }
+
+    .role {
+      font-size: 36px;
+      font-weight: 500;
+      color: #cbd5e1;
+      line-height: 1.4;
+    }
+
+    .tagline {
+      font-size: 27px;
+      font-weight: 400;
+      color: #94a3b8;
+      line-height: 1.6;
+      max-width: 520px;
+      border-left: 4px solid #3730a3;
+      padding-left: 18px;
+    }
+
+    .badges {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 4px;
+    }
+
+    .badge {
+      background: #1e293b;
+      border: 1px solid #334155;
+      color: #cbd5e1;
+      font-size: 22px;
+      font-weight: 500;
+      padding: 11px 24px;
+      border-radius: 100px;
+      letter-spacing: 0.01em;
+    }
+
+    .badge.accent {
+      background: rgba(236, 72, 153, 0.12);
+      border-color: rgba(236, 72, 153, 0.3);
+      color: #f472b6;
+    }
+
+    .badge.primary {
+      background: rgba(129, 140, 248, 0.12);
+      border-color: rgba(129, 140, 248, 0.3);
+      color: #818cf8;
+    }
+
+    /* Right column */
+    .right {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 24px;
+      z-index: 1;
+      flex-shrink: 0;
+    }
+
+    .photo-ring {
+      width: 270px;
+      height: 270px;
+      border-radius: 50%;
+      padding: 5px;
+      background: linear-gradient(135deg, #3730a3, #ec4899);
+      box-shadow: 0 0 50px rgba(129, 140, 248, 0.35);
+    }
+
+    .photo-ring img {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      object-fit: cover;
+      display: block;
+      background: #1e293b;
+    }
+
+    .social-row {
+      display: flex;
+      gap: 8px;
+    }
+
+    .social-pill {
+      font-size: 19px;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      color: #94a3b8;
+      background: #1e293b;
+      border: 1px solid #334155;
+      padding: 8px 20px;
+      border-radius: 100px;
+    }
+
+    /* Bottom border accent */
+    .bottom-bar {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, #3730a3 0%, #8b5cf6 50%, #ec4899 100%);
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="left">
+      <div class="url">paigeniedringhaus.com</div>
+
+      <div class="name">Paige<br><span>Niedringhaus</span></div>
+
+      <div class="role">Full-Stack Software Engineer</div>
+
+      <div class="tagline">
+        If I spent hours figuring something out,<br>
+        I write it down so you don't have to.
+      </div>
+
+      <div class="badges">
+        <span class="badge primary">Blogger</span>
+        <span class="badge primary">Podcast Co-host</span>
+        <span class="badge accent">Course Author</span>
+        <span class="badge">JavaScript · TypeScript · React</span>
+      </div>
+    </div>
+
+    <div class="right">
+      <div class="photo-ring">
+        <img src="images/paige-hero.jpg" alt="Paige Niedringhaus" />
+      </div>
+      <div class="social-row">
+        <span class="social-pill">@paigen11</span>
+        <span class="social-pill">Front-end Fire</span>
+      </div>
+    </div>
+
+    <div class="bottom-bar"></div>
+  </div>
+</body>
+</html>

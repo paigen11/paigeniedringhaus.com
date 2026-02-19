@@ -1,0 +1,119 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Podcasts | Paige Niedringhaus" description="Talking about code is almost as fun as writing it. I've co-hosted three podcasts over the past few years — here's where to find them.">
+  <div class="page-container">
+    <h1>Podcasts</h1>
+
+    <section>
+      <p>
+        Talking about code is almost as fun as writing it. I've co-hosted three podcasts over the past few years — here's where to find them.
+      </p>
+    </section>
+
+    <section>
+      <h2>Front-end Fire</h2>
+      <div class="podcast-feature">
+        <img src="/thumbnails/front-end-fire.png" alt="Front-end Fire logo" class="podcast-logo" />
+        <div class="podcast-description">
+          <p>
+            <a href="https://twitter.com/jherr" target="_blank" rel="noopener noreferrer">Jack Herrington</a>,
+            <a href="https://twitter.com/tjvantoll" target="_blank" rel="noopener noreferrer">TJ VanToll</a>,
+            and I started <a href="https://front-end-fire.com/" target="_blank" rel="noopener noreferrer">Front-end Fire</a>
+            in 2023 to keep developers up to speed on what's happening in the frontend world — new frameworks, browser updates, the drama, all of it. New episodes every Monday.
+          </p>
+          <a href="https://front-end-fire.com/" target="_blank" rel="noopener noreferrer" class="podcast-cta">
+            Listen to Front-end Fire &rarr;
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>PodRocket</h2>
+      <div class="podcast-feature">
+        <img src="/thumbnails/podRocket.png" alt="PodRocket logo" class="podcast-logo" />
+        <div class="podcast-description">
+          <p>
+            I joined LogRocket's <a href="https://podrocket.logrocket.com/hosts/paige-niedringhaus" target="_blank" rel="noopener noreferrer">PodRocket</a>
+            as a co-host in 2023. Each episode I sit down with someone doing interesting work in web development and we get into it.
+          </p>
+          <a href="https://podrocket.logrocket.com/hosts/paige-niedringhaus" target="_blank" rel="noopener noreferrer" class="podcast-cta">
+            See all PodRocket episodes &rarr;
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>React Round Up</h2>
+      <div class="podcast-feature">
+        <img src="/thumbnails/reactRoundUp.png" alt="React Round Up logo" class="podcast-logo" />
+        <div class="podcast-description">
+          <p>
+            From 2020 to 2023 I co-hosted <a href="https://topenddevs.com/podcasts/react-round-up/" target="_blank" rel="noopener noreferrer">React Round Up</a>
+            — deep dives into the React ecosystem with guests from across the community. The archive is still worth a listen.
+          </p>
+          <a href="https://topenddevs.com/podcasts/react-round-up/" target="_blank" rel="noopener noreferrer" class="podcast-cta">
+            Browse React Round Up episodes &rarr;
+          </a>
+        </div>
+      </div>
+    </section>
+  </div>
+</Layout>
+
+<style>
+  .podcast-feature {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-6);
+    margin-bottom: var(--space-6);
+  }
+
+  .podcast-logo {
+    width: 120px;
+    height: 120px;
+    object-fit: contain;
+    flex-shrink: 0;
+    border-radius: var(--radius-lg);
+  }
+
+  .podcast-description {
+    flex: 1;
+
+    & p {
+      font-size: var(--text-lg);
+      line-height: 1.8;
+      margin-bottom: var(--space-4);
+      color: var(--color-text);
+    }
+  }
+
+  .podcast-cta {
+    display: inline-block;
+    font-weight: 600;
+    font-size: var(--text-base);
+    color: var(--color-primary);
+    text-decoration: none;
+    transition: color 0.2s;
+
+    &:hover {
+      color: var(--color-accent);
+    }
+  }
+
+  @media (max-width: 768px) {
+    .podcast-feature {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .podcast-logo {
+      width: 100px;
+      height: 100px;
+    }
+  }
+</style>

@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <defs>
+    <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#818cf8"/>
+      <stop offset="100%" stop-color="#ec4899"/>
+    </linearGradient>
+  </defs>
+  <!-- Dark navy background with rounded corners -->
+  <rect width="32" height="32" rx="6" fill="#0f172a"/>
+  <!-- PN initials with indigo→pink gradient -->
+  <text
+    x="16"
+    y="23"
+    font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif"
+    font-size="17"
+    font-weight="800"
+    text-anchor="middle"
+    letter-spacing="-0.5"
+    fill="url(#grad)"
+  >PN</text>
+</svg>

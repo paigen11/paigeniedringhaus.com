@@ -1,4 +1,4 @@
-import moment from 'moment';
+
 import angularToReact from '../../content/images/angular-react.jpeg';
 import epcot from '../../content/images/epcot.jpeg';
 import dualMonitors from '../../content/images/dual-monitors.jpeg';
@@ -32,7 +32,7 @@ import notehubPyLogo from '../../content/images/notehub-py/notehub-py-logo.png';
 
 export default [
   {
-    date: moment('2019-02-11').format('ll'),
+    date: '2019-02-11',
     img: angularToReact,
     url: 'https://buttercms.com/blog/migrating-from-angularjs-to-react',
     subTitle: 'What to Keep in Mind as You Upgrade Your Legacy UI Code Bases',
@@ -41,7 +41,7 @@ export default [
     title: 'Migrating from AngularJS to React',
   },
   {
-    date: moment('2019-07-15').format('ll'),
+    date: '2019-07-15',
     img: nodeBackground,
     url: 'https://blog.logrocket.com/node-js-12/',
     subTitle: 'Node, new and improved in so many ways',
@@ -50,7 +50,7 @@ export default [
     title: 'Node.js 12: The future of server-side JavaScript',
   },
   {
-    date: moment('2020-03-03').format('ll'),
+    date: '2020-03-03',
     img: epcot,
     url: 'https://medium.com/better-programming/how-to-use-reacts-context-api-and-usecontext-hooks-effectively-ed98ad9343b6',
     subTitle:
@@ -60,7 +60,7 @@ export default [
     title: "How to Use React's Context API and useContext() Hooks Effectively",
   },
   {
-    date: moment('2020-04-01').format('ll'),
+    date: '2020-04-01',
     img: dualMonitors,
     url: 'https://medium.com/better-programming/9-react-testing-library-tips-and-tricks-5cce3e458282',
     subTitle: 'Writing tests is hard. These tips make it a little easier',
@@ -69,7 +69,7 @@ export default [
     title: '9 React Testing Library Tips and Tricks',
   },
   {
-    date: moment('2020-04-14').format('ll'),
+    date: '2020-04-14',
     img: marionette,
     url: 'https://medium.com/bitsrc/animating-reactjs-with-react-transition-group-2af6c87cab0c',
     subTitle:
@@ -79,7 +79,7 @@ export default [
     title: 'Animating React with React Transition Group',
   },
   {
-    date: moment('2020-05-11').format('ll'),
+    date: '2020-05-11',
     img: stopwatch,
     url: 'https://medium.com/bitsrc/polling-in-react-using-the-useinterval-custom-hook-e2bcefda4197',
     subTitle:
@@ -89,7 +89,7 @@ export default [
     title: 'Polling in React using the useInterval Custom Hook',
   },
   {
-    date: moment('2020-06-10').format('ll'),
+    date: '2020-06-10',
     img: loader,
     url: 'https://medium.com/bitsrc/building-a-universal-higher-order-component-page-loader-for-your-react-app-46d74f7a6958',
     subTitle:
@@ -100,7 +100,7 @@ export default [
       'Building a Universal Higher-Order Component Page Loader for your React App',
   },
   {
-    date: moment('2020-07-08').format('ll'),
+    date: '2020-07-08',
     img: laptopGraph,
     url: 'https://medium.com/bitsrc/gatsby-fetching-data-at-the-component-level-with-usestaticquery-397e35e648e',
     subTitle: 'Queries are no longer relegated to just page level components',
@@ -109,7 +109,7 @@ export default [
     title: 'Gatsby: Fetching Data at The Component Level with useStaticQuery',
   },
   {
-    date: moment('2020-08-13').format('ll'),
+    date: '2020-08-13',
     img: uxFlows,
     url: 'https://medium.com/bitsrc/mocking-http-calls-in-cypress-end-to-end-tests-fa2e6b7caaf7',
     subTitle:
@@ -119,7 +119,7 @@ export default [
     title: 'Mocking HTTP Calls in Cypress End-to-End Tests',
   },
   {
-    date: moment('2020-09-09').format('ll'),
+    date: '2020-09-09',
     img: holdingHands,
     url: 'https://medium.com/bitsrc/recent-advances-and-improvements-to-javascript-promises-561790897a5d',
     subTitle:
@@ -129,7 +129,7 @@ export default [
     title: 'Recent Advances and Improvements to JavaScript Promises',
   },
   {
-    date: moment('2020-10-20').format('ll'),
+    date: '2020-10-20',
     img: laptopMetrics,
     url: 'https://medium.com/bitsrc/vs-codes-rest-client-plugin-is-all-you-need-to-make-api-calls-e9e95fcfd85a',
     subTitle: "Why leave the IDE to test new endpoints? Now you don't have to.",
@@ -138,7 +138,7 @@ export default [
     title: "VS Code's REST Client Plugin is All You Need to Make API Calls",
   },
   {
-    date: moment('2020-11-24').format('ll'),
+    date: '2020-11-24',
     img: coloredSmoke,
     url: 'https://medium.com/bitsrc/pure-css-to-make-a-button-shine-and-gently-change-colors-over-time-5b685d9c6a7e',
     subTitle: 'Because animations and gradients in CSS are delightful.',
@@ -148,7 +148,7 @@ export default [
       'Pure CSS to Make a Button "Shine" and Gently Change Colors Over Time',
   },
   {
-    date: moment('2020-12-23').format('ll'),
+    date: '2020-12-23',
     img: cables,
     url: 'https://medium.com/bitsrc/setting-up-axios-interceptors-for-all-http-calls-in-an-application-71bc2c636e4e',
     subTitle:
@@ -158,7 +158,7 @@ export default [
     title: 'Setting up Axios Interceptors for all HTTP call in an application',
   },
   {
-    date: moment('2021-01-19').format('ll'),
+    date: '2021-01-19',
     img: fistBump,
     url: 'https://medium.com/bitsrc/css-clamp-the-responsive-combination-weve-all-been-waiting-for-f1ce1981ea6e',
     subTitle: 'Bringing together the best of CSS min() and CSS max() functions',
@@ -167,7 +167,7 @@ export default [
     title: "CSS Clamp(): The Responsive Combination We've All Been Waiting For",
   },
   {
-    date: moment('2021-02-22').format('ll'),
+    date: '2021-02-22',
     img: scientist,
     url: 'https://medium.com/bitsrc/successfully-throwing-async-errors-with-the-jest-testing-library-fda17261733a',
     subTitle: 'The One Time Errors Should Happen in your Code',
@@ -176,7 +176,7 @@ export default [
     title: 'Successfully Throwing Async Errors with the Jest Testing Library',
   },
   {
-    date: moment('2021-03-18').format('ll'),
+    date: '2021-03-18',
     img: puzzle,
     url: 'https://medium.com/bitsrc/how-to-utilize-submodules-within-git-repos-5dfdd1c62d09',
     subTitle:
@@ -186,7 +186,7 @@ export default [
     title: 'How to Utilize Submodules within Git Repos',
   },
   {
-    date: moment('2021-05-03').format('ll'),
+    date: '2021-05-03',
     img: paigeSite,
     url: 'https://medium.com/bitsrc/animate-a-mobile-hamburger-bar-menu-using-css-and-just-a-hint-of-javascript-f31f928eb992',
     subTitle:
@@ -197,7 +197,7 @@ export default [
       'Animate a Mobile Hamburger Bar Menu Using CSS and Just a Hint of JavaScript',
   },
   {
-    date: moment('2021-06-24').format('ll'),
+    date: '2021-06-24',
     img: iphoneIpad,
     url: 'https://medium.com/bitsrc/using-react-hooks-to-recognize-respond-to-current-viewport-size-c385009005c0',
     subTitle: 'Because Edge Cases are the Only Certainty in Development',
@@ -206,7 +206,7 @@ export default [
     title: 'Using React Hooks to Recognize & Respond to Current Viewport Size',
   },
   {
-    date: moment('2021-08-24').format('ll'),
+    date: '2021-08-24',
     img: gpsTracker,
     url: 'https://www.hackster.io/paige-niedringhaus/low-code-gps-asset-tracker-and-map-display-b10419',
     subTitle:
@@ -216,7 +216,7 @@ export default [
     title: 'Low Code GPS Asset Tracker and Map Display',
   },
   {
-    date: moment('2021-11-02').format('ll'),
+    date: '2021-11-02',
     img: reactBlues,
     url: 'https://blues.io/blog/reactjs-vs-blues-wireless-iot/',
     subTitle: 'You can build without React or Blues, but why would you?',
@@ -224,7 +224,7 @@ export default [
     title: 'Blues - Just Like React, but for IoT',
   },
   {
-    date: moment('2022-02-23').format('ll'),
+    date: '2022-02-23',
     img: assetTrackerMap,
     url: 'https://blues.io/blog/gps-asset-tracker-with-blues-wireless-and-react/',
     subTitle:
@@ -233,7 +233,7 @@ export default [
     title: 'Low Fi LoJack® with Blues and React',
   },
   {
-    date: moment('2022-03-04').format('ll'),
+    date: '2022-03-04',
     img: antiTheftHero,
     url: 'https://www.hackster.io/paige-niedringhaus/blues-where-s-my-car-5eac7d',
     subTitle:
@@ -244,7 +244,7 @@ export default [
   },
 
   {
-    date: moment('2022-04-13').format('ll'),
+    date: '2022-04-13',
     img: sms,
     url: 'https://blues.io/blog/anti-theft-iot-gps-asset-tracker/',
     subTitle:
@@ -253,7 +253,7 @@ export default [
     title: 'Anti-Theft GPS Tracker and Recovery System',
   },
   {
-    date: moment('2022-07-08').format('ll'),
+    date: '2022-07-08',
     img: leakDetectorHero,
     url: 'https://www.hackster.io/paige-niedringhaus/leave-the-water-running-build-an-iot-smart-leak-detector-3cc099',
     subTitle:
@@ -262,7 +262,7 @@ export default [
     title: 'Leave the Water Running? Build an IoT Smart Leak Detector',
   },
   {
-    date: moment('2022-07-29').format('ll'),
+    date: '2022-07-29',
     img: leakDetectorParts,
     url: 'https://blues.io/blog/build-an-iot-smart-leak-detector-with-sms-alerts/',
     subTitle:
@@ -271,7 +271,7 @@ export default [
     title: 'Build an IoT Smart Leak Detector with SMS Alerts',
   },
   {
-    date: moment('2022-09-08').format('ll'),
+    date: '2022-09-08',
     img: snowflakeStreamlitLogos,
     url: 'https://blues.io/blog/build-custom-iot-dashboards-with-snowflake-streamlit-and-blues/',
     subTitle:
@@ -281,7 +281,7 @@ export default [
       'Quickly Build Custom IoT Dashboards with Snowflake, Streamlit, and Blues',
   },
   {
-    date: moment('2022-10-07').format('ll'),
+    date: '2022-10-07',
     img: fridgeFleetMonitor,
     url: 'https://www.hackster.io/blues-wireless/refrigerator-fleet-monitoring-made-easy-with-lora-e6163e',
     subTitle:
@@ -290,7 +290,7 @@ export default [
     title: 'Refrigerator Fleet Monitoring Made Easy with LoRa',
   },
   {
-    date: moment('2022-11-07').format('ll'),
+    date: '2022-11-07',
     img: parkingLotHelpRequest,
     url: 'https://www.hackster.io/blues-wireless/host-free-smart-parking-lot-help-request-device-f4a03c',
     subTitle:
@@ -299,7 +299,7 @@ export default [
     title: 'Host-free Smart Parking Lot Help Request Device',
   },
   {
-    date: moment('2023-02-21').format('ll'),
+    date: '2023-02-21',
     img: notehubJsLogo,
     url: 'https://blues.io/blog/introducing-notehub-js-the-javascript-library-for-the-notehub-api/',
     subTitle:
@@ -309,7 +309,7 @@ export default [
       'Introducing Notehub JS – the JavaScript Library for the Notehub API',
   },
   {
-    date: moment('2024-06-11').format('ll'),
+    date: '2024-06-11',
     img: notehubPyLogo,
     url: 'https://dev.blues.io/blog/notehub-python-sdk-library/',
     subTitle:

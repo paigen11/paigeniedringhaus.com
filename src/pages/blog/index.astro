@@ -2,59 +2,118 @@
 import { getCollection, type CollectionEntry } from 'astro:content';
 import Layout from '../../layouts/Layout.astro';
 import PostCard from '../../components/PostCard.astro';
+import mediumBlogs from '../../data/mediumBlogs.js';
+import { getPostSlug } from '../../utils/slug';
+import { formatDate } from '../../utils/date';
 
-// Get all blog posts, filter out omitted ones, and sort by date
-const allPosts = await getCollection('posts', ({ data }) => {
-  return data.omit !== true;
+interface MediumPost {
+  date: string;
+  img: string | { src: string };
+  url: string;
+  subTitle?: string;
+  tags?: string[];
+  title: string;
+}
+
+const collectionPosts = await getCollection('posts', ({ data }) => data.omit !== true);
+
+// Normalize collection posts
+const internalPosts = collectionPosts.map((post: CollectionEntry<'posts'>) => {
+  const d = new Date(post.data.date);
+  return {
+    title: post.data.title,
+    subTitle: post.data.subTitle,
+    date: formatDate(d),
+    _ts: d.getTime(),
+    tags: post.data.tags || [],
+    image: post.data.featuredImage?.replace(/^\.\.\/images\//, '/images/') ?? null,
+    href: `/blog/${getPostSlug(post.data.title, post.slug)}`,
+    isExternal: false,
+    category: post.data.category,
+  };
 });
 
-const sortedPosts = allPosts.sort((a: CollectionEntry<'posts'>, b: CollectionEntry<'posts'>) => {
-  return new Date(b.data.date).getTime() - new Date(a.data.date).getTime();
+// Normalize external/Medium posts
+const externalPosts = mediumBlogs.map((post: MediumPost) => {
+  const d = new Date(post.date);
+  const isIoT = post.url.includes('blues.io') || post.url.includes('hackster.io');
+  return {
+    title: post.title,
+    subTitle: post.subTitle,
+    date: formatDate(d),
+    _ts: d.getTime(),
+    tags: post.tags || [],
+    image: typeof post.img === 'string' ? post.img : (post.img?.src ?? null),
+    href: post.url,
+    isExternal: true,
+    category: isIoT ? 'IoT' : 'Article',
+  };
 });
 
-// Get unique tags for filtering
-const allTags = [...new Set(sortedPosts.flatMap((post: CollectionEntry<'posts'>) => post.data.tags || []))].sort();
+// Merge and sort newest-first
+const allNormalizedPosts = [...internalPosts, ...externalPosts]
+  .sort((a, b) => b._ts - a._ts);
+
+const allTags = [...new Set(allNormalizedPosts.flatMap((p) => p.tags))].sort();
+const totalPosts = allNormalizedPosts.length;
 ---
 
 <Layout
   title="Blog | Paige Niedringhaus"
-  description="Technical blog posts about web development, React, Node.js, and frontend engineering."
+  description="If I spent hours figuring something out, I write it down so you don't have to. Web development, React, TypeScript, IoT, and whatever else I couldn't stop thinking about."
 >
   <main class="page-container">
-      <header class="blog-header">
-        <h1>Blog</h1>
-        <p class="intro">
-          Writing about web development, React, TypeScript, and everything frontend.
-        </p>
-      </header>
+    <header class="blog-header">
+      <h1>Blog</h1>
+      <p class="intro">
+        If I spent hours figuring something out, I write it down so you don't have to. Web development, React, TypeScript, IoT, and whatever else I couldn't stop thinking about.
+      </p>
+    </header>
 
-      <div class="blog-content">
-        <aside class="sidebar">
-          <h3>Filter by Tag</h3>
-          <div class="tag-list">
-            <button class="tag-filter" data-tag="all">
-              All Posts
-            </button>
-            {allTags.map((tag: string) => (
-              <button class="tag-filter" data-tag={tag}>
-                {tag}
-              </button>
-            ))}
+    <div class="blog-content">
+      <aside class="sidebar">
+        <h3>Filter by Tag</h3>
+        <div class="tag-list">
+          <button class="tag-filter" data-tag="all">All Posts</button>
+          {allTags.map((tag: string) => (
+            <button class="tag-filter" data-tag={tag}>{tag}</button>
+          ))}
+        </div>
+      </aside>
+
+      <section class="posts-section">
+        <div class="posts-toolbar">
+          <p id="post-count" class="post-count">{totalPosts} posts</p>
+          <div id="active-filter" class="active-filter" hidden>
+            Filtered by: <strong id="active-tag-name"></strong>
+            <button id="clear-tag" class="clear-btn" aria-label="Clear tag filter">✕ Clear</button>
           </div>
-        </aside>
+        </div>
 
-        <section class="posts-grid">
-          {sortedPosts.map((post: CollectionEntry<'posts'>) => (
-            <div class="post-item" data-tags={JSON.stringify(post.data.tags || [])}>
-              <PostCard post={post} />
+        <div class="posts-grid">
+          {allNormalizedPosts.map((post) => (
+            <div class="post-item" data-tags={JSON.stringify(post.tags)}>
+              <PostCard
+                title={post.title}
+                subTitle={post.subTitle}
+                date={post.date}
+                tags={post.tags}
+                image={post.image}
+                href={post.href}
+                isExternal={post.isExternal}
+                category={post.category}
+              />
             </div>
           ))}
-        </section>
-      </div>
+        </div>
 
-      {sortedPosts.length === 0 && (
-        <p class="no-posts">No blog posts found.</p>
-      )}
+        <div id="scroll-sentinel" aria-hidden="true"></div>
+      </section>
+    </div>
+
+    {allNormalizedPosts.length === 0 && (
+      <p class="no-posts">No blog posts found.</p>
+    )}
   </main>
 </Layout>
 
@@ -84,22 +143,27 @@ const allTags = [...new Set(sortedPosts.flatMap((post: CollectionEntry<'posts'>)
     align-items: start;
   }
 
+  /* ── Sidebar ───────────────────────────── */
   .sidebar {
     position: sticky;
-    top: var(--space-8);
+    top: calc(var(--header-height) + var(--space-4));
+    max-height: calc(100vh - var(--header-height) - var(--space-8));
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
   }
 
   .sidebar h3 {
-    font-size: 1.125rem;
+    font-size: var(--text-lg);
     margin-bottom: var(--space-4);
     color: var(--color-text);
+    flex-shrink: 0;
   }
 
   .tag-list {
     display: flex;
     flex-direction: column;
     gap: var(--space-2);
-    max-height: 500px;
     overflow-y: auto;
     padding-right: var(--space-2);
     background:
@@ -120,8 +184,9 @@ const allTags = [...new Set(sortedPosts.flatMap((post: CollectionEntry<'posts'>)
     text-align: left;
     cursor: pointer;
     transition: all 0.2s ease;
-    font-size: 0.875rem;
+    font-size: var(--text-sm);
     color: var(--color-text);
+    flex-shrink: 0;
   }
 
   .tag-filter:hover {
@@ -137,18 +202,74 @@ const allTags = [...new Set(sortedPosts.flatMap((post: CollectionEntry<'posts'>)
     font-weight: 600;
   }
 
-  .post-item {
-    transition: opacity 0.2s ease;
+  /* ── Posts section ─────────────────────── */
+  .posts-section {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+  }
+
+  .posts-toolbar {
+    display: flex;
+    align-items: center;
+    gap: var(--space-4);
+    flex-wrap: wrap;
+    min-height: 2rem;
+  }
+
+  .post-count {
+    font-size: var(--text-sm);
+    color: var(--color-text-secondary);
+    margin: 0;
+  }
+
+  .active-filter[hidden] {
+    display: none;
+  }
+
+  .active-filter {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    font-size: var(--text-sm);
+    color: var(--color-text-secondary);
+    padding: var(--space-2) var(--space-3);
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+  }
+
+  .clear-btn {
+    background: none;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    padding: 0.125rem var(--space-2);
+    font-size: var(--text-xs);
+    font-weight: 600;
+    cursor: pointer;
+    color: var(--color-text-secondary);
+    transition: all 0.15s;
+    line-height: 1.6;
+  }
+
+  .clear-btn:hover {
+    background: var(--color-primary);
+    border-color: var(--color-primary);
+    color: white;
+  }
+
+  .posts-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-4);
   }
 
   .post-item.hidden {
     display: none;
   }
 
-  .posts-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: var(--space-6);
+  #scroll-sentinel {
+    height: 1px;
   }
 
   .no-posts {
@@ -157,6 +278,7 @@ const allTags = [...new Set(sortedPosts.flatMap((post: CollectionEntry<'posts'>)
     padding: var(--space-12);
   }
 
+  /* ── Responsive ───────────────────────── */
   @media (max-width: 768px) {
     .blog-content {
       grid-template-columns: 1fr;
@@ -164,6 +286,8 @@ const allTags = [...new Set(sortedPosts.flatMap((post: CollectionEntry<'posts'>)
 
     .sidebar {
       position: static;
+      max-height: none;
+      overflow: visible;
     }
 
     .tag-list {
@@ -172,14 +296,6 @@ const allTags = [...new Set(sortedPosts.flatMap((post: CollectionEntry<'posts'>)
       max-height: 150px;
       overflow-y: auto;
       padding-bottom: var(--space-2);
-      background:
-        linear-gradient(var(--color-bg) 30%, transparent),
-        linear-gradient(transparent, var(--color-bg) 70%) 0 100%,
-        radial-gradient(farthest-side at 50% 0, rgba(0,0,0,.15), transparent),
-        radial-gradient(farthest-side at 50% 100%, rgba(0,0,0,.15), transparent) 0 100%;
-      background-repeat: no-repeat;
-      background-size: 100% 40px, 100% 40px, 100% 14px, 100% 14px;
-      background-attachment: local, local, scroll, scroll;
     }
 
     .blog-header h1 {
@@ -188,54 +304,101 @@ const allTags = [...new Set(sortedPosts.flatMap((post: CollectionEntry<'posts'>)
   }
 </style>
 
-<script>
-  // Tag filtering functionality
-  document.addEventListener('DOMContentLoaded', () => {
-    const tagButtons = document.querySelectorAll('.tag-filter');
-    const postItems = document.querySelectorAll('.post-item');
+<script define:vars={{ totalPosts }} is:inline>
+  const BATCH = 12;
+  let activeTag = 'all';
+  let visibleCount = BATCH;
+  let matchingItems = [];
 
-    // Set "All Posts" as active by default
-    const allButton = document.querySelector('[data-tag="all"]');
-    if (allButton) {
-      allButton.classList.add('active');
+  function allItems() {
+    return Array.from(document.querySelectorAll('.post-item'));
+  }
+
+  function getMatching(tag) {
+    if (tag === 'all') return allItems();
+    return allItems().filter((item) => {
+      try {
+        return JSON.parse(item.dataset.tags ?? '[]').includes(tag);
+      } catch {
+        return false;
+      }
+    });
+  }
+
+  function updateDisplay() {
+    // Hide everything, then reveal the current visible slice
+    allItems().forEach((item) => item.classList.add('hidden'));
+    const toShow = matchingItems.slice(0, visibleCount);
+    toShow.forEach((item) => item.classList.remove('hidden'));
+
+    // Post count
+    const countEl = document.getElementById('post-count');
+    if (countEl) {
+      const total = matchingItems.length;
+      countEl.textContent = activeTag !== 'all'
+        ? `${total} post${total !== 1 ? 's' : ''} tagged "${activeTag}"`
+        : `${total} post${total !== 1 ? 's' : ''}`;
     }
 
-    tagButtons.forEach((button) => {
-      button.addEventListener('click', () => {
-        const selectedTag = button.getAttribute('data-tag');
+    // Sentinel — hide when all matching posts are visible
+    const sentinel = document.getElementById('scroll-sentinel');
+    if (sentinel) sentinel.hidden = visibleCount >= matchingItems.length;
 
-        // Update active state on buttons
-        tagButtons.forEach((btn) => btn.classList.remove('active'));
-        button.classList.add('active');
+    // Active filter chip
+    const activeFilterEl = document.getElementById('active-filter');
+    const activeTagName = document.getElementById('active-tag-name');
+    if (activeFilterEl) activeFilterEl.hidden = activeTag === 'all';
+    if (activeTagName) activeTagName.textContent = activeTag;
 
-        // Filter posts
-        if (selectedTag === 'all') {
-          // Show all posts
-          postItems.forEach((post) => {
-            post.classList.remove('hidden');
-          });
-        } else {
-          // Show only posts with the selected tag
-          postItems.forEach((post) => {
-            const postTagsAttr = post.getAttribute('data-tags');
-            if (!postTagsAttr) {
-              post.classList.add('hidden');
-              return;
-            }
+    // Sidebar active state
+    document.querySelectorAll('.tag-filter').forEach((btn) => btn.classList.remove('active'));
+    const activeBtn = document.querySelector(`[data-tag="${CSS.escape(activeTag)}"]`);
+    if (activeBtn) activeBtn.classList.add('active');
 
-            try {
-              const postTags = JSON.parse(postTagsAttr);
-              if (postTags.includes(selectedTag)) {
-                post.classList.remove('hidden');
-              } else {
-                post.classList.add('hidden');
-              }
-            } catch (e) {
-              post.classList.add('hidden');
-            }
-          });
-        }
-      });
+    // URL
+    const url = new URL(window.location.href);
+    if (activeTag !== 'all') {
+      url.searchParams.set('tag', activeTag);
+    } else {
+      url.searchParams.delete('tag');
+    }
+    history.pushState({}, '', url);
+  }
+
+  function applyFilter(tag) {
+    activeTag = tag;
+    visibleCount = BATCH;
+    matchingItems = getMatching(tag);
+    updateDisplay();
+  }
+
+  function loadMore() {
+    visibleCount += BATCH;
+    updateDisplay();
+  }
+
+  document.addEventListener('DOMContentLoaded', () => {
+    // Initialise from URL
+    const initialTag = new URLSearchParams(window.location.search).get('tag') ?? 'all';
+    matchingItems = getMatching(initialTag);
+    activeTag = initialTag;
+    updateDisplay();
+
+    // Sidebar clicks
+    document.querySelectorAll('.tag-filter').forEach((btn) => {
+      btn.addEventListener('click', () => applyFilter(btn.dataset.tag ?? 'all'));
     });
+
+    // Clear button
+    document.getElementById('clear-tag')?.addEventListener('click', () => applyFilter('all'));
+
+    // Infinite scroll via sentinel
+    const sentinel = document.getElementById('scroll-sentinel');
+    if (sentinel) {
+      new IntersectionObserver(
+        (entries) => { if (entries[0].isIntersecting) loadMore(); },
+        { rootMargin: '300px' }
+      ).observe(sentinel);
+    }
   });
 </script>

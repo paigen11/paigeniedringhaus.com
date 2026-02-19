@@ -1,13 +1,13 @@
 ---
 const currentPath = Astro.url.pathname;
-const logo = '/logos/pn-logo-48.png';
+const logo = '/favicon.svg';
 
 const navLinks = [
   { href: '/blog', label: 'Blog' },
-  { href: '/courses', label: 'Courses' },
-  { href: '/media', label: 'Media' },
+  { href: '/podcasts', label: 'Podcasts' },
   { href: '/about', label: 'About' },
   { href: '/contact', label: 'Contact' },
+  { href: '/archive', label: 'Archive' },
 ];
 ---
 
@@ -31,16 +31,40 @@ const navLinks = [
       ))}
     </nav>
 
-    <button
-      class="mobile-menu-button"
-      aria-label="Toggle mobile menu"
-      aria-expanded="false"
-      id="mobile-menu-toggle"
-    >
-      <span class="hamburger-line"></span>
-      <span class="hamburger-line"></span>
-      <span class="hamburger-line"></span>
-    </button>
+    <div class="header-actions">
+      <button
+        class="theme-toggle"
+        id="theme-toggle"
+        aria-label="Toggle dark mode"
+        title="Toggle dark mode"
+      >
+        <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="5"></circle>
+          <line x1="12" y1="1" x2="12" y2="3"></line>
+          <line x1="12" y1="21" x2="12" y2="23"></line>
+          <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+          <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+          <line x1="1" y1="12" x2="3" y2="12"></line>
+          <line x1="21" y1="12" x2="23" y2="12"></line>
+          <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+          <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+        </svg>
+        <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+        </svg>
+      </button>
+
+      <button
+        class="mobile-menu-button"
+        aria-label="Toggle mobile menu"
+        aria-expanded="false"
+        id="mobile-menu-toggle"
+      >
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+    </div>
   </div>
 
   <nav class="nav-mobile" id="mobile-menu" aria-label="Mobile navigation">
@@ -56,6 +80,22 @@ const navLinks = [
 </header>
 
 <script>
+  // Theme toggle functionality
+  const themeToggle = document.getElementById('theme-toggle');
+
+  function setTheme(theme: string) {
+    document.documentElement.setAttribute('data-theme', theme);
+    localStorage.setItem('theme', theme);
+  }
+
+  if (themeToggle) {
+    themeToggle.addEventListener('click', () => {
+      const currentTheme = document.documentElement.getAttribute('data-theme');
+      const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+      setTheme(newTheme);
+    });
+  }
+
   // Mobile menu toggle functionality
   const menuButton = document.getElementById('mobile-menu-toggle');
   const mobileMenu = document.getElementById('mobile-menu');
@@ -85,14 +125,14 @@ const navLinks = [
     position: sticky;
     top: 0;
     z-index: 1000;
-    background-color: var(--color-surface, #ffffff);
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    background-color: var(--color-surface);
+    box-shadow: var(--shadow);
   }
 
   .header-content {
-    max-width: 1200px;
+    max-width: var(--content-width);
     margin: 0 auto;
-    padding: 1rem 2rem;
+    padding: var(--space-4) var(--space-8);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -106,21 +146,21 @@ const navLinks = [
   .logo-link {
     display: flex;
     align-items: center;
-    gap: 0.75rem;
+    gap: var(--space-3);
     text-decoration: none;
-    color: var(--color-text, #2d3748);
+    color: var(--color-text);
     font-weight: 600;
-    font-size: 1.125rem;
+    font-size: var(--text-lg);
     transition: color 0.2s;
   }
 
   .logo-link:hover {
-    color: var(--color-primary, #3730a3);
+    color: var(--color-primary);
   }
 
   .logo-img {
-    width: 48px;
-    height: 48px;
+    width: 36px;
+    height: 36px;
   }
 
   .site-name {
@@ -136,7 +176,7 @@ const navLinks = [
   /* Desktop Navigation */
   .nav-desktop {
     display: none;
-    gap: 2rem;
+    gap: var(--space-8);
   }
 
   @media (min-width: 768px) {
@@ -147,10 +187,10 @@ const navLinks = [
 
   .nav-link {
     text-decoration: none;
-    color: var(--color-text, #2d3748);
+    color: var(--color-text);
     font-weight: 500;
-    font-size: 1rem;
-    padding: 0.5rem 0;
+    font-size: var(--text-base);
+    padding: var(--space-2) 0;
     position: relative;
     transition: color 0.2s;
   }
@@ -162,13 +202,13 @@ const navLinks = [
     left: 0;
     width: 0;
     height: 2px;
-    background-color: var(--color-primary, #3730a3);
+    background-color: var(--color-primary);
     transition: width 0.3s ease;
   }
 
   .nav-link:hover,
   .nav-link.active {
-    color: var(--color-primary, #3730a3);
+    color: var(--color-primary);
   }
 
   .nav-link:hover::after,
@@ -180,11 +220,11 @@ const navLinks = [
   .mobile-menu-button {
     display: flex;
     flex-direction: column;
-    gap: 4px;
+    gap: var(--space-1);
     background: none;
     border: none;
     cursor: pointer;
-    padding: 0.5rem;
+    padding: var(--space-2);
     z-index: 1001;
   }
 
@@ -198,7 +238,7 @@ const navLinks = [
     display: block;
     width: 24px;
     height: 3px;
-    background-color: var(--color-text, #2d3748);
+    background-color: var(--color-text);
     transition: all 0.3s ease;
     border-radius: 2px;
   }
@@ -218,11 +258,11 @@ const navLinks = [
   /* Mobile Navigation */
   .nav-mobile {
     position: fixed;
-    top: 80px;
+    top: 70px;
     left: 0;
     right: 0;
-    background-color: var(--color-surface, #ffffff);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    background-color: var(--color-surface);
+    box-shadow: var(--shadow-lg);
     display: flex;
     flex-direction: column;
     max-height: 0;
@@ -242,12 +282,16 @@ const navLinks = [
 
   .mobile-nav-link {
     text-decoration: none;
-    color: var(--color-text, #2d3748);
+    color: var(--color-text);
     font-weight: 500;
-    font-size: 1.125rem;
-    padding: 1rem 2rem;
+    font-size: var(--text-lg);
+    padding: var(--space-4) var(--space-8);
     transition: background-color 0.2s, color 0.2s;
-    border-bottom: 1px solid var(--color-border, #e2e8f0);
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .mobile-nav-link:first-child {
+    border-top: 1px solid var(--color-border);
   }
 
   .mobile-nav-link:last-child {
@@ -256,7 +300,51 @@ const navLinks = [
 
   .mobile-nav-link:hover,
   .mobile-nav-link.active {
-    background-color: var(--color-bg, #f7fafc);
-    color: var(--color-primary, #3730a3);
+    background-color: var(--color-bg);
+    color: var(--color-primary);
+  }
+
+  /* Header actions (theme toggle + mobile menu) */
+  .header-actions {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+  }
+
+  /* Theme toggle button */
+  .theme-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    cursor: pointer;
+    color: var(--color-text);
+    transition: background-color 0.2s, border-color 0.2s;
+  }
+
+  .theme-toggle:hover {
+    background-color: var(--color-bg);
+    border-color: var(--color-primary);
+  }
+
+  /* Show sun icon in dark mode, moon icon in light mode */
+  .icon-sun {
+    display: none;
+  }
+
+  .icon-moon {
+    display: block;
+  }
+
+  :global([data-theme='dark']) .icon-sun {
+    display: block;
+  }
+
+  :global([data-theme='dark']) .icon-moon {
+    display: none;
   }
 </style>

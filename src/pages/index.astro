@@ -1,162 +1,340 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import PostCard from '../components/PostCard.astro';
+import Subscribe from '../components/Subscribe.astro';
+import SocialIcons from '../components/SocialIcons.astro';
 import { getCollection, type CollectionEntry } from 'astro:content';
 import { getPostSlug } from '../utils/slug';
+import { formatDate } from '../utils/date';
 
-// Get latest 3 blog posts for homepage
 const allPosts = await getCollection('posts', ({ data }) => {
   return data.omit !== true;
 });
 
 const latestPosts = allPosts
   .sort((a: CollectionEntry<'posts'>, b: CollectionEntry<'posts'>) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime())
-  .slice(0, 3);
+  .slice(0, 7);
+
+const featuredPost = latestPosts[0];
+const recentPosts = latestPosts.slice(1);
+
+const featuredPostSlug = getPostSlug(featuredPost.data.title, featuredPost.slug);
+const featuredPostDate = formatDate(featuredPost.data.date);
+
+// Transform relative image paths (../images/...) to absolute (/images/...)
+const featuredPostImage = featuredPost.data.featuredImage?.replace(/^\.\.\/images\//, '/images/') ?? null;
+
 ---
 
-<Layout title="Paige Niedringhaus | Lead Software Engineer">
-  <main class="page-container">
+<Layout title="Paige Niedringhaus | Lead Software Engineer" description="Engineer. Podcast co-host. Compulsive note-taker. Building things on the web since 2016.">
+  <main>
+
+    <!-- Hero -->
     <section class="hero">
-      <h1>Paige Niedringhaus</h1>
-      <h2>Lead Software Engineer</h2>
-      <p class="tagline">
-        Writing about web development, hosting podcasts, building things.
-      </p>
-      <p class="migration-notice">
-        🚧 Site migration & redesign in progress - Gatsby → Astro 🚧
-      </p>
+      <div class="hero-inner">
+        <img
+          src="/images/paige-hero.jpg"
+          alt="Paige Niedringhaus"
+          class="hero-photo"
+        />
+        <h1>Paige Niedringhaus</h1>
+        <p class="hero-title">Full-Stack Software Engineer</p>
+        <p class="hero-tagline">Engineer. Podcast co-host. Compulsive note-taker. Building things on the web since 2016.</p>
+        <div class="social-links">
+          <SocialIcons />
+        </div>
+      </div>
     </section>
 
-    <section class="recent-posts">
-      <div class="section-header">
-        <h3>Recent Blog Posts</h3>
-        <a href="/blog" class="view-all">View All →</a>
+    <!-- Featured Cards -->
+    <section class="featured-section page-container">
+      <h2 class="section-title">Featured</h2>
+      <div class="featured-grid">
+
+        <!-- Latest Blog Post -->
+        <a href={`/blog/${featuredPostSlug}`} class="featured-card featured-post">
+          {featuredPostImage && (
+            <img src={featuredPostImage} alt="" class="featured-post-image" />
+          )}
+          <span class="featured-label">Latest Post</span>
+          <h3 class="featured-card-title">{featuredPost.data.title}</h3>
+          {featuredPost.data.subTitle && (
+            <p class="featured-card-subtitle">{featuredPost.data.subTitle}</p>
+          )}
+          <p class="featured-card-date">{featuredPostDate}</p>
+          <span class="featured-cta">Read post &rarr;</span>
+        </a>
+
+        <!-- Front-end Fire -->
+        <a href="https://front-end-fire.com/" target="_blank" rel="noopener noreferrer" class="featured-card featured-podcast">
+          <img src="/front-end-fire-horizontal.jpg" alt="Front-end Fire" class="featured-post-image" />
+          <span class="featured-label">Podcast</span>
+          <h3 class="featured-card-title">Front-end Fire</h3>
+          <p class="featured-card-subtitle">Weekly frontend news with Jack Herrington, TJ VanToll, and me.</p>
+          <span class="featured-cta">Listen now &rarr;</span>
+        </a>
+
       </div>
-      <div class="posts-preview">
-        {latestPosts.map((post: CollectionEntry<'posts'>) => (
-          <article class="post-preview">
-            <a href={`/blog/${getPostSlug(post.data.title, post.slug)}`}>
-              <h4>{post.data.title}</h4>
-              {post.data.subTitle && <p>{post.data.subTitle}</p>}
-            </a>
-          </article>
+    </section>
+
+    <!-- Recent Posts -->
+    <section class="posts-section page-container">
+      <div class="section-header">
+        <h2 class="section-title">Recent Posts</h2>
+        <a href="/blog" class="view-all">View all &rarr;</a>
+      </div>
+      <div class="posts-grid">
+        {recentPosts.map((post: CollectionEntry<'posts'>) => (
+          <PostCard
+            title={post.data.title}
+            subTitle={post.data.subTitle}
+            date={formatDate(post.data.date)}
+            tags={post.data.tags}
+            image={post.data.featuredImage?.replace(/^\.\.\/images\//, '/images/') ?? null}
+            href={`/blog/${getPostSlug(post.data.title, post.slug)}`}
+            category={post.data.category}
+            layout="vertical"
+          />
         ))}
       </div>
     </section>
+
+    <!-- Newsletter -->
+    <section class="newsletter-section">
+      <div class="newsletter-inner">
+        <p class="newsletter-copy">Worth reading? Get new posts straight to your inbox.</p>
+        <Subscribe />
+      </div>
+    </section>
+
   </main>
 </Layout>
 
 <style>
+  /* ── Hero ─────────────────────────────────────────── */
   .hero {
-    text-align: center;
-    padding: var(--space-16) 0;
+    background: linear-gradient(180deg, var(--color-surface) 0%, var(--color-bg) 100%);
     border-bottom: 1px solid var(--color-border);
-    margin-bottom: var(--space-12);
+    padding: var(--space-16) var(--space-4);
+    text-align: center;
+  }
+
+  .hero-inner {
+    max-width: var(--content-width-narrow);
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-4);
+  }
+
+  .hero-photo {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--color-primary);
+    box-shadow: var(--shadow-lg);
   }
 
   .hero h1 {
-    font-size: 3.5rem;
+    font-size: var(--text-5xl);
     font-weight: 700;
-    margin-bottom: var(--space-4);
     color: var(--color-text);
+    margin: 0;
+    line-height: 1.1;
   }
 
-  .hero h2 {
-    font-size: 1.5rem;
+  .hero-title {
+    font-size: var(--text-xl);
     font-weight: 500;
     color: var(--color-text-secondary);
-    margin-bottom: var(--space-6);
+    margin: 0;
   }
 
-  .tagline {
-    font-size: 1.25rem;
+  .hero-tagline {
+    font-size: var(--text-lg);
     color: var(--color-text-secondary);
-    margin-bottom: var(--space-4);
+    margin: 0;
+    max-width: 480px;
   }
 
-  .migration-notice {
-    color: var(--color-accent);
-    font-weight: 500;
-    margin-top: var(--space-6);
+  .social-links {
+    display: flex;
+    gap: var(--space-4);
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: var(--space-2);
   }
 
-  .recent-posts {
-    margin-bottom: var(--space-12);
+  /* ── Section shared ───────────────────────────────── */
+  .section-title {
+    font-size: var(--text-2xl);
+    font-weight: 700;
+    color: var(--color-text);
+    margin: 0 0 var(--space-6);
   }
 
   .section-header {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: baseline;
     margin-bottom: var(--space-6);
   }
 
-  .section-header h3 {
-    font-size: 2rem;
-    font-weight: 700;
-    color: var(--color-text);
+  .section-header .section-title {
+    margin-bottom: 0;
   }
 
   .view-all {
+    font-size: var(--text-base);
+    font-weight: 500;
     color: var(--color-primary);
     text-decoration: none;
-    font-weight: 500;
-    transition: color 0.2s ease;
+    transition: color 0.2s;
   }
 
   .view-all:hover {
     color: var(--color-accent);
   }
 
-  .posts-preview {
+  /* ── Featured Cards ───────────────────────────────── */
+  .featured-section {
+    padding-top: var(--space-8);
+    padding-bottom: var(--space-4);
+  }
+
+  .featured-post-image {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    border-radius: var(--radius);
+    margin-bottom: var(--space-2);
+  }
+
+  .featured-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: 1fr 1fr;
     gap: var(--space-6);
   }
 
-  .post-preview {
+  .featured-card {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+    padding: var(--space-6);
     background: var(--color-surface);
     border: 1px solid var(--color-border);
-    border-radius: var(--radius-lg);
-    padding: var(--space-6);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-  }
-
-  .post-preview:hover {
-    transform: translateY(-4px);
-    box-shadow: var(--shadow-lg);
-  }
-
-  .post-preview a {
+    border-radius: var(--radius-xl);
     text-decoration: none;
     color: inherit;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
   }
 
-  .post-preview h4 {
-    font-size: 1.25rem;
+  .featured-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--color-primary);
+  }
+
+  .featured-label {
+    font-size: var(--text-xs);
     font-weight: 600;
-    margin-bottom: var(--space-2);
-    color: var(--color-text);
-  }
-
-  .post-preview a:hover h4 {
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
     color: var(--color-primary);
   }
 
-  .post-preview p {
+  .featured-card-title {
+    font-size: var(--text-xl);
+    font-weight: 700;
+    color: var(--color-text);
+    line-height: 1.3;
+    margin: 0;
+  }
+
+  .featured-card-subtitle {
+    font-size: var(--text-base);
     color: var(--color-text-secondary);
     line-height: 1.5;
+    margin: 0;
+    flex: 1;
+  }
+
+  .featured-card-date {
+    font-size: var(--text-sm);
+    color: var(--color-text-secondary);
+    margin: 0;
+  }
+
+  .featured-cta {
+    font-size: var(--text-sm);
+    font-weight: 600;
+    color: var(--color-primary);
+    margin-top: auto;
+    transition: color 0.2s;
+  }
+
+  .featured-card:hover .featured-cta {
+    color: var(--color-accent);
+  }
+
+  /* ── Recent Posts ─────────────────────────────────── */
+  .posts-section {
+    padding-top: var(--space-4);
+    padding-bottom: var(--space-8);
+  }
+
+  .posts-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-6);
+  }
+
+  /* ── Newsletter ───────────────────────────────────── */
+  .newsletter-section {
+    border-top: 1px solid var(--color-border);
+    padding: var(--space-16) var(--space-4);
+    text-align: center;
+  }
+
+  .newsletter-inner {
+    max-width: 480px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-6);
+  }
+
+  .newsletter-copy {
+    font-size: var(--text-xl);
+    font-weight: 500;
+    color: var(--color-text);
+    margin: 0;
+  }
+
+  /* ── Responsive ───────────────────────────────────── */
+  @media (max-width: 1024px) {
+    .posts-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
   }
 
   @media (max-width: 768px) {
     .hero h1 {
-      font-size: 2.5rem;
+      font-size: var(--text-4xl);
     }
 
-    .hero h2 {
-      font-size: 1.25rem;
+    .hero-title {
+      font-size: var(--text-lg);
     }
 
-    .posts-preview {
+    .featured-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .posts-grid {
       grid-template-columns: 1fr;
     }
   }

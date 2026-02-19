@@ -9,17 +9,32 @@ export async function getStaticPaths() {
     return data.omit !== true;
   });
 
-  return posts.map((post: CollectionEntry<'posts'>) => ({
+  // Sort newest-first so index+1 = older, index-1 = newer
+  const sorted = [...posts].sort(
+    (a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime()
+  );
+
+  return sorted.map((post, index) => ({
     params: { slug: getPostSlug(post.data.title, post.slug) },
-    props: { post },
+    props: {
+      post,
+      prevPost: index + 1 < sorted.length
+        ? { title: sorted[index + 1].data.title, href: `/blog/${getPostSlug(sorted[index + 1].data.title, sorted[index + 1].slug)}` }
+        : null,
+      nextPost: index > 0
+        ? { title: sorted[index - 1].data.title, href: `/blog/${getPostSlug(sorted[index - 1].data.title, sorted[index - 1].slug)}` }
+        : null,
+    },
   }));
 }
 
 interface Props {
   post: CollectionEntry<'posts'>;
+  prevPost: { title: string; href: string } | null;
+  nextPost: { title: string; href: string } | null;
 }
 
-const { post } = Astro.props;
+const { post, prevPost, nextPost } = Astro.props;
 ---
 
-<BlogPost post={post} />
+<BlogPost post={post} prevPost={prevPost} nextPost={nextPost} />
