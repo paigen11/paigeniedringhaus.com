@@ -258,7 +258,7 @@ const navLinks = [
   /* Mobile Navigation */
   .nav-mobile {
     position: fixed;
-    top: 80px;
+    top: 70px;
     left: 0;
     right: 0;
     background-color: var(--color-surface);
@@ -288,6 +288,10 @@ const navLinks = [
     padding: var(--space-4) var(--space-8);
     transition: background-color 0.2s, color 0.2s;
     border-bottom: 1px solid var(--color-border);
+  }
+
+  .mobile-nav-link:first-child {
+    border-top: 1px solid var(--color-border);
   }
 
   .mobile-nav-link:last-child {

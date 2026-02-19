@@ -21,7 +21,7 @@ const description = subTitle || `Blog post: ${title}`;
 const siteUrl = 'https://www.paigeniedringhaus.com';
 const ogImage = post.data.featuredImage
   ? siteUrl + post.data.featuredImage.replace(/^\.\.\/images\//, '/images/')
-  : undefined; // Layout will fall back to paige-hero.jpg
+  : undefined; // Layout will fall back to og-default.png
 
 // Reading time
 const wordCount = post.body
@@ -256,7 +256,7 @@ const tocHeadings = headings.filter((h) => h.depth === 2 || h.depth === 3);
   }
 
   .post-content :global(h2) {
-    font-size: 2rem;
+    font-size: var(--text-4xl);
     font-weight: 700;
     margin: var(--space-10) 0 var(--space-4);
     color: var(--color-text);
@@ -292,7 +292,7 @@ const tocHeadings = headings.filter((h) => h.depth === 2 || h.depth === 3);
   .post-content :global(ul),
   .post-content :global(ol) {
     margin: var(--space-6) 0;
-    padding-left: 2rem;
+    padding-left: var(--space-8);
   }
 
   .post-content :global(li) {

@@ -7,14 +7,10 @@ import speaking from '../data/speaking.js';
 import podcasts from '../data/podcasts.js';
 import publications from '../data/publications.js';
 
-// Exclude course videos from the talks list since they're already in the Courses section
-const courseVideoPaths = new Set(courseVideos.map((v: { path: string }) => v.path));
 const sortedSpeaking = speaking
-  .filter((talk: { path: string | null }) => !talk.path || !courseVideoPaths.has(talk.path))
   .sort((a: { date: string }, b: { date: string }) => new Date(b.date).getTime() - new Date(a.date).getTime());
 
-const guestPodcasts = podcasts
-  .filter((p) => p.type === 'guest')
+const sortedPodcasts = podcasts
   .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 
 // Order companies newest-first by their most recent article
@@ -38,7 +34,7 @@ const companyLogos: Record<string, string> = {
 const totalArticles = Object.values(sortedPublications).reduce((sum, articles) => sum + articles.length, 0);
 ---
 
-<Layout title="Archive | Paige Niedringhaus" description="Paige's courses, talks, guest podcast appearances, and published articles.">
+<Layout title="Archive | Paige Niedringhaus" description="The full catalog — courses, conference talks, guest podcast appearances, and articles written across the web. Some of it's old, all of it happened.">
   <div class="page-container">
     <h1>Archive</h1>
 
@@ -123,11 +119,11 @@ const totalArticles = Object.values(sortedPublications).reduce((sum, articles) =
 
     <details>
       <summary>
-        <h2>Guest Podcast Appearances <span class="count">({guestPodcasts.length})</span></h2>
+        <h2>Guest Podcast Appearances <span class="count">({sortedPodcasts.length})</span></h2>
       </summary>
       <div class="details-content">
         <ul class="media-list">
-          {guestPodcasts.map((podcast) => (
+          {sortedPodcasts.map((podcast) => (
             <li class="media-item">
               <img src={podcast.img} alt="podcast logo" class="media-logo" />
               <div class="media-content">

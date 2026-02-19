@@ -117,59 +117,10 @@ export default [
     img: digitalCrafts,
   },
   {
-    title:
-      'Update a Legacy React App (React Hooks & more) with Paige Niedringhaus',
-    date: formatDate('2021-10-29'),
-    path: 'https://www.youtube.com/watch?v=Prv6Pt1Ltrs',
-    img: newline,
-  },
-  {
     title: 'The Niedringhaus Effect (Ep 1): IoT for React Developers',
     date: formatDate('2021-11-02'),
     path: 'https://www.youtube.com/watch?v=Nr-VclCFwzE',
     img: blues,
-  },
-  {
-    title:
-      'Intro to React Hooks (Full Course, Part 1 of 6) with Blues Staff Software Engineer, Paige N.',
-    date: formatDate('2022-01-11'),
-    path: 'https://www.youtube.com/watch?v=hlhLujLmH78',
-    img: newline,
-  },
-  {
-    title:
-      'useState Hook (Full Course, Part 2 of 6) with Blues Staff Software Engineer, Paige N.',
-    date: formatDate('2022-01-12'),
-    path: 'https://www.youtube.com/watch?v=rg3aSmiZgX0',
-    img: newline,
-  },
-  {
-    title:
-      'useEffect Hook (Full Course, Part 3 of 6) with Blues Staff Software Engineer, Paige N.',
-    date: formatDate('2022-01-13'),
-    path: 'https://www.youtube.com/watch?v=28MnBPqqDVk',
-    img: newline,
-  },
-  {
-    title:
-      'useRef Hook (Full Course, Part 4 of 6) with Blues Staff Software Engineer, Paige N.',
-    date: formatDate('2022-01-16'),
-    path: 'https://www.youtube.com/watch?v=dBMTFAizsEA',
-    img: newline,
-  },
-  {
-    title:
-      'useContext Hook (Full Course, Part 5 of 6) with Blues Staff Software Engineer, Paige N.',
-    date: formatDate('2022-01-17'),
-    path: 'https://www.youtube.com/watch?v=j-WjpVJB6Rc',
-    img: newline,
-  },
-  {
-    title:
-      'Custom Hooks & Summary (Full Course, Part 6 of 6) with Blues Staff Software Engineer, Paige N.',
-    date: formatDate('2022-01-18'),
-    path: 'https://www.youtube.com/watch?v=aCu4PaygeP4',
-    img: newline,
   },
   {
     title: 'Tech Elevator: Lessons I Learned in My IT Career Panel',
@@ -218,7 +169,7 @@ export default [
   {
     title: 'Why IoT Development Needs its own Create React App',
     date: formatDate('2023-01-18'),
-    path: null, // 403/removed as of 2026
+    path: null,
     img: thatConf,
   },
   {

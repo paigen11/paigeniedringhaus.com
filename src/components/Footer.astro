@@ -7,7 +7,9 @@ const currentYear = new Date().getFullYear();
 <footer class="footer">
   <div class="footer-content">
     <div class="copyright">
-      <p>Copyright © {currentYear}. Paige Niedringhaus</p>
+      <p>Made with ❤️ by Paige Niedringhaus</p>
+      <p class="powered-by">Powered by <a href="https://astro.build" target="_blank" rel="noopener noreferrer">Astro</a></p>
+      <p class="copy-year">© {currentYear}</p>
     </div>
 
     <div class="social-links">
@@ -44,10 +46,36 @@ const currentYear = new Date().getFullYear();
   .copyright {
     color: var(--color-text-secondary);
     font-size: var(--text-sm);
+    text-align: center;
   }
 
   .copyright p {
     margin: 0;
+    line-height: 1.6;
+  }
+
+  .powered-by a {
+    color: var(--color-primary);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s;
+  }
+
+  .powered-by a:hover {
+    color: var(--color-accent);
+    text-decoration: underline;
+  }
+
+  .copy-year {
+    margin-top: var(--space-2) !important;
+    font-size: var(--text-xs);
+    opacity: 0.8;
+  }
+
+  @media (min-width: 768px) {
+    .copyright {
+      text-align: left;
+    }
   }
 
   .social-links {
