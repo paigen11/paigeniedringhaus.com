@@ -1,6 +1,4 @@
-
 import angularToReact from '../../content/images/angular-react.jpeg';
-import epcot from '../../content/images/epcot.jpeg';
 import dualMonitors from '../../content/images/dual-monitors.jpeg';
 import marionette from '../../content/images/marionette.jpeg';
 import stopwatch from '../../content/images/stopwatch.jpeg';
@@ -48,16 +46,6 @@ export default [
     tags: ['javascript', 'nodejs', 'programming'],
     timeToRead: 6,
     title: 'Node.js 12: The future of server-side JavaScript',
-  },
-  {
-    date: '2020-03-03',
-    img: epcot,
-    url: 'https://medium.com/better-programming/how-to-use-reacts-context-api-and-usecontext-hooks-effectively-ed98ad9343b6',
-    subTitle:
-      'Avoid prop drilling both your values and your functions with the help of Context',
-    tags: ['javascript', 'react'],
-    timeToRead: 7,
-    title: "How to Use React's Context API and useContext() Hooks Effectively",
   },
   {
     date: '2020-04-01',
