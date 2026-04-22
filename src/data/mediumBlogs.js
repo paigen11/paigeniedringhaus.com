@@ -1,5 +1,4 @@
 import angularToReact from '../../content/images/angular-react.jpeg';
-import dualMonitors from '../../content/images/dual-monitors.jpeg';
 import marionette from '../../content/images/marionette.jpeg';
 import stopwatch from '../../content/images/stopwatch.jpeg';
 import loader from '../../content/images/loader.png';
@@ -46,15 +45,6 @@ export default [
     tags: ['javascript', 'nodejs', 'programming'],
     timeToRead: 6,
     title: 'Node.js 12: The future of server-side JavaScript',
-  },
-  {
-    date: '2020-04-01',
-    img: dualMonitors,
-    url: 'https://medium.com/better-programming/9-react-testing-library-tips-and-tricks-5cce3e458282',
-    subTitle: 'Writing tests is hard. These tips make it a little easier',
-    tags: ['javascript', 'react', 'testing'],
-    timeToRead: 12,
-    title: '9 React Testing Library Tips and Tricks',
   },
   {
     date: '2020-04-14',
