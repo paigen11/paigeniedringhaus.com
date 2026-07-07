@@ -1,5 +1,4 @@
 import angularToReact from '../../content/images/angular-react.jpeg';
-import marionette from '../../content/images/marionette.jpeg';
 import stopwatch from '../../content/images/stopwatch.jpeg';
 import loader from '../../content/images/loader.png';
 import laptopGraph from '../../content/images/laptop-graph.jpeg';
@@ -45,16 +44,6 @@ export default [
     tags: ['javascript', 'nodejs', 'programming'],
     timeToRead: 6,
     title: 'Node.js 12: The future of server-side JavaScript',
-  },
-  {
-    date: '2020-04-14',
-    img: marionette,
-    url: 'https://medium.com/bitsrc/animating-reactjs-with-react-transition-group-2af6c87cab0c',
-    subTitle:
-      'Another handy React animation library to have in your tool belt.',
-    tags: ['javascript', 'react', 'css'],
-    timeToRead: 11,
-    title: 'Animating React with React Transition Group',
   },
   {
     date: '2020-05-11',
