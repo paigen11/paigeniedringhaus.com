@@ -1,5 +1,4 @@
 import angularToReact from '../../content/images/angular-react.jpeg';
-import stopwatch from '../../content/images/stopwatch.jpeg';
 import loader from '../../content/images/loader.png';
 import laptopGraph from '../../content/images/laptop-graph.jpeg';
 import uxFlows from '../../content/images/ux-flows.jpeg';
@@ -44,16 +43,6 @@ export default [
     tags: ['javascript', 'nodejs', 'programming'],
     timeToRead: 6,
     title: 'Node.js 12: The future of server-side JavaScript',
-  },
-  {
-    date: '2020-05-11',
-    img: stopwatch,
-    url: 'https://medium.com/bitsrc/polling-in-react-using-the-useinterval-custom-hook-e2bcefda4197',
-    subTitle:
-      "useInterval is a custom Hook that's certain to make intervals simpler in your app.",
-    tags: ['javascript', 'react'],
-    timeToRead: 8,
-    title: 'Polling in React using the useInterval Custom Hook',
   },
   {
     date: '2020-06-10',
